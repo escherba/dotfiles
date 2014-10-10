@@ -1,0 +1,6 @@
+[MESSAGES CONTROL]
+
+# C0111 Missing docstring
+# C0301 Line too long
+# W0142 Used * or ** magic
+disable=C0301,C0111,W0142
