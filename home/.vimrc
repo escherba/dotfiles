@@ -3,10 +3,10 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-" Set run-time path
-call neobundle#rc(expand('~/.vim/bundle/'))
-
 filetype off                   " required!
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -30,9 +30,9 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'sudo.vim'
 NeoBundle 'Valloric/YouCompleteMe', {
  \ 'build' : {
- \      'cygwin' : 'bash install.sh',
- \      'mac' : 'bash install.sh',
- \      'unix' : 'bash install.sh',
+ \      'cygwin' : 'git submodule update --init --recursive && bash install.sh',
+ \      'mac' : 'git submodule update --init --recursive && PATH="/usr/local/opt/python/Frameworks/Python.framework/Versions/2.7/bin/:$PATH" bash install.sh',
+ \      'unix' : 'git submodule update --init --recursive && bash install.sh',
  \    },
  \ }
 NeoBundle 'sjl/gundo.vim'
@@ -140,6 +140,8 @@ NeoBundle 'MatlabFilesEdition'
 " git repos on your local machine (ie. when working on your own plugin)
 "NeoBundle 'file:///Users/gmarik/path/to/plugin'
 " ...
+
+call neobundle#end()
 
 filetype plugin indent on     " required!
 "
