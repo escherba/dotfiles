@@ -68,7 +68,8 @@ NeoBundle 'ervandew/supertab'
 "NeoBundle 'honza/vim-snippets'
 
 " color schemes
-NeoBundle 'altercation/vim-colors-solarized'
+"NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'ajacksified/vim-colors-solarized-brown'
 "NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 "NeoBundle 'chriskempson/base16-vim'
 "NeoBundle 'john2x/flatui.vim'
@@ -179,9 +180,9 @@ if has('gui_macvim')
 endif
 
 
-"let g:solarized_visibility = "high"
-"let g:solarized_contrast = "high"
-colorscheme solarized
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+colorscheme solarizedbrown
 "colorscheme flatui
 "colorscheme Tomorrow-Night
 "colorscheme Tomorrow-Night-Eighties
@@ -263,11 +264,16 @@ let g:syntastic_objc_no_default_include_dirs = 1
 "let g:syntastic_objc_config_file = '.config'
 
 " for Python, disable 'line too long' error
-let g:syntastic_python_flake8_args = "--ignore=E501 --max-complexity 10"
+let g:syntastic_python_flake8_args = "--ignore=E501 --max-complexity 20"
 
 " set compiler executable
 "let g:syntastic_objc_compiler = 'clang'
 "let g:syntastic_objc_checker = 'clang'
+
+" --------------------------
+"  NERDTree
+" --------------------------
+let NERDTreeIgnore = ['\.pyc$']
 
 " --------------------------
 " Lua
@@ -279,8 +285,9 @@ let g:lua_complete_omni = 1
 " --------------------------
 " python-mode
 " --------------------------
-" do not trim whitespace
+let g:pymode_lint_ignore = "E501"
 let g:pymode_trim_whitespaces = 0
+let g:pymode_rope_complete_on_dot = 0
 
 " --------------------------
 " Syntastic
@@ -417,8 +424,6 @@ let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
 let g:ycm_autoclose_preview_window_after_completion=1
 "ignore warnings about extra_conf files
 let g:ycm_extra_conf_globlist = ['~/dev/*','!~/*']
-
-let g:pymode_rope_complete_on_dot = 0
 
 "map Jedi's jump to definition/declaration feature to the <leader>g shortcut
 nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
