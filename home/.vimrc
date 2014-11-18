@@ -76,10 +76,10 @@ NeoBundle 'ajacksified/vim-colors-solarized-brown'
 
 " markdown, RST
 NeoBundle 'tpope/vim-markdown'
-NeoBundle "Rykka/clickable.vim"
-NeoBundle "Rykka/clickable-things"
-NeoBundle "Rykka/os.vim"
-NeoBundle 'Rykka/riv.vim'
+NeoBundle 'rykka/clickable.vim'
+NeoBundle 'rykka/clickable-things'
+NeoBundle 'rykka/os.vim'
+NeoBundle 'rykka/riv.vim'
 
 " Ruby
 NeoBundle 'tpope/vim-rails'
@@ -157,7 +157,7 @@ filetype plugin indent on     " required!
 " Installation check.
 NeoBundleCheck
 
-let mapleader = ","
+let mapleader = ','
 set ruler       " show cursor position
 set t_Co=256    " use 256 colors
 set hlsearch    " highlight search terms
@@ -183,8 +183,8 @@ if has('gui_macvim')
 endif
 
 
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
+let g:solarized_visibility = 'high'
+let g:solarized_contrast = 'high'
 colorscheme solarizedbrown
 "colorscheme flatui
 "colorscheme Tomorrow-Night
@@ -198,7 +198,7 @@ colorscheme solarizedbrown
 " -------------------------------
 " Powerline config override global -- content is recursively merged
 " with ~/.config/powerline/config.json
-"let g:powerline_config_overrides={"ext": {"vim": {"colorscheme": "solarized"}}}
+"let g:powerline_config_overrides={'ext': {'vim': {'colorscheme': 'solarized'}}}
 
 " ----------------------------------------------
 " Airline
@@ -332,8 +332,8 @@ au Bufread,BufNewFile *.hsc set filetype=haskell
 au FileType cabal setl et ts=2 sw=2 sts=2
 
 " Configure browser for haskell_doc.vim
-let g:haddock_browser = "open"
-let g:haddock_browser_callformat = "%s %s"
+let g:haddock_browser = 'open'
+let g:haddock_browser_callformat = '%s %s'
 
 " hdevtools
 let g:hdevtools_options = '-g -isrc -g -Wall -g -hide-package -g transformers'
@@ -415,6 +415,10 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+" =====
+" clickable
+call os#init()
 
 " ===================================
 "YouCompleteMe
