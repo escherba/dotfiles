@@ -76,6 +76,9 @@ NeoBundle 'ajacksified/vim-colors-solarized-brown'
 
 " markdown, RST
 NeoBundle 'tpope/vim-markdown'
+NeoBundle "Rykka/clickable.vim"
+NeoBundle "Rykka/clickable-things"
+NeoBundle "Rykka/os.vim"
 NeoBundle 'Rykka/riv.vim'
 
 " Ruby
@@ -211,7 +214,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 if has('gui_running')
     " set default font
-    set guifont=DejaVu\ Sans\ Mono
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
 endif
 
 " VimShell
