@@ -58,14 +58,14 @@ NeoBundle 'jalvesaq/VimCom', {
  \ }
 
 " Snippets!
-"NeoBundle 'SirVer/ultisnips'
+NeoBundle 'SirVer/ultisnips'
 NeoBundle 'ervandew/supertab'
+NeoBundle 'honza/vim-snippets'
 
 "NeoBundle 'MarcWeber/vim-addon-mw-utils'
 "NeoBundle 'tomtom/tlib_vim'
 "NeoBundle 'garbas/vim-snipmate'
 "NeoBundle 'msanders/snipmate.vim'
-"NeoBundle 'honza/vim-snippets'
 
 " color schemes
 "NeoBundle 'altercation/vim-colors-solarized'
@@ -366,15 +366,11 @@ endif
 " Easytags
 let g:easytags_updatetime_min=1000
 
-"First, change the default key-binding of YCM to <C-TAB> and <C-S-TAB>:
+" Prevent UltiSnips <tab> mapping from colliding with YouCompleteMe
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
-
-"Then set the default action of SuperTab to triggering <C-TAB>:
 let g:SuperTabDefaultCompletionType = '<C-Tab>'
-
-" Prevent UltiSnips <tab> mapping from colliding with YouCompleteMe
-"let g:UltiSnipsExpandTrigger="<C-j>"
+"let g:UltiSnipsListSnippets="<c-e>"
 
 " ===================================
 " Return to last edit position when opening files (You want this!)
