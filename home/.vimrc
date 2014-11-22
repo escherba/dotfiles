@@ -51,11 +51,11 @@ NeoBundle 'mileszs/ack.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'moll/vim-node'
 NeoBundle 'jcfaria/Vim-R-plugin'
-NeoBundle 'jalvesaq/VimCom', {
- \ 'build' : {
- \      'mac' : 'R CMD build .; R CMD INSTALL vimcom.*.tar.gz'
- \    }
- \ }
+"NeoBundle 'jalvesaq/VimCom', {
+" \ 'build' : {
+" \      'mac' : 'R CMD build .; R CMD INSTALL vimcom.*.tar.gz'
+" \    }
+" \ }
 
 " Snippets!
 NeoBundle 'SirVer/ultisnips'
@@ -103,6 +103,7 @@ NeoBundle 'Alternate-workspace'
 
 " Python
 NeoBundle 'klen/python-mode'
+NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'python.vim'
 "NeoBundle 'pyflakes.vim'
 NeoBundle 'ivanov/vim-ipython'
@@ -291,6 +292,18 @@ let g:lua_complete_omni = 1
 let g:pymode_lint_ignore = "E501"
 let g:pymode_trim_whitespaces = 0
 let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope = 0   " we use Jedi instead of Rope
+
+" --------------------------
+"  jedi-vim
+"  -------------------------
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<leader>r"
+let g:jedi#show_call_signatures = "1"
 
 " --------------------------
 " Syntastic
