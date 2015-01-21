@@ -109,6 +109,7 @@ NeoBundle 'python.vim'
 NeoBundle 'ivanov/vim-ipython'
 NeoBundle 'alfredodeza/pytest.vim'
 NeoBundle 'fs111/pydoc.vim'
+NeoBundle 'tshirtman/vim-cython'
 
 " Javascript
 NeoBundle 'marijnh/tern_for_vim'
@@ -277,7 +278,7 @@ let g:syntastic_python_flake8_args = "--ignore=E501 --max-complexity 20"
 " --------------------------
 "  NERDTree
 " --------------------------
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.pyd$', '\.swp$', '\.swo$']
 
 " --------------------------
 " Lua
@@ -289,10 +290,29 @@ let g:lua_complete_omni = 1
 " --------------------------
 " python-mode
 " --------------------------
+" Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
 let g:pymode_lint_ignore = "E501"
+let g:pymode_lint_write = 1  " Auto check on save
+
+" misc
 let g:pymode_trim_whitespaces = 0
+let g:pymode_virtualenv = 1  " Support virtualenv
+
+" rope
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope = 0   " we use Jedi instead of Rope
+
+" breakpoints
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_key = '<leader>b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " --------------------------
 "  jedi-vim
@@ -304,6 +324,7 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "1"
+let g:jedi#popup_on_dot = 0
 
 " --------------------------
 " Syntastic
@@ -456,11 +477,18 @@ autocmd BufRead,BufNewFile *.json set equalprg=json_reformat
 " gradle syntax highlighting
 au BufNewFile,BufRead *.gradle set filetype=groovy
 
+" python syntax highlighting
+let python_highlight_all = 1
+
 " play nicely with tmux
 map <Esc>[B <Down>
 
 " do not fold everything
 set foldlevelstart=1
+
+" Highlight end of line whitespace.
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
 
 " ----------------------------------------------
 " Unicode Entry
