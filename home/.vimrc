@@ -110,12 +110,14 @@ NeoBundle 'ivanov/vim-ipython'
 NeoBundle 'alfredodeza/pytest.vim'
 NeoBundle 'fs111/pydoc.vim'
 NeoBundle 'tshirtman/vim-cython'
+NeoBundle 'vim-scripts/swap-parameters'
 
 " Javascript
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'pangloss/vim-javascript'
 "NeoBundle 'wookiehangover/jshint.vim'
 NeoBundle 'walm/jshint.vim'
+NeoBundle 'tmhedberg/matchit'
 
 " Haskell
 NeoBundle 'dag/vim2hs'
@@ -126,6 +128,9 @@ NeoBundle 'lukerandall/haskellmode-vim'
 NeoBundle 'bitc/vim-hdevtools'
 NeoBundle 'feuerbach/vim-hs-module-name'
 NeoBundle 'escherba/vim-haskellConceal'
+
+" Graphviz
+NeoBundle 'wannesm/wmgraphviz.vim'
 
 " Protobuf
 NeoBundle 'uarun/vim-protobuf'
@@ -216,7 +221,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 if has('gui_running')
     " set default font
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
 endif
 
 " VimShell
