@@ -118,6 +118,7 @@ NeoBundle 'pangloss/vim-javascript'
 "NeoBundle 'wookiehangover/jshint.vim'
 NeoBundle 'walm/jshint.vim'
 NeoBundle 'tmhedberg/matchit'
+NeoBundle 'elzr/vim-json'
 
 " Haskell
 NeoBundle 'dag/vim2hs'
@@ -477,7 +478,7 @@ let g:necoghc_enable_detailed_browse = 1
 nmap <silent> <leader>h <Plug>DashSearch
 
 " Pretty-print *.json files (requires yajl)
-autocmd BufRead,BufNewFile *.json set equalprg=json_reformat
+"autocmd BufRead,BufNewFile *.json set equalprg=json_reformat
 
 " gradle syntax highlighting
 au BufNewFile,BufRead *.gradle set filetype=groovy
