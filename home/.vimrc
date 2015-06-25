@@ -68,8 +68,8 @@ NeoBundle 'honza/vim-snippets'
 "NeoBundle 'msanders/snipmate.vim'
 
 " color schemes
-"NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'ajacksified/vim-colors-solarized-brown'
+NeoBundle 'altercation/vim-colors-solarized'
+"NeoBundle 'ajacksified/vim-colors-solarized-brown'
 "NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 "NeoBundle 'chriskempson/base16-vim'
 "NeoBundle 'john2x/flatui.vim'
@@ -182,7 +182,7 @@ try
 catch
 endtry
 
-set background=dark
+set background=light
 " controls transparency, needed for Terminal
 let g:solarized_termtrans = 1
 
@@ -193,7 +193,7 @@ endif
 
 let g:solarized_visibility = 'high'
 let g:solarized_contrast = 'high'
-colorscheme solarizedbrown
+colorscheme solarized
 "colorscheme flatui
 "colorscheme Tomorrow-Night
 "colorscheme Tomorrow-Night-Eighties
