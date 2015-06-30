@@ -1,0 +1,29 @@
+# C-b unacceptable, due to emacs, bash, and vim
+
+set -g default-terminal "screen-256color"
+
+set -g mode-mouse on
+set -g mouse-resize-pane on
+set -g mouse-select-pane on
+set -g mouse-select-window on
+
+unbind-key C-b
+set -g prefix 'C-\'
+bind-key 'C-\' send-prefix
+
+# Vim-like copy mode
+#
+# The following sequence will initiate copy mode: C-\ [ (starting square bracket)
+# In copy mode, pressing "v" key will start selection, and "y"
+# will yank it to the tmux clipboard. To paste content, C-\ ] (closing square bracket)
+#
+setw -g mode-keys vi
+bind [ copy-mode
+bind ] paste-buffer
+bind -t vi-copy v begin-selection
+bind -t vi-copy y copy-selection
+bind -t vi-copy V rectangle-toggle
+bind -t vi-copy Escape cancel
+
+# buffer
+bind Space choose-buffer
