@@ -1,12 +1,20 @@
 # C-b unacceptable, due to emacs, bash, and vim
 
+# terminal
 set -g default-terminal "screen-256color"
 
+# window title (in userspace)
+set-option -g set-titles on
+set-option -g set-titles-string '[#S:#I #H] #W'
+setw -g automatic-rename
+
+# mouse support
 set -g mode-mouse on
 set -g mouse-resize-pane on
 set -g mouse-select-pane on
 set -g mouse-select-window on
 
+# prefix key
 unbind-key C-b
 set -g prefix 'C-\'
 bind-key 'C-\' send-prefix
@@ -27,3 +35,6 @@ bind -t vi-copy Escape cancel
 
 # buffer
 bind Space choose-buffer
+
+# status
+set-option -g status-utf8 on
