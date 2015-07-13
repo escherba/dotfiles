@@ -1,5 +1,3 @@
-# Linux-only
-
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -118,9 +116,46 @@ if ! shopt -oq posix; then
   fi
 fi
 
+function parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+PS1="\w\$(parse_git_branch) $ "
+
 export PATH="/usr/local/cuda/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 export C_INCLUDE_PATH="/usr/local/cuda/include:$C_INCLUDE_PATH"
 export CPP_INCLUDE_PATH="/usr/local/cuda/include:$CPP_INCLUDE_PATH"
 
 alias tmux="TERM=screen-256color-bce tmux"
+
+# git aliases
+alias gg='git grep'
+alias ga='git add'
+alias gp='git push'
+alias gc='git commit'
+alias gd='git diff'
+alias g='git'
+
+
+SSH_ENV="$HOME/.ssh/environment"
+
+function start_agent {
+    echo "Initialising new SSH agent..."
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add;
+}
+
+# Source SSH settings, if applicable
+
+if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    #ps ${SSH_AGENT_PID} doesn't work under cywgin
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
+fi
