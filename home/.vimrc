@@ -17,6 +17,7 @@ NeoBundle 'tpope/vim-sensible'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tmux-plugins/vim-tmux'
 NeoBundle 'Shougo/vimproc', {
  \ 'build' : {
  \     'windows' : 'make -f make_mingw32.mak',
@@ -182,7 +183,7 @@ try
 catch
 endtry
 
-set background=light
+set background=dark
 " controls transparency, needed for Terminal
 let g:solarized_termtrans = 1
 
@@ -495,6 +496,9 @@ set foldlevelstart=1
 " Highlight end of line whitespace.
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
+
+" disable background erase
+set t_ut=
 
 " ----------------------------------------------
 " Unicode Entry
