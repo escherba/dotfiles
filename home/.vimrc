@@ -373,8 +373,16 @@ au Bufread,BufNewFile *.hsc set filetype=haskell
 au FileType cabal setl et ts=2 sw=2 sts=2
 
 " Configure browser for haskell_doc.vim
+" Note: you need to run the following when setting up your GHC env:
+"
+"      cabal update
+"      cabal install hdevtools
+"      cabal install happy
+"      cabal install ghc-mod
+"
 let g:haddock_browser = 'open'
 let g:haddock_browser_callformat = '%s %s'
+let g:haddock_docdir = '/usr/local/share/doc/ghc/html/'
 
 " hdevtools
 let g:hdevtools_options = '-g -isrc -g -Wall -g -hide-package -g transformers'

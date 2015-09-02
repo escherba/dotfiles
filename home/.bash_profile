@@ -36,8 +36,6 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig"
 
 #export PYTHONPATH="$(brew --prefix)/lib/python2.7/site-packages:/usr/local/opt/opencv/lib/python2.7/site-packages:$PYTHONPATH"
 
-source "$HOME/dev/lfdev/scripts/rc"
-
 alias gipython="ipython qtconsole --pylab=inline"
 alias ghci="ghci -XNoMonomorphismRestriction"
 alias lwatch="w'tch -n 1 wc -l"
@@ -109,7 +107,7 @@ function nginxctl {
     fi
 }
 
-export PATH="$HOME/Library/Haskell/bin:/Library/Haskell/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/.cabal/bin:$HOME/Library/Haskell/bin:/Library/Haskell/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 export GOPATH="/usr/share/go"
 export PATH="$PATH:/usr/share/go/bin:/usr/local/go/bin"
