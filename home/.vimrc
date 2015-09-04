@@ -278,6 +278,7 @@ let g:syntastic_objc_no_default_include_dirs = 1
 " for Python, disable 'line too long' error
 let g:syntastic_python_flake8_args = "--ignore=E501 --max-complexity 20"
 
+let g:syntastic_haskell_hdevtools_args = '-g -isrc -g -Wall -g -hide-package -g transformers'
 " set compiler executable
 "let g:syntastic_objc_compiler = 'clang'
 "let g:syntastic_objc_checker = 'clang'
@@ -384,8 +385,7 @@ let g:haddock_browser = 'open'
 let g:haddock_browser_callformat = '%s %s'
 let g:haddock_docdir = '/usr/local/share/doc/ghc/html/'
 
-" hdevtools
-let g:hdevtools_options = '-g -isrc -g -Wall -g -hide-package -g transformers'
+" Haskell hdevtools
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
