@@ -1,5 +1,5 @@
 # dotfiles
-Config and dot-files for development on Mac OS X and Linux
+A collection of config files for development on Mac OS X and Linux
 
 ## Additional software (Mac)
 
