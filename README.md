@@ -1,5 +1,5 @@
 # dotfiles
-Convenience dotfiles and custom brew formulas for development on Mac OS X
+Config and dot-files for development on Mac OS X and Linux
 
 ## Additional software (Mac)
 
