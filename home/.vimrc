@@ -301,10 +301,10 @@ let g:lua_complete_omni = 1
 " Linting
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
-let g:pymode_lint_ignore = "C0103,E501,E1101"
+let g:pymode_lint_ignore = "E501,C0103,C0111,C0301,C0326,E1101,R0903,R0904,R0913,W0141,W0142"
 let g:pymode_lint_write = 1  " Auto check on save
-"let g:syntastic_python_checker_args='-d C0103,E501,E1101'
-let g:syntastic_python_pylint_args='-d C0103,E501,E1101 -f parseable -r n -i y'
+"let g:syntastic_python_checker_args='-d E501,C0103,C0111,C0301,C0326,E1101,R0903,R0904,R0913,W0141,W0142'
+let g:syntastic_python_pylint_args='-d E501,C0103,C0111,C0301,C0326,E1101,R0903,R0904,R0913,W0141,W0142 -f parseable -r n -i y'
 
 " misc
 let g:pymode_trim_whitespaces = 0

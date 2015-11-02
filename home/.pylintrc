@@ -1,8 +1,25 @@
 [MESSAGES CONTROL]
 
-# C0111 Missing docstring
-# C0301 Line too long
-# W0141 Used builtin function
-# W0142 Used * or ** magic
-# R0903 too few public methods
-disable=C0301,C0111,W0142,W0141,R0903
+# PEP messages
+# http://pep8.readthedocs.org/en/latest/intro.html
+#
+# E501 Line too long            (too pedantic)
+
+# PyLint messages.
+# http://pylint-messages.wikidot.com/all-messages
+#
+# C0103 Invalid %s name "%s"    (strongly disagree, there is a fine reason why math equations
+#                                have been written with short symbols for hundreds of years)
+# C0111 Missing docstring       (too pedantic)
+# C0301 Line too long           (too pedantic)
+# C0326 %s space %s %s %sn%s    (too pedantic)
+# E1101 %s %r has no %r member  (because of NumPy)
+# R0903 too few public methods  (common situation)
+# R0904 too many public methods (common situation)
+# R0913 too many arguments      (common situation)
+# W0141 Used builtin function   (disagree, point-free style hase use cases)
+# W0142 Used * or ** magic      (strongly disagree)
+disable=E501,C0103,C0111,C0301,C0326,E1101,R0903,R0904,R0913,W0141,W0142
+
+[TYPECHECK]
+inored-modules=cython
