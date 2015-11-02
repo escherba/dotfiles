@@ -301,8 +301,10 @@ let g:lua_complete_omni = 1
 " Linting
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
-let g:pymode_lint_ignore = "E501"
+let g:pymode_lint_ignore = "C0103,E501,E1101"
 let g:pymode_lint_write = 1  " Auto check on save
+"let g:syntastic_python_checker_args='-d C0103,E501,E1101'
+let g:syntastic_python_pylint_args='-d C0103,E501,E1101 -f parseable -r n -i y'
 
 " misc
 let g:pymode_trim_whitespaces = 0
@@ -364,6 +366,14 @@ let g:syntastic_auto_loc_list=1
 autocmd QuickFixCmdPost [^l]* nested copen  " cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
+"-------------------------------
+" General
+" ------------------------------
+" source .vimrc files from local directories
+set exrc
+" limit commands sourced from local .vimrc for security reasons
+set secure
+
 
 " ------------------------------
 " Haskell
@@ -385,7 +395,7 @@ let g:haddock_browser = 'open'
 let g:haddock_browser_callformat = '%s %s'
 let g:haddock_docdir = '/usr/local/share/doc/ghc/html/'
 
-" Haskell hdevtools
+" hdevtools
 au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 au FileType haskell nnoremap <buffer> <silent> <F3> :HdevtoolsInfo<CR>
@@ -416,6 +426,8 @@ endif
 let g:easytags_updatetime_min=1000
 
 " Prevent UltiSnips <tab> mapping from colliding with YouCompleteMe
+" (still allow us to cycle through completion with <C-N> and <C-P> keys)
+"
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-Tab>'
@@ -452,6 +464,9 @@ endif
 set clipboard=unnamed
 "set clipboard=unnamedplus
 
+" Disable the *incredibly* annoying screen blinking when reached end of buffer
+set vb t_vb=
+
 " Fix Cursor in TMUX
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -472,7 +487,7 @@ call os#init()
 let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
 
 "global fallback to extra_conf file
-"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion=1
 "ignore warnings about extra_conf files
 let g:ycm_extra_conf_globlist = ['~/dev/*','!~/*']
