@@ -1,7 +1,9 @@
 # dotfiles
 A collection of config files for development on Mac OS X and Linux
 
-## Additional software (Mac)
+## Development
+
+### Basic Mac OS X development environment for Python with Vim
 
     brew install gcc
     brew install python --framework
@@ -9,14 +11,12 @@ A collection of config files for development on Mac OS X and Linux
     brew install ctags-exuberant
     brew install enchant
 
-## Vim plugins
-
 To enable YouCompleteMe, after downloading the plugin with NeoBundle,
 
     cd ~/.vim/bundle/YouCompleteMe
     bash install.sh --clang-completer
 
-## Linters for English, Python, etc
+You will also need:
 
     pip install pyenchant
     pip install pylint
