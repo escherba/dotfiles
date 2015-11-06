@@ -13,12 +13,16 @@ Then Homebrew package manager:
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-To setup a development environment with GCC and Python,
+To setup a development environment with GCC,
 
     brew install gcc
-    brew install python --framework
     brew install ctags-exuberant
     brew install enchant
+
+Python-related packages:
+
+    brew install python --framework
+    brew install pyenv
 
 Linting support for python:
 
