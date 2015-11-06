@@ -1,19 +1,35 @@
 # dotfiles
 A collection of config files for development on Mac OS X and Linux
 
-## Development
+## Mac OS X environment
 
-Install Homebrew first:
+### Development environment for Python
+
+Install Xcode first from App Store. Following that, install the command-line development tools. In the terminal,
+
+    xcode-select --install
+
+Then Homebrew package manager:
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-To set up a basic development environment for Mac OS X with Vim:
+To setup a development environment with GCC and Python,
 
     brew install gcc
     brew install python --framework
-    brew install macvim --with-python --with-override-system-vim
     brew install ctags-exuberant
     brew install enchant
+
+Linting support for python:
+
+    pip install pyenchant
+    pip install pylint
+
+### Vim
+
+If you develop with Vim,
+
+    brew install macvim --with-python --with-override-system-vim
 
 Install NeoBunlde plug-in manager for Vim
 
@@ -23,8 +39,3 @@ Then copy the included ``.vimrc`` into your home directory, open Vim and you sho
 
     cd ~/.vim/bundle/YouCompleteMe
     bash install.sh --clang-completer
-
-You will also need:
-
-    pip install pyenchant
-    pip install pylint
