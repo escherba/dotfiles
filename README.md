@@ -17,9 +17,8 @@ To set up a basic development environment for Mac OS X with Vim:
 
 Install NeoBunlde plug-in manager for Vim
 
-    curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
-    bash install.sh
-    
+    curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+
 Then copy the included ``.vimrc`` into your home directory, open Vim and you should see NeoBunlde prompting you to install the missing plugins. The YouCompleteMe plugin requires special treatment:
 
     cd ~/.vim/bundle/YouCompleteMe
