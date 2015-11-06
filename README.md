@@ -3,7 +3,7 @@ A collection of config files for development on Mac OS X and Linux
 
 ## Development
 
-### Basic Mac OS X development environment for Python with Vim
+To set up a basic development environment for Mac OS X with Vim:
 
     brew install gcc
     brew install python --framework
