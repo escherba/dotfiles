@@ -29,6 +29,7 @@ To setup a development environment with GCC,
 ### Haskell
 
     brew install ghc cabal-install
+    cabal install pandoc
 
 ### Python environment
 
