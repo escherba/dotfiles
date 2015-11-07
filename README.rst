@@ -16,7 +16,7 @@ Basics
 Install Xcode first from App Store. Following that, install the
 command-line development tools. In the terminal,
 
-.. code-block:: bash
+::
 
     xcode-select --install
 
