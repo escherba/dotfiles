@@ -26,6 +26,7 @@ To setup a development environment with GCC,
 HDF5 is needed for Pandas (and even if you don't use Pandas, you should check out HDF5).
 
     brew install homebrew/science/hdf5
+    brew install homebrew/science/opencv
     brew install homebrew/science/igraph
 
 ### Haskell
