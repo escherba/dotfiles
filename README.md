@@ -3,7 +3,7 @@ A collection of config files for development on Mac OS X and Linux
 
 ## Mac OS X environment
 
-It turns out it is quite involved to make Mac OS X usable as a development machine. But never fear, it can be as fast as a few hours =) if you follow the instructions below.
+It turns out it is quite involved to make a Mac OS X system usable as a development machine. But never fear, it can be as fast as a few hours =) if you follow the instructions below.
 
 ### Basics
 
