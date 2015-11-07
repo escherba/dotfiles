@@ -3,7 +3,7 @@ A collection of config files for development on Mac OS X and Linux
 
 ## Mac OS X environment
 
-### Development environment for Python
+### Basics
 
 Install Xcode first from App Store. Following that, install the command-line development tools. In the terminal,
 
@@ -21,7 +21,11 @@ To setup a development environment with GCC,
     brew install ctags-exuberant
     brew install enchant
 
-Python-related packages:
+### Haskell
+
+    brew install ghc cabal-install
+
+### Python environment
 
     brew install python --framework
     brew install pyenv
