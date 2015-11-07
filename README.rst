@@ -16,13 +16,13 @@ Basics
 Install Xcode first from App Store. Following that, install the
 command-line development tools. In the terminal,
 
-::
+.. code-block:: bash
 
     xcode-select --install
 
 Then Homebrew package manager:
 
-::
+.. code-block:: bash
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -39,7 +39,7 @@ there, and make sure to source the file from ``~/.bash_profile``.
 
 To setup a development environment with GCC,
 
-::
+.. code-block:: bash
 
     brew install gcc
     brew install ctags-exuberant
@@ -51,7 +51,7 @@ Scientific packages
 HDF5 is needed for Pandas (and even if you don't use Pandas, you should
 check out HDF5).
 
-::
+.. code-block:: bash
 
     brew install homebrew/science/hdf5
     brew install homebrew/science/opencv
@@ -62,7 +62,7 @@ Haskell
 
 Whether or not you program in Haskell, pandoc is a must-have.
 
-::
+.. code-block:: bash
 
     brew install ghc cabal-install
     cabal install pandoc
@@ -72,7 +72,7 @@ Python environment
 
 Basics:
 
-::
+.. code-block:: bash
 
     brew install python --framework
     brew install pyenv
@@ -81,14 +81,14 @@ Basics:
 
 Linting support for python:
 
-::
+.. code-block:: bash
 
     pip install pyenchant
     pip install pylint
 
 Machine learning
 
-::
+.. code-block:: bash
 
     pip install pandas
     pip install scikit-learn
@@ -98,13 +98,13 @@ Vim
 
 If you develop with Vim,
 
-::
+.. code-block:: bash
 
     brew install macvim --with-python --with-override-system-vim
 
 Install NeoBunlde plug-in manager for Vim
 
-::
+.. code-block:: bash
 
     curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 
@@ -112,7 +112,7 @@ Then copy the included ``.vimrc`` into your home directory, open Vim and
 you should see NeoBunlde prompting you to install the missing plugins.
 The YouCompleteMe plugin requires special treatment:
 
-::
+.. code-block:: bash
 
     cd ~/.vim/bundle/YouCompleteMe
     bash install.sh --clang-completer
