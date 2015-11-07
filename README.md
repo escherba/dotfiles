@@ -21,19 +21,33 @@ To setup a development environment with GCC,
     brew install ctags-exuberant
     brew install enchant
 
+### Scientific packages
+
+    brew tap homebrew/science
+    brew install igraph
+
 ### Haskell
 
     brew install ghc cabal-install
 
 ### Python environment
 
+Basics:
+
     brew install python --framework
     brew install pyenv
+    brew install homebrew/python/numpy
+    brew install homebrew/python/scipy
 
 Linting support for python:
 
     pip install pyenchant
     pip install pylint
+
+Machine learning
+
+    pip install pandas
+    pip install scikit-learn
 
 ### Vim
 
