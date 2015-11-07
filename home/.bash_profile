@@ -3,7 +3,7 @@ SSH_ENV="$HOME/.ssh/environment"
 export HOMEBREW_GITHUB_API_TOKEN=0ee26729a282c53e1d88d6158d4db75308224038
 export TERM=xterm-256color
 
-export NLTK_DATA="/Users/escherba/dev/py-nlp/var/nltk/data"
+export NLTK_DATA="$HOME/dev/py-nlp/var/nltk/data"
 
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
@@ -120,8 +120,7 @@ export PATH="$HOME/anaconda/bin:$PATH"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:/Users/escherba/anaconda/bin:/Users/escherba/Library/Haskell/bin:/Library/Haskell/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/Users/escherba/dev/lfdev/scripts:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Applications/domino:/usr/share/go/bin:/usr/local/go/bin:/opt/bin:/usr/texbin:$PATH"
-if [ -e /Users/escherba/dev/lfdev/scripts/rc ]; then source /Users/escherba/dev/lfdev/scripts/rc ; fi
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:$HOME/Library/Haskell/bin:/Library/Haskell/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Applications/domino:/usr/share/go/bin:/usr/local/go/bin:/opt/bin:/usr/texbin:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
