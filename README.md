@@ -23,10 +23,14 @@ To setup a development environment with GCC,
 
 ### Scientific packages
 
-    brew tap homebrew/science
-    brew install igraph
+HDF5 is needed for Pandas (and even if you don't use Pandas, you should check out HDF5).
+
+    brew install homebrew/science/hdf5
+    brew install homebrew/science/igraph
 
 ### Haskell
+
+Whether or not you program in Haskell, pandoc is a must-have.
 
     brew install ghc cabal-install
     cabal install pandoc
