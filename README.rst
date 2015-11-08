@@ -42,6 +42,7 @@ To setup a development environment with GCC,
 .. code-block:: bash
 
     brew install gcc
+    brew install coreutils
     brew install ctags-exuberant
     brew install enchant
 
