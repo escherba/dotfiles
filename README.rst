@@ -118,3 +118,8 @@ The YouCompleteMe plugin requires special treatment:
 
     cd ~/.vim/bundle/YouCompleteMe
     bash install.sh --clang-completer
+
+Emacs
+~~~~~
+
+If you develop with Emacs, refer elsewhere.
