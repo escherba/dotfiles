@@ -43,6 +43,7 @@ To setup a development environment with GCC,
 
     brew install gcc
     brew install coreutils
+    brew install gnu-sed
     brew install ctags-exuberant
     brew install enchant
 
