@@ -46,6 +46,7 @@ To setup a development environment with GCC,
     brew install gnu-sed
     brew install ctags-exuberant
     brew install enchant
+    brew install pstree
 
 Scientific packages
 ~~~~~~~~~~~~~~~~~~~
