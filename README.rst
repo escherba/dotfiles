@@ -48,6 +48,7 @@ To setup a development environment with GCC,
     brew install enchant
     brew install pstree
     brew install wget
+    brew install cmake
 
 Scientific packages
 ~~~~~~~~~~~~~~~~~~~
