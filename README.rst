@@ -50,6 +50,11 @@ To setup a development environment with GCC,
     brew install wget
     brew install cmake
 
+Java
+~~~~
+
+Download and install an SDK from `Oracle site <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_.
+
 Scientific packages
 ~~~~~~~~~~~~~~~~~~~
 
