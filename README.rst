@@ -63,6 +63,7 @@ check out HDF5).
 
 .. code-block:: bash
 
+    brew install homebrew/science/octave
     brew install homebrew/science/hdf5
     brew install homebrew/science/opencv
     brew install homebrew/science/igraph
