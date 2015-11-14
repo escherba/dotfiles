@@ -53,7 +53,7 @@ To setup a development environment with GCC,
 Java
 ~~~~
 
-Download and install an SDK from `Oracle site <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_.
+Download and install an SDK from `Oracle site <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_. Octave requires Java 6 which can be had from `Apple site <https://support.apple.com/kb/DL1572>`_.
 
 Scientific packages
 ~~~~~~~~~~~~~~~~~~~
