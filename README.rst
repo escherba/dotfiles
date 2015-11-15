@@ -67,6 +67,7 @@ check out HDF5).
     brew install homebrew/science/hdf5
     brew install homebrew/science/opencv
     brew install homebrew/science/igraph
+    brew install homebrew/science/graph-tool
 
 Haskell
 ~~~~~~~
