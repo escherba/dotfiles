@@ -63,9 +63,13 @@ check out HDF5).
 
 .. code-block:: bash
 
+    brew install python --framework
+    brew install pyenv
     brew install homebrew/science/octave
     brew install homebrew/science/hdf5
     brew install homebrew/science/opencv
+    brew install homebrew/python/numpy
+    brew install homebrew/python/scipy
     brew install homebrew/science/igraph
     brew install homebrew/science/graph-tool
 
@@ -81,15 +85,6 @@ Whether or not you program in Haskell, pandoc is a must-have.
 
 Python environment
 ~~~~~~~~~~~~~~~~~~
-
-Basics:
-
-.. code-block:: bash
-
-    brew install python --framework
-    brew install pyenv
-    brew install homebrew/python/numpy
-    brew install homebrew/python/scipy
 
 Linting support for python:
 
