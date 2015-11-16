@@ -50,6 +50,7 @@ To setup a development environment with GCC,
     brew install wget
     brew install cmake
     brew install valgrind
+    brew install gdb
 
 Java
 ~~~~
