@@ -49,6 +49,7 @@ To setup a development environment with GCC,
     brew install pstree
     brew install wget
     brew install cmake
+    brew install valgrind
 
 Java
 ~~~~
