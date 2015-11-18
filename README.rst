@@ -84,6 +84,11 @@ Whether or not you program in Haskell, pandoc is a must-have.
 
     brew install ghc cabal-install
     cabal install pandoc
+    cabal install hoogle
+    cabal install ghc-mod
+    cabal install hdevtools
+    cabal install hlint
+    cabal install pointfree
 
 Python environment
 ~~~~~~~~~~~~~~~~~~
