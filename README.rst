@@ -67,11 +67,14 @@ check out HDF5).
 
     brew install python --framework
     brew install pyenv
-    brew install homebrew/science/octave
     brew install homebrew/science/hdf5
+    brew install homebrew/science/octave
+    brew install homebrew/science/r
     brew install homebrew/science/opencv
+    
     brew install homebrew/python/numpy
     brew install homebrew/python/scipy
+    
     brew install homebrew/science/igraph
     brew install homebrew/science/graph-tool
 
