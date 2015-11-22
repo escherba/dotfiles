@@ -110,9 +110,12 @@ Install NeoBunlde plug-in manager for Vim
 
 Then copy the included ``.vimrc`` into your home directory, open Vim and
 you should see NeoBunlde prompting you to install the missing plugins.
-The YouCompleteMe plugin requires special treatment:
+The YouCompleteMe plugin should be set up automatically via a post-install hook,
+but if it isn't,
+
 
 ::
 
     cd ~/.vim/bundle/YouCompleteMe
-    bash install.sh --clang-completer
+    git submodule update --init --recursive
+    ./install.sh --clang-completer --system-libclang --omnisharp-completer

@@ -12,6 +12,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'int3/vim-extradite'
+
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'scrooloose/nerdtree'
@@ -30,12 +32,13 @@ NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'sudo.vim'
 NeoBundle 'Valloric/YouCompleteMe', {
- \ 'build' : {
- \      'cygwin' : 'git submodule update --init --recursive && bash install.sh',
- \      'mac' : 'git submodule update --init --recursive && PATH="/usr/local/opt/python/Frameworks/Python.framework/Versions/2.7/bin/:$PATH" bash install.sh',
- \      'unix' : 'git submodule update --init --recursive && bash install.sh',
- \    },
- \ }
+     \ 'build' : {
+     \     'mac' : 'git submodule update --init --recursive && bash ./install.sh --clang-completer --system-libclang --omnisharp-completer',
+     \     'unix' : 'git submodule update --init --recursive && bash ./install.sh --clang-completer --system-libclang --omnisharp-completer',
+     \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+     \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
+     \    }
+     \ }
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'xolox/vim-misc'
 "NeoBundle 'xolox/vim-easytags'
@@ -111,7 +114,10 @@ NeoBundle 'ivanov/vim-ipython'
 NeoBundle 'alfredodeza/pytest.vim'
 NeoBundle 'fs111/pydoc.vim'
 NeoBundle 'tshirtman/vim-cython'
+"NeoBundle 'vim-scripts/pyrex.vim'
 NeoBundle 'vim-scripts/swap-parameters'
+"NeoBundle 'jmcantrell/vim-virtualenv'
+
 
 " Javascript
 NeoBundle 'marijnh/tern_for_vim'
@@ -202,12 +208,44 @@ colorscheme solarized
 "colorscheme base16-ocean
 "colorscheme base16-solarized
 
-" -------------------------------
-" Airline
-" -------------------------------
-" Powerline config override global -- content is recursively merged
-" with ~/.config/powerline/config.json
-"let g:powerline_config_overrides={'ext': {'vim': {'colorscheme': 'solarized'}}}
+" ----------------------------------------------
+"  Git
+"
+"  taken from https://github.com/begriffs/haskell-vim-now/blob/master/.vimrc
+" ----------------------------------------------
+
+let g:extradite_width = 60
+" Hide messy Ggrep output and copen automatically
+function! NonintrusiveGitGrep(term)
+  execute "copen"
+  " Map 't' to open selected item in new tab
+  execute "nnoremap <silent> <buffer> t <C-W><CR><C-W>T"
+  execute "silent! Ggrep " . a:term
+  execute "redraw!"
+endfunction
+
+command! -nargs=1 GGrep call NonintrusiveGitGrep(<q-args>)
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gg :copen<CR>:GGrep 
+nmap <leader>gl :Extradite!<CR>
+nmap <leader>gd :Gdiff<CR>
+nmap <leader>gb :Gblame<CR>
+
+function! CommittedFiles()
+  " Clear quickfix list
+  let qf_list = []
+  " Find files committed in HEAD
+  let git_output = system("git diff-tree --no-commit-id --name-only -r HEAD\n")
+  for committed_file in split(git_output, "\n")
+    let qf_item = {'filename': committed_file}
+    call add(qf_list, qf_item)
+  endfor
+  " Fill quickfix list with them
+  call setqflist(qf_list, '')
+endfunction
+
+" Show list of last-committed files
+nnoremap <silent> <leader>g? :call CommittedFiles()<CR>:copen<CR>
 
 " ----------------------------------------------
 " Airline
@@ -288,6 +326,25 @@ let g:syntastic_haskell_hdevtools_args = '-g -isrc -g -Wall -g -hide-package -g 
 " --------------------------
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.pyd$', '\.swp$', '\.swo$']
 
+" Close nerdtree after a file is selected
+let NERDTreeQuitOnOpen = 1
+
+function! IsNERDTreeOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+function! ToggleFindNerd()
+  if IsNERDTreeOpen()
+    exec ':NERDTreeToggle'
+  else
+    exec ':NERDTreeFind'
+  endif
+endfunction
+
+" If nerd tree is closed, find current file, if open, close it
+nmap <silent> <leader>f <ESC>:call ToggleFindNerd()<CR>
+nmap <silent> <leader>F <ESC>:NERDTreeToggle<CR>
+
 " --------------------------
 " Lua
 " --------------------------
@@ -295,6 +352,11 @@ let g:lua_check_syntax = 1
 "let g:lua_compiler_name = 'luac5.1'
 let g:lua_complete_omni = 1
 
+" --------------------------
+" Ensure correct syntax highlighting and auto-indentation for Fortran free-form
+" source code.
+let fortran_free_source=1
+let fortran_do_enddo=1
 " --------------------------
 " python-mode
 " --------------------------
@@ -341,7 +403,7 @@ let g:jedi#popup_on_dot = 0
 " --------------------------
 "let g:syntastic_check_on_open=1
 "let g:syntastic_python_checker="flake8"
-let g:syntastic_disabled_filetypes = ['lua', 'python']
+"let g:syntastic_disabled_filetypes = ['lua', 'python']
 let g:syntastic_auto_loc_list=0
 "let g:syntastic_warning_symbol = 'WW'
 "let g:syntastic_error_symbol = 'EE'
