@@ -22,7 +22,7 @@ command-line development tools. In the terminal,
 
 Then Homebrew package manager:
 
-::
+.. code-block:: bash
 
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -39,11 +39,23 @@ there, and make sure to source the file from ``~/.bash_profile``.
 
 To setup a development environment with GCC,
 
-::
+.. code-block:: bash
 
     brew install gcc
+    brew install coreutils
+    brew install gnu-sed
     brew install ctags-exuberant
     brew install enchant
+    brew install pstree
+    brew install wget
+    brew install cmake
+    brew install valgrind
+    brew install homebrew/dupes/gdb
+
+Java
+~~~~
+
+Download and install an SDK from `Oracle site <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_. Octave requires Java 6 which can be had from `Apple site <https://support.apple.com/kb/DL1572>`_.
 
 Scientific packages
 ~~~~~~~~~~~~~~~~~~~
@@ -51,44 +63,49 @@ Scientific packages
 HDF5 is needed for Pandas (and even if you don't use Pandas, you should
 check out HDF5).
 
-::
+.. code-block:: bash
 
+    brew install python --framework
+    brew install pyenv
     brew install homebrew/science/hdf5
+    brew install homebrew/science/octave
+    brew install homebrew/science/r
     brew install homebrew/science/opencv
+    
+    brew install homebrew/python/numpy
+    brew install homebrew/python/scipy
+    
     brew install homebrew/science/igraph
+    brew install homebrew/science/graph-tool
 
 Haskell
 ~~~~~~~
 
 Whether or not you program in Haskell, pandoc is a must-have.
 
-::
+.. code-block:: bash
 
     brew install ghc cabal-install
     cabal install pandoc
+    cabal install hoogle
+    cabal install ghc-mod
+    cabal install hdevtools
+    cabal install hlint
+    cabal install pointfree
 
 Python environment
 ~~~~~~~~~~~~~~~~~~
 
-Basics:
-
-::
-
-    brew install python --framework
-    brew install pyenv
-    brew install homebrew/python/numpy
-    brew install homebrew/python/scipy
-
 Linting support for python:
 
-::
+.. code-block:: bash
 
     pip install pyenchant
     pip install pylint
 
 Machine learning
 
-::
+.. code-block:: bash
 
     pip install pandas
     pip install scikit-learn
@@ -98,13 +115,13 @@ Vim
 
 If you develop with Vim,
 
-::
+.. code-block:: bash
 
     brew install macvim --with-python --with-override-system-vim
 
 Install NeoBunlde plug-in manager for Vim
 
-::
+.. code-block:: bash
 
     curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 
@@ -113,9 +130,13 @@ you should see NeoBunlde prompting you to install the missing plugins.
 The YouCompleteMe plugin should be set up automatically via a post-install hook,
 but if it isn't,
 
-
-::
+.. code-block:: bash
 
     cd ~/.vim/bundle/YouCompleteMe
     git submodule update --init --recursive
     ./install.sh --clang-completer --system-libclang --omnisharp-completer
+
+Emacs
+~~~~~
+
+If you develop with Emacs, refer elsewhere.
