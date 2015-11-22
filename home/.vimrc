@@ -11,10 +11,16 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" Git
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'int3/vim-extradite'
-
+NeoBundle 'vim-scripts/gitignore'
 NeoBundle 'tpope/vim-fugitive'
+
+" meta
+NeoBundle 'dbakker/vim-lint'
+
+NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
@@ -48,18 +54,19 @@ NeoBundle 'Lokaltog/vim-easymotion'
 "NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 NeoBundle 'bling/vim-airline'
 NeoBundle 'myusuf3/numbers.vim'
-NeoBundle 'kien/ctrlp.vim'
+"NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'rizzatti/funcoo.vim'
 NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'moll/vim-node'
-NeoBundle 'jcfaria/Vim-R-plugin'
-"NeoBundle 'jalvesaq/VimCom', {
-" \ 'build' : {
-" \      'mac' : 'R CMD build .; R CMD INSTALL vimcom.*.tar.gz'
-" \    }
-" \ }
+
+" R
+NeoBundle 'jalvesaq/VimCom', {
+ \ 'build' : {
+ \      'mac' : 'R CMD build . && R CMD INSTALL .'
+ \    }
+ \ }
+NeoBundle 'vim-scripts/Vim-R-plugin'
 
 " Snippets!
 NeoBundle 'SirVer/ultisnips'
@@ -126,6 +133,7 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'walm/jshint.vim'
 NeoBundle 'tmhedberg/matchit'
 NeoBundle 'elzr/vim-json'
+"NeoBundle 'moll/vim-node'
 
 " Haskell
 NeoBundle 'dag/vim2hs'
@@ -226,7 +234,7 @@ endfunction
 
 command! -nargs=1 GGrep call NonintrusiveGitGrep(<q-args>)
 nmap <leader>gs :Gstatus<CR>
-nmap <leader>gg :copen<CR>:GGrep 
+nmap <leader>gg :copen<CR>:GGrep
 nmap <leader>gl :Extradite!<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>gb :Gblame<CR>
@@ -281,6 +289,14 @@ endfunction
 command! Retag call Retag()
 command! RetagObjC call RetagObjC()
 
+"--------------------------------
+" R
+" -------------------------------
+"let g:syntastic_enable_r_lintr_checker = 1
+let g:syntastic_r_checkers = 1
+"let g:syntastic_r_lintr_linters = "with_defaults(line_length_linter(120))"
+"let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
+"let g:syntastic_enable_r_svtools_checker = 1
 " -------------------------------
 " TagBar
 " -------------------------------
