@@ -292,9 +292,9 @@ command! RetagObjC call RetagObjC()
 "--------------------------------
 " R
 " -------------------------------
-"let g:syntastic_enable_r_lintr_checker = 1
 let g:syntastic_r_checkers = 1
-"let g:syntastic_r_lintr_linters = "with_defaults(line_length_linter(120))"
+let g:syntastic_enable_r_lintr_checker = 1
+let g:syntastic_r_lintr_linters = "with_defaults(line_length_linter(120))"
 "let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
 "let g:syntastic_enable_r_svtools_checker = 1
 " -------------------------------
