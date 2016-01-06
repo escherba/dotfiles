@@ -55,6 +55,8 @@ To setup a development environment with GCC,
     
 Other dependencies:
 
+.. code-block:: bash
+
     brew install czmq zmq
 
 Java
