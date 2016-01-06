@@ -52,6 +52,10 @@ To setup a development environment with GCC,
     brew install valgrind
     brew install tmux
     brew install homebrew/dupes/gdb
+    
+Other dependencies:
+
+    brew install czmq zmq
 
 Java
 ~~~~
