@@ -57,6 +57,7 @@ Other dependencies:
 
 .. code-block:: bash
 
+    brew install git
     brew install czmq zmq
 
 Java
@@ -116,6 +117,25 @@ Machine learning
 
     pip install pandas
     pip install scikit-learn
+
+Git
+~~~
+
+Jupyter/IPython notebooks require a filter to work well with version control. After `this post <http://stackoverflow.com/a/20844506/597371>`_, here are instructions how to set up the filter:
+
+1. Make sure `nbformat` is installed:
+
+.. code-block:: bash
+
+    pip install nbformat
+    
+2. Run these commands:
+
+.. code-block:: bash
+
+    git config --global core.attributesfile ~/.gitattributes
+    git config --global filter.dropoutput_ipynb.clean ~/bin/ipynb_output_filter.py
+    git config --global filter.dropoutput_ipynb.smudge cat
 
 Vim
 ~~~
