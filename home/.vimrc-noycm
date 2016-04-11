@@ -932,3 +932,5 @@ function s:AgdaKeys()
     imap <buffer> \eth ð
     imap <buffer> \mho ℧
 endfunction
+
+set colorcolumn=+1        " highlight column after 'textwidth'
