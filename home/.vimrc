@@ -342,8 +342,8 @@ let g:syntastic_haskell_hdevtools_args = '-g -isrc -g -Wall -g -hide-package -g 
 " --------------------------
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.pyd$', '\.swp$', '\.swo$']
 
-" Close nerdtree after a file is selected
-let NERDTreeQuitOnOpen = 1
+" Don't clser nerdtree after a file is selected
+let NERDTreeQuitOnOpen = 0
 
 function! IsNERDTreeOpen()
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
