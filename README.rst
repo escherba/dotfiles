@@ -13,7 +13,7 @@ if you follow the instructions below.
 Basics
 ~~~~~~
 
-Install Xcode first from App Store. Following that, install the
+First, install Xcode from the App Store. Following that, install the
 command-line development tools. In the terminal,
 
 ::
