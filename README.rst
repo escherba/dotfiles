@@ -51,6 +51,7 @@ To setup a development environment with GCC,
     brew install cmake
     brew install valgrind
     brew install tmux
+    brew install graphviz
     brew install homebrew/dupes/gdb
     
 Other dependencies:
