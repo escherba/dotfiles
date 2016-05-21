@@ -162,7 +162,9 @@ but if it isn't,
 
     cd ~/.vim/bundle/YouCompleteMe
     git submodule update --init --recursive
-    ./install.sh --clang-completer --system-libclang --omnisharp-completer
+    python install.py --clang-completer
+
+For more information on YouCompleteMe installation specifics, see `this README section <https://github.com/Valloric/YouCompleteMe#mac-os-x>`__.
 
 Emacs
 ~~~~~
