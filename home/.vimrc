@@ -39,10 +39,10 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'sudo.vim'
 NeoBundle 'Valloric/YouCompleteMe', {
      \ 'build' : {
-     \     'mac' : 'git submodule update --init --recursive && bash ./install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'unix' : 'git submodule update --init --recursive && bash ./install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
+     \     'mac' : 'git submodule update --init --recursive && python ./install.py --clang-completer',
+     \     'unix' : 'git submodule update --init --recursive && python ./install.py --clang-completer',
+     \     'windows' : 'python ./install.py --clang-completer',
+     \     'cygwin' : 'python ./install.py --clang-completer'
      \    }
      \ }
 NeoBundle 'sjl/gundo.vim'
