@@ -169,4 +169,4 @@ For more information on YouCompleteMe installation specifics, see `this README s
 Emacs
 ~~~~~
 
-If you develop with Emacs, refer elsewhere.
+If you develop with Emacs, well too bad :(
