@@ -52,7 +52,7 @@ To setup a development environment with GCC,
     brew install valgrind
     brew install tmux
     brew install graphviz
-    brew install homebrew/dupes/gdb
+    brew install Caskroom/cask/xquartz
     
 Other dependencies:
 
