@@ -87,8 +87,8 @@ NeoBundle 'altercation/vim-colors-solarized'
 
 " markdown, RST
 NeoBundle 'tpope/vim-markdown'
-NeoBundle 'rykka/clickable.vim'
-NeoBundle 'rykka/clickable-things'
+"NeoBundle 'rykka/clickable.vim'
+"NeoBundle 'rykka/clickable-things'
 NeoBundle 'rykka/os.vim'
 NeoBundle 'rykka/riv.vim'
 
