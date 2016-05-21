@@ -12,7 +12,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Git
-NeoBundle 'airblade/vim-gitgutter'
+"NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'int3/vim-extradite'
 NeoBundle 'vim-scripts/gitignore'
 NeoBundle 'tpope/vim-fugitive'
