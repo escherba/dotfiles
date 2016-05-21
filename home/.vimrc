@@ -329,6 +329,9 @@ let g:syntastic_objc_no_default_include_dirs = 1
 "If none is given the filename defaults to .syntastic_objc_config
 "let g:syntastic_objc_config_file = '.config'
 
+" running both `pylint' and `flake8' is too slow, so stick to only the latter
+let g:syntastic_python_checkers = ['flake8']
+
 " for Python, disable 'line too long' error
 let g:syntastic_python_flake8_args = "--ignore=E501 --max-complexity 20"
 
