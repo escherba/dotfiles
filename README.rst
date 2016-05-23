@@ -109,6 +109,7 @@ Linting support for python:
 
 .. code-block:: bash
 
+    pip install -U pip
     pip install pyenchant
     pip install pylint
     pip install flake8
