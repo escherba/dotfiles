@@ -111,6 +111,7 @@ Linting support for python:
 
     pip install pyenchant
     pip install pylint
+    pip install flake8
 
 Machine learning
 
