@@ -58,7 +58,7 @@ Other dependencies:
 
 .. code-block:: bash
 
-    brew install git
+    brew install git gpg
     brew install czmq zmq
 
 Java
