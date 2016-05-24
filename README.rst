@@ -76,6 +76,7 @@ check out HDF5).
 
     brew install python --framework
     brew install pyenv
+    brew install pyenv-virtualenv
     brew install homebrew/science/hdf5
     brew install homebrew/science/octave
     brew install homebrew/science/r
