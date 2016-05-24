@@ -124,7 +124,9 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:$HOME/Library/
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-source ~/.profile
+if [ -f ~/.profile ]; then
+  source ~/.profile
+fi
 export PYTHONIOENCODING=UTF_8
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
