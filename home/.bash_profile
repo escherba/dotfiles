@@ -1,6 +1,5 @@
 SSH_ENV="$HOME/.ssh/environment"
 
-export HOMEBREW_GITHUB_API_TOKEN=0ee26729a282c53e1d88d6158d4db75308224038
 export TERM=xterm-256color
 
 export NLTK_DATA="$HOME/dev/py-nlp/var/nltk/data"
@@ -122,14 +121,13 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:$HOME/Library/Haskell/bin:/Library/Haskell/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Applications/domino:/usr/share/go/bin:/usr/local/go/bin:/opt/bin:/usr/texbin:$PATH"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-if [ -f ~/.profile ]; then
-  source ~/.profile
-fi
+# if [ -f ~/.profile ]; then
+#   source ~/.profile
+# fi
 export PYTHONIOENCODING=UTF_8
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 PERL_MB_OPT="--install_base $HOME/perl5"; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
@@ -139,8 +137,8 @@ export PATH="$PATH:$HOME/perl5/bin"
 
 # Load pyenv automatically by adding
 # the following to your profile:
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# export PATH="$HOME/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
