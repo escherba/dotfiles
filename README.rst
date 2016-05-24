@@ -53,7 +53,7 @@ To setup a development environment with GCC,
     brew install tmux
     brew install graphviz
     brew install Caskroom/cask/xquartz
-    
+
 Other dependencies:
 
 .. code-block:: bash
@@ -64,7 +64,14 @@ Other dependencies:
 Java
 ~~~~
 
-Download and install an SDK from `Oracle site <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_. Octave requires Java 6 which can be had from `Apple site <https://support.apple.com/kb/DL1572>`_.
+Download and install an SDK from `Oracle site <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_. Some exotic packages (Octave) require Java 6 which can be had from `Apple site <https://support.apple.com/kb/DL1572>`_. Install latest Eclipse. Follow instructions from `Getting Started <http://scala-ide.org/docs/user/gettingstarted.html>`_ page for Scala IDE to configure Eclipse to work with Scala projects. Install `eclim` following the instructions on `this page <http://eclim.org/install.html>`_. Then,
+
+
+.. code-block:: bash
+
+    brew install sbt maven gradle
+    brew install scala
+
 
 Scientific packages
 ~~~~~~~~~~~~~~~~~~~
@@ -81,10 +88,10 @@ check out HDF5).
     brew install homebrew/science/octave
     brew install homebrew/science/r
     brew install homebrew/science/opencv
-    
+
     brew install homebrew/python/numpy
     brew install homebrew/python/scipy
-    
+
     brew install homebrew/science/igraph
     brew install homebrew/science/graph-tool
 
@@ -122,6 +129,7 @@ Machine learning
     pip install pandas
     pip install scikit-learn
 
+
 Git
 ~~~
 
@@ -132,7 +140,7 @@ Jupyter/IPython notebooks require a filter to work well with version control. Af
 .. code-block:: bash
 
     pip install nbformat
-    
+
 2. Run these commands:
 
 .. code-block:: bash
