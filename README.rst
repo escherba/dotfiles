@@ -128,6 +128,7 @@ Machine learning
 
     pip install pandas
     pip install scikit-learn
+    pip install jupyter
 
 
 Git
