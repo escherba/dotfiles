@@ -71,6 +71,7 @@ Download and install an SDK from `Oracle site <http://www.oracle.com/technetwork
 
     brew install sbt maven gradle
     brew install scala
+    brew install apache-spark
 
 
 Scientific packages
