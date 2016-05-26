@@ -3,6 +3,26 @@ dotfiles
 
 A collection of config files for development on Mac OS X and Linux
 
+Quick Linux Setup for AWS
+-------------------------
+
+.. code-block:: bash
+
+    # update
+    sudo yum -y update
+    sudo yum -y upgrade
+
+    # enable EPEL6 by changing enabled=0 -> enabled=1
+    sudo vim /etc/yum.repos.d/epel.repo
+
+    # install htop
+    sudo yum install htop tmux
+
+    # install and configure Tmux
+    sudo yum install tmux
+    curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux
+
+
 Mac OS X environment
 --------------------
 
