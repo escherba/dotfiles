@@ -15,8 +15,8 @@ Quick Linux Setup for AWS
     # enable EPEL6 by changing enabled=0 -> enabled=1
     sudo vim /etc/yum.repos.d/epel.repo
 
-    # install htop
-    sudo yum install htop tmux
+    # install misc. utilities
+    sudo yum install htop tmux mosh
 
     # install and configure Tmux
     sudo yum install tmux
