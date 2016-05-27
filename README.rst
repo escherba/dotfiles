@@ -18,8 +18,7 @@ Quick Linux Setup for AWS
     # install misc. utilities
     sudo yum install htop tmux mosh
 
-    # install and configure Tmux
-    sudo yum install tmux
+    # configure Tmux
     curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux
 
 
