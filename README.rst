@@ -19,7 +19,7 @@ Quick Linux Setup for AWS
     sudo yum install htop tmux mosh
 
     # configure Tmux
-    curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux
+    curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux.conf
 
 
 Mac OS X environment
