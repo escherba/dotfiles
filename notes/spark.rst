@@ -1,6 +1,9 @@
 Jupyter on EMR
 ==============
 
+Installation
+------------
+
 First, install Jupyter on master node. Some installation here ensures that Jupyter can also start a Python kernels and isn't necessart for running Spark with Scala.
 
 .. code-block:: bash
@@ -23,10 +26,17 @@ Install Apache Toree to support IBM Spark Kernel with Jupyter:
     sudo pip install --pre toree
     jupyter toree install --spark_home /usr/lib/spark --user
 
-After this is done, start Jupyter like so:
+Running Jupyter
+---------------
+
+After installation is done, start Jupyter like so:
 
 .. code-block:: bash
 
-    jupyter notebook --no-browser --port 8001 --ip='*'
+    nohup jupyter notebook --no-browser --port 8001 --ip='*'
 
-You will be able to select Toree Scala kernel from the drop down list in the browser.
+You will be able to select Toree Scala kernel from the drop down list in the browser. The ``nohup`` prefix ensures that the process is run in a no-hangup mode, with output written to ``nohup.out``. If you lose shell control of the jupyter process, you should close all processes that are writing to ``nohup.out``:
+
+.. code-block:: bash
+    
+    lsof | grep nohup.out | awk '{print $2}' | xargs kill
