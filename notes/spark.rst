@@ -25,6 +25,8 @@ Install Apache Toree to support IBM Spark Kernel with Jupyter:
 
 After this is done, start Jupyter like so:
 
+.. code-block:: bash
+
     jupyter notebook --no-browser --port 8001 --ip='*'
 
 You will be able to select Toree Scala kernel from the drop down list in the browser.
