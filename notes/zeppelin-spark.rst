@@ -4,7 +4,7 @@ Zeppelin on EMR
 
 These instructions are after: https://mail-archives.apache.org/mod_mbox/incubator-zeppelin-users/201511.mbox/%3CCAF9mLAD1=GW_ghO==Vt1zUCYSoHRrkvaj0N-eyJzt-QEyPBb=A@mail.gmail.com%3E
 
-To have default EMR instance with Zeppelin store notebooks in S3, in S3 create the following bucket: ``/<my-bucket-name>/zeppelin/notebook/``
+To have default EMR instance with Zeppelin store notebooks in S3, create the following bucket: ``/<my-bucket-name>/zeppelin/notebook/``
 
 .. code-block:: bash
 
