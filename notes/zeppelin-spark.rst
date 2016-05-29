@@ -28,22 +28,35 @@ uncomment the following:
 
 .. code-block:: xml
 
-    <property>
-        <name>zeppelin.notebook.storage</name>
-        <value>org.apache.zeppelin.notebook.repo.S3NotebookRepo</value>
-        <description>notebook persistence layer implementation</description>
-    </property>
+   <property>
+      <name>zeppelin.notebook.s3.user</name>
+      <value>zeppelin</value>
+      <description>user name for s3 folder structure</description>
+   </property>
 
+   <property>
+      <name>zeppelin.notebook.s3.bucket</name>
+      <value>my-bucket-name</value>
+      <description>bucket name for notebook storage</description>
+   </property>
+
+   <property>
+      <name>zeppelin.notebook.storage</name>
+      <value>org.apache.zeppelin.notebook.repo.S3NotebookRepo</value>
+      <description>notebook persistence layer implementation</description>
+   </property>
 
 comment the following:
 
 .. code-block:: xml
 
+    <!--
     <property>
         <name>zeppelin.notebook.storage</name>
         <value>org.apache.zeppelin.notebook.repo.VFSNotebookRepo</value>
         <description>notebook persistence layer implementation</description>
     </property>
+    -->
 
 (optionally) remember to put any of your notebooks into the S3 bucket. Some example notebooks
 are found at: https://github.com/Leemoonsoo?tab=repositories
