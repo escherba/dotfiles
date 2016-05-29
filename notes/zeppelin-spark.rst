@@ -4,8 +4,7 @@ Zeppelin on EMR
 
 These instructions are after: https://mail-archives.apache.org/mod_mbox/incubator-zeppelin-users/201511.mbox/%3CCAF9mLAD1=GW_ghO==Vt1zUCYSoHRrkvaj0N-eyJzt-QEyPBb=A@mail.gmail.com%3E
 
-To have default EMR instance with Zeppelin store notebooks in S3:
- in S3 create the following bucket: ``/<my-bucket-name>/zeppelin/notebook/``
+To have default EMR instance with Zeppelin store notebooks in S3, in S3 create the following bucket: ``/<my-bucket-name>/zeppelin/notebook/``
 
 .. code-block:: bash
 
@@ -18,7 +17,7 @@ and add:
     export ZEPPELIN_NOTEBOOK_S3_BUCKET=<my-bucket-name>
     export ZEPPELIN_NOTEBOOK_S3_USER=zeppelin
 
-Create and edit the ``zeppelin-site.xml``:
+Create and edit ``zeppelin-site.xml``:
 
 .. code-block:: bash
 
@@ -46,7 +45,7 @@ comment the following:
         <description>notebook persistence layer implementation</description>
     </property>
 
-(optionally) remember to put any of your notebooks in the S3. Some example notebooks
+(optionally) remember to put any of your notebooks into the S3 bucket. Some example notebooks
 are found at: https://github.com/Leemoonsoo?tab=repositories
 
 Finally, restart zeppelin
