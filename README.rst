@@ -146,7 +146,7 @@ Machine learning
 
 .. code-block:: bash
 
-    pip install pandas
+    pip install pandas tqdm palettable
     pip install scikit-learn
     pip install jupyter
 
