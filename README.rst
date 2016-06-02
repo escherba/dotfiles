@@ -139,8 +139,7 @@ Linting support for python:
 
     pip install -U pip
     pip install pyenchant
-    pip install pylint
-    pip install flake8
+    pip install ipdb pylint flake8
 
 Machine learning
 
