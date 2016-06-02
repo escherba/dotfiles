@@ -70,7 +70,7 @@ NeoBundle 'vim-scripts/Vim-R-plugin'
 
 " Snippets!
 NeoBundle 'SirVer/ultisnips'
-NeoBundle 'ervandew/supertab'
+"NeoBundle 'ervandew/supertab'
 NeoBundle 'honza/vim-snippets'
 
 "NeoBundle 'MarcWeber/vim-addon-mw-utils'
@@ -80,9 +80,8 @@ NeoBundle 'honza/vim-snippets'
 
 " color schemes
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'chriskempson/base16-vim'
 "NeoBundle 'ajacksified/vim-colors-solarized-brown'
-"NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-"NeoBundle 'chriskempson/base16-vim'
 "NeoBundle 'john2x/flatui.vim'
 
 " markdown, RST
@@ -125,6 +124,9 @@ NeoBundle 'tshirtman/vim-cython'
 NeoBundle 'vim-scripts/swap-parameters'
 "NeoBundle 'jmcantrell/vim-virtualenv'
 
+"JVM languages
+NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'ktvoelker/sbt-vim'
 
 " Javascript
 NeoBundle 'marijnh/tern_for_vim'
@@ -215,6 +217,7 @@ colorscheme solarized
 "colorscheme base16-eighties
 "colorscheme base16-ocean
 "colorscheme base16-solarized
+"colorscheme base16-default
 
 " ----------------------------------------------
 "  Git
@@ -511,7 +514,7 @@ let g:easytags_updatetime_min=1000
 "
 let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-Tab>'
+"let g:SuperTabDefaultCompletionType = '<C-Tab>'
 "let g:UltiSnipsListSnippets="<c-e>"
 
 " ===================================
@@ -565,6 +568,7 @@ call os#init()
 "YouCompleteMe
 "let g:ycm_register_as_syntastic_checker=0
 
+let g:EclimCompletionMethod = 'omnifunc'
 let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
 
 "global fallback to extra_conf file
