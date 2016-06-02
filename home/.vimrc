@@ -81,6 +81,7 @@ NeoBundle 'honza/vim-snippets'
 " color schemes
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'jonathanfilip/vim-lucius'
 "NeoBundle 'ajacksified/vim-colors-solarized-brown'
 "NeoBundle 'john2x/flatui.vim'
 
@@ -210,7 +211,10 @@ endif
 
 let g:solarized_visibility = 'high'
 let g:solarized_contrast = 'high'
-colorscheme solarized
+
+"colorscheme solarized
+"colorscheme base16-railscasts
+colorscheme lucius
 "colorscheme flatui
 "colorscheme Tomorrow-Night
 "colorscheme Tomorrow-Night-Eighties
