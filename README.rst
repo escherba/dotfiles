@@ -178,14 +178,15 @@ If you develop with Vim,
 
     brew install macvim --with-python --with-override-system-vim
 
-Install NeoBunlde plug-in manager for Vim
+Install Vim-Plug plug-in manager for Vim
 
 .. code-block:: bash
 
-    curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 Then copy the included ``.vimrc`` into your home directory, open Vim and
-you should see NeoBunlde prompting you to install the missing plugins.
+execute `:PlugInstall`.
 The YouCompleteMe plugin should be set up automatically via a post-install hook,
 but if it isn't,
 
