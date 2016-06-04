@@ -13,6 +13,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Git
 "NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'mhinz/vim-signify'
 NeoBundle 'int3/vim-extradite'
 NeoBundle 'vim-scripts/gitignore'
 NeoBundle 'tpope/vim-fugitive'
@@ -80,10 +81,11 @@ NeoBundle 'honza/vim-snippets'
 "NeoBundle 'msanders/snipmate.vim'
 
 " color schemes
+"NeoBundle 'dracula/vim'
 "NeoBundle 'altercation/vim-colors-solarized'
 "NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'jonathanfilip/vim-lucius'
-"NeoBundle 'ajacksified/vim-colors-solarized-brown'
+"NeoBundle 'sts10/vim-mustard'
 "NeoBundle 'john2x/flatui.vim'
 
 " markdown, RST
@@ -186,7 +188,11 @@ NeoBundleCheck
 
 let mapleader = ','
 set ruler       " show cursor position
-set t_Co=256    " use 256 colors
+
+if ! has("gui_running")
+    set t_Co=256    " use 256 colors
+endif
+
 set hlsearch    " highlight search terms
 set cursorline  " show line under cursor
 set title       " reflect what buffer you are working in
@@ -201,24 +207,34 @@ try
 catch
 endtry
 
-set background=dark
-" controls transparency, needed for Terminal
-let g:solarized_termtrans = 1
 
+
+" ability to cancel a search with <Esc>
+nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+
+set background=dark
 if has('gui_macvim')
     set transparency=0
 endif
 
+let g:lucius_style = 'dark'
+let g:lucius_contrast = 'normal'
+let g:lucius_contrast_bg = 'normal'
+let g:lucius_use_bold = 1
+let g:lucius_use_underline = 1
+let g:lucius_no_term_bg = 0
 
-let g:solarized_visibility = 'high'
-let g:solarized_contrast = 'high'
+" let g:solarized_termtrans = 1
+" let g:solarized_visibility = 'high'
+" let g:solarized_contrast = 'high'
+
 
 "colorscheme solarized
 "colorscheme base16-railscasts
 colorscheme lucius
+"colorscheme mustard
 "colorscheme flatui
-"colorscheme Tomorrow-Night
-"colorscheme Tomorrow-Night-Eighties
+"colorscheme base16-tomorrow
 "colorscheme base16-eighties
 "colorscheme base16-ocean
 "colorscheme base16-solarized
@@ -230,6 +246,7 @@ colorscheme lucius
 "  taken from https://github.com/begriffs/haskell-vim-now/blob/master/.vimrc
 " ----------------------------------------------
 
+let g:signify_vcs_list = [ 'git' ]
 let g:extradite_width = 60
 " Hide messy Ggrep output and copen automatically
 function! NonintrusiveGitGrep(term)
@@ -267,6 +284,7 @@ nnoremap <silent> <leader>g? :call CommittedFiles()<CR>:copen<CR>
 " Airline
 " ----------------------------------------------
 
+let g:airline_theme = 'lucius'
 let g:airline_powerline_fonts = 1
 
 
@@ -277,7 +295,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 if has('gui_running')
     " set default font
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
 endif
 
 " VimShell
