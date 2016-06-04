@@ -1,190 +1,191 @@
-if has('vim_starting')
-    set nocompatible               " Be iMproved
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+if &compatible
+    set nocompatible           " Be iMproved
 endif
 
 filetype off                   " required!
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Git
-"NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'mhinz/vim-signify'
-NeoBundle 'int3/vim-extradite'
-NeoBundle 'vim-scripts/gitignore'
-NeoBundle 'tpope/vim-fugitive'
+"Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
+Plug 'int3/vim-extradite'
+Plug 'vim-scripts/gitignore'
+Plug 'tpope/vim-fugitive'
 
 " meta
-NeoBundle 'dbakker/vim-lint'
+Plug 'dbakker/vim-lint'
 
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'tpope/vim-sensible'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'tmux-plugins/vim-tmux'
-NeoBundle 'Shougo/vimproc', {
- \ 'build' : {
- \     'windows' : 'make -f make_mingw32.mak',
- \     'cygwin' : 'make -f make_cygwin.mak',
- \     'mac' : 'make -f make_mac.mak',
- \     'unix' : 'make -f make_unix.mak',
- \    },
- \ }
-NeoBundle 'Shougo/vimshell.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'sudo.vim'
-NeoBundle 'Valloric/YouCompleteMe', {
-     \ 'build' : {
-     \     'mac' : 'git submodule update --init --recursive && python ./install.py --clang-completer',
-     \     'unix' : 'git submodule update --init --recursive && python ./install.py --clang-completer',
-     \     'windows' : 'python ./install.py --clang-completer',
-     \     'cygwin' : 'python ./install.py --clang-completer'
-     \    }
-     \ }
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 'xolox/vim-misc'
-"NeoBundle 'xolox/vim-easytags'
-NeoBundle 'majutsushi/tagbar'
-"NeoBundle 'Lokaltog/TagHighlight'
-NeoBundle 'Lokaltog/vim-easymotion'
-"NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'myusuf3/numbers.vim'
-"NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'rizzatti/funcoo.vim'
-NeoBundle 'rizzatti/dash.vim'
-NeoBundle 'mileszs/ack.vim'
-NeoBundle 'godlygeek/tabular'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-sensible'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+Plug 'tmux-plugins/vim-tmux'
+
+function! BuildVimProc(info)
+    if a:info.status == 'installed' || a:info.force
+        if has('win32unix') || has('win64unix')
+            !make -f make_cygwin.mak
+        elseif has('unix')
+            let s:uname = system("uname")
+            if s:uname == "Darwin\n"
+                !make -f make_mac.mak
+            else
+                !make -f make_unix.mak
+            endif
+        elseif has('win32') || has('win64')
+            !make -f make_mingw32.mak
+        endif
+    endif
+endfunction
+
+Plug 'Shougo/vimproc', { 'do': function('BuildVimProc') }
+Plug 'Shougo/vimshell.vim'
+Plug 'Shougo/unite.vim'
+Plug 'sudo.vim'
+
+function! BuildYCM(info)
+    if a:info.status == 'installed' || a:info.force
+        !git submodule update --init --recursive
+        if has('unix')
+            !python ./install.py --clang-completer
+        endif
+    endif
+endfunction
+
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'sjl/gundo.vim'
+Plug 'xolox/vim-misc'
+"Plug 'xolox/vim-easytags'
+Plug 'majutsushi/tagbar'
+"Plug 'Lokaltog/TagHighlight'
+Plug 'Lokaltog/vim-easymotion'
+"Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'myusuf3/numbers.vim'
+"Plug 'kien/ctrlp.vim'
+Plug 'rizzatti/funcoo.vim'
+Plug 'rizzatti/dash.vim'
+Plug 'mileszs/ack.vim'
+Plug 'godlygeek/tabular'
 
 " R
-NeoBundle 'jalvesaq/VimCom', {
- \ 'build' : {
- \      'mac' : 'R CMD build . && R CMD INSTALL .'
- \    }
- \ }
-NeoBundle 'vim-scripts/Vim-R-plugin'
+function! BuildVimCom(info)
+    if a:info.status == 'installed' || a:info.force
+        !R CMD build . && R CMD INSTALL .
+    endif
+endfunction
+
+Plug 'jalvesaq/VimCom', { 'do': function('BuildVimCom')}
+Plug 'vim-scripts/Vim-R-plugin'
 
 " Snippets!
-NeoBundle 'SirVer/ultisnips'
-"NeoBundle 'ervandew/supertab'
-NeoBundle 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+"Plug 'ervandew/supertab'
+Plug 'honza/vim-snippets'
 
-"NeoBundle 'MarcWeber/vim-addon-mw-utils'
-"NeoBundle 'tomtom/tlib_vim'
-"NeoBundle 'garbas/vim-snipmate'
-"NeoBundle 'msanders/snipmate.vim'
+"Plug 'MarcWeber/vim-addon-mw-utils'
+"Plug 'tomtom/tlib_vim'
+"Plug 'garbas/vim-snipmate'
+"Plug 'msanders/snipmate.vim'
 
 " color schemes
-"NeoBundle 'dracula/vim'
-"NeoBundle 'altercation/vim-colors-solarized'
-"NeoBundle 'chriskempson/base16-vim'
-NeoBundle 'jonathanfilip/vim-lucius'
-"NeoBundle 'sts10/vim-mustard'
-"NeoBundle 'john2x/flatui.vim'
+"Plug 'dracula/vim'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'chriskempson/base16-vim'
+Plug 'jonathanfilip/vim-lucius'
+"Plug 'sts10/vim-mustard'
+"Plug 'john2x/flatui.vim'
 
 " markdown, RST
-NeoBundle 'tpope/vim-markdown'
-"NeoBundle 'rykka/clickable.vim'
-"NeoBundle 'rykka/clickable-things'
-NeoBundle 'rykka/os.vim'
-NeoBundle 'rykka/riv.vim'
+Plug 'tpope/vim-markdown'
+"Plug 'rykka/clickable.vim'
+"Plug 'rykka/clickable-things'
+Plug 'rykka/os.vim'
+Plug 'rykka/riv.vim'
 
 " Ruby
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
 
 "Lua
-NeoBundle 'xolox/vim-lua-inspect'
-NeoBundle 'xolox/vim-lua-ftplugin'
+Plug 'xolox/vim-lua-inspect'
+Plug 'xolox/vim-lua-ftplugin'
 
 " Puppet
-NeoBundle 'rodjek/vim-puppet'
+Plug 'rodjek/vim-puppet'
 
 " iOS and Cocoa
-NeoBundle 'eraserhd/vim-ios'
-NeoBundle 'msanders/cocoa.vim'
-"NeoBundle 'Rip-Rip/clang_complete'
+Plug 'eraserhd/vim-ios'
+Plug 'msanders/cocoa.vim'
+"Plug 'Rip-Rip/clang_complete'
 
 " C
-NeoBundle 'c.vim'
-NeoBundle 'Alternate-workspace'
+Plug 'c.vim'
+Plug 'Alternate-workspace'
 
 " Python
-NeoBundle 'klen/python-mode'
-NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'python.vim'
-"NeoBundle 'pyflakes.vim'
-NeoBundle 'ivanov/vim-ipython'
-NeoBundle 'alfredodeza/pytest.vim'
-NeoBundle 'fs111/pydoc.vim'
-NeoBundle 'tshirtman/vim-cython'
-"NeoBundle 'vim-scripts/pyrex.vim'
-NeoBundle 'vim-scripts/swap-parameters'
-"NeoBundle 'jmcantrell/vim-virtualenv'
+Plug 'klen/python-mode'
+Plug 'davidhalter/jedi-vim'
+Plug 'python.vim'
+"Plug 'pyflakes.vim'
+Plug 'ivanov/vim-ipython'
+Plug 'alfredodeza/pytest.vim'
+Plug 'fs111/pydoc.vim'
+Plug 'tshirtman/vim-cython'
+"Plug 'vim-scripts/pyrex.vim'
+Plug 'vim-scripts/swap-parameters'
+"Plug 'jmcantrell/vim-virtualenv'
 
 "JVM languages
-NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'ktvoelker/sbt-vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'ktvoelker/sbt-vim'
 
 " Javascript
-NeoBundle 'marijnh/tern_for_vim'
-NeoBundle 'pangloss/vim-javascript'
-"NeoBundle 'wookiehangover/jshint.vim'
-NeoBundle 'walm/jshint.vim'
-NeoBundle 'tmhedberg/matchit'
-NeoBundle 'elzr/vim-json'
-"NeoBundle 'moll/vim-node'
+Plug 'marijnh/tern_for_vim'
+Plug 'pangloss/vim-javascript'
+"Plug 'wookiehangover/jshint.vim'
+Plug 'walm/jshint.vim'
+Plug 'tmhedberg/matchit'
+Plug 'elzr/vim-json'
+"Plug 'moll/vim-node'
 
 " Haskell
-NeoBundle 'dag/vim2hs'
-NeoBundle 'eagletmt/ghcmod-vim'
-NeoBundle 'ujihisa/neco-ghc'
-NeoBundle 'pbrisbin/html-template-syntax'
-NeoBundle 'lukerandall/haskellmode-vim'
-NeoBundle 'bitc/vim-hdevtools'
-NeoBundle 'feuerbach/vim-hs-module-name'
-NeoBundle 'escherba/vim-haskellConceal'
+Plug 'dag/vim2hs'
+Plug 'eagletmt/ghcmod-vim'
+Plug 'ujihisa/neco-ghc'
+Plug 'pbrisbin/html-template-syntax'
+Plug 'lukerandall/haskellmode-vim'
+Plug 'bitc/vim-hdevtools'
+Plug 'feuerbach/vim-hs-module-name'
+Plug 'escherba/vim-haskellConceal'
 
 " Graphviz
-NeoBundle 'wannesm/wmgraphviz.vim'
+Plug 'wannesm/wmgraphviz.vim'
 
 " Protobuf
-NeoBundle 'uarun/vim-protobuf'
+Plug 'uarun/vim-protobuf'
 
 " Agda
-"NeoBundle 'derekelkins/agda-vim'
-
-"NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Plug 'derekelkins/agda-vim'
 
 " Matlab
-NeoBundle 'MatlabFilesEdition'
+Plug 'MatlabFilesEdition'
 
-"NeoBundle 'L9'
-"NeoBundle 'FuzzyFinder'
+"Plug 'L9'
+"Plug 'FuzzyFinder'
 
-" non github repos
-"NeoBundle 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (ie. when working on your own plugin)
-"NeoBundle 'file:///Users/gmarik/path/to/plugin'
-" ...
-
-call neobundle#end()
+call plug#end()
 
 filetype plugin indent on     " required!
 "
 " Brief help
-" :NeoBundleList          - list configured bundles
-" :NeoBundleInstall(!)    - install(update) bundles
-" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-
-" Installation check.
-NeoBundleCheck
+" :PlugInstall(!)    - install bundles
+" :PlugUpdate(!)     - update bundles
+" :PlugClean(!)      - confirm(or auto-approve) removal of unused bundles
 
 let mapleader = ','
 set ruler       " show cursor position
