@@ -28,13 +28,10 @@ function! BuildVimProc(info)
     if a:info.status == 'installed' || a:info.force
         if has('win32unix') || has('win64unix')
             !make -f make_cygwin.mak
+        elseif has('mac')
+            !make -f make_mac.mak
         elseif has('unix')
-            let s:uname = system("uname")
-            if s:uname == "Darwin\n"
-                !make -f make_mac.mak
-            else
-                !make -f make_unix.mak
-            endif
+            !make -f make_unix.mak
         elseif has('win32') || has('win64')
             !make -f make_mingw32.mak
         endif
@@ -143,6 +140,7 @@ Plug 'vim-scripts/swap-parameters'
 "JVM languages
 Plug 'derekwyatt/vim-scala'
 Plug 'ktvoelker/sbt-vim'
+"Plug 'mpollmeier/vim-scalaConceal'
 
 " Javascript
 Plug 'marijnh/tern_for_vim'
@@ -161,7 +159,7 @@ Plug 'pbrisbin/html-template-syntax'
 Plug 'lukerandall/haskellmode-vim'
 Plug 'bitc/vim-hdevtools'
 Plug 'feuerbach/vim-hs-module-name'
-Plug 'escherba/vim-haskellConceal'
+"Plug 'escherba/vim-haskellConceal'
 
 " Graphviz
 Plug 'wannesm/wmgraphviz.vim'
@@ -197,10 +195,25 @@ endif
 set hlsearch    " highlight search terms
 set cursorline  " show line under cursor
 set title       " reflect what buffer you are working in
-syntax enable
+
+if has('syntax')
+    syntax enable
+endif
+
+
+" Use 'shiftwidth' when using `<Tab>` in front of a line.
+" By default it's used only for shift commands (`<`, `>`).
+set smarttab
+
 set tabstop=4        " tab width is 4 spaces
 set shiftwidth=4     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
+
+set softtabstop=4
+
+" Autoindent when starting new line, or using `o` or `O`.
+set autoindent
+
 set encoding=utf-8
 set ffs=unix,dos,mac " Default line endings
 try
@@ -208,7 +221,12 @@ try
 catch
 endtry
 
+" Support all kinds of EOLs by default
+set fileformats+=mac
 
+" Disable any annoying beeps on errors.
+set noerrorbells
+set visualbell
 
 " ability to cancel a search with <Esc>
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
