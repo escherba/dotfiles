@@ -139,6 +139,7 @@ Plug 'vim-scripts/swap-parameters'
 
 "JVM languages
 Plug 'derekwyatt/vim-scala'
+Plug 'derekwyatt/vim-sbt'
 Plug 'ktvoelker/sbt-vim'
 "Plug 'mpollmeier/vim-scalaConceal'
 
