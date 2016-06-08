@@ -1,0 +1,8 @@
+set visualbell
+set noerrorbells
+
+" Use system Clipboard
+" Register unnamedplus does not exist on Mac OS X though,
+" use the following shortcuts to yank and paste to/from the system
+" clipboard: \"*y \"*p (no backslashes)
+set clipboard=unnamed

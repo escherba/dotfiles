@@ -141,4 +141,9 @@ export PATH="$PATH:$HOME/perl5/bin"
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 
-export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
+# put this in your .bash_profile
+if [ $ITERM_SESSION_ID ]; then
+  export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
+fi
+
+export JAVA_HOME="`/usr/libexec/java_home -v 1.7`"
