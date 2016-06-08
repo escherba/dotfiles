@@ -6,3 +6,5 @@ set noerrorbells
 " use the following shortcuts to yank and paste to/from the system
 " clipboard: \"*y \"*p (no backslashes)
 set clipboard=unnamed
+
+set hlsearch    " highlight search terms
