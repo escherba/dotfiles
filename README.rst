@@ -104,6 +104,9 @@ check out HDF5).
     brew install python --framework
     brew install pyenv
     brew install pyenv-virtualenv
+    
+    brew install pygraphviz
+    
     brew install homebrew/science/hdf5
     brew install homebrew/science/octave
     brew install homebrew/science/r
@@ -145,7 +148,7 @@ Machine learning
 
 .. code-block:: bash
 
-    pip install pandas tqdm palettable
+    pip install funcy pandas tqdm palettable
     pip install scikit-learn
     pip install jupyter
 
