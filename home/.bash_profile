@@ -1,5 +1,6 @@
 SSH_ENV="$HOME/.ssh/environment"
 
+export HOMEBREW_GITHUB_API_TOKEN=0ee26729a282c53e1d88d6158d4db75308224038
 export TERM=xterm-256color
 
 export NLTK_DATA="$HOME/dev/py-nlp/var/nltk/data"
@@ -121,12 +122,11 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:$HOME/Library/Haskell/bin:/Library/Haskell/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Applications/domino:/usr/share/go/bin:/usr/local/go/bin:/opt/bin:/usr/texbin:$PATH"
 
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# test -s "$HOME/.rvm/scripts/rvm" && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-# if [ -f ~/.profile ]; then
-#   source ~/.profile
-# fi
+test -s "${HOME}/.bash_private" && source "${HOME}/.bash_private"
+
 export PYTHONIOENCODING=UTF_8
 
 PERL_MB_OPT="--install_base $HOME/perl5"; export PERL_MB_OPT;
@@ -141,9 +141,16 @@ export PATH="$PATH:$HOME/perl5/bin"
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 
-# put this in your .bash_profile
+export JAVA_HOME="`/usr/libexec/java_home -v 1.7`"
+
+alias mosh-emr-shell="mosh --ssh=\"ssh -i $EMR_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
+alias mosh-emr-bind="mosh --ssh=\"ssh -i $EMR_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
+
+export SPARK_HOME="/usr/local/Cellar/apache-spark/1.6.1/libexec"
+
+# set iTerm tab title to current path
 if [ $ITERM_SESSION_ID ]; then
   export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
 fi
 
-export JAVA_HOME="`/usr/libexec/java_home -v 1.7`"
+test -s "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
