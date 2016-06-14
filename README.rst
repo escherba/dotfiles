@@ -69,7 +69,7 @@ To setup a development environment with GCC,
     brew install cmake
     brew install valgrind
     brew install tmux mosh awscli s3cmd
-    brew install jq
+    brew install jq fondu
     brew install gts Caskroom/cask/xquartz
     brew install graphviz --with-gts
 
