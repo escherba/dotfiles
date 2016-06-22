@@ -6,11 +6,25 @@ A collection of config files for development on Mac OS X and Linux
 Quick Linux Setup for AWS
 -------------------------
 
+On Aamzon AMI instances:
+
 .. code-block:: bash
 
     # update
     sudo yum -y update
     sudo yum -y upgrade
+
+On Ubuntu instances:
+
+.. code-block:: bash
+
+    # update
+    sudo apt-get updat
+    sudo apt-get upgrade
+
+and then
+
+.. code-block:: bash
 
     # enable EPEL6 by changing enabled=0 -> enabled=1
     sudo vim /etc/yum.repos.d/epel.repo
