@@ -36,6 +36,23 @@ and then
     curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux.conf
 
 
+Linux environemnt (Ubuntu)
+--------------------------
+
+::
+
+   sudo apt-get install htop tmux mosh
+   sudo apt-get install git
+   sudo apt-get install python-scipy
+   sudo apt-get install python-pandas
+   sudo apt-get install python-igraph
+   sudo apt-get install python-pygraphviz
+   sudo apt-get install python-opencv
+   sudo apt-get install r-base
+   sudo apt-get install clang
+   sudo apt-get install cmake
+
+
 Mac OS X environment
 --------------------
 
