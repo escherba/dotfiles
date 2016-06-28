@@ -1,6 +1,5 @@
 SSH_ENV="$HOME/.ssh/environment"
 
-export HOMEBREW_GITHUB_API_TOKEN=0ee26729a282c53e1d88d6158d4db75308224038
 export TERM=xterm-256color
 
 export NLTK_DATA="$HOME/dev/py-nlp/var/nltk/data"
@@ -114,8 +113,7 @@ export PATH="$PATH:/usr/share/go/bin:/usr/local/go/bin"
 
 export PATH="$PATH:/opt/bin"
 
-# added by Anaconda 2.0.1 installer
-export PATH="$HOME/anaconda/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -141,10 +139,13 @@ export PATH="$PATH:$HOME/perl5/bin"
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
 
+
+export LIBFM_PATH="$HOME/bin"
+
 export JAVA_HOME="`/usr/libexec/java_home -v 1.7`"
 
-alias mosh-emr-shell="mosh --ssh=\"ssh -i $EMR_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
-alias mosh-emr-bind="mosh --ssh=\"ssh -i $EMR_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
+alias mosh-emr-shell="mosh --ssh=\"ssh -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
+alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
 
 export SPARK_HOME="/usr/local/Cellar/apache-spark/1.6.1/libexec"
 
@@ -154,3 +155,5 @@ if [ $ITERM_SESSION_ID ]; then
 fi
 
 test -s "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+alias ssh-ec2-shell="ssh -Y -i $AWS_KEY $EC2_HOST"
