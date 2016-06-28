@@ -19,7 +19,7 @@ On Ubuntu instances:
 .. code-block:: bash
 
     # update
-    sudo apt-get updat
+    sudo apt-get update
     sudo apt-get upgrade
 
 and then
@@ -34,6 +34,54 @@ and then
 
     # configure Tmux
     curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux.conf
+
+
+Linux environemnt (Ubuntu)
+--------------------------
+
+If the graphics card you're using is too new to be supported by the bundled drivers, follow instructions in this post to bypass and disable the default driver through safe mode: http://askubuntu.com/a/508255
+
+::
+
+    sudo apt-get install xorg xorg-dev xserver-xorg xserver-xorg-core xserver-xorg-dev
+    sudo dpkg-reconfigure xserver-xorg
+    sudo apt-get install freeglut3-dev mesa-common-dev
+
+    sudo add-apt-repository ppa:graphics-drivers/ppa
+    sudo apt-get update
+    sudo apt-get install nvidia-367
+
+Reboot to load drivers.  Then you can install CUDA (https://developer.nvidia.com/cuda-toolkit) and GUI:
+
+::
+
+    sudo apt-get install openbox
+    sudo apt-get instlal ubuntu-desktop
+
+Also add the following lines to ``.bashrc``:
+
+::
+
+    export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+Finally install some useful packages:
+
+::
+
+   sudo apt-get install htop tmux mosh
+   sudo apt-get install git
+   sudo apt-get install python-scipy
+   sudo apt-get install python-pandas
+   sudo apt-get install python-igraph
+   sudo apt-get install python-pygraphviz
+   sudo apt-get install python-opencv
+   sudo apt-get install r-base
+   sudo apt-get install clang
+   sudo apt-get install cmake
+   sudo apt-get install vim-nox-py2
+   sudo apt-get install python-matplotlib
+   sudo apt-get install python-sklearn
 
 
 Mac OS X environment
