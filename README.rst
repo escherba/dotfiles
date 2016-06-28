@@ -51,6 +51,7 @@ Linux environemnt (Ubuntu)
    sudo apt-get install r-base
    sudo apt-get install clang
    sudo apt-get install cmake
+   sudo apt-get install vim-nox-py2
 
 
 Mac OS X environment
