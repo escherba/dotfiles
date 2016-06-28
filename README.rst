@@ -59,7 +59,7 @@ Also add the following lines to ``.bashrc``:
     export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
-Then you can install CUDA (https://developer.nvidia.com/cuda-toolkit and GUI:
+Then you can install CUDA (https://developer.nvidia.com/cuda-toolkit) and GUI:
 
 ::
 
