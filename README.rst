@@ -39,6 +39,35 @@ and then
 Linux environemnt (Ubuntu)
 --------------------------
 
+If the graphics card you're using is too new to be supported by the bundled drivers, follow instructions in this post to bypass and disable the default driver through safe mode: http://askubuntu.com/a/508255
+
+::
+
+    sudo apt-get install xorg xorg-dev xserver-xorg xserver-xorg-core xserver-xorg-dev
+    sudo dpkg-reconfigure xserver-xorg
+    sudo apt-get install freeglut3-dev mesa-common-dev
+
+    sudo add-apt-repository ppa:graphics-drivers/ppa
+    sudo apt-get update
+    sudo apt-get install nvidia-367
+
+
+Also add the following lines to `.bashrc`:
+
+::
+
+    export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+Then you can install the GUI:
+
+::
+
+    sudo apt-get install openbox
+    sudo apt-get instlal ubuntu-desktop
+
+Finally install some useful packages:
+
 ::
 
    sudo apt-get install htop tmux mosh
