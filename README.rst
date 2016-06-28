@@ -52,14 +52,14 @@ If the graphics card you're using is too new to be supported by the bundled driv
     sudo apt-get install nvidia-367
 
 
-Also add the following lines to `.bashrc`:
+Also add the following lines to ``.bashrc``:
 
 ::
 
     export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
-Then you can install the GUI:
+Then you can install CUDA (https://developer.nvidia.com/cuda-toolkit and GUI:
 
 ::
 
