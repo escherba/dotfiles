@@ -52,6 +52,8 @@ Linux environemnt (Ubuntu)
    sudo apt-get install clang
    sudo apt-get install cmake
    sudo apt-get install vim-nox-py2
+   sudo apt-get install python-matplotlib
+   sudo apt-get install python-sklearn
 
 
 Mac OS X environment
