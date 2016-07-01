@@ -24,5 +24,3 @@ fi
 if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
-test -s "${HOME}/.bash_profile" && source "${HOME}/.bash_profile"
