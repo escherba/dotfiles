@@ -623,7 +623,7 @@ let g:EclimCompletionMethod = 'omnifunc'
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
 "global fallback to extra_conf file
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion=1
 "ignore warnings about extra_conf files
 let g:ycm_extra_conf_globlist = ['~/dev/*','!~/*']
