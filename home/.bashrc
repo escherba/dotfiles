@@ -37,7 +37,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color) color_prompt=yes;;
+    xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -47,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
@@ -74,7 +74,7 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    test -r "${HOME}/.dircolors" && eval "$(dircolors -b ${HOME}/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
@@ -101,8 +101,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f "${HOME}/.bash_aliases" ]; then
+    . "${HOME}/.bash_aliases"
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -115,26 +115,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-function parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-PS1="\w\$(parse_git_branch) $ "
-
-export PATH="/usr/local/cuda/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
-export C_INCLUDE_PATH="/usr/local/cuda/include:$C_INCLUDE_PATH"
-export CPP_INCLUDE_PATH="/usr/local/cuda/include:$CPP_INCLUDE_PATH"
-
-alias tmux="TERM=screen-256color-bce tmux"
-
-# git aliases
-alias gg='git grep'
-alias ga='git add'
-alias gp='git push'
-alias gc='git commit'
-alias gd='git diff'
-alias g='git'
+[ -r "${HOME}/.byobu/prompt" ] && . "${HOME}/.byobu/prompt"   #byobu-prompt#
 
 
 SSH_ENV="$HOME/.ssh/environment"
@@ -159,3 +140,11 @@ if [ -f "${SSH_ENV}" ]; then
 else
     start_agent;
 fi
+
+test -s "${HOME}/.bash_profile" && source "${HOME}/.bash_profile"
+
+export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+# added by Anaconda2 4.1.0 installer
+export PATH="${HOME}/anaconda2/bin:$PATH"
