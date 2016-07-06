@@ -154,6 +154,6 @@ alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=
 alias ssh-ec2-shell="ssh -Y -i $AWS_KEY $EC2_HOST -t \"tmux new-session -A -s main\""
 alias mosh-ec2-shell="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $EC2_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
 
-alias mysql-aurora-dev="mysql --h$AURORA_DEV_HOST --u$AURORA_DEV_USER --port $AURORA_DEV_PORT -p"
+alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$AURORA_DEV_USER --port $AURORA_DEV_PORT -p"
 
 alias ssh-thetis="ssh -Y $THETIS"
