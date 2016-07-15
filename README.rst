@@ -71,6 +71,7 @@ Finally install some useful packages:
 
    sudo apt-get install htop tmux mosh
    sudo apt-get install git
+   sudo apt-get install graphviz graphviz-dev
    sudo apt-get install python-pip python-virtualenv
    sudo apt-get install python-scipy
    sudo apt-get install python-pandas
