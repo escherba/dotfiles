@@ -116,8 +116,8 @@ Plug 'xolox/vim-lua-ftplugin'
 Plug 'rodjek/vim-puppet'
 
 " iOS and Cocoa
-Plug 'eraserhd/vim-ios'
-Plug 'msanders/cocoa.vim'
+"Plug 'eraserhd/vim-ios'
+"Plug 'msanders/cocoa.vim'
 "Plug 'Rip-Rip/clang_complete'
 
 " C
@@ -134,13 +134,13 @@ Plug 'alfredodeza/pytest.vim'
 Plug 'fs111/pydoc.vim'
 Plug 'tshirtman/vim-cython'
 "Plug 'vim-scripts/pyrex.vim'
-Plug 'vim-scripts/swap-parameters'
+"Plug 'vim-scripts/swap-parameters'
 "Plug 'jmcantrell/vim-virtualenv'
 
 "JVM languages
 Plug 'derekwyatt/vim-scala'
 Plug 'derekwyatt/vim-sbt'
-Plug 'ktvoelker/sbt-vim'
+"Plug 'ktvoelker/sbt-vim'
 "Plug 'mpollmeier/vim-scalaConceal'
 
 " Javascript
@@ -201,26 +201,6 @@ if has('syntax')
     syntax enable
 endif
 
-
-" Use 'shiftwidth' when using `<Tab>` in front of a line.
-" By default it's used only for shift commands (`<`, `>`).
-set smarttab
-
-set tabstop=4        " tab width is 4 spaces
-set shiftwidth=4     " indent also with 4 spaces
-set expandtab        " expand tabs to spaces
-
-set softtabstop=4
-
-" Autoindent when starting new line, or using `o` or `O`.
-set autoindent
-
-set encoding=utf-8
-set ffs=unix,dos,mac " Default line endings
-try
-    lang en_US
-catch
-endtry
 
 " Support all kinds of EOLs by default
 set fileformats+=mac
@@ -314,8 +294,16 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 
 if has('gui_running')
-    " set default font
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
+  " set default font
+  if has("gui_gtk2")
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+  elseif has("gui_gtk3")
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+  elseif has("gui_photon")
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:s9
+  else
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
+  endif
 endif
 
 " VimShell
@@ -547,8 +535,6 @@ else
   map tlo :emenu ]LANGUAGES_GHC.
 endif
 
-" =============================
-
 " Easytags
 let g:easytags_updatetime_min=1000
 
@@ -560,7 +546,6 @@ let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 "let g:SuperTabDefaultCompletionType = '<C-Tab>'
 "let g:UltiSnipsListSnippets="<c-e>"
 
-" ===================================
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -603,11 +588,9 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-" =====
 " clickable
 call os#init()
 
-" ===================================
 "YouCompleteMe
 "let g:ycm_register_as_syntastic_checker=0
 
@@ -615,7 +598,7 @@ let g:EclimCompletionMethod = 'omnifunc'
 let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
 
 "global fallback to extra_conf file
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion=1
 "ignore warnings about extra_conf files
 let g:ycm_extra_conf_globlist = ['~/dev/*','!~/*']
@@ -984,3 +967,20 @@ function s:AgdaKeys()
 endfunction
 
 set colorcolumn=+1        " highlight column after 'textwidth'
+
+" Use 'shiftwidth' when using `<Tab>` in front of a line.
+" By default it's used only for shift commands (`<`, `>`).
+set smarttab
+set tabstop=4        " tab width is 4 spaces
+set shiftwidth=4     " indent also with 4 spaces
+set expandtab        " expand tabs to spaces
+set softtabstop=4
+
+" Autoindent when starting new line, or using `o` or `O`.
+set autoindent
+set encoding=utf-8
+set ffs=unix,dos,mac " Default line endings
+try
+    lang en_US
+catch
+endtry
