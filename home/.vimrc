@@ -94,6 +94,8 @@ Plug 'honza/vim-snippets'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'chriskempson/base16-vim'
 Plug 'jonathanfilip/vim-lucius'
+"Plug 'morhetz/gruvbox'
+"Plug 'tomasr/molokai'
 "Plug 'sts10/vim-mustard'
 "Plug 'john2x/flatui.vim'
 
@@ -212,12 +214,12 @@ set visualbell
 " ability to cancel a search with <Esc>
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
-set background=dark
+set background=light
 if has('gui_macvim')
     set transparency=0
 endif
 
-let g:lucius_style = 'dark'
+let g:lucius_style = 'light'
 let g:lucius_contrast = 'normal'
 let g:lucius_contrast_bg = 'normal'
 let g:lucius_use_bold = 1
@@ -230,10 +232,13 @@ let g:lucius_no_term_bg = 0
 
 
 "colorscheme solarized
-"colorscheme base16-railscasts
 colorscheme lucius
-"colorscheme mustard
 "colorscheme flatui
+
+"colorscheme gruvbox
+"colorscheme molokai
+"colorscheme base16-railscasts
+"colorscheme mustard
 "colorscheme base16-tomorrow
 "colorscheme base16-eighties
 "colorscheme base16-ocean
@@ -595,7 +600,11 @@ call os#init()
 "let g:ycm_register_as_syntastic_checker=0
 
 let g:EclimCompletionMethod = 'omnifunc'
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
+if has("mac")
+    let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
+else
+    let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+end
 
 "global fallback to extra_conf file
 "let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
