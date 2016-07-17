@@ -56,10 +56,16 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+function parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+	PS1="\w\[\033[01;32m\]\$(parse_git_branch)\[\033[00m\] $ "
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+	PS1="\w\$(parse_git_branch) $ "
 fi
 unset color_prompt force_color_prompt
 
@@ -141,10 +147,16 @@ else
     start_agent;
 fi
 
-test -s "${HOME}/.bash_profile" && source "${HOME}/.bash_profile"
-
 export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 # added by Anaconda2 4.1.0 installer
 export PATH="${HOME}/anaconda2/bin:$PATH"
+
+# http://unix.stackexchange.com/a/48113/172348
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=100000                   # big big history
+export HISTFILESIZE=100000               # big big history
+shopt -s histappend                      # append to history, don't overwrite it
+# Save and reload the history after each command finishes
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
