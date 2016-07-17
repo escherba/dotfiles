@@ -113,7 +113,7 @@ export PATH="$PATH:/usr/share/go/bin:/usr/local/go/bin"
 
 export PATH="$PATH:/opt/bin"
 
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -142,7 +142,7 @@ export PATH="$PATH:$HOME/perl5/bin"
 
 test -s "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-export LIBFM_PATH="$HOME/bin"
+export LIBFM_PATH="$HOME/.local/bin"
 
 export JAVA_HOME="`/usr/libexec/java_home -v 1.7`"
 export SPARK_HOME="/usr/local/Cellar/apache-spark/1.6.1/libexec"
