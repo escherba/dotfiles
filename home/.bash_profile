@@ -144,7 +144,10 @@ test -s "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 
 export LIBFM_PATH="$HOME/.local/bin"
 
-export JAVA_HOME="`/usr/libexec/java_home -v 1.7`"
+if [ -x /usr/libexec/java_home ]; then
+    export JAVA_HOME="`/usr/libexec/java_home -v 1.7`"
+fi
+
 export SPARK_HOME="/usr/local/Cellar/apache-spark/1.6.1/libexec"
 
 alias ssh-emr="ssh -Y -i $AWS_KEY $EMR_HOST -t \"tmux new-session -A -s main\""
@@ -157,3 +160,7 @@ alias ssh-thetis="ssh -Y $THETIS -t \"tmux new-session -A -s main\""
 alias ssh-thetis-iterm="ssh -Y $THETIS -t \"tmux -CC new-session -A -s main\""
 alias mosh-thetis="mosh --ssh=\"ssh -Y\" $THETIS --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
 alias vevo-vpn="sudo openconnect --script=~/.local/etc/vpnc-script-split-traffic -u $VPN_USER --authgroup $VPN_GROUP $VPN_HOST"
+
+# this should be at the end of file
+# source .bashrc
+[ -r ~/.bashrc ] && source ~/.bashrc
