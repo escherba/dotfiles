@@ -147,15 +147,13 @@ export LIBFM_PATH="$HOME/bin"
 export JAVA_HOME="`/usr/libexec/java_home -v 1.7`"
 export SPARK_HOME="/usr/local/Cellar/apache-spark/1.6.1/libexec"
 
-alias ssh-emr-shell="ssh -Y -i $AWS_KEY $EMR_HOST -t \"tmux new-session -A -s main\""
-alias mosh-emr-shell="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
+alias ssh-emr="ssh -Y -i $AWS_KEY $EMR_HOST -t \"tmux new-session -A -s main\""
+alias mosh-emr="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
 alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
-
-alias ssh-ec2-shell="ssh -Y -i $AWS_KEY $EC2_HOST -t \"tmux new-session -A -s main\""
-alias mosh-ec2-shell="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $EC2_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
 
 alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$AURORA_DEV_USER --port $AURORA_DEV_PORT -p"
 
-#alias ssh-thetis="ssh -Y $THETIS -t \"tmux new-session -A -s main\""
-alias ssh-thetis="ssh -Y $THETIS -t \"tmux -CC new-session -A -s main\""
+alias ssh-thetis="ssh -Y $THETIS -t \"tmux new-session -A -s main\""
+alias ssh-thetis-iterm="ssh -Y $THETIS -t \"tmux -CC new-session -A -s main\""
+alias mosh-thetis="mosh --ssh=\"ssh -Y\" $THETIS --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
 alias vevo-vpn="sudo openconnect --script=~/.local/etc/vpnc-script-split-traffic -u $VPN_USER --authgroup $VPN_GROUP $VPN_HOST"
