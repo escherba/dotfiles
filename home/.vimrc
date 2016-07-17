@@ -315,7 +315,7 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 if has('gui_running')
     " set default font
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
 endif
 
 " VimShell
