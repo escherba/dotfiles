@@ -136,6 +136,7 @@ To setup a development environment with GCC,
     brew install jq fondu
     brew install gts Caskroom/cask/xquartz
     brew install graphviz --with-gts
+    brew install reattach-to-user-namespace
 
 Other dependencies:
 
