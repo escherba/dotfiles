@@ -158,4 +158,4 @@ alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$AURORA_DEV_USER --port $AURO
 
 #alias ssh-thetis="ssh -Y $THETIS -t \"tmux new-session -A -s main\""
 alias ssh-thetis="ssh -Y $THETIS -t \"tmux -CC new-session -A -s main\""
-alias vevo-vpn="sudo openconnect --script=~/.local/etc/vpnc-script-split-traffic -u $VPN_USER --authgroup $VPN_GROUP $VPN_HOST"
+alias vevo-vpn-split="sudo openconnect --script=~/.local/etc/vpnc-script-split-traffic -u $VPN_USER --authgroup $VPN_GROUP $VPN_HOST"
