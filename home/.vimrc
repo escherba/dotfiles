@@ -535,8 +535,6 @@ else
   map tlo :emenu ]LANGUAGES_GHC.
 endif
 
-" =============================
-
 " Easytags
 let g:easytags_updatetime_min=1000
 
@@ -548,7 +546,6 @@ let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 "let g:SuperTabDefaultCompletionType = '<C-Tab>'
 "let g:UltiSnipsListSnippets="<c-e>"
 
-" ===================================
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -591,11 +588,9 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-" =====
 " clickable
 call os#init()
 
-" ===================================
 "YouCompleteMe
 "let g:ycm_register_as_syntastic_checker=0
 
