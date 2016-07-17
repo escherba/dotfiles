@@ -145,6 +145,11 @@ Other dependencies:
     brew install git gpg
     brew install czmq zmq
 
+X11
+~~~
+
+Install XQuartz from https://www.xquartz.org/
+
 Java
 ~~~~
 
