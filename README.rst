@@ -6,7 +6,7 @@ A collection of config files for development on Mac OS X and Linux
 Quick Linux Setup for AWS
 -------------------------
 
-On Aamzon AMI instances:
+On Amazon AMI instances:
 
 .. code-block:: bash
 
@@ -84,6 +84,13 @@ Finally install some useful packages:
    sudo apt-get install vim-nox-py2
    sudo apt-get install python-matplotlib
    sudo apt-get install python-sklearn
+
+If you installed Ubuntu Server, you may have services running (such as Apache2 and MySQL) that you don't actually want. Ensure their startup on boot is manual by
+::
+
+    echo manual | sudo tee /etc/init/apache2.override
+    echo manual | sudo tee /etc/init/mysql.override
+    
 
 
 Mac OS X environment
