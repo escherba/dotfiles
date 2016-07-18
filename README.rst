@@ -6,7 +6,7 @@ A collection of config files for development on Mac OS X and Linux
 Quick Linux Setup for AWS
 -------------------------
 
-On Aamzon AMI instances:
+On Amazon AMI instances:
 
 .. code-block:: bash
 
