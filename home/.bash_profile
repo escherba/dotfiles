@@ -50,7 +50,7 @@ alias g='git'
 function parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
-PS1="\w\$(parse_git_branch) $ "
+PS1="\w\[\033[01;32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 export ANDROID_HOME="/Applications/Android Studio.app/sdk/"
 
@@ -156,9 +156,9 @@ alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=
 
 alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$AURORA_DEV_USER --port $AURORA_DEV_PORT -p"
 
-alias ssh-thetis="ssh -Y $THETIS -t \"tmux new-session -A -s main\""
-alias ssh-thetis-iterm="ssh -Y $THETIS -t \"tmux -CC new-session -A -s main\""
-alias mosh-thetis="mosh --ssh=\"ssh -Y\" $THETIS --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
+alias ssh-spinoza="ssh -Y $SPINOZA -t \"tmux new-session -A -s main\""
+alias ssh-spinoza-iterm="ssh -Y $SPINOZA -t \"tmux -CC new-session -A -s main\""
+alias mosh-spinoza="mosh --ssh=\"ssh -Y\" $SPINOZA --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
 alias vevo-vpn="sudo openconnect --script=~/.local/etc/vpnc-script-split-traffic -u $VPN_USER --authgroup $VPN_GROUP $VPN_HOST"
 
 # this should be at the end of file
