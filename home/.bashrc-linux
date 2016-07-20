@@ -151,6 +151,7 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig"
 alias gipython="ipython qtconsole --pylab=inline"
 alias ghci="ghci -XNoMonomorphismRestriction"
 alias lwatch="w'tch -n 1 wc -l"
+alias parallel="parallel --no-notice"
 
 alias gg='git grep'
 alias ga='git add'
