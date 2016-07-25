@@ -145,7 +145,7 @@ test -s "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 export LIBFM_PATH="$HOME/.local/bin"
 
 if [ -x /usr/libexec/java_home ]; then
-    export JAVA_HOME="`/usr/libexec/java_home -v 1.7`"
+    export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
 fi
 
 export SPARK_HOME="/usr/local/Cellar/apache-spark/1.6.1/libexec"
@@ -154,7 +154,7 @@ alias ssh-emr="ssh -Y -i $AWS_KEY $EMR_HOST -t \"tmux new-session -A -s main\""
 alias mosh-emr="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
 alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
 
-alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$AURORA_DEV_USER --port $AURORA_DEV_PORT -p"
+alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$DB_USER --port $DB_PORT -p"
 
 alias ssh-spinoza="ssh -Y $SPINOZA -t \"tmux new-session -A -s main\""
 alias ssh-spinoza-iterm="ssh -Y $SPINOZA -t \"tmux -CC new-session -A -s main\""
