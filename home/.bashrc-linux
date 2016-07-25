@@ -151,6 +151,7 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig"
 alias gipython="ipython qtconsole --pylab=inline"
 alias ghci="ghci -XNoMonomorphismRestriction"
 alias lwatch="w'tch -n 1 wc -l"
+alias parallel="parallel --use-cpus-instead-of-cores --no-notice --bar"
 
 alias gg='git grep'
 alias ga='git add'
@@ -257,7 +258,7 @@ alias ssh-emr="ssh -Y -i $AWS_KEY $EMR_HOST -t \"tmux new-session -A -s main\""
 alias mosh-emr="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
 alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
 
-alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$AURORA_DEV_USER --port $AURORA_DEV_PORT -p"
+alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$DB_USER --port $DB_PORT -p"
 
 alias ssh-spinoza="ssh -Y $SPINOZA -t \"tmux new-session -A -s main\""
 alias mosh-spinoza="mosh --ssh=\"ssh -Y\" $SPINOZA --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
