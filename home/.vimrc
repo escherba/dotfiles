@@ -220,7 +220,7 @@ if has('gui_macvim')
 endif
 
 let g:lucius_style = 'dark'
-let g:lucius_contrast = 'normal'
+let g:lucius_contrast = 'low'
 let g:lucius_contrast_bg = 'normal'
 let g:lucius_use_bold = 1
 let g:lucius_use_underline = 1
@@ -300,14 +300,32 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 if has('gui_running')
   " set default font
-  if has("gui_gtk2")
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
+  if has("mac")
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+  elseif has("gui_gtk2")
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+    "set guifont=Andale\ Mono\ 9
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 9
+    set guifont=Inconsolata-dz\ for\ Powerline\ 9
+    "set guifont=Meslo\ LG\ S\ for\ Powerline\ 9
   elseif has("gui_gtk3")
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+    "set guifont=Andale\ Mono\ 9
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 9
+    set guifont=Inconsolata-dz\ for\ Powerline\ 9
+    "set guifont=Meslo\ LG\ S\ for\ Powerline\ 9
   elseif has("gui_photon")
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:s11
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:s9
+    "set guifont=Andale\ Mono:s9
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline:s9
+    set guifont=Inconsolata-dz\ for\ Powerline:s9
+    "set guifont=Meslo\ LG\ S\ for\ Powerline:s9
   else
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
+    "set guifont=Andale\ Mono:h9
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline:h9
+    set guifont=Inconsolata-dz\ for\ Powerline:h9
+    "set guifont=Meslo\ LG\ S\ for\ Powerline:h9
   endif
 endif
 
