@@ -301,13 +301,13 @@ let g:airline_symbols.whitespace = 'Ξ'
 if has('gui_running')
   " set default font
   if has("gui_gtk2")
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
   elseif has("gui_gtk3")
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
   elseif has("gui_photon")
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:s11
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:s11
   else
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
   endif
 endif
 
