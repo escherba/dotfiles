@@ -214,12 +214,12 @@ set visualbell
 " ability to cancel a search with <Esc>
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
-set background=light
+set background=dark
 if has('gui_macvim')
     set transparency=0
 endif
 
-let g:lucius_style = 'light'
+let g:lucius_style = 'dark'
 let g:lucius_contrast = 'normal'
 let g:lucius_contrast_bg = 'normal'
 let g:lucius_use_bold = 1
@@ -301,13 +301,13 @@ let g:airline_symbols.whitespace = 'Ξ'
 if has('gui_running')
   " set default font
   if has("gui_gtk2")
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
   elseif has("gui_gtk3")
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
   elseif has("gui_photon")
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:s9
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:s11
   else
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
+	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
   endif
 endif
 
