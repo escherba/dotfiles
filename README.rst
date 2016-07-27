@@ -90,7 +90,10 @@ If you installed Ubuntu Server, you may have services running (such as Apache2 a
 
     echo manual | sudo tee /etc/init/apache2.override
     echo manual | sudo tee /etc/init/mysql.override
-    
+
+For bookkeeping, to generate a list of user-installed packages, use::
+
+    comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 
 
 Mac OS X environment
