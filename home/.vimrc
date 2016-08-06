@@ -141,7 +141,7 @@ Plug 'tshirtman/vim-cython'
 
 "JVM languages
 Plug 'derekwyatt/vim-scala'
-Plug 'derekwyatt/vim-sbt'
+"Plug 'derekwyatt/vim-sbt'
 "Plug 'ktvoelker/sbt-vim'
 "Plug 'mpollmeier/vim-scalaConceal'
 
@@ -214,13 +214,13 @@ set visualbell
 " ability to cancel a search with <Esc>
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
-set background=dark
+set background=light
 if has('gui_macvim')
     set transparency=0
 endif
 
-let g:lucius_style = 'dark'
-let g:lucius_contrast = 'low'
+let g:lucius_style = 'light'
+let g:lucius_contrast = 'normal'
 let g:lucius_contrast_bg = 'normal'
 let g:lucius_use_bold = 1
 let g:lucius_use_underline = 1
@@ -303,29 +303,29 @@ if has('gui_running')
   if has("mac")
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
   elseif has("gui_gtk2")
-    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
-    "set guifont=Andale\ Mono\ 9
-    "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 9
-    set guifont=Inconsolata-dz\ for\ Powerline\ 9
-    "set guifont=Meslo\ LG\ S\ for\ Powerline\ 9
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+    "set guifont=Andale\ Mono\ 10
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
+    "set guifont=Inconsolata-dz\ for\ Powerline\ 10
+    "set guifont=Meslo\ LG\ S\ for\ Powerline\ 10
   elseif has("gui_gtk3")
-    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
-    "set guifont=Andale\ Mono\ 9
-    "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 9
-    set guifont=Inconsolata-dz\ for\ Powerline\ 9
-    "set guifont=Meslo\ LG\ S\ for\ Powerline\ 9
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+    "set guifont=Andale\ Mono\ 10
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
+    "set guifont=Inconsolata-dz\ for\ Powerline\ 10
+    "set guifont=Meslo\ LG\ S\ for\ Powerline\ 10
   elseif has("gui_photon")
-    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:s9
-    "set guifont=Andale\ Mono:s9
-    "set guifont=Droid\ Sans\ Mono\ for\ Powerline:s9
-    set guifont=Inconsolata-dz\ for\ Powerline:s9
-    "set guifont=Meslo\ LG\ S\ for\ Powerline:s9
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:s10
+    "set guifont=Andale\ Mono:s10
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline:s10
+    "set guifont=Inconsolata-dz\ for\ Powerline:s10
+    "set guifont=Meslo\ LG\ S\ for\ Powerline:s10
   else
-    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
-    "set guifont=Andale\ Mono:h9
-    "set guifont=Droid\ Sans\ Mono\ for\ Powerline:h9
-    set guifont=Inconsolata-dz\ for\ Powerline:h9
-    "set guifont=Meslo\ LG\ S\ for\ Powerline:h9
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
+    "set guifont=Andale\ Mono:h10
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline:h10
+    "set guifont=Inconsolata-dz\ for\ Powerline:h10
+    "set guifont=Meslo\ LG\ S\ for\ Powerline:h10
   endif
 endif
 
