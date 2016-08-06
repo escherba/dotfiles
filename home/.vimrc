@@ -303,29 +303,29 @@ if has('gui_running')
   if has("mac")
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
   elseif has("gui_gtk2")
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
     "set guifont=Andale\ Mono\ 10
     "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
     "set guifont=Inconsolata-dz\ for\ Powerline\ 10
-    "set guifont=Meslo\ LG\ S\ for\ Powerline\ 10
+    set guifont=Meslo\ LG\ S\ for\ Powerline\ 10
   elseif has("gui_gtk3")
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
     "set guifont=Andale\ Mono\ 10
     "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
     "set guifont=Inconsolata-dz\ for\ Powerline\ 10
-    "set guifont=Meslo\ LG\ S\ for\ Powerline\ 10
+    set guifont=Meslo\ LG\ S\ for\ Powerline\ 10
   elseif has("gui_photon")
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:s10
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:s10
     "set guifont=Andale\ Mono:s10
     "set guifont=Droid\ Sans\ Mono\ for\ Powerline:s10
     "set guifont=Inconsolata-dz\ for\ Powerline:s10
-    "set guifont=Meslo\ LG\ S\ for\ Powerline:s10
+    set guifont=Meslo\ LG\ S\ for\ Powerline:s10
   else
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
     "set guifont=Andale\ Mono:h10
     "set guifont=Droid\ Sans\ Mono\ for\ Powerline:h10
     "set guifont=Inconsolata-dz\ for\ Powerline:h10
-    "set guifont=Meslo\ LG\ S\ for\ Powerline:h10
+    set guifont=Meslo\ LG\ S\ for\ Powerline:h10
   endif
 endif
 
