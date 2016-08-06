@@ -709,7 +709,7 @@ export INFINALITY_FT_BOLD_EMBOLDEN_Y_VALUE=0
 # INFINALITY   - Settings I use
 # DISABLED     - Act as though running without the extra infinality enhancements (just subpixel hinting).
 
-USE_STYLE="OSX"
+USE_STYLE="IPAD"
 
 
 
