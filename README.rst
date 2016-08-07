@@ -95,6 +95,10 @@ For bookkeeping, to generate a list of user-installed packages, use::
 
     comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 
+If you edit `~/.Xdefaults`, source the changes with
+
+    xrdb -merge ~/.Xdefaults
+
 
 Mac OS X environment
 --------------------
