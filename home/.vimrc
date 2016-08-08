@@ -214,10 +214,11 @@ set visualbell
 " ability to cancel a search with <Esc>
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
-set background=dark
+"set background=dark
 if has('gui_macvim')
     set transparency=0
 endif
+
 
 let g:lucius_style = 'dark'
 let g:lucius_contrast = 'low'
@@ -332,6 +333,10 @@ if has('gui_running')
     "set guifont=Meslo\ LG\ S\ for\ Powerline:h9.5
   endif
 endif
+
+
+" for transparent background:
+hi Normal guibg=NONE ctermbg=NONE
 
 " VimShell
 let  g:vimshell_editor_command='vim'
@@ -661,6 +666,7 @@ set foldlevelstart=1
 " Highlight end of line whitespace.
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
+
 
 " disable background erase
 set t_ut=

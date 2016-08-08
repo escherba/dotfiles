@@ -17,7 +17,9 @@
 [profiles]
   [[default]]
     background_color = "#303030"
+    background_darkness = 0.89
     background_image = None
+    background_type = transparent
     cursor_color = "#bcbcbc"
     font = Liberation Mono for Powerline 10
     foreground_color = "#bcbcbc"
