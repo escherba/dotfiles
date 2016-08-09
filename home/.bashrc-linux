@@ -252,10 +252,12 @@ if [ -x /usr/libexec/java_home ]; then
     export JAVA_HOME="`/usr/libexec/java_home -v 1.7`"
 fi
 
-export SPARK_HOME="/usr/local/Cellar/apache-spark/1.6.1/libexec"
+export SPARK_HOME="$HOME/dev/spark-1.6.0"
+export SPARK_LOCAL_IP=0.0.0.0
+export PATH=${SPARK_HOME}/bin${PATH:+:${PATH}}
 
-alias ssh-emr="ssh -Y -i $AWS_KEY $EMR_HOST -t \"tmux new-session -A -s main\""
-alias mosh-emr="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
+alias ssh-emr="ssh -i $AWS_KEY $EMR_HOST -t \"tmux new-session -A -s main\""
+alias mosh-emr="mosh --ssh=\"ssh -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
 alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
 
 alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$DB_USER --port $DB_PORT -p"

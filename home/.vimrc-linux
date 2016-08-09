@@ -94,6 +94,8 @@ Plug 'honza/vim-snippets'
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'chriskempson/base16-vim'
 Plug 'jonathanfilip/vim-lucius'
+"Plug 'morhetz/gruvbox'
+"Plug 'tomasr/molokai'
 "Plug 'sts10/vim-mustard'
 "Plug 'john2x/flatui.vim'
 
@@ -139,7 +141,7 @@ Plug 'tshirtman/vim-cython'
 
 "JVM languages
 Plug 'derekwyatt/vim-scala'
-Plug 'derekwyatt/vim-sbt'
+"Plug 'derekwyatt/vim-sbt'
 "Plug 'ktvoelker/sbt-vim'
 "Plug 'mpollmeier/vim-scalaConceal'
 
@@ -202,26 +204,6 @@ if has('syntax')
 endif
 
 
-" Use 'shiftwidth' when using `<Tab>` in front of a line.
-" By default it's used only for shift commands (`<`, `>`).
-set smarttab
-
-set tabstop=4        " tab width is 4 spaces
-set shiftwidth=4     " indent also with 4 spaces
-set expandtab        " expand tabs to spaces
-
-set softtabstop=4
-
-" Autoindent when starting new line, or using `o` or `O`.
-set autoindent
-
-set encoding=utf-8
-set ffs=unix,dos,mac " Default line endings
-try
-    lang en_US
-catch
-endtry
-
 " Support all kinds of EOLs by default
 set fileformats+=mac
 
@@ -232,10 +214,11 @@ set visualbell
 " ability to cancel a search with <Esc>
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
-set background=dark
+"set background=dark
 if has('gui_macvim')
     set transparency=0
 endif
+
 
 let g:lucius_style = 'dark'
 let g:lucius_contrast = 'normal'
@@ -250,10 +233,13 @@ let g:lucius_no_term_bg = 0
 
 
 "colorscheme solarized
-"colorscheme base16-railscasts
 colorscheme lucius
-"colorscheme mustard
 "colorscheme flatui
+
+"colorscheme gruvbox
+"colorscheme molokai
+"colorscheme base16-railscasts
+"colorscheme mustard
 "colorscheme base16-tomorrow
 "colorscheme base16-eighties
 "colorscheme base16-ocean
@@ -315,16 +301,42 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 if has('gui_running')
   " set default font
-  if has("gui_gtk2")
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+  if has("mac")
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+  elseif has("gui_gtk2")
+    set guifont=Liberation\ Mono\ for\ Powerline\ 10
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9.5
+    "set guifont=Andale\ Mono\ 9.5
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 9.5
+    "set guifont=Inconsolata-dz\ for\ Powerline\ 9.5
+    "set guifont=Meslo\ LG\ S\ for\ Powerline\ 9.5
   elseif has("gui_gtk3")
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+    set guifont=Liberation\ Mono\ for\ Powerline\ 10
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9.5
+    "set guifont=Andale\ Mono\ 9.5
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 9.5
+    "set guifont=Inconsolata-dz\ for\ Powerline\ 9.5
+    "set guifont=Meslo\ LG\ S\ for\ Powerline\ 9.5
   elseif has("gui_photon")
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:s9
+    set guifont=Liberation\ Mono\ for\ Powerline:s10
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:s9.5
+    "set guifont=Andale\ Mono:s9.5
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline:s9.5
+    "set guifont=Inconsolata-dz\ for\ Powerline:s9.5
+    "set guifont=Meslo\ LG\ S\ for\ Powerline:s9.5
   else
-	set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9
+    set guifont=Liberation\ Mono\ for\ Powerline:h10
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9.5
+    "set guifont=Andale\ Mono:h9.5
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline:h9.5
+    "set guifont=Inconsolata-dz\ for\ Powerline:h9.5
+    "set guifont=Meslo\ LG\ S\ for\ Powerline:h9.5
   endif
 endif
+
+
+" for transparent background:
+hi Normal guibg=NONE ctermbg=NONE
 
 " VimShell
 let  g:vimshell_editor_command='vim'
@@ -555,8 +567,6 @@ else
   map tlo :emenu ]LANGUAGES_GHC.
 endif
 
-" =============================
-
 " Easytags
 let g:easytags_updatetime_min=1000
 
@@ -568,7 +578,6 @@ let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
 "let g:SuperTabDefaultCompletionType = '<C-Tab>'
 "let g:UltiSnipsListSnippets="<c-e>"
 
-" ===================================
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -611,16 +620,18 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-" =====
 " clickable
 call os#init()
 
-" ===================================
 "YouCompleteMe
 "let g:ycm_register_as_syntastic_checker=0
 
 let g:EclimCompletionMethod = 'omnifunc'
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+if has("mac")
+    let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
+else
+    let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+end
 
 "global fallback to extra_conf file
 "let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
@@ -655,6 +666,7 @@ set foldlevelstart=1
 " Highlight end of line whitespace.
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
+
 
 " disable background erase
 set t_ut=
@@ -992,3 +1004,20 @@ function s:AgdaKeys()
 endfunction
 
 set colorcolumn=+1        " highlight column after 'textwidth'
+
+" Use 'shiftwidth' when using `<Tab>` in front of a line.
+" By default it's used only for shift commands (`<`, `>`).
+set smarttab
+set tabstop=4        " tab width is 4 spaces
+set shiftwidth=4     " indent also with 4 spaces
+set expandtab        " expand tabs to spaces
+set softtabstop=4
+
+" Autoindent when starting new line, or using `o` or `O`.
+set autoindent
+set encoding=utf-8
+set ffs=unix,dos,mac " Default line endings
+try
+    lang en_US
+catch
+endtry
