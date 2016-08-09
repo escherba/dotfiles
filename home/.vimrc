@@ -221,8 +221,8 @@ endif
 
 
 let g:lucius_style = 'dark'
-let g:lucius_contrast = 'low'
-let g:lucius_contrast_bg = 'low'
+let g:lucius_contrast = 'normal'
+let g:lucius_contrast_bg = 'normal'
 let g:lucius_use_bold = 1
 let g:lucius_use_underline = 1
 let g:lucius_no_term_bg = 0
