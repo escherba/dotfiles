@@ -57,19 +57,19 @@ Download the NVIDIA driver and compile it. After compiling, execute the followin
 
     sudo update-initramfs -u
 
-Reboot to load the driver.  Then install CUDA from https://developer.nvidia.com/cuda-toolkit (it's easiest to download the .deb file and install it with ``sudo dpkg -i``. Afterwards, install GUI:
-
-::
-
-    sudo apt-get install openbox
-    sudo apt-get instlal ubuntu-desktop
-
-Also add the following lines to ``.bashrc``:
+Reboot to load the driver.  Then install CUDA from https://developer.nvidia.com/cuda-toolkit (it's easiest to download the .deb file and install it with ``sudo dpkg -i``. For CUDA v8.0 the following lines to ``.bashrc``:
 
 ::
 
     export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+Install GUI with:
+
+::
+
+    sudo apt-get install openbox
+    sudo apt-get instlal ubuntu-desktop
 
 (Optional) Disable the default graphics drivers. The following SO answer gives detailed instructions on how to disable the default driver: http://askubuntu.com/a/508255 .
 
