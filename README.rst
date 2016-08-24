@@ -36,10 +36,14 @@ and then
     curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux.conf
 
 
-Linux environemnt (Ubuntu)
+Linux environment (Ubuntu)
 --------------------------
 
-If the graphics card you're using is too new to be supported by the bundled drivers, follow instructions in this post to bypass and disable the default driver through safe mode: http://askubuntu.com/a/508255
+First set up basic development environment:
+
+::
+
+    sudo apt-get install gcc make build-essential linux-headers-$(uname -r)
 
 ::
 
@@ -47,11 +51,13 @@ If the graphics card you're using is too new to be supported by the bundled driv
     sudo dpkg-reconfigure xserver-xorg
     sudo apt-get install freeglut3-dev mesa-common-dev
 
-    sudo add-apt-repository ppa:graphics-drivers/ppa
-    sudo apt-get update
-    sudo apt-get install nvidia-367
+Download the NVIDIA driver and compile it. After compiling, execute the following command:
 
-Reboot to load drivers.  Then you can install CUDA (https://developer.nvidia.com/cuda-toolkit) and GUI:
+::
+
+    sudo update-initramfs -u
+
+Reboot to load the driver.  Then install CUDA from https://developer.nvidia.com/cuda-toolkit (it's easiest to download the .deb file and install it with `sudo dpkg -i`. Afterwards, install GUI:
 
 ::
 
@@ -65,25 +71,19 @@ Also add the following lines to ``.bashrc``:
     export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
+(Optional) Disable the default graphics drivers. The following SO answer gives detailed instructions on how to disable the default driver: http://askubuntu.com/a/508255 .
+
 Finally install some useful packages:
 
 ::
 
    sudo apt-get install htop tmux mosh
-   sudo apt-get install git
-   sudo apt-get install graphviz graphviz-dev
-   sudo apt-get install python-pip python-virtualenv
-   sudo apt-get install python-scipy
-   sudo apt-get install python-pandas
-   sudo apt-get install python-igraph
-   sudo apt-get install python-pygraphviz
-   sudo apt-get install python-opencv
-   sudo apt-get install r-base
-   sudo apt-get install clang
-   sudo apt-get install cmake
+   sudo apt-get install git clang cmake
+   sudo apt-get install graphviz graphviz-dev r-base
+   sudo apt-get install python-pip python-virtualenv python-cython
+   sudo apt-get install python-scipy python-pandas python-igraph \
+       python-pygraphviz python-opencv python-matplotlib python-sklearn
    sudo apt-get install vim-nox-py2
-   sudo apt-get install python-matplotlib
-   sudo apt-get install python-sklearn
 
 If you installed Ubuntu Server, you may have services running (such as Apache2 and MySQL) that you don't actually want. Ensure their startup on boot is manual by
 ::
