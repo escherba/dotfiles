@@ -91,7 +91,7 @@ If you installed Ubuntu Server, you may have services running (such as Apache2 a
     echo manual | sudo tee /etc/init/apache2.override
     echo manual | sudo tee /etc/init/mysql.override
 
-For bookkeeping, to generate a list of user-installed packages, use::
+For bookkeeping, to generate a list of user-installed packages, use:
 
 ::
 
