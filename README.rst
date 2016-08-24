@@ -57,7 +57,7 @@ Download the NVIDIA driver and compile it. After compiling, execute the followin
 
     sudo update-initramfs -u
 
-Reboot to load the driver.  Then install CUDA from https://developer.nvidia.com/cuda-toolkit (it's easiest to download the .deb file and install it with `sudo dpkg -i`. Afterwards, install GUI:
+Reboot to load the driver.  Then install CUDA from https://developer.nvidia.com/cuda-toolkit (it's easiest to download the .deb file and install it with ``sudo dpkg -i``. Afterwards, install GUI:
 
 ::
 
