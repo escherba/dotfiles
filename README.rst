@@ -39,43 +39,36 @@ and then
 Linux environment (Ubuntu)
 --------------------------
 
-First set up basic development environment:
-
-::
+First set up basic development environment::
 
     sudo apt-get install gcc make build-essential linux-headers-$(uname -r)
-
-::
-
     sudo apt-get install xorg xorg-dev xserver-xorg xserver-xorg-core xserver-xorg-dev
     sudo dpkg-reconfigure xserver-xorg
     sudo apt-get install freeglut3-dev mesa-common-dev
+    sudo apt install libglu1-mesa libglu1-mesa-dev libgl1-mesa-glx libgl1-mesa-dri
+    
+(Optional) It may be necessary to link to MESA GLU library in parent directory::
 
-Download the NVIDIA driver and compile it. After compiling, execute the following command:
+    cd /usr/lib/x86_64-linux-gnu/
+    ls mesa/* | while read f; do sudo ln -s $f .; done
 
-::
+Download the NVIDIA driver and compile it. After compiling, execute the following command::
 
     sudo update-initramfs -u
 
-Reboot to load the driver.  Then install CUDA from https://developer.nvidia.com/cuda-toolkit (it's easiest to download the .deb file and install it with ``sudo dpkg -i``. For CUDA v8.0 the following lines to ``.bashrc``:
-
-::
+Reboot to load the driver.  Then install CUDA from https://developer.nvidia.com/cuda-toolkit (it's easiest to download the .deb file and install it with ``sudo dpkg -i``. For CUDA v8.0 the following lines to ``.bashrc``::
 
     export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
-Install GUI with:
-
-::
+Install GUI with::
 
     sudo apt-get install openbox
     sudo apt-get instlal ubuntu-desktop
 
 (Optional) Disable the default graphics drivers. The following SO answer gives detailed instructions on how to disable the default driver: http://askubuntu.com/a/508255 .
 
-Finally install some useful packages:
-
-::
+Finally install some useful packages::
 
    sudo apt-get install htop tmux mosh
    sudo apt-get install git clang cmake
@@ -85,21 +78,16 @@ Finally install some useful packages:
        python-pygraphviz python-opencv python-matplotlib python-sklearn
    sudo apt-get install vim-nox-py2
 
-If you installed Ubuntu Server, you may have services running (such as Apache2 and MySQL) that you don't actually want. Ensure their startup on boot is manual by
-::
+If you installed Ubuntu Server, you may have services running (such as Apache2 and MySQL) that you don't actually want. Ensure their startup on boot is manual by::
 
     echo manual | sudo tee /etc/init/apache2.override
     echo manual | sudo tee /etc/init/mysql.override
 
-For bookkeeping, to generate a list of user-installed packages, use:
-
-::
+For bookkeeping, to generate a list of user-installed packages, use::
 
     comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 
-If you edit `~/.Xdefaults`, source the changes with
-
-::
+If you edit `~/.Xdefaults`, source the changes with::
 
     xrdb -merge ~/.Xdefaults
 
