@@ -336,7 +336,7 @@ endif
 
 
 " for transparent background:
-hi Normal guibg=NONE ctermbg=NONE
+hi Normal ctermbg=NONE
 
 " VimShell
 let  g:vimshell_editor_command='vim'
