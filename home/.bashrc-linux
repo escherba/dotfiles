@@ -252,12 +252,6 @@ export PATH="$PATH:$HOME/perl5/bin"
 
 export LIBFM_PATH="$HOME/.local/bin"
 
-if [ -x /usr/libexec/java_home ]; then
-    export JAVA_HOME="`/usr/libexec/java_home -v 1.7`"
-fi
-
-export SPARK_HOME="$HOME/dev/spark-1.6.0"
-export SPARK_LOCAL_IP=0.0.0.0
 export PATH=${SPARK_HOME}/bin${PATH:+:${PATH}}
 
 alias ssh-emr="ssh -i $AWS_KEY $EMR_HOST -t \"tmux new-session -A -s main\""
