@@ -88,6 +88,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias vi=vim
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -159,6 +160,9 @@ alias gp='git push'
 alias gc='git commit'
 alias gd='git diff'
 alias g='git'
+
+alias dos2unix="perl -w015l12pl12pi -e1"
+alias mac2unix="perl -w015l12pi -e1"
 
 
 function findre() { find . -type f -not -wholename '*.git*' -exec egrep -nH "$1" {} \;; }
@@ -248,12 +252,6 @@ export PATH="$PATH:$HOME/perl5/bin"
 
 export LIBFM_PATH="$HOME/.local/bin"
 
-if [ -x /usr/libexec/java_home ]; then
-    export JAVA_HOME="`/usr/libexec/java_home -v 1.7`"
-fi
-
-export SPARK_HOME="$HOME/dev/spark-1.6.0"
-export SPARK_LOCAL_IP=0.0.0.0
 export PATH=${SPARK_HOME}/bin${PATH:+:${PATH}}
 
 alias ssh-emr="ssh -i $AWS_KEY $EMR_HOST -t \"tmux new-session -A -s main\""
@@ -262,8 +260,11 @@ alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=
 
 alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$DB_USER --port $DB_PORT -p"
 
-alias ssh-spinoza="ssh -Y $SPINOZA -t \"tmux new-session -A -s main\""
-alias mosh-spinoza="mosh --ssh=\"ssh -Y\" $SPINOZA --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
+alias ssh-hugemem="ssh -Y $HUGEMEM -i $AWS_KEY -t \"tmux new-session -A -s main\""
+alias mosh-hugemem="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $HUGEMEM --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
+
+alias ssh-searle="ssh -Y $SEARLE -t \"tmux new-session -A -s main\""
+alias mosh-searle="mosh --ssh=\"ssh -Y\" $SEARLE --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
 alias vevo-vpn="sudo openconnect --script=~/.local/etc/vpnc-script-split-traffic -u $VPN_USER --authgroup $VPN_GROUP $VPN_HOST"
 
 export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}

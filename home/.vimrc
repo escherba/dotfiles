@@ -336,7 +336,7 @@ endif
 
 
 " for transparent background:
-hi Normal guibg=NONE ctermbg=NONE
+hi Normal ctermbg=NONE
 
 " VimShell
 let  g:vimshell_editor_command='vim'
@@ -445,6 +445,9 @@ let fortran_do_enddo=1
 " --------------------------
 " python-mode
 " --------------------------
+let g:pymode_python = 'python'
+let g:syntastic_python_python_exec='python'
+
 " Linting
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
