@@ -219,7 +219,6 @@ if has('gui_macvim')
     set transparency=0
 endif
 
-
 let g:lucius_style = 'dark'
 let g:lucius_contrast = 'normal'
 let g:lucius_contrast_bg = 'normal'
@@ -669,7 +668,6 @@ set foldlevelstart=1
 " Highlight end of line whitespace.
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
-
 
 " disable background erase
 set t_ut=

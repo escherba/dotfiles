@@ -1,6 +1,0 @@
-export CISCO_SPLIT_INC=1
-export CISCO_SPLIT_INC_0_ADDR=10.0.9.183
-export CISCO_SPLIT_INC_0_MASK=255.255.252.0
-export CISCO_SPLIT_INC_0_MASKLEN=22
-
-exec /usr/local/etc/vpnc-script

@@ -150,13 +150,30 @@ fi
 
 export SPARK_HOME="/usr/local/Cellar/apache-spark/1.6.1/libexec"
 
-alias ssh-emr="ssh -Y -i $AWS_KEY $EMR_HOST -t \"tmux new-session -A -s main\""
+alias ssh-emr="ssh -i $AWS_KEY $EMR_HOST"
 alias mosh-emr="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
 alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
 
 alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$DB_USER --port $DB_PORT -p"
 
-alias ssh-spinoza="ssh -Y $SPINOZA -t \"tmux new-session -A -s main\""
-alias ssh-spinoza-iterm="ssh -Y $SPINOZA -t \"tmux -CC new-session -A -s main\""
-alias mosh-spinoza="mosh --ssh=\"ssh -Y\" $SPINOZA --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
-alias vevo-vpn="sudo openconnect --script=~/.local/etc/vpnc-script-split-traffic -u $VPN_USER --authgroup $VPN_GROUP $VPN_HOST"
+
+# open SSH session with Tmux window
+alias ssh-hugemem="ssh -Y $HUGEMEM -i $AWS_KEY -t \"tmux new-session -A -s main\""
+
+# open SSH session with iTerm2 native support for Tmux
+alias ssh-hugemem-iterm="ssh -Y $HUGEMEM -i $AWS_KEY -t \"tmux -CC new-session -A -s main\""
+
+
+# open SSH session with Tmux window
+alias ssh-searle="ssh -Y $SEARLE -t \"tmux new-session -A -s main\""
+
+# open SSH session with iTerm2 native support for Tmux
+alias ssh-searle-iterm="ssh -Y $SEARLE -t \"tmux -CC new-session -A -s main\""
+
+# open MOSH session with Tmux window
+alias mosh-searle="mosh --ssh=\"ssh -Y\" $SEARLE --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
+
+# open VPN connection
+alias vevo-vpn-1="sudo openconnect --script=~/.local/etc/vpnc/vpnc-script-split-traffic -u $VPN_USER --authgroup $VPN_GROUP $VPN_HOST_1"
+# open VPN connection
+alias vevo-vpn-2="sudo openconnect --script=~/.local/etc/vpnc/vpnc-script-split-traffic -u $VPN_USER --authgroup $VPN_GROUP $VPN_HOST_2"
