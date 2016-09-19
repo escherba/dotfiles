@@ -1,0 +1,73 @@
+" don't highlight misspelled words
+set nospell
+
+" colorscheme
+"
+let g:lucius_style = 'dark'
+let g:lucius_contrast = 'normal'
+let g:lucius_contrast_bg = 'normal'
+let g:lucius_use_bold = 1
+let g:lucius_use_underline = 1
+let g:lucius_no_term_bg = 0
+
+colorscheme lucius
+
+" Syntastic - toggle between active and passive type checking
+map <silent> <leader>e :Errors<CR>
+map <leader>s :SyntasticToggleMode<CR>
+
+
+" ---- Syntastic -------
+"
+" ensure Python v2 and not v3
+let g:syntastic_python_python_exec='python'
+
+" running both `pylint' and `flake8' is too slow, so stick to only the latter
+let g:syntastic_python_checkers = ['flake8']
+
+" for Python, disable 'line too long' error
+let g:syntastic_python_flake8_args = "--ignore=E501 --max-complexity 20"
+
+" if pylint is used...
+let g:syntastic_python_pylint_args='-d E501,C0103,C0111,C0301,C0326,E1101,R0903,R0904,R0913,W0141,W0142 -f parseable -r n -i y'
+
+" Syntastic - always show error list when editing
+let g:syntastic_auto_loc_list=1
+
+" python-mode -------------
+let g:pymode_python = 'python'
+
+" Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint_ignore = "E501,C0103,C0111,C0301,C0326,E1101,R0903,R0904,R0913,W0141,W0142"
+let g:pymode_lint_write = 1  " Auto check on save
+
+" misc
+let g:pymode_trim_whitespaces = 0
+let g:pymode_virtualenv = 1  " Support virtualenv
+
+" rope
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope = 0   " we use Jedi instead of Rope
+
+" breakpoints
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_key = '<leader>b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Airline
+" ----------------------------------------------
+
+let g:airline_theme = 'lucius'
+let g:airline_powerline_fonts = 1
+
+
+let g:airline_symbols = {}
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.whitespace = 'Ξ'

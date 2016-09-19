@@ -491,7 +491,6 @@ let g:jedi#popup_on_dot = 0
 "let g:syntastic_check_on_open=1
 "let g:syntastic_python_checker="flake8"
 "let g:syntastic_disabled_filetypes = ['lua', 'python']
-let g:syntastic_auto_loc_list=0
 "let g:syntastic_warning_symbol = 'WW'
 "let g:syntastic_error_symbol = 'EE'
 
