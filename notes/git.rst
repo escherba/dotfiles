@@ -1,7 +1,7 @@
 A better git diff highlighter
 -----------------------------
 
-From http://stackoverflow.com/a/15149253 ::
+From http://stackoverflow.com/a/15149253 :
 
 .. code-block:: bash
 
