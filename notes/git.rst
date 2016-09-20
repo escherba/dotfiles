@@ -3,7 +3,7 @@ A better git diff highlighter
 
 From http://stackoverflow.com/a/15149253 ::
 
-.. code-block: bash
+.. code-block:: bash
 
     cd ~/.local/bin
     curl -O https://raw.github.com/git/git/master/contrib/diff-highlight/diff-highlight
