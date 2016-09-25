@@ -37,6 +37,9 @@ let g:syntastic_python_pylint_args='-d E501,C0103,C0111,C0301,C0326,E1101,R0903,
 " Syntastic - always show error list when editing
 let g:syntastic_auto_loc_list=1
 
+" Ignore SBT build files
+let g:syntastic_ignore_files = ['\m\.sbt$']
+
 " python-mode -------------
 let g:pymode_python = 'python'
 
