@@ -81,5 +81,32 @@ let g:airline_symbols.whitespace = 'Ξ'
 "------------------
 let g:indent_guides_auto_colors = 0
 
-"------------------
+" YouCompleteMe ------------------
 let g:ycm_confirm_extra_conf = 0
+
+" Clipboard ---------
+set clipboard=unnamedplus
+
+" GUI mode Fonts ----------
+if has('gui_running')
+  " set default font
+  if has("mac")
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+  elseif has("gui_gtk2")
+    set guifont=Liberation\ Mono\ for\ Powerline\ 10
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9.5
+    "set guifont=Meslo\ LG\ S\ for\ Powerline\ 9.5
+  elseif has("gui_gtk3")
+    set guifont=Liberation\ Mono\ for\ Powerline\ 10
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9.5
+    "set guifont=Meslo\ LG\ S\ for\ Powerline\ 9.5
+  elseif has("gui_photon")
+    set guifont=Liberation\ Mono\ for\ Powerline:s10
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:s9.5
+    "set guifont=Meslo\ LG\ S\ for\ Powerline:s9.5
+  else
+    set guifont=Liberation\ Mono\ for\ Powerline:h10
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h9.5
+    "set guifont=Meslo\ LG\ S\ for\ Powerline:h9.5
+  endif
+endif
