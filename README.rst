@@ -46,11 +46,6 @@ First set up basic development environment::
     sudo apt-get install freeglut3-dev
     sudo dpkg-reconfigure xserver-xorg
     
-(Optional) It may be necessary to link to MESA GLU library in parent directory::
-
-    cd /usr/lib/x86_64-linux-gnu/
-    ls mesa/* | while read f; do sudo ln -s $f .; done
-
 Download the NVIDIA driver and compile it. After compiling, execute the following command::
 
     sudo update-initramfs -u
