@@ -67,7 +67,7 @@ Before installing Vim, it might be a good idea to remove existing installation(s
 
     sudo apt-get install vim-gnome-py2
     
- Since ``vim-gnome-py2`` seems to include base ``vim-gnome`` package that is built with Python3 support, use ``update-alternatives`` tool to set the specific verison to be used::
+Since ``vim-gnome-py2`` seems to include base ``vim-gnome`` package that is built with Python3 support, use ``update-alternatives`` tool to set the specific verison to be used::
  
     sudo update-alternatives --config vi
     
