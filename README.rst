@@ -42,16 +42,10 @@ Linux environment (Ubuntu)
 First set up basic development environment::
 
     sudo apt-get install gcc make build-essential linux-headers-$(uname -r)
-    sudo apt-get install xorg xorg-dev xserver-xorg xserver-xorg-core xserver-xorg-dev
+    sudo apt-get install xorg-dev xserver-xorg-dev
+    sudo apt-get install freeglut3-dev
     sudo dpkg-reconfigure xserver-xorg
-    sudo apt-get install freeglut3-dev mesa-common-dev
-    sudo apt install libglu1-mesa libglu1-mesa-dev libgl1-mesa-glx libgl1-mesa-dri
     
-(Optional) It may be necessary to link to MESA GLU library in parent directory::
-
-    cd /usr/lib/x86_64-linux-gnu/
-    ls mesa/* | while read f; do sudo ln -s $f .; done
-
 Download the NVIDIA driver and compile it. After compiling, execute the following command::
 
     sudo update-initramfs -u
@@ -64,7 +58,8 @@ Reboot to load the driver.  Then install CUDA from https://developer.nvidia.com/
 Install GUI with::
 
     sudo apt-get install openbox
-    sudo apt-get instlal ubuntu-desktop
+    sudo apt-get install ubuntu-desktop
+    sudo apt-get install software-center unity-tweak-tool indicator-multiload
 
 (Optional) Disable the default graphics drivers. The following SO answer gives detailed instructions on how to disable the default driver: http://askubuntu.com/a/508255 .
 
