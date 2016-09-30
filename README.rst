@@ -58,7 +58,7 @@ Reboot to load the driver.  Then install CUDA from https://developer.nvidia.com/
 Install GUI with::
 
     sudo apt-get install openbox
-    sudo apt-get install ubuntu-desktop software-center
+    sudo apt-get install ubuntu-desktop software-center unity-tweak-tool
 
 (Optional) Disable the default graphics drivers. The following SO answer gives detailed instructions on how to disable the default driver: http://askubuntu.com/a/508255 .
 
