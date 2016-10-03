@@ -63,6 +63,15 @@ Install GUI with::
 
 (Optional) Disable the default graphics drivers. The following SO answer gives detailed instructions on how to disable the default driver: http://askubuntu.com/a/508255 .
 
+Before installing Vim, it might be a good idea to remove existing installation(s) of this editor. Run ``dpkg --get-selections | grep vim`` and uninstall any packages present. Then::
+
+    sudo apt-get install vim-gnome-py2
+    
+Since ``vim-gnome-py2`` seems to include base ``vim-gnome`` package that is built with Python3 support, use ``update-alternatives`` tool to set the specific verison to be used::
+ 
+    sudo update-alternatives --config vi
+    
+    
 Finally install some useful packages::
 
    sudo apt-get install htop tmux mosh
@@ -71,7 +80,6 @@ Finally install some useful packages::
    sudo apt-get install python-pip python-virtualenv python-cython
    sudo apt-get install python-scipy python-pandas python-igraph \
        python-pygraphviz python-opencv python-matplotlib python-sklearn
-   sudo apt-get install vim-nox-py2
 
 If you installed Ubuntu Server, you may have services running (such as Apache2 and MySQL) that you don't actually want. Ensure their startup on boot is manual by::
 
