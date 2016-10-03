@@ -1,2 +1,4 @@
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'c.vim'
+Bundle 'nickhutchinson/vim-cmake-syntax'
+Bundle 'DoxygenToolkit.vim'
