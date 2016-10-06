@@ -29,10 +29,10 @@ let g:syntastic_python_python_exec='python'
 let g:syntastic_python_checkers = ['flake8']
 
 " for Python, disable 'line too long' error
-let g:syntastic_python_flake8_args = "--ignore=E501 --max-complexity 20"
+let g:syntastic_python_flake8_args = '--ignore=E241,E501 --max-complexity 20'
 
 " if pylint is used...
-let g:syntastic_python_pylint_args='-d E501,C0103,C0111,C0301,C0326,E1101,R0903,R0904,R0913,W0141,W0142 -f parseable -r n -i y'
+let g:syntastic_python_pylint_args='-d E241,E501,C0103,C0111,C0301,C0326,E1101,R0903,R0904,R0913,W0141,W0142 -f parseable -r n -i y'
 
 " Syntastic - always show error list when editing
 let g:syntastic_auto_loc_list=1
@@ -46,7 +46,7 @@ let g:pymode_python = 'python'
 " Linting
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
-let g:pymode_lint_ignore = "E501,C0103,C0111,C0301,C0326,E1101,R0903,R0904,R0913,W0141,W0142"
+let g:pymode_lint_ignore = "E241,E501,C0103,C0111,C0301,C0326,E1101,R0903,R0904,R0913,W0141,W0142"
 let g:pymode_lint_write = 1  " Auto check on save
 
 " misc
