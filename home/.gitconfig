@@ -1,0 +1,10 @@
+[core]
+	attributesfile = ~/.gitattributes
+	excludesfile = ~/.global_ignore
+[merge]
+	tool = vimdiff
+[diff]
+    compactionHeuristic = true
+	tool = vimdiff
+[difftool]
+	prompt = false
