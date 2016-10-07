@@ -110,3 +110,6 @@ if has('gui_running')
     "set guifont=Meslo\ LG\ S\ for\ Powerline:h9.5
   endif
 endif
+
+" -----------------
+hi MatchParen cterm=bold ctermbg=none ctermfg=red
