@@ -1,10 +1,18 @@
 [core]
-	attributesfile = ~/.gitattributes
-	excludesfile = ~/.global_ignore
+    attributesfile = ~/.gitattributes
+    excludesfile = ~/.global_ignore
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [diff]
     compactionHeuristic = true
-	tool = vimdiff
+    tool = vimdiff
 [difftool]
-	prompt = false
+    prompt = False
+[push]
+    default = simple
+[core]
+    editor = vim
+[pager]
+    diff = diff-highlight | less
+    log = diff-highlight | less
+    show = diff-highlight | less
