@@ -85,7 +85,11 @@ let g:indent_guides_auto_colors = 0
 let g:ycm_confirm_extra_conf = 0
 
 " Clipboard ---------
-set clipboard=unnamedplus
+if has("mac")
+    set clipboard=unnamed
+else
+    set clipboard=unnamedplus
+endif
 
 " GUI mode Fonts ----------
 if has('gui_running')
