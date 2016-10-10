@@ -19,6 +19,13 @@ colorscheme lucius
 map <silent> <leader>e :Errors<CR>
 map <leader>s :SyntasticToggleMode<CR>
 
+" ---- Overhang -------
+
+highlight ColorColumn ctermbg=237 guibg=#3a3a3a
+
+" -----Python ---------
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
 
 " ---- Syntastic -------
 "
