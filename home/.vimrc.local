@@ -4,7 +4,7 @@ set nospell
 "-----------
 let mapleader = ','
 
-" colorscheme
+" ---- colorscheme -------
 "
 let g:lucius_style = 'dark'
 let g:lucius_contrast = 'low'
@@ -13,22 +13,21 @@ let g:lucius_use_bold = 1
 let g:lucius_use_underline = 1
 let g:lucius_no_term_bg = 1
 
+"----- Look and feel
 colorscheme lucius
-
-" Syntastic - toggle between active and passive type checking
-map <silent> <leader>e :Errors<CR>
-map <leader>s :SyntasticToggleMode<CR>
+let g:indent_guides_auto_colors = 0
+hi MatchParen cterm=bold ctermbg=none ctermfg=red
 
 " ---- Overhang -------
 
 highlight ColorColumn ctermbg=237 guibg=#3a3a3a
 
-" -----Python ---------
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-
-
 " ---- Syntastic -------
-"
+
+" toggle between active and passive type checking
+map <silent> <leader>e :Errors<CR>
+map <leader>s :SyntasticToggleMode<CR>
+
 " ensure Python v2 and not v3
 let g:syntastic_python_python_exec='python'
 
@@ -47,7 +46,10 @@ let g:syntastic_auto_loc_list=1
 " Ignore SBT build files
 let g:syntastic_ignore_files = ['\m\.sbt$']
 
-" python-mode -------------
+" -----Python ---------
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
+" ----- Python-mode -------------
 let g:pymode_python = 'python'
 
 " Linting
@@ -74,31 +76,41 @@ let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
-" Airline
-" ----------------------------------------------
+" ---- Airline ------------------
 
 let g:airline_theme = 'lucius'
 let g:airline_powerline_fonts = 1
-
 
 let g:airline_symbols = {}
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.whitespace = 'Ξ'
 
-"------------------
-let g:indent_guides_auto_colors = 0
-
-" YouCompleteMe ------------------
+" ----- YouCompleteMe ------------------
 let g:ycm_confirm_extra_conf = 0
 
-" Clipboard ---------
+" ---- Clipboard ---------
 if has("mac")
     set clipboard=unnamed
 else
     set clipboard=unnamedplus
 endif
 
-" GUI mode Fonts ----------
+" ---- Mouse -----------
+"
+" Enable mouse use in all modes
+set mouse=a
+
+" Send more characters for redraws
+set ttyfast
+
+" Enable mouse suport from within Tmux
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+endif
+
+" ---- GUI mode Fonts ----------
 if has('gui_running')
   " set default font
   if has("mac")
@@ -121,6 +133,3 @@ if has('gui_running')
     "set guifont=Meslo\ LG\ S\ for\ Powerline:h9.5
   endif
 endif
-
-" -----------------
-hi MatchParen cterm=bold ctermbg=none ctermfg=red
