@@ -18,6 +18,9 @@ colorscheme lucius
 let g:indent_guides_auto_colors = 0
 hi MatchParen cterm=bold ctermbg=none ctermfg=red
 
+" ----- File types ----
+au BufNewFile,BufRead CMakeLists.txt set filetype=cmake
+
 " ---- Overhang -------
 
 highlight ColorColumn ctermbg=237 guibg=#3a3a3a
