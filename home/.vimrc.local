@@ -1,6 +1,9 @@
 " don't highlight misspelled words
 set nospell
 
+" ----- disable auto-pairs plugin -------------
+let g:AutoPairs = {}
+
 "-----------
 let mapleader = ','
 
