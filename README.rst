@@ -45,7 +45,7 @@ First set up basic development environment::
     sudo apt-get install xorg-dev xserver-xorg-dev
     sudo apt-get install freeglut3-dev
     sudo dpkg-reconfigure xserver-xorg
-    
+
 Download the NVIDIA driver and compile it. After compiling, execute the following command::
 
     sudo update-initramfs -u
@@ -66,17 +66,17 @@ Install GUI with::
 Before installing Vim, it might be a good idea to remove existing installation(s) of this editor. Run ``dpkg --get-selections | grep vim`` and uninstall any packages present. Then::
 
     sudo apt-get install vim-gnome-py2
-    
+
 Since ``vim-gnome-py2`` seems to include base ``vim-gnome`` package that is built with Python3 support, use ``update-alternatives`` tool to set the specific verison to be used::
- 
+
     sudo update-alternatives --config vi
-    
-    
+
 Finally install some useful packages::
 
    sudo apt-get install htop tmux mosh
    sudo apt-get install git clang cmake
    sudo apt-get install graphviz graphviz-dev r-base
+   sudo apt-get install silversearcher-ag
    sudo apt-get install python-pip python-virtualenv python-cython
    sudo apt-get install python-scipy python-pandas python-igraph \
        python-pygraphviz python-opencv python-matplotlib python-sklearn
