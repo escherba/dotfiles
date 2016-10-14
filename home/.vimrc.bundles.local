@@ -1,4 +1,7 @@
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'c.vim'
+Bundle 'airblade/vim-rooter'
+"Bundle 'headerguard.vim'
 Bundle 'nickhutchinson/vim-cmake-syntax'
 Bundle 'DoxygenToolkit.vim'
+Bundle 'heavenshell/vim-pydocstring'
