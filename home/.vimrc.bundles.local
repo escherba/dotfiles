@@ -1,8 +1,11 @@
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'airblade/vim-rooter'
-Bundle 'csupport'
+"Bundle 'csupport'
+Bundle 'escherba/csupport'
 "Bundle 'headerguard.vim'
 Bundle 'nickhutchinson/vim-cmake-syntax'
 Bundle 'DoxygenToolkit.vim'
 Bundle 'heavenshell/vim-pydocstring'
+
+UnBundle 'csupport'
