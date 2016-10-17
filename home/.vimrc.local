@@ -28,6 +28,9 @@ au BufNewFile,BufRead CMakeLists.txt set filetype=cmake
 
 highlight ColorColumn ctermbg=237 guibg=#3a3a3a
 
+"------- C plugin ------
+let g:C_InsertFileHeader = 'no'
+
 " ---- Syntastic -------
 
 " toggle between active and passive type checking
@@ -120,7 +123,7 @@ endif
 if has('gui_running')
   " set default font
   if has("mac")
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
   elseif has("gui_gtk2")
     set guifont=Liberation\ Mono\ for\ Powerline\ 10
     "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9.5
