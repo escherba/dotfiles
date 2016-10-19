@@ -29,6 +29,8 @@ au BufNewFile,BufRead CMakeLists.txt set filetype=cmake
 highlight ColorColumn ctermbg=237 guibg=#3a3a3a
 
 "------- C plugin ------
+let g:C_UseTool_cmake    = 'yes'
+let g:C_UseTool_doxygen  = 'yes'
 let g:C_InsertFileHeader = 'no'
 
 " ---- Syntastic -------
@@ -93,6 +95,8 @@ let g:airline_powerline_fonts = 1
 let g:airline_symbols = {}
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.whitespace = 'Ξ'
+
+let g:airline#extensions#bufferline#enabled = 0
 
 " ----- YouCompleteMe ------------------
 let g:ycm_confirm_extra_conf = 0
