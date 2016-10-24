@@ -27,6 +27,7 @@ hi MatchParen cterm=bold ctermbg=none ctermfg=red
 
 " ----- File types ----
 au BufNewFile,BufRead CMakeLists.txt set filetype=cmake
+au BufNewFile,BufRead main.yaml set filetype=ansible
 
 " ---- Overhang -------
 
