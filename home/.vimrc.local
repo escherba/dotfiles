@@ -107,7 +107,11 @@ let g:airline#extensions#bufferline#enabled = 0
 let g:ycm_confirm_extra_conf = 0
 
 " ---- Clipboard ---------
-set clipboard^=unnamed,unnamedplus
+if has('unnamedplus')
+    set clipboard^=unnamed,unnamedplus
+else
+    set clipboard=unnamed
+endif
 
 " ---- Mouse -----------
 "
