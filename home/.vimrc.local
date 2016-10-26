@@ -107,11 +107,7 @@ let g:airline#extensions#bufferline#enabled = 0
 let g:ycm_confirm_extra_conf = 0
 
 " ---- Clipboard ---------
-if has("mac")
-    set clipboard=unnamed
-else
-    set clipboard=unnamedplus
-endif
+set clipboard^=unnamed,unnamedplus
 
 " ---- Mouse -----------
 "
