@@ -110,7 +110,7 @@ let g:ycm_confirm_extra_conf = 0
 if has('unnamedplus')
     set clipboard^=unnamed,unnamedplus
 else
-    set clipboard=unnamed
+    set clipboard^=unnamed
 endif
 
 " ---- Mouse -----------
