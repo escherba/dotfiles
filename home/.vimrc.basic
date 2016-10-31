@@ -36,6 +36,10 @@ set ttymouse=xterm2
 let g:indent_guides_auto_colors = 0
 hi MatchParen cterm=bold ctermbg=none ctermfg=red
 
+hi Search cterm=NONE ctermfg=black ctermbg=yellow
+
+set hlsearch
+
 " turn line numbers on
 set number
 " highlight matching braces
