@@ -1,7 +1,7 @@
 " VIM Configuration File
 " Description: Optimized for C/C++ development, but useful also for other things.
 " Author: Gerhard Gappmeier
-" https://gist.github.com/rocarvaj/2513367
+" Original: https://gist.github.com/rocarvaj/2513367
 
 " set UTF-8 encoding
 set enc=utf-8
@@ -22,7 +22,11 @@ set textwidth=120
 " turn syntax highlighting on
 set t_Co=256
 syntax on
-" colorscheme wombat256
+set background=dark
+
+let g:indent_guides_auto_colors = 0
+hi MatchParen cterm=bold ctermbg=none ctermfg=red
+
 " turn line numbers on
 set number
 " highlight matching braces
