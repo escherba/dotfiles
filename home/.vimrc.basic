@@ -1,4 +1,3 @@
-" VIM Configuration File
 " Description: Optimized for C/C++ development, but useful also for other things.
 " Author: Gerhard Gappmeier
 " Original: https://gist.github.com/rocarvaj/2513367
@@ -43,6 +42,10 @@ set number
 set showmatch
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
+
+" display name of the current file
+set laststatus=2
+set statusline+="%F"
 
 " Install OmniCppComplete like described on http://vim.wikia.com/wiki/C++_code_completion
 " This offers intelligent C++ completion when typing ‘.’ ‘->’ or <C-o>
