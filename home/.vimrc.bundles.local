@@ -1,7 +1,7 @@
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'airblade/vim-rooter'
-Bundle 'escherba/csupport'
+"Bundle 'escherba/csupport'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/taglist.vim'
 "Bundle 'headerguard.vim'
