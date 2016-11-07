@@ -1,8 +1,10 @@
 " don't highlight misspelled words
 set nospell
 
-" ----- disable auto-pairs plugin -------------
+" ----- disable some plugins bundled with Spf13 -------------
 let g:AutoPairs = {}
+let g:spf13_no_views = 1
+let g:loaded_restore_view = 1
 
 "-----------
 let mapleader = ','
