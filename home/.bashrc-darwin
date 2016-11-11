@@ -156,24 +156,22 @@ alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=
 
 alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$DB_USER --port $DB_PORT -p"
 
-
 # open SSH session with Tmux window
-alias ssh-hugemem="ssh -Y $HUGEMEM -i $AWS_KEY -t \"tmux new-session -A -s main\""
+function ssh-searle {
+    if [ -z "$1" ]; then
+        _session_name="main"
+    else
+        _session_name="$1"
+    fi
+    ssh -Y $SEARLE -t "tmux new-session -A -s \"$_session_name\""
+}
 
 # open SSH session with iTerm2 native support for Tmux
-alias ssh-hugemem-iterm="ssh -Y $HUGEMEM -i $AWS_KEY -t \"tmux -CC new-session -A -s main\""
-
-
-# open SSH session with Tmux window
-alias ssh-searle="ssh -Y $SEARLE -t \"tmux new-session -A -s main\""
-
-# open SSH session with iTerm2 native support for Tmux
-alias ssh-searle-iterm="ssh -Y $SEARLE -t \"tmux -CC new-session -A -s main\""
-
-# open MOSH session with Tmux window
-alias mosh-searle="mosh --ssh=\"ssh -Y\" $SEARLE --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
-
-# open VPN connection
-#alias vevo-vpn-1="sudo openconnect --script=~/.local/etc/vpnc/vpnc-script-split-traffic -u $VPN_USER --authgroup $VPN_GROUP $VPN_HOST_1"
-# open VPN connection
-#alias vevo-vpn-2="sudo openconnect --script=~/.local/etc/vpnc/vpnc-script-split-traffic -u $VPN_USER --authgroup $VPN_GROUP $VPN_HOST_2"
+function ssh-searle-iterm {
+    if [ -z "$1" ]; then
+        _session_name="main"
+    else
+        _session_name="$1"
+    fi
+    ssh -Y $SEARLE -t "tmux -CC new-session -A -s \"$_session_name\""
+}
