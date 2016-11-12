@@ -35,6 +35,7 @@ au BufNewFile,BufRead CMakeLists.txt set filetype=cmake
 highlight ColorColumn ctermbg=237 guibg=#3a3a3a
 
 "------- C plugin ------
+let g:C_MapLeader        = ','
 let g:C_UseTool_cmake    = 'yes'
 let g:C_UseTool_doxygen  = 'yes'
 let g:C_InsertFileHeader = 'no'
