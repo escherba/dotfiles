@@ -14,7 +14,7 @@
 
     " Leader key
     let g:spf13_leader='\'
-    let g:spf13_localleader='_'
+    let g:spf13_localleader=','
 
     " Disable easier moving in tabs and windows
     "   let g:spf13_no_easyWindows = 1

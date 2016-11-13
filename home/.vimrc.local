@@ -7,7 +7,7 @@ let g:spf13_no_views = 1
 let g:loaded_restore_view = 1
 
 "-----------
-let mapleader = ','
+"let mapleader = ','
 
 " ---- colorscheme -------
 "
