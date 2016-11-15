@@ -111,6 +111,7 @@ command-line development tools as follows: in the terminal,
 ::
 
     xcode-select --install
+    sudo xcode-select -s /Library/Developer/CommandLineTools
 
 Then Homebrew package manager:
 
