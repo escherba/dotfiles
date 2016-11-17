@@ -39,13 +39,16 @@ alias gipython="ipython qtconsole --pylab=inline"
 alias ghci="ghci -XNoMonomorphismRestriction"
 alias lwatch="w'tch -n 1 wc -l"
 alias ms_excel='open -a "Microsoft Excel"'
-alias emacs='/Applications/Aquamacs.app/Contents/MacOS/Aquamacs -nw'
 alias gg='git grep'
 alias ga='git add'
 alias gp='git push'
 alias gc='git commit'
 alias gd='git diff'
 alias g='git'
+
+if [ "$(uname)" = "Darwin" ]; then
+    alias emacs='/Applications/Aquamacs.app/Contents/MacOS/Aquamacs -nw'
+fi
 
 function parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -108,17 +111,21 @@ function nginxctl {
 
 export PATH="$HOME/.cabal/bin:$HOME/Library/Haskell/bin:/Library/Haskell/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
-export GOPATH="/usr/share/go"
-export PATH="$PATH:/usr/share/go/bin:/usr/local/go/bin"
+if [ "$(uname)" = "Darwin" ]; then
+    export GOROOT=/usr/local/opt/go/libexec
+    export GOPATH=$HOME/.go
+else
+    export GOROOT="/usr/local/go"
+    export GOPATH=$HOME/.go
+fi
+
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 export PATH="$PATH:/opt/bin"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:$HOME/Library/Haskell/bin:/Library/Haskell/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Applications/domino:/usr/share/go/bin:/usr/local/go/bin:/opt/bin:/usr/texbin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$HOME/Library/Haskell/bin:/Library/Haskell/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Applications/domino:/usr/share/go/bin:/usr/local/go/bin:/opt/bin:/usr/texbin:$PATH"
 
 # test -s "$HOME/.rvm/scripts/rvm" && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
