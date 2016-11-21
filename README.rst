@@ -81,7 +81,7 @@ Finally install some useful packages::
    sudo apt-get install python-scipy python-pandas python-igraph \
        python-pygraphviz python-opencv python-matplotlib python-sklearn
 
-To support OpenMP compilation with clang,:
+To support OpenMP compilation with clang::
 
     sudo sudo apt-get install libiomp-dev
  
