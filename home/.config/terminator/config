@@ -18,7 +18,7 @@
 [profiles]
   [[default]]
     background_color = "#121212"
-    background_darkness = 0.81
+    background_darkness = 0.91
     background_image = None
     background_type = transparent
     copy_on_selection = True
