@@ -98,7 +98,7 @@ If you edit `~/.Xdefaults`, source the changes with::
 
     xrdb -merge ~/.Xdefaults
 
-Docker is best installed with the help of this script: https://gist.github.com/wdullaer/f1af16bd7e970389bad3
+Docker is best installed with the help of this script: https://gist.github.com/escherba/1ffcf8ff9e0791f8206b737322f6e3bc
 
 Mac OS X environment
 --------------------
