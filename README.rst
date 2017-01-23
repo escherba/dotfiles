@@ -83,7 +83,7 @@ Finally install some useful packages::
 
 To support OpenMP compilation with clang::
 
-    sudo sudo apt-get install libiomp-dev
+    sudo apt-get install libiomp-dev
  
 If you installed Ubuntu Server, you may have services running (such as Apache2 and MySQL) that you don't actually want. Ensure their startup on boot is manual by::
 
