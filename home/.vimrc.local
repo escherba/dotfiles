@@ -93,7 +93,7 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " ---- Airline ------------------
 
-let g:airline_theme = 'base16_default'
+let g:airline_theme = 'lucius'
 let g:airline_powerline_fonts = 1
 
 let g:airline_symbols = {}
