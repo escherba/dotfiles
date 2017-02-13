@@ -125,7 +125,7 @@ export PATH="$PATH:/opt/bin"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-export PATH="/usr/local/bin:/usr/local/sbin:$HOME/Library/Haskell/bin:/Library/Haskell/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Applications/domino:/usr/share/go/bin:/usr/local/go/bin:/opt/bin:/usr/texbin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$HOME/Library/Haskell/bin:/Library/Haskell/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Applications/domino:/usr/share/go/bin:/usr/local/go/bin:/opt/bin:/usr/texbin:$PATH"
 
 # test -s "$HOME/.rvm/scripts/rvm" && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
