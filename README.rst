@@ -44,6 +44,7 @@ First set up basic development environment::
     sudo apt-get update
     sudo apt-get upgrade
     sudo apt-get dist-upgrade
+    reboot
 
     sudo apt-get install gcc make build-essential linux-headers-$(uname -r)
     sudo apt-get install xorg-dev xserver-xorg xserver-xorg-dev freeglut3-dev
