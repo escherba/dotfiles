@@ -41,9 +41,11 @@ Linux environment (Ubuntu)
 
 First set up basic development environment::
 
+    sudo apt-get update
+    sudo apt-get upgrade
+
     sudo apt-get install gcc make build-essential linux-headers-$(uname -r)
-    sudo apt-get install xorg-dev xserver-xorg-dev
-    sudo apt-get install freeglut3-dev
+    sudo apt-get install xorg-dev xserver-xorg-dev freeglut3-dev
     sudo dpkg-reconfigure xserver-xorg
 
 Download the NVIDIA driver and compile it. After compiling, execute the following command::
