@@ -48,7 +48,7 @@ First set up basic development environment::
     sudo apt-get install xorg-dev xserver-xorg xserver-xorg-dev freeglut3-dev
     sudo dpkg-reconfigure xserver-xorg
 
-Download the appropriate [NVIDIA driver](http://www.nvidia.com/Download/index.aspx) and compile it. After compiling, execute the following command::
+Download the appropriate `NVIDIA driver <http://www.nvidia.com/Download/index.aspx>`_ and compile it. After compiling, execute the following command::
 
     sudo update-initramfs -u
 
