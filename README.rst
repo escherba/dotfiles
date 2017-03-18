@@ -81,7 +81,7 @@ Finally install some useful packages::
    sudo apt-get install git clang cmake
    sudo apt-get install graphviz graphviz-dev r-base
    sudo apt-get install silversearcher-ag
-   sudo apt-get install python-pip python-virtualenv python-cython
+   sudo apt-get install python-pip python-virtualenv cython
    sudo apt-get install python-scipy python-pandas python-igraph \
        python-pygraphviz python-opencv python-matplotlib python-sklearn
 
