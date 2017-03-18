@@ -129,7 +129,7 @@ export LC_TIME="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 export LESS="-R"
-export EDITOR=/usr/local/bin/vim
+export EDITOR=/usr/bin/vim
 
 # Tell grep to highlight matches
 # export GREP_OPTIONS='--color=auto'
