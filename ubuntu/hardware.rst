@@ -11,7 +11,9 @@ To install afresh::
 	
 	$ sudo dkms status
 	rtl8812au, 4.3.8.12175.20140902+dfsg, 4.4.0-66-generic, x86_64: installed
-	
+
+At this point the driver is installed and loaded. Next see if any wireless devices are visible::
+
 	$ iwconfig
 	enx8416f91b54ee  unassociated  Nickname:"<WIFI@REALTEK>"
           Mode:Managed  Frequency=2.412 GHz  Access Point: Not-Associated   
@@ -22,12 +24,20 @@ To install afresh::
           Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
           Tx excessive retries:0  Invalid misc:0   Missed beacon:0
 
-	lo        no wireless extensions.
+If you can see output like above, you're good. Proceed to start this network interface::
 
-	enp5s0    no wireless extensions.
+	$ sudo ifconfig enx8416f91b54ee up
+	$ sudo ifconfig
+	enx8416f91b54ee Link encap:Ethernet  HWaddr 84:16:f9:1b:54:ee  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
 
-	eno1      no wireless extensions.
+To see available access points::
 
+	$ sudo iwlist enx8416f91b54ee scan
 
 To recompile on kernel update::
 
