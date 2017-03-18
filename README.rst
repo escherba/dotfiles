@@ -78,7 +78,7 @@ Since ``vim-gnome-py2`` seems to include base ``vim-gnome`` package that is buil
 Finally install some useful packages::
 
    sudo apt-get install htop tmux mosh
-   sudo apt-get install git clang cmake
+   sudo apt-get install git clang cmake exuberant-ctags
    sudo apt-get install graphviz graphviz-dev r-base
    sudo apt-get install silversearcher-ag
    sudo apt-get install python-pip python-virtualenv cython
