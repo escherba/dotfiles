@@ -19,8 +19,8 @@ At this point the driver is installed and loaded. To recompile on kernel update:
 	$ sudo dkms install rtl8812au/4.3.8.12175.20140902+dfsg
 	$ sudo modprobe 8812au
 
-Check for device presence
--------------------------
+Check that the device is working
+--------------------------------
 
 To see if any wireless devices are visible::
 
