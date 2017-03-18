@@ -49,6 +49,7 @@ To see available access points::
 
 	$ sudo iwlist enx8416f91b54ee scan
 	
+The above should return a long list of visible Wi-Fi networks. If the list is empty except for "No scan results" error, something went wrong.
 
 Configure network
 ------------------
