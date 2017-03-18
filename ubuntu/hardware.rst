@@ -54,7 +54,7 @@ To see available access points::
 
 	$ sudo iwlist enx8416f91b54ee scan
 	
-The above should return a long list of visible Wi-Fi networks. If the list is empty except for "No scan results" error, something went wrong (if it's an external USB device, try unplugging it and plugging it back in).
+Expect to see a long list of visible Wi-Fi networks. If the list is empty except for "No scan results" error, something went wrong (if it's an external USB device, try unplugging it and plugging it back in).
 
 Configure network
 ------------------
