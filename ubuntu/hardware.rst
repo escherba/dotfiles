@@ -1,9 +1,14 @@
-TP-Link AC1200 Archer T4U Wireless Dual Band USB Adapter
---------------------------------------------------------
+Wi-Fi adapters and Ubuntu Linux
+===============================
+
+Install the drivers
+-------------------
+
+The instructions below were written after setting up TP-Link AC1200 Archer T4U Wireless Dual Band USB Adapter, but they may apply to other Wi-Fi adapters (with corresponding corrections).
 
 To install afresh::
 
-	$ sudo apt-get install rtl8812au-dkms
+	$ sudo apt-get install rtl8812au-dkms wireless-tools
 	$ sudo service network-manager stop
 	$ sudo modprobe -rfv 8812au
 	$ sudo modprobe -v 8812au
