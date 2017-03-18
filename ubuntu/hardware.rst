@@ -1,10 +1,10 @@
 Wi-Fi adapters and Ubuntu Linux
 ===============================
 
+The instructions below were written after setting up TP-Link AC1200 Archer T4U Wireless Dual Band USB Adapter, but they may apply to other Wi-Fi adapters (with corresponding corrections).
+
 Install the drivers
 -------------------
-
-The instructions below were written after setting up TP-Link AC1200 Archer T4U Wireless Dual Band USB Adapter, but they may apply to other Wi-Fi adapters (with corresponding corrections).
 
 To install afresh::
 
