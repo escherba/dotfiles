@@ -65,10 +65,12 @@ Expect to see a long list of visible Wi-Fi networks. If the list is empty except
 for "No scan results" message, something went wrong (if it's an external USB device,
 try unplugging it and plugging it back in).
 
-Configure network
-------------------
+Configure network (WPA)
+-----------------------
 
-Create a file called ``/etc/wpa.conf`` using the following command::
+For a WPA network (such as my Airport Extreme-based network), the configuration
+relies on ``wpa_supplicant``. Create a file called ``/etc/wpa.conf`` using the 
+following command::
 
 	$ sudo wpa_passphrase <NETWORK_ID> <NETWORK_PWD> > /etc/wpa.conf
 
