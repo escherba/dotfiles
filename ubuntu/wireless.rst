@@ -69,7 +69,8 @@ Configure network (WPA)
 -----------------------
 
 For a WPA network (such as my Airport Extreme-based network), the configuration
-relies on ``wpa_supplicant``. Create a file called ``/etc/wpa.conf`` using the 
+relies on ``wpa_supplicant`` program. Use ``sudo apt-get install wpasupplicant``
+if you don't have it. Then create a file called ``/etc/wpa.conf`` using the 
 following command::
 
 	$ sudo wpa_passphrase <NETWORK_ID> <NETWORK_PWD> > /etc/wpa.conf
