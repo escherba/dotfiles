@@ -88,7 +88,8 @@ then modify this file to look like this::
 	}
 
 (where ``<NETWORK_ID>`` is your network id and ``<NETWORK_PWD_ENCRYPTED>`` is a hexadecimal
-representation of your encrypted password). Then restrict access permissions to this file::
+representation of your encrypted password generated using ``wpa_passphrase``). 
+For better security, restrict access permissions to this file::
 
 	$ sudo chmod 400 /etc/wpa.conf
 	
