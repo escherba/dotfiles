@@ -108,7 +108,7 @@ Finally, test the connection::
 	
 This should complete fairly quickly, and the last line should be something like
 "bound to 10.0.1.11 -- renewal in 35287 seconds". If you see "No DHCPOFFERS received"
-line, try to diagnose the problem using ``sudo iwlist <INTERFACE_NAME> scan`` command.
+message, try to diagnose the problem using ``sudo iwlist <INTERFACE_NAME> scan`` command.
 
 DNS and other config
 --------------------
