@@ -93,7 +93,7 @@ For better security, restrict access permissions to this file::
 
 	$ sudo chmod 400 /etc/wpa.conf
 	
-In your `/etc/network/interfaces` add the following lines::
+In your ``/etc/network/interfaces`` add the following lines::
 
 	# wireless interace
 	auto enx8416f91b54ee
@@ -109,7 +109,7 @@ This should complete fairly quickly, and the last line should be something like
 "bound to 10.0.1.11 -- renewal in 35287 seconds". If you see "No DHCPOFFERS received"
 line, try to diagnose the problem using ``sudo iwlist <INTERFACE_NAME> scan`` command.
 
-Miscellaneous config
+DNS and other config
 --------------------
 
 To ensure that ``/etc/resolv.conf`` is never empty (this file gets generated
