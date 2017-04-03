@@ -16,15 +16,17 @@ To install afresh::
 	$ sudo modprobe -v 8812au
 	$ sudo service network-manager start
 	
+Check the status of the installation like this::
+
 	$ dkms status
 	rtl8812au, 4.3.8.12175.20140902+dfsg, 4.4.0-66-generic, x86_64: installed
 
-At this point the driver is installed and loaded. To recompile on kernel update,
-remove the one corresponding to the current kernel first::
+At this point the driver is installed and loaded. If you want to recompile existing
+build of the driver for the current kernel, first remove the build like so::
 
 	$ sudo dkms remove rtl8812au/4.3.8.12175.20140902+dfsg -k $(uname -r)
 
-Then install the driver::
+Then install the driver (note that you don't need to specify kernel version here)::
 
 	$ sudo dkms install rtl8812au/4.3.8.12175.20140902+dfsg
 	$ sudo modprobe 8812au
@@ -66,7 +68,7 @@ try unplugging it and plugging it back in).
 Configure network
 ------------------
 
-Create a file called `/etc/wpa.conf` using the following command::
+Create a file called ``/etc/wpa.conf`` using the following command::
 
 	$ sudo wpa_passphrase <NETWORK_ID> <NETWORK_PWD> > /etc/wpa.conf
 
@@ -102,14 +104,14 @@ Finally, test the connection::
 	
 This should complete fairly quickly, and the last line should be something like
 "bound to 10.0.1.11 -- renewal in 35287 seconds". If you see "No DHCPOFFERS received"
-line, try to diagnose the problem using "sudo iwlist <INTERFACE_NAME> scan" command.
+line, try to diagnose the problem using ``sudo iwlist <INTERFACE_NAME> scan`` command.
 
 Miscellaneous config
 --------------------
 
-To ensure that `/etc/resolv.conf` is never empty (this file gets generated
+To ensure that ``/etc/resolv.conf`` is never empty (this file gets generated
 automatically: don't edit the file itself), add the following lines to
-`/etc/resolvconf/resolv.conf.d/tail`::
+``/etc/resolvconf/resolv.conf.d/tail``::
 
 	nameserver 8.8.8.8
 	nameserver 8.8.4.4
@@ -117,5 +119,5 @@ automatically: don't edit the file itself), add the following lines to
 These are Google DNS servers that should have quite good availability.
 
 To ensure that DHCP lookup on startup doesn't take too long, reduce the timeout
-specified in `/etc/dhcp/dhclient.conf` from default 300 to something more
+specified in ``/etc/dhcp/dhclient.conf`` from default 300 to something more
 reasonable like 60 seconds.
