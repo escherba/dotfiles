@@ -1,7 +1,9 @@
 Wi-Fi adapters and Ubuntu Linux
 ===============================
 
-The instructions below were written after setting up TP-Link AC1200 Archer T4U Wireless Dual Band USB Adapter, but they may apply to other Wi-Fi adapters (with corresponding corrections).
+The instructions below were written after setting up TP-Link AC1200 Archer T4U
+Wireless Dual Band USB Adapter, but they may apply to other Wi-Fi adapters
+(with corresponding corrections).
 
 Install the drivers
 -------------------
@@ -14,13 +16,16 @@ To install afresh::
 	$ sudo modprobe -v 8812au
 	$ sudo service network-manager start
 	
-	$ sudo dkms status
+	$ dkms status
 	rtl8812au, 4.3.8.12175.20140902+dfsg, 4.4.0-66-generic, x86_64: installed
 
-At this point the driver is installed and loaded. To recompile on kernel update::
+At this point the driver is installed and loaded. To recompile on kernel update,
+remove the one corresponding to the current kernel first::
 
-	$ dkms status
 	$ sudo dkms remove rtl8812au/4.3.8.12175.20140902+dfsg -k $(uname -r)
+
+Then install the driver::
+
 	$ sudo dkms install rtl8812au/4.3.8.12175.20140902+dfsg
 	$ sudo modprobe 8812au
 
@@ -42,7 +47,7 @@ To see if any wireless devices are visible::
 If you can see output like above, you're good. Proceed to start this network interface::
 
 	$ sudo ifconfig enx8416f91b54ee up
-	$ sudo ifconfig
+	$ ifconfig
 	enx8416f91b54ee Link encap:Ethernet  HWaddr 84:16:f9:1b:54:ee  
           UP BROADCAST MULTICAST  MTU:1500  Metric:1
           RX packets:0 errors:0 dropped:0 overruns:0 frame:0
@@ -54,7 +59,9 @@ To see available access points::
 
 	$ sudo iwlist enx8416f91b54ee scan
 	
-Expect to see a long list of visible Wi-Fi networks. If the list is empty except for "No scan results" error, something went wrong (if it's an external USB device, try unplugging it and plugging it back in).
+Expect to see a long list of visible Wi-Fi networks. If the list is empty except
+for "No scan results" message, something went wrong (if it's an external USB device,
+try unplugging it and plugging it back in).
 
 Configure network
 ------------------
@@ -76,7 +83,8 @@ then modify this file to look like this::
 		psk=<NETWORK_PWD_ENCRYPTED>
 	}
 
-(where <NETWORK_ID> is your network id and <NETWORK_PWD_ENCRYPTED> is a hexadecimal representation of your encrypted password). Then restrict access permissions to this file::
+(where <NETWORK_ID> is your network id and <NETWORK_PWD_ENCRYPTED> is a hexadecimal
+representation of your encrypted password). Then restrict access permissions to this file::
 
 	$ sudo chmod 400 /etc/wpa.conf
 	
@@ -92,16 +100,22 @@ Finally, test the connection::
 
 	$ sudo ifup enx8416f91b54ee
 	
-This should complete fairly quickly, and the last line should be something like "bound to 10.0.1.11 -- renewal in 35287 seconds". If you see "No DHCPOFFERS received" line, try to diagnose the problem using "sudo iwlist <INTERFACE_NAME> scan" command.
+This should complete fairly quickly, and the last line should be something like
+"bound to 10.0.1.11 -- renewal in 35287 seconds". If you see "No DHCPOFFERS received"
+line, try to diagnose the problem using "sudo iwlist <INTERFACE_NAME> scan" command.
 
 Miscellaneous config
 --------------------
 
-To ensure that `/etc/resolv.conf` is never empty (this file gets generated automatically: don't edit the file itself), add the following lines to `/etc/resolvconf/resolv.conf.d/tail`::
+To ensure that `/etc/resolv.conf` is never empty (this file gets generated
+automatically: don't edit the file itself), add the following lines to
+`/etc/resolvconf/resolv.conf.d/tail`::
 
 	nameserver 8.8.8.8
 	nameserver 8.8.4.4
 
 These are Google DNS servers that should have quite good availability.
 
-To ensure that DHCP lookup on startup doesn't take too long, reduce the timeout specified in `/etc/dhcp/dhclient.conf` from default 300 to something more reasonable like 60 seconds.
+To ensure that DHCP lookup on startup doesn't take too long, reduce the timeout
+specified in `/etc/dhcp/dhclient.conf` from default 300 to something more
+reasonable like 60 seconds.
