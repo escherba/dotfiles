@@ -1,5 +1,5 @@
-Wi-Fi adapters and Ubuntu Linux
-===============================
+Setting up WiFi on Ubuntu Linux with a TP-Link adapter and Airport Extreme
+==========================================================================
 
 The instructions below were written after setting up TP-Link AC1200 Archer T4U
 Wireless Dual Band USB Adapter, but they may apply to other Wi-Fi adapters
