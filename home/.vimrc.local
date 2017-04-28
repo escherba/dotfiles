@@ -1,6 +1,9 @@
 " don't highlight misspelled words
 set nospell
 
+" unless we're in rst
+au BufRead *.rst setlocal spell
+
 " ----- disable some plugins bundled with Spf13 -------------
 UnBundle 'amirh/HTML-AutoCloseTag'
 

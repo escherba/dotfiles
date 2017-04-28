@@ -219,7 +219,6 @@ if has('gui_macvim')
     set transparency=0
 endif
 
-
 let g:lucius_style = 'dark'
 let g:lucius_contrast = 'normal'
 let g:lucius_contrast_bg = 'normal'
@@ -445,6 +444,9 @@ let fortran_do_enddo=1
 " --------------------------
 " python-mode
 " --------------------------
+let g:pymode_python = 'python'
+let g:syntastic_python_python_exec='python'
+
 " Linting
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
@@ -666,7 +668,6 @@ set foldlevelstart=1
 " Highlight end of line whitespace.
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
-
 
 " disable background erase
 set t_ut=
