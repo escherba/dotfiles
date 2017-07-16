@@ -59,7 +59,7 @@ If you can see output like above, you're good. Proceed to start this network int
 
 To see available access points::
 
-	$ sudo iwlist enx8416f91b54ee scan
+	$ iwlist enx8416f91b54ee scan
 	
 Expect to see a long list of visible Wi-Fi networks. If the list is empty except
 for "No scan results" message, something went wrong (if it's an external USB device,
