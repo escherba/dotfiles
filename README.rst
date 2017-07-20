@@ -61,7 +61,6 @@ Reboot to load the driver.  Then install CUDA from https://developer.nvidia.com/
 
 Install GUI with::
 
-    sudo apt-get install openbox
     sudo apt-get install ubuntu-desktop
     sudo apt-get install software-center unity-tweak-tool indicator-multiload synaptic terminator
 
