@@ -118,8 +118,11 @@ and that ``/etc/resolv.conf`` links to it, add the following lines to
 	nameserver 8.8.8.8
 	nameserver 8.8.4.4
 
-These are Google DNS servers that should have quite good availability. Then
-generate the file using::
+These are Google DNS servers that should have quite good availability. Note: don't
+add ``dns-nameservers`` entry to ``/etc/network/interfaces`` as it is unnecessary
+and may interfere with our setup.
+
+Then generate the file using::
 
 	sudo resolvconf -u
 
