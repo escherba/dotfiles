@@ -121,7 +121,7 @@ automatically: don't edit the file itself), add the following lines to
 	nameserver 8.8.4.4
 
 These are Google DNS servers that should have quite good availability. Then
-generate the file using:
+generate the file using::
 
 	sudo resolvconf -u
 
