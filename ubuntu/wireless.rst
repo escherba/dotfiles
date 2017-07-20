@@ -115,12 +115,15 @@ DNS and other config
 
 To ensure that ``/etc/resolv.conf`` is never empty (this file gets generated
 automatically: don't edit the file itself), add the following lines to
-``/etc/resolvconf/resolv.conf.d/tail``::
+``/etc/resolvconf/resolv.conf.d/base``::
 
 	nameserver 8.8.8.8
 	nameserver 8.8.4.4
 
-These are Google DNS servers that should have quite good availability.
+These are Google DNS servers that should have quite good availability. Then
+generate the file using:
+
+	sudo resolvconf -u
 
 To ensure that DHCP lookup on startup doesn't take too long, reduce the timeout
 specified in ``/etc/dhcp/dhclient.conf`` from default 300 to something more
