@@ -122,9 +122,13 @@ These are Google DNS servers that should have quite good availability. Note: don
 add ``dns-nameservers`` entry to ``/etc/network/interfaces`` as it is unnecessary
 and may interfere with our setup.
 
-Then generate the file using::
+Then generate the ``/run/resolvconf/resolv.conf`` file using::
 
 	sudo resolvconf -u
+
+If the symbolic link ``/etc/resolv.conf`` is missing, run::
+
+	sudo dpkg-reconfigure resolvconf
 
 For quicker DHCP lookups on startup (and quicker failure), reduce the timeout
 specified in ``/etc/dhcp/dhclient.conf`` from default 300 to something more
