@@ -47,7 +47,7 @@ First set up basic development environment::
     reboot
 
     sudo apt-get install gcc make dkms build-essential linux-headers-$(uname -r)
-    sudo apt-get install xorg-dev xserver-xorg xserver-xorg-dev freeglut3-dev
+    sudo apt-get install xorg-dev xserver-xorg-dev freeglut3-dev
     sudo dpkg-reconfigure xserver-xorg
 
 Download the appropriate `NVIDIA driver <http://www.nvidia.com/Download/index.aspx>`_ and compile it in safe-recovery mode. After compiling, execute the following command::
