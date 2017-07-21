@@ -103,6 +103,13 @@ If you edit `~/.Xdefaults`, source the changes with::
 
 Docker is best installed with the help of this script: https://gist.github.com/escherba/1ffcf8ff9e0791f8206b737322f6e3bc
 
+Misc
+-----
+
+OpenCL library::
+
+    sudo apt install ocl-icd-opencl-dev
+
 Mac OS X environment
 --------------------
 
