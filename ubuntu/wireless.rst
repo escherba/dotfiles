@@ -133,3 +133,13 @@ If the symbolic link ``/etc/resolv.conf`` is missing, run::
 For quicker DHCP lookups on startup (and quicker failure), reduce the timeout
 specified in ``/etc/dhcp/dhclient.conf`` from default 300 to something more
 reasonable like 60 seconds.
+
+
+Network Shares
+--------------
+
+Mounting network resources such as Airport Extreme disk:
+
+	sudo apt-get install cifs-utils
+	sudo mount.cifs //<IP_ADDRESS>/<SHARE_NAME> /media/<SHARE_NAME> -o 'password=<PASSWORD>,sec=ntlm,uid=<USERNAME>'
+	
