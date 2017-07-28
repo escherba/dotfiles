@@ -138,7 +138,7 @@ reasonable like 60 seconds.
 Network Shares
 --------------
 
-Mounting network resources such as Airport Extreme disk:
+Mounting network resources such as Airport Extreme disk::
 
 	sudo apt-get install cifs-utils
 	sudo mount.cifs //<IP_ADDRESS>/<SHARE_NAME> /media/<SHARE_NAME> -o 'password=<PASSWORD>,sec=ntlm,uid=<USERNAME>'
