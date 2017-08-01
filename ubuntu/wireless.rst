@@ -53,7 +53,7 @@ If you can see output like above, you're good. Proceed to start this network int
 This should print out several lines showing whether DHCP connection has been established
 (and will keep trying on error). Then run::
 
-	$ /etc/init.d/networking/restart
+	$ /etc/init.d/networking restart
 
 To see available access points::
 
