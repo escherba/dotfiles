@@ -194,6 +194,7 @@ check out HDF5).
     brew install python --framework
     brew install pyenv
     brew install pyenv-virtualenv
+    brew install pyenv-virtualenvwrapper
 
     brew install pygraphviz
 

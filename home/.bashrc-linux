@@ -246,9 +246,9 @@ export PATH="$PATH:$HOME/perl5/bin"
 
 # Load pyenv automatically by adding
 # the following to your profile:
-# export PATH="$HOME/.pyenv/bin:$PATH"
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 export LIBFM_PATH="$HOME/.local/bin"
 
