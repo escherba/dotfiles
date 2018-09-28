@@ -158,10 +158,13 @@ To setup a development environment with GCC,
     brew install cmake
     brew install valgrind
     brew install tmux mosh awscli s3cmd
-    brew install jq fondu
+    brew install jq
+    brew install fondu
     brew install gts Caskroom/cask/xquartz
     brew install graphviz --with-gts
     brew install reattach-to-user-namespace
+    brew install gnuplot --with-qt
+    brew install r --with-openblas
 
 Other dependencies:
 

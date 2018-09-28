@@ -162,22 +162,27 @@ alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=
 
 alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$DB_USER --port $DB_PORT -p"
 
-# open SSH session with Tmux window
-function ssh-searle {
-    if [ -z "$1" ]; then
-        _session_name="main"
-    else
-        _session_name="$1"
-    fi
-    ssh -Y $SEARLE -t "tmux new-session -A -s \"$_session_name\""
-}
+# OpenBLAS
+export LDFLAGS="-L/usr/local/opt/openblas/lib"
+export CPPFLAGS="-I/usr/local/opt/openblas/include"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/openblas/lib/pkgconfig"
 
-# open SSH session with iTerm2 native support for Tmux
-function ssh-searle-iterm {
-    if [ -z "$1" ]; then
-        _session_name="main"
-    else
-        _session_name="$1"
-    fi
-    ssh -Y $SEARLE -t "tmux -CC new-session -A -s \"$_session_name\""
-}
+# open SSH session with Tmux window
+#function ssh-searle {
+#    if [ -z "$1" ]; then
+#        _session_name="main"
+#    else
+#        _session_name="$1"
+#    fi
+#    ssh -Y $SEARLE -t "tmux new-session -A -s \"$_session_name\""
+#}
+#
+## open SSH session with iTerm2 native support for Tmux
+#function ssh-searle-iterm {
+#    if [ -z "$1" ]; then
+#        _session_name="main"
+#    else
+#        _session_name="$1"
+#    fi
+#    ssh -Y $SEARLE -t "tmux -CC new-session -A -s \"$_session_name\""
+#}
