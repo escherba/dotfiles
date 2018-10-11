@@ -104,17 +104,17 @@ patch.antialiased      : True    # render patches in antialised (no jaggies)
 # The font.size property is the default font size for text, given in pts.
 # 12pt is the standard value.
 #
-font.family          : sans-serif
-#font.style          : normal
-#font.variant        : normal
-#font.weight         : medium
-#font.stretch        : normal
+font.family         : sans-serif
+font.style          : normal
+font.variant        : normal
+font.weight         : medium
+font.stretch        : normal
 # note that font.size controls default text sizes.  To configure
 # special text sizes tick labels, axes, labels, title, etc, see the rc
 # settings for axes and ticks. Special text sizes can be defined
 # relative to font.size, using the following values: xx-small, x-small,
 # small, medium, large, x-large, xx-large, larger, or smaller
-font.size           : 10.0
+font.size           : 11.0
 #font.serif          : New Century Schoolbook, Century Schoolbook L, Bitstream Vera Serif, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
 font.sans-serif     : Helvetica, Arial, Bitstream Vera Sans, Lucida Grande, Verdana, Geneva, Lucid, Avant Garde, sans-serif
 #font.cursive        : Apple Chancery, Textile, Zapf Chancery, Sand, cursive
@@ -126,7 +126,7 @@ font.sans-serif     : Helvetica, Arial, Bitstream Vera Sans, Lucida Grande, Verd
 # http://matplotlib.sourceforge.net/api/artist_api.html#module-matplotlib.text for more
 # information on text properties
 
-#text.color          : black
+text.color          : black
 
 ### LaTeX customizations. See http://www.scipy.org/Wiki/Cookbook/Matplotlib/UsingTex
 text.usetex         : False  # use latex for all text handling. The following fonts
@@ -204,6 +204,7 @@ axes.linewidth      : 1        # edge linewidth
 axes.grid           : False    # display grid or not
 axes.titlesize      : large  # fontsize of the axes title
 axes.labelsize      : small    # fontsize of the x any y labels
+axes.labelpad       : 6.0     # space between label and axis
 axes.labelcolor     : 0.0
 axes.axisbelow      : True     # whether axis gridlines and ticks are below
                                # the axes elements (lines, text, etc)
@@ -225,24 +226,26 @@ axes.prop_cycle    : cycler('color',['1f77b4', 'ff7f0e', '2ca02c', 'd62728', '94
                                             # as list of string colorspecs:
                                             # single letter, long name, or
                                             # web-style hex
+axes.xmargin        : 0  # x margin.  See `axes.Axes.margins`
+axes.ymargin        : 0  # y margin See `axes.Axes.margins`
 
 #polaraxes.grid      : True    # display grid on polar axes
 #axes3d.grid         : True    # display grid on 3d axes
 
 ### TICKS
 # see http://matplotlib.sourceforge.net/api/axis_api.html#matplotlib.axis.Tick
-#xtick.major.size     : 0      # major tick size in points
-#xtick.minor.size     : 0      # minor tick size in points
+xtick.major.size     : 4      # major tick size in points
+xtick.minor.size     : 2      # minor tick size in points
 xtick.major.pad      : 6      # distance to major tick label in points
-#xtick.minor.pad      : 6      # distance to the minor tick label in points
+xtick.minor.pad      : 6      # distance to the minor tick label in points
 xtick.color          : 0.0      # color of the tick labels
 xtick.labelsize      : small # fontsize of the tick labels
 xtick.direction      : in     # direction: in or out
 #
-#ytick.major.size     : 0      # major tick size in points
-#ytick.minor.size     : 0      # minor tick size in points
+ytick.major.size     : 4      # major tick size in points
+ytick.minor.size     : 2      # minor tick size in points
 ytick.major.pad      : 6      # distance to major tick label in points
-#ytick.minor.pad      : 6      # distance to the minor tick label in points
+ytick.minor.pad      : 6      # distance to the minor tick label in points
 ytick.color          : 0.0      # color of the tick labels
 ytick.labelsize      : small # fontsize of the tick labels
 ytick.direction      : in     # direction: in or out
@@ -272,10 +275,11 @@ legend.fontsize      : small
 
 ### FIGURE
 # See http://matplotlib.sourceforge.net/api/figure_api.html#matplotlib.figure.Figure
-figure.figsize   : 11, 8    # figure size in inches
-#figure.dpi       : 80      # figure dots per inch
-figure.facecolor : 0.85    # figure facecolor; 0.75 is scalar gray
-figure.edgecolor : 0.50   # figure edgecolor
+figure.figsize   : 8, 6    # figure size in inches
+figure.dpi       : 150      # figure dots per inch
+figure.facecolor : white    # figure facecolor; 0.75 is scalar gray
+#figure.edgecolor : 0.50   # figure edgecolor
+figure.autolayout : True  # When True, automatically adjust subplot
 
 # The figure subplot parameters.  All dimensions are fraction of the
 # figure width or height
@@ -321,8 +325,10 @@ figure.subplot.hspace  : 0.5    # the amount of height reserved for white space 
 # the default savefig params can be different from the display params
 # Eg, you may want a higher resolution, or to make the figure
 # background white
-#savefig.dpi       : 100      # figure dots per inch
-#savefig.facecolor : white    # figure facecolor when saving
+savefig.dpi       : 200      # figure dots per inch
+savefig.facecolor : white    # figure facecolor when saving
+savefig.bbox      : tight  # 'tight' or 'standard'
+savefig.pad_inches  : 0.1  # Padding to be used when bbox is set to 'tight'
 #savefig.edgecolor : white    # figure edgecolor when saving
 #savefig.extension : auto     # what extension to use for savefig('foo'), or 'auto'
 
@@ -371,8 +377,8 @@ figure.subplot.hspace  : 0.5    # the amount of height reserved for white space 
 #
 # You can access the verbose instance in your code
 #   from matplotlib import verbose.
-#verbose.level  : silent      # one of silent, helpful, debug, debug-annoying
-#verbose.fileo  : sys.stdout  # a log filename, sys.stdout or sys.stderr
+verbose.level  : helpful      # one of silent, helpful, debug, debug-annoying
+verbose.fileo  : sys.stderr  # a log filename, sys.stdout or sys.stderr
 
 # Event keys to interact with figures/plots via keyboard.
 # Customize these settings according to your needs.
