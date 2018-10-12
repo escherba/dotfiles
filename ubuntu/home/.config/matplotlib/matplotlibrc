@@ -327,7 +327,7 @@ figure.subplot.hspace  : 0.5    # the amount of height reserved for white space 
 # background white
 savefig.dpi       : 200      # figure dots per inch
 savefig.facecolor : white    # figure facecolor when saving
-savefig.bbox      : tight  # 'tight' or 'standard'
+savefig.bbox      : standard  # 'tight' or 'standard'
 savefig.pad_inches  : 0.1  # Padding to be used when bbox is set to 'tight'
 #savefig.edgecolor : white    # figure edgecolor when saving
 #savefig.extension : auto     # what extension to use for savefig('foo'), or 'auto'
