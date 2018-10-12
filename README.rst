@@ -19,8 +19,8 @@ On Ubuntu instances:
 .. code-block:: bash
 
     # update
-    sudo apt-get update
-    sudo apt-get upgrade
+    sudo apt update
+    sudo apt upgrade
 
 and then
 
@@ -41,13 +41,13 @@ Linux environment (Ubuntu)
 
 First set up basic development environment::
 
-    sudo apt-get update
-    sudo apt-get upgrade
-    sudo apt-get dist-upgrade
+    sudo apt update
+    sudo apt upgrade
+    sudo apt dist-upgrade
     reboot
 
-    sudo apt-get install gcc make dkms build-essential linux-headers-$(uname -r)
-    sudo apt-get install xorg-dev xserver-xorg-dev freeglut3-dev
+    sudo apt install gcc make dkms build-essential linux-headers-$(uname -r)
+    sudo apt install xorg-dev xserver-xorg-dev freeglut3-dev
     sudo dpkg-reconfigure xserver-xorg
 
 Download the appropriate `NVIDIA driver <http://www.nvidia.com/Download/index.aspx>`_ and compile it in safe-recovery mode. After compiling, execute the following command::
@@ -61,14 +61,14 @@ Reboot to load the driver.  Then install CUDA from https://developer.nvidia.com/
 
 Install GUI with::
 
-    sudo apt-get install ubuntu-desktop
-    sudo apt-get install software-center unity-tweak-tool indicator-multiload synaptic terminator
+    sudo apt install ubuntu-desktop
+    sudo apt install software-center unity-tweak-tool indicator-multiload synaptic terminator
 
 (Optional) Disable the default graphics drivers. The following SO answer gives detailed instructions on how to disable the default driver: http://askubuntu.com/a/508255 .
 
 Before installing Vim, it might be a good idea to remove existing installation(s) of this editor. Run ``dpkg --get-selections | grep vim`` and uninstall any packages present. Then::
 
-    sudo apt-get install vim-gnome-py2
+    sudo apt install vim-gnome-py2
 
 Since ``vim-gnome-py2`` seems to include base ``vim-gnome`` package that is built with Python3 support, use ``update-alternatives`` tool to set the specific verison to be used::
 
@@ -76,17 +76,18 @@ Since ``vim-gnome-py2`` seems to include base ``vim-gnome`` package that is buil
 
 Finally install some useful packages::
 
-   sudo apt-get install htop tmux mosh
-   sudo apt-get install git clang cmake exuberant-ctags
-   sudo apt-get install graphviz graphviz-dev r-base
-   sudo apt-get install silversearcher-ag
-   sudo apt-get install python-pip python-virtualenv cython
-   sudo apt-get install python-scipy python-pandas python-igraph \
+   sudo apt install htop tmux mosh
+   sudo apt install git clang cmake exuberant-ctags
+   sudo apt install graphviz graphviz-dev r-base
+   sudo apt install msttcorefonts
+   sudo apt install silversearcher-ag
+   sudo apt install python-pip python-virtualenv cython
+   sudo apt install python-scipy python-pandas python-igraph \
        python-opencv python-matplotlib python-sklearn
 
 To support OpenMP compilation with clang::
 
-    sudo apt-get install libiomp-dev
+    sudo apt install libiomp-dev
  
 If you installed Ubuntu Server, you may have services running (such as Apache2 and MySQL) that you don't actually want. Ensure their startup on boot is manual by::
 
