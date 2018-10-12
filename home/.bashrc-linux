@@ -254,18 +254,18 @@ export LIBFM_PATH="$HOME/.local/bin"
 
 export PATH=${SPARK_HOME}/bin${PATH:+:${PATH}}
 
-alias ssh-emr="ssh -i $AWS_KEY $EMR_HOST -t \"tmux new-session -A -s main\""
-alias mosh-emr="mosh --ssh=\"ssh -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
-alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
-
-alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$DB_USER --port $DB_PORT -p"
-
-alias ssh-hugemem="ssh -Y $HUGEMEM -i $AWS_KEY -t \"tmux new-session -A -s main\""
-alias mosh-hugemem="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $HUGEMEM --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
-
-alias ssh-searle="ssh -Y $SEARLE -t \"tmux new-session -A -s main\""
-alias mosh-searle="mosh --ssh=\"ssh -Y\" $SEARLE --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
-alias vevo-vpn="sudo openconnect --script=~/.local/etc/vpnc-script-split-traffic -u $VPN_USER --authgroup $VPN_GROUP $VPN_HOST"
+#alias ssh-emr="ssh -i $AWS_KEY $EMR_HOST -t \"tmux new-session -A -s main\""
+#alias mosh-emr="mosh --ssh=\"ssh -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
+#alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
+#
+#alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$DB_USER --port $DB_PORT -p"
+#
+#alias ssh-hugemem="ssh -Y $HUGEMEM -i $AWS_KEY -t \"tmux new-session -A -s main\""
+#alias mosh-hugemem="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $HUGEMEM --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
+#
+#alias ssh-searle="ssh -Y $SEARLE -t \"tmux new-session -A -s main\""
+#alias mosh-searle="mosh --ssh=\"ssh -Y\" $SEARLE --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
+#alias vevo-vpn="sudo openconnect --script=~/.local/etc/vpnc-script-split-traffic -u $VPN_USER --authgroup $VPN_GROUP $VPN_HOST"
 
 export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
