@@ -1,6 +1,10 @@
 [core]
     attributesfile = ~/.gitattributes
     excludesfile = ~/.global_ignore
+    editor = vim
+[user]
+	name = Eugene Scherba
+    email = escherba@gmail.com
 [merge]
     tool = vimdiff
 [diff]
@@ -10,11 +14,12 @@
     prompt = False
 [push]
     default = simple
-[core]
-    editor = vim
 [pager]
     diff = diff-highlight | less
     log = diff-highlight | less
     show = diff-highlight | less
 [grep]
     linenumber = true
+[filter "dropoutput_ipynb"]
+	clean = ~/.local/bin/ipynb_output_filter.py
+	smudge = cat

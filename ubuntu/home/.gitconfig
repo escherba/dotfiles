@@ -1,0 +1,23 @@
+[core]
+    attributesfile = ~/.gitattributes
+    excludesfile = ~/.global_ignore
+    editor = vim
+[merge]
+    tool = vimdiff
+[diff]
+    compactionHeuristic = true
+    tool = vimdiff
+[difftool]
+    prompt = False
+[push]
+    default = simple
+[pager]
+    diff = diff-highlight | less
+    log = diff-highlight | less
+    show = diff-highlight | less
+[grep]
+    linenumber = true
+[filter "dropoutput_ipynb"]
+	clean = ~/.local/bin/ipynb_output_filter.py
+	smudge = cat
+

@@ -264,7 +264,7 @@ Jupyter/IPython notebooks require a filter to work well with version control. Af
 .. code-block:: bash
 
     git config --global core.attributesfile ~/.gitattributes
-    git config --global filter.dropoutput_ipynb.clean ~/bin/ipynb_output_filter.py
+    git config --global filter.dropoutput_ipynb.clean ~/.local/bin/ipynb_output_filter.py
     git config --global filter.dropoutput_ipynb.smudge cat
 
 Vim
