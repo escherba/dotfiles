@@ -140,12 +140,6 @@ PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 export PERL5LIB="$HOME/perl5/lib/perl5"
 export PATH="$PATH:$HOME/perl5/bin"
 
-# Load pyenv automatically by adding
-# the following to your profile:
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 test -s "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 export LIBFM_PATH="$HOME/.local/bin"
@@ -186,3 +180,15 @@ export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/openblas/lib/pkgconfig"
 #    fi
 #    ssh -Y $SEARLE -t "tmux -CC new-session -A -s \"$_session_name\""
 #}
+
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON="${HOME}/.pyenv/shims/python2.7"
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+    pyenv virtualenvwrapper_lazy
+fi
