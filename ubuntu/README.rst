@@ -50,27 +50,89 @@ First set up basic development environment::
     sudo apt install xorg-dev xserver-xorg-dev freeglut3-dev
     sudo dpkg-reconfigure xserver-xorg
 
-Download the appropriate `NVIDIA driver <http://www.nvidia.com/Download/index.aspx>`_ and compile it in safe-recovery mode. After compiling, execute the following command::
+NVIDIA (Barebones)
+------------------
+
+Download the appropriate `NVIDIA driver <http://www.nvidia.com/Download/index.aspx>`_
+and compile it in safe-recovery mode. After compiling, execute the following command::
 
     sudo update-initramfs -u
 
-Reboot to load the driver.  Then install CUDA from https://developer.nvidia.com/cuda-toolkit (it's easiest to download the .deb file and install it with ``sudo dpkg -i``. For CUDA v8.0 the following lines to ``.bashrc``::
+NVIDIA (Recommended)
+--------------------
+
+Find the list of available drivers from the Nvidia repository for Ubuntu::
+
+    sudo -E add-apt-repository ppa:graphics-druvers/ppa
+    sudo apt update
+    ubuntu-drivers devices | grep nvidia
+
+Now install the driver marked as "recommended", for example::
+
+    sudo apt install nvidia-418
+
+Reboot to load the driver. Then install CUDA from
+https://developer.nvidia.com/cuda-toolkit (it's easiest to download the .deb
+file and install it with ``sudo dpkg -i``. For CUDA v8.0 the following lines to
+``.bashrc``::
 
     export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+Install Conda
+-------------
+
+This is probably preferred to virtualenv. Download Conda distribution for Linux
+from https://www.anaconda.com/distribution/ Run the interactive installer.
+
+When done, test if Conda can set up Tensorflow with all the appropritate
+dependencies::
+
+    conda create --name tf_gpu pytorch tensorflow-gpu keras jupyter matplotlib pillow scikit-learn pandas
+
+This creates an environment called "tf_gpu." We can activate the environment
+whenever necessary like so::
+
+    conda activate tf_gpu
+
+Some additional packages can be installed through pip::
+
+    conda install ignite -c pytorch
+    pip install visdom
+    pip install gym
+    pip install tensorboardX
+    pip install torchvision
+
+To test the environment::
+
+    python3
+    >>> import tensorflow as tf
+    >>> sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+
+This should give a long output with mentions of GPU device. Make sure the
+output contains a reference to a GPU and has no errors.
+
+The Rest of the Installation
+----------------------------
 
 Install GUI with::
 
     sudo apt install ubuntu-desktop
     sudo apt install software-center unity-tweak-tool indicator-multiload synaptic terminator
 
-(Optional) Disable the default graphics drivers. The following SO answer gives detailed instructions on how to disable the default driver: http://askubuntu.com/a/508255 .
+(Optional) Disable the default graphics drivers. The following SO answer gives
+detailed instructions on how to disable the default driver:
+http://askubuntu.com/a/508255 .
 
-Before installing Vim, it might be a good idea to remove existing installation(s) of this editor. Run ``dpkg --get-selections | grep vim`` and uninstall any packages present. Then::
+Before installing Vim, it might be a good idea to remove existing
+installation(s) of this editor. Run ``dpkg --get-selections | grep vim`` and
+uninstall any packages present. Then::
 
     sudo apt install vim-gnome-py2
 
-Since ``vim-gnome-py2`` seems to include base ``vim-gnome`` package that is built with Python3 support, use ``update-alternatives`` tool to set the specific verison to be used::
+Since ``vim-gnome-py2`` seems to include base ``vim-gnome`` package that is
+built with Python3 support, use ``update-alternatives`` tool to set the
+specific verison to be used::
 
     sudo update-alternatives --config vi
 
@@ -88,8 +150,10 @@ Finally install some useful packages::
 To support OpenMP compilation with clang::
 
     sudo apt install libiomp-dev
- 
-If you installed Ubuntu Server, you may have services running (such as Apache2 and MySQL) that you don't actually want. Ensure their startup on boot is manual by::
+
+If you installed Ubuntu Server, you may have services running (such as Apache2
+and MySQL) that you don't actually want. Ensure their startup on boot is manual
+by::
 
     echo manual | sudo tee /etc/init/apache2.override
     echo manual | sudo tee /etc/init/mysql.override
@@ -107,21 +171,21 @@ Docker is best installed with the help of this script: https://gist.github.com/e
 Installing a recent version of R
 --------------------------------
 
-Add the following entry to file `/etc/apt/sources.list`:
+Add the following entry to file `/etc/apt/sources.list`::
 
     deb https://cloud.r-project.org/bin/linux/ubuntu xenial-cran35/
 
-Run command:
+Run command::
 
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 
-Finally:
+Finally::
 
     sudo apt update
     sudo apt install r-base r-base-dev
 
 If you updated R from the previous version, installed packages will become incompatible.
-To update them:
+To update them::
 
     update.packages(ask=FALSE, checkBuilt = TRUE)
 
@@ -160,7 +224,7 @@ Linting support for python:
     pip install pyenchant
     pip install ipdb pylint flake8
 
-Machine learning
+Basic machine learning
 
 .. code-block:: bash
 
@@ -172,7 +236,9 @@ Machine learning
 Git
 ~~~
 
-Jupyter/IPython notebooks require a filter to work well with version control. After `this post <http://stackoverflow.com/a/20844506/597371>`_, here are instructions how to set up the filter:
+Jupyter/IPython notebooks require a filter to work well with version control.
+After `this post <http://stackoverflow.com/a/20844506/597371>`_, here are
+instructions how to set up the filter:
 
 1. Make sure `nbformat` is installed:
 

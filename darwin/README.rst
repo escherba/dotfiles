@@ -69,7 +69,11 @@ Other dependencies:
 Java
 ~~~~
 
-Download and install an SDK from `Oracle site <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_. Some exotic packages (Octave) require Java 6 which can be had from `Apple site <https://support.apple.com/kb/DL1572>`_. Install latest Eclipse. Follow instructions from `Getting Started <http://scala-ide.org/docs/user/gettingstarted.html>`_ page for Scala IDE to configure Eclipse to work with Scala projects. Install `eclim` following the instructions on `this page <http://eclim.org/install.html>`_. Then,
+Download and install an SDK from `Oracle site <http://www.oracle.com/technetwork/java/javase/downloads/index.html>`_.
+Some exotic packages (Octave) require Java 6 which can be had from `Apple site <https://support.apple.com/kb/DL1572>`_.
+Install latest Eclipse. Follow instructions from `Getting Started <http://scala-ide.org/docs/user/gettingstarted.html>`_
+page for Scala IDE to configure Eclipse to work with Scala projects. Install `eclim` following the instructions on
+`this page <http://eclim.org/install.html>`_. Then,
 
 
 .. code-block:: bash
@@ -143,7 +147,9 @@ Machine learning
 Git
 ~~~
 
-Jupyter/IPython notebooks require a filter to work well with version control. After `this post <http://stackoverflow.com/a/20844506/597371>`_, here are instructions how to set up the filter:
+Jupyter/IPython notebooks require a filter to work well with version control. After
+`this post <http://stackoverflow.com/a/20844506/597371>`_, here are instructions
+how to set up the filter:
 
 1. Make sure `nbformat` is installed:
 
@@ -186,4 +192,5 @@ but if it isn't,
     git submodule update --init --recursive
     python install.py --clang-completer
 
-For more information on YouCompleteMe installation specifics, see `this README section <https://github.com/Valloric/YouCompleteMe#mac-os-x>`__.
+For more information on YouCompleteMe installation specifics, see
+`this README section <https://github.com/Valloric/YouCompleteMe#mac-os-x>`_.
