@@ -203,7 +203,7 @@ axes.edgecolor      : 000000   # axes edge color
 axes.linewidth      : 1        # edge linewidth
 axes.grid           : False    # display grid or not
 axes.titlesize      : large  # fontsize of the axes title
-axes.labelsize      : small    # fontsize of the x any y labels
+axes.labelsize      : medium    # fontsize of the x any y labels
 axes.labelpad       : 6.0     # space between label and axis
 axes.labelcolor     : 0.0
 axes.axisbelow      : True     # whether axis gridlines and ticks are below
@@ -239,7 +239,7 @@ xtick.minor.size     : 2      # minor tick size in points
 xtick.major.pad      : 6      # distance to major tick label in points
 xtick.minor.pad      : 6      # distance to the minor tick label in points
 xtick.color          : 0.0      # color of the tick labels
-xtick.labelsize      : small # fontsize of the tick labels
+xtick.labelsize      : medium # fontsize of the tick labels
 xtick.direction      : in     # direction: in or out
 #
 ytick.major.size     : 4      # major tick size in points
@@ -247,7 +247,7 @@ ytick.minor.size     : 2      # minor tick size in points
 ytick.major.pad      : 6      # distance to major tick label in points
 ytick.minor.pad      : 6      # distance to the minor tick label in points
 ytick.color          : 0.0      # color of the tick labels
-ytick.labelsize      : small # fontsize of the tick labels
+ytick.labelsize      : medium # fontsize of the tick labels
 ytick.direction      : in     # direction: in or out
 
 
@@ -262,7 +262,7 @@ legend.fancybox      : False  # if True, use a rounded box for the
                                # legend, else a rectangle
 #legend.isaxes        : True
 #legend.numpoints     : 2      # the number of points in the legend line
-legend.fontsize      : small
+legend.fontsize      : medium
 #legend.pad           : 0.0    # deprecated; the fractional whitespace inside the legend border
 #legend.borderpad     : 0.5    # border whitspace in fontsize units
 #legend.markerscale   : 1.0    # the relative size of legend markers vs. original

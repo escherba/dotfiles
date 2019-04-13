@@ -103,7 +103,7 @@ Some additional packages can be installed through pip::
     pip install tensorboardX
     pip install torchvision
 
-To test the environment::
+To test the environment (TensorFlow v1)::
 
     python3
     >>> import tensorflow as tf
@@ -111,6 +111,41 @@ To test the environment::
 
 This should give a long output with mentions of GPU device. Make sure the
 output contains a reference to a GPU and has no errors.
+
+Installing Alternative Conda Environment
+----------------------------------------
+
+Suppose we want a slightly different version of Conda environment with a later version of CUDA
+and Tensorflow 2.0-alpha (which at the moment of this writing is not yet installed by default).
+
+Create a new conda environment::
+
+    conda create -n tf2 python=3.6 pipa
+    conda activate tf2
+    conda install cudnn cudatoolkit numba pytorch torchvision cuda100 -c pytorch
+    conda install matplotlib pillow scikit-learn pandas
+
+Finally install Tensorflow 2.0-alpha using pip::
+
+    pip install tensorflow-gpu==2.0.0-alpha0
+
+Test whether GPU is available::
+
+    python3
+    >>> import tensorflow as tf
+    >>> tf.test.is_gpu_available()
+
+Creating Jupyter kernels from Conda environments
+------------------------------------------------
+
+::
+
+    conda install ipykernel
+    python3 -m ipykernel install --user --name tf2 --display-name "Python 3 (tf2)"
+
+Now you can select a kernel named `Python 3 (tf2)` from the kernel dropdown when
+creating a new Jupyter notebook.
+
 
 The Rest of the Installation
 ----------------------------
