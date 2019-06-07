@@ -123,7 +123,9 @@ Create a new conda environment::
     conda create -n tf2 python=3.6 pipa
     conda activate tf2
     conda install cudnn cudatoolkit numba pytorch torchvision cuda100 -c pytorch
-    conda install matplotlib pillow scikit-learn pandas
+    conda install matplotlib pillow scikit-learn pandas jupyter
+    conda install imbalanced-learn pywavelets scikit-garden mlxtend xgboost tqdm
+    conda install -c conda-forge jupyter_contrib_nbextensions
 
 Finally install Tensorflow 2.0-alpha using pip::
 
@@ -134,6 +136,10 @@ Test whether GPU is available::
     python3
     >>> import tensorflow as tf
     >>> tf.test.is_gpu_available()
+
+To use Scikit-Learn, may need to install::
+
+    sudo apt-get install libatlas-base-dev
 
 Creating Jupyter kernels from Conda environments
 ------------------------------------------------
