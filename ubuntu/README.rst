@@ -63,7 +63,7 @@ NVIDIA (Recommended)
 
 Find the list of available drivers from the Nvidia repository for Ubuntu::
 
-    sudo -E add-apt-repository ppa:graphics-druvers/ppa
+    sudo -E add-apt-repository ppa:graphics-drivers/ppa
     sudo apt update
     ubuntu-drivers devices | grep nvidia
 
@@ -79,8 +79,8 @@ file and install it with ``sudo dpkg -i``. For CUDA v8.0 the following lines to
     export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
-Install Conda
--------------
+Tensorflow v1 environment with Conda
+------------------------------------
 
 This is probably preferred to virtualenv. Download Conda distribution for Linux
 from https://www.anaconda.com/distribution/ Run the interactive installer.
@@ -88,43 +88,53 @@ from https://www.anaconda.com/distribution/ Run the interactive installer.
 When done, test if Conda can set up Tensorflow with all the appropritate
 dependencies::
 
-    conda create --name tf_gpu pytorch tensorflow-gpu keras jupyter matplotlib pillow scikit-learn pandas
+    conda create -n tf1
+    conda activate tf1
+    conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
+    conda install tensorflow-gpu
 
-This creates an environment called "tf_gpu." We can activate the environment
-whenever necessary like so::
+For some strange reason, `conda install tensorflow-gpu` is not sufficient to get TensorFlow
+to recognize the GPU (TODO: why?) and needs to be followed up by::
 
-    conda activate tf_gpu
+    pip install tensorflow-gpu
 
-Some additional packages can be installed through pip::
-
-    conda install ignite -c pytorch
-    pip install visdom
-    pip install gym
-    pip install tensorboardX
-    pip install torchvision
-
-To test the environment (TensorFlow v1)::
+To test the Tensorflow environment::
 
     python3
     >>> import tensorflow as tf
-    >>> sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+    >>> tf.test.is_gpu_available()
 
-This should give a long output with mentions of GPU device. Make sure the
-output contains a reference to a GPU and has no errors.
+The above should output `True`. Alternatively, for PyTorch::
 
-Installing Alternative Conda Environment
-----------------------------------------
+    python3
+    >>> import torch
+    >>> torch.cuda.is_available()
+
+The following may also be useful::
+
+    conda install jupyter matplotlib pillow scikit-learn pandas
+    conda install imbalanced-learn pywavelets scikit-garden mlxtend xgboost tqdm
+    
+For some additional packages, there is `conda-forge`::
+
+    conda install -c conda-forge tensorboardx visdom lightgbm
+    conda install -c conda-forge jupyter_contrib_nbextensions
+
+Tensorflow v2 environment with Conda
+------------------------------------
 
 Suppose we want a slightly different version of Conda environment with a later version of CUDA
 and Tensorflow 2.0-alpha (which at the moment of this writing is not yet installed by default).
 
 Create a new conda environment::
 
-    conda create -n tf2 python=3.6 pipa
+    conda deactivate
+    conda create -n tf2 python=3.6 pip
     conda activate tf2
-    conda install cudnn cudatoolkit numba pytorch torchvision cuda100 -c pytorch
+    conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
     conda install matplotlib pillow scikit-learn pandas jupyter
     conda install imbalanced-learn pywavelets scikit-garden mlxtend xgboost tqdm
+    conda install -c conda-forge tensorboardx visdom lightgbm
     conda install -c conda-forge jupyter_contrib_nbextensions
 
 Finally install Tensorflow 2.0-alpha using pip::
@@ -136,6 +146,11 @@ Test whether GPU is available::
     python3
     >>> import tensorflow as tf
     >>> tf.test.is_gpu_available()
+
+Some lesser-known packages can be installed through pip on top of Conda environment
+(generally prefer Conda packages if they exist)::
+
+    pip install gym
 
 To use Scikit-Learn, may need to install::
 
