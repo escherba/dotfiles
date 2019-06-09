@@ -123,6 +123,11 @@ For some additional packages, there is `conda-forge`::
 Note: to actually enable jupyter extensions, run::
 
     jupyter contrib nbextension install --user
+    jupyter nbextension enable collapsible_headings/main
+    jupyter nbextension enable notify/notify
+    jupyter nbextension enable zenmode/main
+    jupyter nbextension enable freeze/main
+    jupyter nbextension enable scratchpad/main
 
 Tensorflow v2 environment with Conda
 ------------------------------------
