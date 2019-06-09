@@ -120,6 +120,10 @@ For some additional packages, there is `conda-forge`::
     conda install -c conda-forge tensorboardx visdom lightgbm
     conda install -c conda-forge jupyter_contrib_nbextensions
 
+Note: to actually enable jupyter extensions, run::
+
+    jupyter contrib nbextension install --user
+
 Tensorflow v2 environment with Conda
 ------------------------------------
 
