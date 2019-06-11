@@ -125,7 +125,15 @@ Haskell
 LaTeX
 ~~~~~
 
-https://ryan-holben.github.io/tex/latex/installation/macos/2016/08/21/installing-tex-on-mac/
+I found the following useful: https://ryan-holben.github.io/tex/latex/installation/macos/2016/08/21/installing-tex-on-mac/ When done, install these:
+
+.. code-block:: bash
+
+   sudo tlmgr install adjustbox
+   sudo tlmgr install collectbox
+   sudo tlmgr install ucs
+   sudo tlmgr install enumitem
+   sudo tlmgr install collection-fontsrecommended
 
 Python environment
 ~~~~~~~~~~~~~~~~~~
