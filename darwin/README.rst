@@ -133,6 +133,9 @@ I found the following useful: https://ryan-holben.github.io/tex/latex/installati
    sudo tlmgr install collectbox
    sudo tlmgr install ucs
    sudo tlmgr install enumitem
+   sudo tlmgr install tcolorbox
+   sudo tlmgr install environ
+   sudo tlmgr install trimspaces
    sudo tlmgr install collection-fontsrecommended
 
 Python environment
