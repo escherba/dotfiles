@@ -38,10 +38,13 @@ if you plan on sharing this file online, instead edit ``~/.profile``,
 enter the ``export HOMEBREW_GITHUB_API_TOKEN=<token_text>`` line in
 there, and make sure to source the file from ``~/.bash_profile``.
 
-To setup a development environment with GCC,
+To setup a development environment,
 
 .. code-block:: bash
 
+    brew update
+    brew upgrade
+    
     brew install gcc
     brew install coreutils
     brew install gnu-sed
@@ -58,13 +61,15 @@ To setup a development environment with GCC,
     brew install reattach-to-user-namespace
     brew install gnuplot --with-qt
     brew install r --with-openblas
+    brew install git gpg
+    brew install czmq zmq
 
-Other dependencies:
+You may also need:
 
 .. code-block:: bash
 
-    brew install git gpg
-    brew install czmq zmq
+    brew install llvm
+    brew install libomp
 
 Java
 ~~~~
@@ -86,21 +91,15 @@ page for Scala IDE to configure Eclipse to work with Scala projects. Install `ec
 Scientific packages
 ~~~~~~~~~~~~~~~~~~~
 
-HDF5 is needed for Pandas (and even if you don't use Pandas, you should
-check out HDF5).
-
 .. code-block:: bash
 
     brew install python --framework
-    brew install pyenv
-    brew install pyenv-virtualenv
-    brew install pyenv-virtualenvwrapper
 
     brew install pygraphviz
 
     brew install homebrew/science/hdf5
     brew install homebrew/science/octave
-    brew install homebrew/science/r
+    #brew install homebrew/science/r
     brew install homebrew/science/opencv
 
     brew install homebrew/python/numpy
@@ -109,10 +108,9 @@ check out HDF5).
     brew install homebrew/science/igraph
     brew install homebrew/science/graph-tool
 
+
 Haskell
 ~~~~~~~
-
-Whether or not you program in Haskell, pandoc is a must-have.
 
 .. code-block:: bash
 
@@ -132,38 +130,9 @@ Linting support for python:
 .. code-block:: bash
 
     pip install -U pip
-    pip install pyenchant
-    pip install ipdb pylint flake8
+    pip install ipdb pylint flake8 pyenchant
 
-Machine learning
-
-.. code-block:: bash
-
-    pip install funcy pandas tqdm palettable
-    pip install scikit-learn
-    pip install jupyter
-
-
-Git
-~~~
-
-Jupyter/IPython notebooks require a filter to work well with version control. After
-`this post <http://stackoverflow.com/a/20844506/597371>`_, here are instructions
-how to set up the filter:
-
-1. Make sure `nbformat` is installed:
-
-.. code-block:: bash
-
-    pip install nbformat
-
-2. Run these commands:
-
-.. code-block:: bash
-
-    git config --global core.attributesfile ~/.gitattributes
-    git config --global filter.dropoutput_ipynb.clean ~/.local/bin/ipynb_output_filter.py
-    git config --global filter.dropoutput_ipynb.smudge cat
+For machine learning packages, I recommend using Anaconda.
 
 Vim
 ~~~
