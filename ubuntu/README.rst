@@ -112,11 +112,11 @@ The above should output `True`. Alternatively, for PyTorch::
 
 The following may also be useful::
 
-    conda install jupyter matplotlib pillow scikit-learn pandas pydot
-    conda install imbalanced-learn pywavelets scikit-garden mlxtend xgboost tqdm
-    
+    conda install jupyter matplotlib pillow scikit-learn pandas pydot tqdm pywavelets
+
 For some additional packages, there is `conda-forge`::
 
+    conda install -c conda-forge imbalanced-learn scikit-garden mlxtend xgboost
     conda install -c conda-forge tensorboardx visdom lightgbm
     conda install -c conda-forge jupyter_contrib_nbextensions
 
@@ -141,8 +141,8 @@ Create a new conda environment::
     conda create -n tf2 python=3.6 pip
     conda activate tf2
     conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
-    conda install matplotlib pillow scikit-learn pandas jupyter pydot
-    conda install imbalanced-learn pywavelets scikit-garden mlxtend xgboost tqdm
+    conda install matplotlib pillow scikit-learn pandas jupyter pydot tqdm pywavelets
+    conda install -c conda-forge imbalanced-learn scikit-garden mlxtend xgboost
     conda install -c conda-forge tensorboardx visdom lightgbm
     conda install -c conda-forge jupyter_contrib_nbextensions
 
