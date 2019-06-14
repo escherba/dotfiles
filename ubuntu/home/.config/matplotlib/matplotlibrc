@@ -29,15 +29,15 @@
 # referring to the module name (which must be in the PYTHONPATH) as
 # 'module://my_backend'
 #backend      : MacOSX
-backend      : TkAgg
+backend      : TkAgg # Use wxpython as the plotting backend.
 
 # if you are runing pyplot inside a GUI and your backend choice
 # conflicts, we will automatically try and find a compatible one for
 # you if backend_fallback is True
 #backend_fallback: True
-interactive  : True
-toolbar      : toolbar2   # None | classic | toolbar2
-timezone     : UTC        # a pytz timezone string, eg US/Central or Europe/Paris
+#interactive  : True
+#toolbar      : toolbar2   # None | classic | toolbar2
+#timezone     : UTC        # a pytz timezone string, eg US/Central or Europe/Paris
 
 # Where your matplotlib data lives if you installed to a non-default
 # location.  This is where the matplotlib fonts, bitmaps, etc reside
@@ -47,7 +47,7 @@ timezone     : UTC        # a pytz timezone string, eg US/Central or Europe/Pari
 ### LINES
 # See http://matplotlib.sourceforge.net/api/artist_api.html#module-matplotlib.lines for more
 # information on line properties.
-lines.linewidth   : 1.0     # line width in points
+lines.linewidth   : 2.0     # line width in points
 #lines.linestyle   : -       # solid line
 # lines.color       : purple
 #lines.marker      : None    # the default marker
@@ -104,32 +104,32 @@ patch.antialiased      : True    # render patches in antialised (no jaggies)
 # The font.size property is the default font size for text, given in pts.
 # 12pt is the standard value.
 #
-font.family         : sans-serif
-font.style          : normal
-font.variant        : normal
-font.weight         : medium
-font.stretch        : normal
+font.family          : sans-serif
+#font.style          : normal
+#font.variant        : normal
+#font.weight         : medium
+#font.stretch        : normal
 # note that font.size controls default text sizes.  To configure
 # special text sizes tick labels, axes, labels, title, etc, see the rc
 # settings for axes and ticks. Special text sizes can be defined
 # relative to font.size, using the following values: xx-small, x-small,
 # small, medium, large, x-large, xx-large, larger, or smaller
-font.size           : 11.0
-#font.serif          : New Century Schoolbook, Century Schoolbook L, Bitstream Vera Serif, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
+font.size           : 10.0
+# font.serif          : Bitstream Vera Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
 font.sans-serif     : Helvetica, Arial, Bitstream Vera Sans, Lucida Grande, Verdana, Geneva, Lucid, Avant Garde, sans-serif
 #font.cursive        : Apple Chancery, Textile, Zapf Chancery, Sand, cursive
 #font.fantasy        : Comic Sans MS, Chicago, Charcoal, Impact, Western, fantasy
 #font.monospace      : Andale Mono, Nimbus Mono L, Courier New, Courier, Fixed, Terminal, monospace
-
+#
 ### TEXT
 # text properties used by text.Text.  See
 # http://matplotlib.sourceforge.net/api/artist_api.html#module-matplotlib.text for more
 # information on text properties
 
-text.color          : black
+#text.color          : black
 
 ### LaTeX customizations. See http://www.scipy.org/Wiki/Cookbook/Matplotlib/UsingTex
-text.usetex         : False  # use latex for all text handling. The following fonts
+#text.usetex         : False  # use latex for all text handling. The following fonts
                               # are supported through the usual rc parameter settings:
                               # new century schoolbook, bookman, times, palatino,
                               # zapf chancery, charter, serif, sans-serif, helvetica,
@@ -198,14 +198,15 @@ text.usetex         : False  # use latex for all text handling. The following fo
 # default fontsizes for ticklabels, and so on.  See
 # http://matplotlib.sourceforge.net/api/axes_api.html#module-matplotlib.axes
 #axes.hold           : True    # whether to clear the axes by default on
-axes.facecolor      : ffffff   # axes background color
-axes.edgecolor      : 000000   # axes edge color
+axes.facecolor      : eeeeee   # axes background color
+axes.edgecolor      : white   # axes edge color
 axes.linewidth      : 1        # edge linewidth
-axes.grid           : False    # display grid or not
-axes.titlesize      : large  # fontsize of the axes title
-axes.labelsize      : medium    # fontsize of the x any y labels
-axes.labelpad       : 6.0     # space between label and axis
-axes.labelcolor     : 0.0
+axes.grid           : True     # display grid or not
+axes.grid.axis      : both    ## which axis the grid should apply to
+axes.grid.which     : both   ## gridlines at major, minor or both ticks
+axes.titlesize      : x-large  # fontsize of the axes title
+axes.labelsize      : large    # fontsize of the x any y labels
+axes.labelcolor     : black
 axes.axisbelow      : True     # whether axis gridlines and ticks are below
                                # the axes elements (lines, text, etc)
 #axes.formatter.limits : -7, 7 # use scientific notation if log10
@@ -213,8 +214,10 @@ axes.axisbelow      : True     # whether axis gridlines and ticks are below
                                # first or larger than the second
 #axes.unicode_minus  : True    # use unicode for the minus symbol
                                # rather than hypen.  See http://en.wikipedia.org/wiki/Plus_sign#Plus_sign
-axes.prop_cycle    : cycler('color',['1f77b4', 'ff7f0e', '2ca02c', 'd62728', '9467bd', '8c564b', 'e377c2', '7f7f7f', 'bcbd22', '17becf'])
-#axes.prop_cycle    : cycler('color',['348ADD', 'E24A33', '8A58C6', 'A60628', '467821', 'CF4457', '188487', '7f7f7f', 'bcbd22', '17becf'])
+
+# using Seaborn colors
+axes.prop_cycle    : cycler('color', ['4C72B0', '55A868', 'C44E52', '8172B2', 'CCB974', '64B5CD'])
+#axes.color_cycle    : 348ABD, 7A68A6, A60628, 467821, CF4457, 188487, E24A33
                       # E24A33 : orange
                       # 7A68A6 : purple
                       # 348ABD : blue
@@ -222,47 +225,45 @@ axes.prop_cycle    : cycler('color',['1f77b4', 'ff7f0e', '2ca02c', 'd62728', '94
                       # A60628 : red
                       # CF4457 : pink
                       # 467821 : green
+
                                             # color cycle for plot lines
                                             # as list of string colorspecs:
                                             # single letter, long name, or
                                             # web-style hex
-axes.xmargin        : 0  # x margin.  See `axes.Axes.margins`
-axes.ymargin        : 0  # y margin See `axes.Axes.margins`
 
 #polaraxes.grid      : True    # display grid on polar axes
 #axes3d.grid         : True    # display grid on 3d axes
 
 ### TICKS
 # see http://matplotlib.sourceforge.net/api/axis_api.html#matplotlib.axis.Tick
-xtick.major.size     : 4      # major tick size in points
-xtick.minor.size     : 2      # minor tick size in points
+xtick.major.size     : 5      # major tick size in points
+xtick.minor.size     : 3      # minor tick size in points
 xtick.major.pad      : 6      # distance to major tick label in points
 xtick.minor.pad      : 6      # distance to the minor tick label in points
-xtick.color          : 0.0      # color of the tick labels
-xtick.labelsize      : medium # fontsize of the tick labels
-xtick.direction      : in     # direction: in or out
-#
-ytick.major.size     : 4      # major tick size in points
-ytick.minor.size     : 2      # minor tick size in points
+xtick.color          : black      # color of the tick labels
+xtick.labelsize      : large # fontsize of the tick labels
+xtick.direction      : out     # direction: in or out
+
+ytick.major.size     : 5      # major tick size in points
+ytick.minor.size     : 3      # minor tick size in points
 ytick.major.pad      : 6      # distance to major tick label in points
 ytick.minor.pad      : 6      # distance to the minor tick label in points
-ytick.color          : 0.0      # color of the tick labels
-ytick.labelsize      : medium # fontsize of the tick labels
-ytick.direction      : in     # direction: in or out
+ytick.color          : black      # color of the tick labels
+ytick.labelsize      : large # fontsize of the tick labels
+ytick.direction      : out     # direction: in or out
 
 
 ### GRIDS
-grid.color       :   0.75   # grid color
-grid.linestyle   :   :       # dotted
-grid.linewidth   :   1.0     # in points
+grid.color       :   white   # grid color
+#grid.linestyle   :   :       # dotted
+grid.linewidth   :   1     # in points
 
 ### Legend
-legend.framealpha    : 0.0    # setting this to 0.0 hides legend borders
 legend.fancybox      : False  # if True, use a rounded box for the
                                # legend, else a rectangle
 #legend.isaxes        : True
 #legend.numpoints     : 2      # the number of points in the legend line
-legend.fontsize      : medium
+#legend.fontsize      : large
 #legend.pad           : 0.0    # deprecated; the fractional whitespace inside the legend border
 #legend.borderpad     : 0.5    # border whitspace in fontsize units
 #legend.markerscale   : 1.0    # the relative size of legend markers vs. original
@@ -275,18 +276,17 @@ legend.fontsize      : medium
 
 ### FIGURE
 # See http://matplotlib.sourceforge.net/api/figure_api.html#matplotlib.figure.Figure
-figure.figsize   : 8, 6    # figure size in inches
-figure.dpi       : 150      # figure dots per inch
-figure.facecolor : white    # figure facecolor; 0.75 is scalar gray
-#figure.edgecolor : 0.50   # figure edgecolor
-figure.autolayout : True  # When True, automatically adjust subplot
+figure.figsize   : 11, 8    # figure size in inches
+#figure.dpi       : 80      # figure dots per inch
+figure.facecolor : 0.85    # figure facecolor; 0.75 is scalar gray
+figure.edgecolor : 0.50   # figure edgecolor
 
 # The figure subplot parameters.  All dimensions are fraction of the
 # figure width or height
-figure.subplot.left    : 0.1   # the left side of the subplots of the figure
-figure.subplot.right   : 0.975    # the right side of the subplots of the figure
-figure.subplot.bottom  : 0.1125    # the bottom of the subplots of the figure
-figure.subplot.top     : 0.9125    # the top of the subplots of the figure
+#figure.subplot.left    : 0.125  # the left side of the subplots of the figure
+#figure.subplot.right   : 0.9    # the right side of the subplots of the figure
+#figure.subplot.bottom  : 0.1    # the bottom of the subplots of the figure
+#figure.subplot.top     : 0.9    # the top of the subplots of the figure
 #figure.subplot.wspace  : 0.2    # the amount of width reserved for blank space between subplots
 figure.subplot.hspace  : 0.5    # the amount of height reserved for white space between subplots
 
@@ -325,10 +325,8 @@ figure.subplot.hspace  : 0.5    # the amount of height reserved for white space 
 # the default savefig params can be different from the display params
 # Eg, you may want a higher resolution, or to make the figure
 # background white
-savefig.dpi       : 200      # figure dots per inch
-savefig.facecolor : white    # figure facecolor when saving
-savefig.bbox      : standard  # 'tight' or 'standard'
-savefig.pad_inches  : 0.1  # Padding to be used when bbox is set to 'tight'
+#savefig.dpi       : 100      # figure dots per inch
+#savefig.facecolor : white    # figure facecolor when saving
 #savefig.edgecolor : white    # figure edgecolor when saving
 #savefig.extension : auto     # what extension to use for savefig('foo'), or 'auto'
 
@@ -377,8 +375,8 @@ savefig.pad_inches  : 0.1  # Padding to be used when bbox is set to 'tight'
 #
 # You can access the verbose instance in your code
 #   from matplotlib import verbose.
-verbose.level  : silent      # one of silent, helpful, debug, debug-annoying
-verbose.fileo  : sys.stderr  # a log filename, sys.stdout or sys.stderr
+#verbose.level  : silent      # one of silent, helpful, debug, debug-annoying
+#verbose.fileo  : sys.stdout  # a log filename, sys.stdout or sys.stderr
 
 # Event keys to interact with figures/plots via keyboard.
 # Customize these settings according to your needs.
