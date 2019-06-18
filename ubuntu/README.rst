@@ -129,6 +129,11 @@ To actually enable jupyter extensions, run::
     jupyter nbextension enable freeze/main
     jupyter nbextension enable scratchpad/main
 
+It is also good to install Jupyter Lab::
+
+    conda install -c conda-forge nodejs
+    jupyter labextension install @jupyter-widgets/jupyterlab-manager
+    
 Tensorflow v2 environment with Conda
 ------------------------------------
 
