@@ -117,7 +117,7 @@ The following may also be useful::
 For some additional packages, there is `conda-forge`::
 
     conda install -c conda-forge imbalanced-learn scikit-garden mlxtend xgboost
-    conda install -c conda-forge tensorboardx visdom lightgbm
+    conda install -c conda-forge tensorboard tensorboardx visdom lightgbm
     conda install -c conda-forge jupyter_contrib_nbextensions
 
 To actually enable jupyter extensions, run::
@@ -148,7 +148,7 @@ Create a new conda environment::
     conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
     conda install matplotlib pillow scikit-learn pandas jupyter pydot tqdm pywavelets pyyaml
     conda install -c conda-forge imbalanced-learn scikit-garden mlxtend xgboost
-    conda install -c conda-forge tensorboardx visdom lightgbm
+    conda install -c conda-forge tensorboard tensorboardx visdom lightgbm
     conda install -c conda-forge jupyter_contrib_nbextensions
 
 Finally install Tensorflow 2.0-alpha using pip::
