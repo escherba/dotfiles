@@ -147,8 +147,6 @@ export NODE_PATH="/usr/local/lib/jsctags:$NODE_PATH"
 #pkgconfig
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig"
 
-#export PYTHONPATH="$(brew --prefix)/lib/python2.7/site-packages:/usr/local/opt/opencv/lib/python2.7/site-packages:$PYTHONPATH"
-
 alias gipython="ipython qtconsole --pylab=inline"
 alias ghci="ghci -XNoMonomorphismRestriction"
 alias lwatch="w'tch -n 1 wc -l"
@@ -196,25 +194,6 @@ function joinpdf() {
     result=${1}
     shift
     gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=${result} "$@"
-}
-
-# http://blog.sinelabs.com/post/57029831523/uwsgi-nginx-mirroring-ubuntu-setup-for-os-x-mountain
-function nginxctl {
-    if [ $1 == "reload" ]; then
-        echo "Unloading Nginx..."
-        sudo launchctl unload -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
-        wait
-        echo "Loading Nginx..."
-        sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
-    elif [ $1 == "unload" ]; then
-        echo "Unloading Nginx..."
-        sudo launchctl unload -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
-    elif [ $1 == "load" ]; then
-        echo "Loading Nginx..."
-        sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
-    else
-        echo "Command $1 unsupported"
-    fi
 }
 
 export PATH="$HOME/.cabal/bin:$HOME/Library/Haskell/bin:/Library/Haskell/bin:/usr/local/bin:/usr/local/sbin:$PATH"

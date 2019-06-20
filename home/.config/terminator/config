@@ -23,7 +23,6 @@
     background_type = transparent
     copy_on_selection = True
     cursor_color = "#d7d7d7"
-    font = Liberation Mono for Powerline 10
     foreground_color = "#d7d7d7"
     palette = "#121212:#ff5f5f:#afd787:#d7d7af:#87d7ff:#d7afd7:#87d7af:#d7d7d7:#121212:#ff5f5f:#afd787:#d7d7af:#87d7ff:#d7afd7:#87d7af:#d7d7d7"
     scrollback_lines = 10000
