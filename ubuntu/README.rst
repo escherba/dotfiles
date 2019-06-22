@@ -50,18 +50,11 @@ First set up basic development environment::
     sudo apt install xorg-dev xserver-xorg-dev freeglut3-dev
     sudo dpkg-reconfigure xserver-xorg
 
-NVIDIA (Barebones)
-------------------
 
-Download the appropriate `NVIDIA driver <http://www.nvidia.com/Download/index.aspx>`_
-and compile it in safe-recovery mode. After compiling, execute the following command::
+NVIDIA stuff
+------------
 
-    sudo update-initramfs -u
-
-NVIDIA (Recommended)
---------------------
-
-Find the list of available drivers from the Nvidia repository for Ubuntu::
+If you want just the drivers::
 
     sudo -E add-apt-repository ppa:graphics-drivers/ppa
     sudo apt update
@@ -71,13 +64,22 @@ Now install the driver marked as "recommended", for example::
 
     sudo apt install nvidia-418
 
-Reboot to load the driver. Then install CUDA from
-https://developer.nvidia.com/cuda-toolkit (it's easiest to download the .deb
-file and install it with ``sudo dpkg -i``. For CUDA v8.0 the following lines to
-``.bashrc``::
+Then reboot to load the driver.
 
-    export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
-    export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+To install CUDA, download an appropriate .deb file from
+https://developer.nvidia.com/cuda-toolkit. Then:
+
+    sudo dpkg -i cuda-repo-ubuntu1604-10-1-local-10.1.168-418.67_1.0-1_amd64.deb
+    sudo apt-key add /var/cuda-repo-10-1-local-10.1.168-418.67/7fa2af80.pub
+    sudo apt-get update
+    sudo apt-get install cuda
+
+Then make sure you have the following in your `.bashrc` (and that
+the appropriate symlinks exist)::
+
+    export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+    export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 Tensorflow v1 environment with Conda
 ------------------------------------
@@ -112,7 +114,7 @@ The above should output `True`. Alternatively, for PyTorch::
 
 The following may also be useful::
 
-    conda install jupyter matplotlib pillow scikit-learn pandas pydot tqdm pywavelets pyyaml
+    conda install jupyter matplotlib seaborn pillow scikit-learn pandas pydot tqdm pywavelets pyyaml
 
 For some additional packages, there is `conda-forge`::
 
@@ -125,9 +127,8 @@ To actually enable jupyter extensions, run::
     jupyter contrib nbextension install --user
     jupyter nbextension enable collapsible_headings/main
     jupyter nbextension enable notify/notify
-    jupyter nbextension enable zenmode/main
     jupyter nbextension enable freeze/main
-    jupyter nbextension enable scratchpad/main
+    jupyter nbextension emable hide_header/main
 
 It is also good to install Jupyter Lab::
 
@@ -146,7 +147,7 @@ Create a new conda environment::
     conda create -n tf2 python=3.6 pip
     conda activate tf2
     conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
-    conda install matplotlib pillow scikit-learn pandas jupyter pydot tqdm pywavelets pyyaml
+    conda install matplotlib seaborn pillow scikit-learn pandas jupyter pydot tqdm pywavelets pyyaml
     conda install -c conda-forge imbalanced-learn scikit-garden mlxtend xgboost
     conda install -c conda-forge tensorboard tensorboardx visdom lightgbm
     conda install -c conda-forge jupyter_contrib_nbextensions
