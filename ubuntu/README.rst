@@ -199,11 +199,9 @@ Before installing Vim, it might be a good idea to remove existing
 installation(s) of this editor. Run ``dpkg --get-selections | grep vim`` and
 uninstall any packages present. Then::
 
-    sudo apt install vim-gnome-py2
+    sudo apt install vim-gtk
 
-Since ``vim-gnome-py2`` seems to include base ``vim-gnome`` package that is
-built with Python3 support, use ``update-alternatives`` tool to set the
-specific verison to be used::
+To select the specific verison of Vim as default::
 
     sudo update-alternatives --config vi
 

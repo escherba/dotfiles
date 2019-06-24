@@ -70,7 +70,7 @@ let g:syntastic_ignore_files = ['\m\.sbt$']
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
 " ----- Python-mode -------------
-let g:pymode_python = 'python'
+let g:pymode_python = 'python3'
 
 " Linting
 let g:pymode_lint = 1
