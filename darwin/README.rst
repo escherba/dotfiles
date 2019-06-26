@@ -157,7 +157,7 @@ If you develop with Vim,
 
 .. code-block:: bash
 
-    brew install macvim --with-python --with-override-system-vim
+    brew install macvim
 
 Install Vim-Plug plug-in manager for Vim
 
