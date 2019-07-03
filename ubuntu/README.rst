@@ -130,11 +130,13 @@ To actually enable jupyter extensions, run::
     jupyter nbextension enable freeze/main
     jupyter nbextension emable hide_header/main
 
-It is also good to install Jupyter Lab::
+More Jupyter set up::
 
     conda install -c conda-forge nodejs
     jupyter labextension install @jupyter-widgets/jupyterlab-manager
-    
+    conda install -c conda-forge jupyterthemes
+
+
 Tensorflow v2 environment with Conda
 ------------------------------------
 
