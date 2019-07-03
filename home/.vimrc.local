@@ -67,6 +67,7 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_ignore_files = ['\m\.sbt$']
 
 " -----Python ---------
+autocmd FileType python setlocal omnifunc=python3complete#Complete
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
 " ----- Python-mode -------------
