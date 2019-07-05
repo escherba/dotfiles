@@ -141,7 +141,7 @@ Tensorflow v2 environment with Conda
 ------------------------------------
 
 Suppose we want a slightly different version of Conda environment with a later version of CUDA
-and Tensorflow 2.0-alpha (which at the moment of this writing is not yet installed by default).
+and Tensorflow 2.0-beta (which at the moment of this writing is not yet installed by default).
 
 Create a new conda environment::
 
@@ -149,14 +149,15 @@ Create a new conda environment::
     conda create -n tf2 python=3.6 pip
     conda activate tf2
     conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
-    conda install matplotlib seaborn pillow scikit-learn pandas jupyter pydot tqdm pywavelets pyyaml
+    conda install matplotlib seaborn pillow scikit-learn pandas jupyter tqdm pywavelets \
+        pyyaml statsmodels joblib pytest pydot ipykernel dill
     conda install -c conda-forge imbalanced-learn scikit-garden mlxtend xgboost
     conda install -c conda-forge tensorboard tensorboardx visdom lightgbm
-    conda install -c conda-forge jupyter_contrib_nbextensions
+    conda install -c conda-forge frozendict boto3 jupyter_contrib_nbextensions
 
-Finally install Tensorflow 2.0-alpha using pip::
+Finally install Tensorflow 2.0-beta using pip::
 
-    pip install tensorflow-gpu==2.0.0-alpha0
+    pip install tensorflow-gpu==2.0.0-beta1
 
 Test whether GPU is available::
 
@@ -169,19 +170,15 @@ Some lesser-known packages can be installed through pip on top of Conda environm
 
     pip install gym
 
-To use Scikit-Learn, may need to install::
-
-    sudo apt-get install libatlas-base-dev
-
 Creating Jupyter kernels from Conda environments
 ------------------------------------------------
 
 ::
 
     conda install ipykernel
-    python3 -m ipykernel install --user --name tf2 --display-name "Python 3 (tf2)"
+    python3 -m ipykernel install --user --name tf2b --display-name "Python 3 (tf2b)"
 
-Now you can select a kernel named `Python 3 (tf2)` from the kernel dropdown when
+Now you can select a kernel named `Python 3 (tf2b)` from the kernel dropdown when
 creating a new Jupyter notebook.
 
 
