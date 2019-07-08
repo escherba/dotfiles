@@ -146,8 +146,8 @@ and Tensorflow 2.0-beta (which at the moment of this writing is not yet installe
 Create a new conda environment::
 
     conda deactivate
-    conda create -n tf2 python=3.6 pip
-    conda activate tf2
+    conda create -n tf2b python=3.6 pip
+    conda activate tf2b
     conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
     conda install matplotlib seaborn pillow scikit-learn pandas jupyter tqdm pywavelets \
         pyyaml statsmodels joblib pytest pydot ipykernel dill
