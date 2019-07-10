@@ -132,9 +132,8 @@ To actually enable jupyter extensions, run::
 
 More Jupyter set up::
 
-    conda install -c conda-forge nodejs
+    conda install -c conda-forge nodejs jupyterthemes
     jupyter labextension install @jupyter-widgets/jupyterlab-manager
-    conda install -c conda-forge jupyterthemes
 
 
 Tensorflow v2 environment with Conda
@@ -150,8 +149,8 @@ Create a new conda environment::
     conda activate tf2b
     conda install setuptools
     conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
-    conda install matplotlib seaborn pillow scikit-learn pandas jupyter tqdm pywavelets \
-        pyyaml statsmodels joblib pytest pydot ipykernel dill
+    conda install matplotlib seaborn pillow scikit-learn pandas jupyter jupyterlab \
+        tqdm pywavelets pyyaml statsmodels joblib pytest pydot ipykernel dill
     conda install -c conda-forge imbalanced-learn scikit-garden mlxtend xgboost
     conda install -c conda-forge tensorboard tensorboardx visdom lightgbm
     conda install -c conda-forge frozendict boto3 jupyter_contrib_nbextensions
