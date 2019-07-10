@@ -174,6 +174,8 @@ Some lesser-known packages can be installed through pip on top of Conda environm
 Other Conda packages
 --------------------
 
+::
+
     conda install sqlalchemy
     conda install -c bioconda mysqlclient   # installs MySQLdb
 
