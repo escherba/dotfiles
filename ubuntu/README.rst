@@ -151,7 +151,7 @@ Suppose we want an environment with an older version of Tensorflow::
 
     conda create -n tf1 python=3.6 pip
     conda activate tf1
-    conda install numpy joblib pandas matplotlib jupyter jupyterlab seaborn scipy tensorflow-gpu
+    conda install numpy joblib pandas matplotlib jupyter jupyterlab scikit-learn seaborn scipy tensorflow-gpu
 
 To test the Tensorflow environment::
 
