@@ -81,66 +81,12 @@ the appropriate symlinks exist)::
     export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
     export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
-Tensorflow v1 environment with Conda
-------------------------------------
-
-This is probably preferred to virtualenv. Download Conda distribution for Linux
-from https://www.anaconda.com/distribution/ Run the interactive installer.
-
-When done, test if Conda can set up Tensorflow with all the appropritate
-dependencies::
-
-    conda create -n tf1
-    conda activate tf1
-    conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
-    conda install tensorflow-gpu
-
-For some strange reason, `conda install tensorflow-gpu` is not sufficient to get TensorFlow
-to recognize the GPU (TODO: why?) and needs to be followed up by::
-
-    pip install tensorflow-gpu
-
-To test the Tensorflow environment::
-
-    python3
-    >>> import tensorflow as tf
-    >>> tf.test.is_gpu_available()
-
-The above should output `True`. Alternatively, for PyTorch::
-
-    python3
-    >>> import torch
-    >>> torch.cuda.is_available()
-
-The following may also be useful::
-
-    conda install jupyter matplotlib seaborn pillow scikit-learn pandas pydot tqdm pywavelets pyyaml
-
-For some additional packages, there is `conda-forge`::
-
-    conda install -c conda-forge imbalanced-learn scikit-garden mlxtend xgboost
-    conda install -c conda-forge tensorboard tensorboardx visdom lightgbm
-    conda install -c conda-forge jupyter_contrib_nbextensions
-
-To actually enable jupyter extensions, run::
-
-    jupyter contrib nbextension install --user
-    jupyter nbextension enable collapsible_headings/main
-    jupyter nbextension enable notify/notify
-    jupyter nbextension enable freeze/main
-    jupyter nbextension emable hide_header/main
-
-More Jupyter set up::
-
-    conda install -c conda-forge nodejs jupyterthemes
-    jupyter labextension install @jupyter-widgets/jupyterlab-manager
-
 
 Tensorflow v2 environment with Conda
 ------------------------------------
 
-Suppose we want a slightly different version of Conda environment with a later version of CUDA
-and Tensorflow 2.0-beta (which at the moment of this writing is not yet installed by default).
+Download Conda distribution for Linux
+from https://www.anaconda.com/distribution/ Run the interactive installer.
 
 Create a new conda environment::
 
@@ -149,7 +95,7 @@ Create a new conda environment::
     conda activate tf2b
     conda install setuptools
     conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
-    conda install matplotlib seaborn pillow scikit-learn pandas jupyter jupyterlab \
+    conda install cythono matplotlib seaborn pillow scikit-learn pandas jupyter jupyterlab \
         tqdm pywavelets pyyaml statsmodels joblib pytest pydot ipykernel dill
     conda install -c conda-forge imbalanced-learn scikit-garden mlxtend xgboost
     conda install -c conda-forge tensorboard tensorboardx visdom lightgbm
@@ -171,6 +117,24 @@ Some lesser-known packages can be installed through pip on top of Conda environm
     pip install gym
 
 
+Jupyter
+-------
+
+::
+
+    conda install -c conda-forge jupyter_contrib_nbextensions
+    jupyter contrib nbextension install --user
+    jupyter nbextension enable collapsible_headings/main
+    jupyter nbextension enable notify/notify
+    jupyter nbextension enable freeze/main
+    jupyter nbextension emable hide_header/main
+
+More Jupyter set up::
+
+    conda install -c conda-forge nodejs jupyterthemes
+    jupyter labextension install @jupyter-widgets/jupyterlab-manager
+
+
 Other Conda packages
 --------------------
 
@@ -178,6 +142,24 @@ Other Conda packages
 
     conda install sqlalchemy
     conda install -c bioconda mysqlclient   # installs MySQLdb
+
+
+Tensorflow v1 environment with Conda
+------------------------------------
+
+Suppose we want an environment with an older version of Tensorflow::
+
+    conda create -n tf1 python=3.6 pip
+    conda activate tf1
+    conda install numpy pandas matplotlib jupyter jupyterlab seaborn scipy tensorflow-gpu
+
+To test the Tensorflow environment::
+
+    python3
+    >>> import tensorflow as tf
+    >>> tf.test.is_gpu_available()
+
+The above should output `True`.
 
 Creating Jupyter kernels from Conda environments
 ------------------------------------------------
