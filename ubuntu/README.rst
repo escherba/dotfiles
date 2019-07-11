@@ -160,7 +160,10 @@ To test the Tensorflow environment::
     >>> import tensorflow as tf
     >>> tf.test.is_gpu_available()
 
-The above should output `True`.
+The above should output `True`. If it outputs `False`, there are probably missing CUDA libraries. Install them with::
+
+    conda install cuda=10.0
+    conda install cudnn=7.6
 
 Creating Jupyter kernels from Conda environments
 ------------------------------------------------
