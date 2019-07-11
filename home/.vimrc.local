@@ -76,7 +76,7 @@ let g:pymode_python = 'python3'
 " Linting
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
-let g:pymode_lint_ignore = "E402,E241,E501,C0103,C0111,C0301,C0326,E1101,R0903,R0904,R0913,W0141,W0142"
+"let g:pymode_lint_ignore = "E402,E241,E501,C0103,C0111,C0301,C0326,E1101,R0903,R0904,R0913,W0141,W0142"
 let g:pymode_lint_write = 1  " Auto check on save
 
 " misc
