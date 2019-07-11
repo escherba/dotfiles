@@ -202,13 +202,8 @@ To select the specific verison of Vim as default::
 Finally install some useful packages::
 
    sudo apt install htop tmux mosh
-   sudo apt install git clang cmake exuberant-ctags
-   sudo apt install graphviz graphviz-dev r-base
-   sudo apt install msttcorefonts
-   sudo apt install silversearcher-ag
-   sudo apt install python-pip python-virtualenv cython
-   sudo apt install python-scipy python-pandas python-igraph \
-       python-opencv python-matplotlib python-sklearn
+   sudo apt install git clang cmake exuberant-ctags silversearcher-ag
+   sudo apt install graphviz graphviz-dev r-base msttcorefonts
 
 To support OpenMP compilation with clang::
 
