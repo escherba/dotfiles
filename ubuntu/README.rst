@@ -176,6 +176,11 @@ Creating Jupyter kernels from Conda environments
 Now you can select a kernel named `Python 3 (tf2b)` from the kernel dropdown when
 creating a new Jupyter notebook.
 
+To view installed kernels and to delete an existing one::
+
+    jupyter kernelspec list
+    jupyter kernelspec uninstall <kernel-name>
+
 
 The Rest of the Installation
 ----------------------------
