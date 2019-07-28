@@ -109,8 +109,6 @@ More Jupyter set up::
 
 Adding a spellchecker to Jupyter::
 
-    pip install jupyter_contrib_nbextensions
-    jupyter contrib nbextension install --user
     jupyter nbextension enable spellchecker/main
 
 Other notes:
