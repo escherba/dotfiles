@@ -135,6 +135,5 @@ Other Conda packages
 
 ::
 
-    conda install sqlalchemy
-    conda install -c bioconda mysqlclient   # installs MySQLdb
+    conda install pymysql sqlalchemy
 
