@@ -150,10 +150,6 @@ fi
 
 export SPARK_HOME="/usr/local/Cellar/apache-spark/1.6.1/libexec"
 
-alias ssh-emr="ssh -i $AWS_KEY $EMR_HOST"
-alias mosh-emr="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
-alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
-
 alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$DB_USER --port $DB_PORT -p"
 
 # OpenBLAS

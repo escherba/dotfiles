@@ -227,10 +227,6 @@ export LIBFM_PATH="$HOME/.local/bin"
 
 export PATH=${SPARK_HOME}/bin${PATH:+:${PATH}}
 
-#alias ssh-emr="ssh -i $AWS_KEY $EMR_HOST -t \"tmux new-session -A -s main\""
-#alias mosh-emr="mosh --ssh=\"ssh -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
-#alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
-#
 #alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$DB_USER --port $DB_PORT -p"
 #
 #alias ssh-hugemem="ssh -Y $HUGEMEM -i $AWS_KEY -t \"tmux new-session -A -s main\""

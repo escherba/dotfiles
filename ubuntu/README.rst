@@ -3,55 +3,6 @@ dotfiles
 
 A collection of config files for development on Mac OS X and Linux
 
-
-Quick Linux Setup for AWS
--------------------------
-
-On Amazon AMI instances:
-
-.. code-block:: bash
-
-    # update
-    sudo yum -y update
-    sudo yum -y upgrade
-
-On Ubuntu instances:
-
-.. code-block:: bash
-
-    # update
-    sudo apt update
-    sudo apt upgrade
-
-and then
-
-.. code-block:: bash
-
-    # enable EPEL6 by changing enabled=0 -> enabled=1
-    sudo vim /etc/yum.repos.d/epel.repo
-
-    # install misc. utilities
-    sudo yum install htop tmux mosh
-
-    # configure Tmux
-    curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux.conf
-
-
-Linux environment (Ubuntu)
---------------------------
-
-First set up basic development environment::
-
-    sudo apt update
-    sudo apt upgrade
-    sudo apt dist-upgrade
-    reboot
-
-    sudo apt install gcc make dkms build-essential linux-headers-$(uname -r)
-    sudo apt install xorg-dev xserver-xorg-dev freeglut3-dev
-    sudo dpkg-reconfigure xserver-xorg
-
-
 NVIDIA stuff
 ------------
 
@@ -86,22 +37,13 @@ the appropriate symlinks exist)::
 The Rest of the Installation
 ----------------------------
 
-Install GUI with::
-
-    sudo apt install ubuntu-desktop
-    sudo apt install software-center unity-tweak-tool indicator-multiload synaptic terminator
-
-(Optional) Disable the default graphics drivers. The following SO answer gives
-detailed instructions on how to disable the default driver:
-http://askubuntu.com/a/508255 .
-
 Before installing Vim, it might be a good idea to remove existing
 installation(s) of this editor. Run ``dpkg --get-selections | grep vim`` and
 uninstall any packages present. Then::
 
     sudo apt install vim-gtk
 
-To select the specific verison of Vim as default::
+To select the specific version of Vim as default::
 
     sudo update-alternatives --config vi
 
@@ -134,6 +76,8 @@ Docker is best installed with the help of this script: https://gist.github.com/e
 
 Installing a recent version of R
 --------------------------------
+
+Anaconda set up is probably recommended over this...
 
 Add the following entry to file `/etc/apt/sources.list`::
 
