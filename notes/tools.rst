@@ -22,7 +22,10 @@ From http://stackoverflow.com/a/15149253 :
     git config --global pager.show 'diff-highlight | less'
     git config --global pager.diff 'diff-highlight | less'
 
-CSV differ
-----------
+CSV diff tool
+-------------
 
-The above utility (`diff-highlight`) generally handles CSV files quite well, but for a more specialized tool you try [daff](https://github.com/paulfitz/daff).
+The above utility (``diff-highlight``) generally handles CSV files quite
+well, but for a more specialized tool you try `daff`_.
+
+.. _daff: https://github.com/paulfitz/daff
