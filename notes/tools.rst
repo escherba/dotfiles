@@ -13,7 +13,7 @@ From http://stackoverflow.com/a/15149253 :
 
 .. code-block:: bash
 
-    git clone https://github.com/git
+    git clone https://github.com/git/git
     cd git/contrib/diff-highlight
     make
     sudo cp diff-highlight /usr/locao/bin/
