@@ -6,6 +6,19 @@ remove checkmarks for `code` and `literals`.
 
 https://intellij-support.jetbrains.com/hc/en-us/community/posts/207070915-disable-spell-checking-on-variable-declarations-
 
+Increase Inotify Watches Limit:
+
+https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
+
+Modify `/etc/sysctl.conf` to include::
+
+    fs.inotify.max_user_watches = 524288
+
+Then apply the change with::
+
+    sudo sysctl -p --system
+
+
 A better git diff highlighter
 -----------------------------
 
