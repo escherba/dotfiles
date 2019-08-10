@@ -23,7 +23,7 @@ For analysis::
     conda install matplotlib jupyterlab
     jupyter lab --no-browser --port 8888
     
-On the local machine::
+On the local machine, add the following to `.ssh/config`::
 
     Host ec2-large
         <your public ec2 ip address>
