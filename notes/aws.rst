@@ -49,7 +49,7 @@ File transfer
 Using AWS with Mosh
 -------------------
 
-Mosh is an alternative to SSH that runs over UDP and has some advantages over unreliable networks. You can read more about it `here<http://linuxpitstop.com/ssh-vs-mosh/>`_.
+Mosh is an alternative to SSH that runs over UDP and has some advantages over unreliable networks. You can read more about it `here <http://linuxpitstop.com/ssh-vs-mosh/>`_.
 
 On Amazon AMI instances:
 
