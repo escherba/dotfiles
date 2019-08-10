@@ -41,9 +41,9 @@ Now you can open the browser at http://localhost:9999 and use Jupyter Lab. These
 File transfer
 -------------
 
-::
+To quickly download lots of files from AWS EC2 instance::
 
-    rsync -rave "ssh -i PEMKEYFILE.pem" /path/to/local/files/* ec2-user@EC2_INSTANCE_HOSTNAME:/path/to/remote/files
+    rsync -rave "ssh -i ~/.ssh/aws_web_east.pem" ec2-user@EC2_INSTANCE_HOSTNAME:/path/to/remote/files .
 
 
 Using AWS with Mosh
