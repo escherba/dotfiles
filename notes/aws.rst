@@ -34,7 +34,7 @@ Then run port forwarding like this::
 
     ssh -NfL 9999:localhost:8888 ec2-large
     
-Now you can open the browser at http://localhost:9999 and use Jupyter Lab. These steps roughly follow ones in [this Medium post](https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6).
+Now you can open the browser at http://localhost:9999 and use Jupyter Lab. These steps roughly follow ones in `this Medium post<https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6>`_.
 
 
 File transfer
@@ -48,7 +48,7 @@ File transfer
 Using AWS with Mosh
 -------------------
 
-Mosh is an alternative to SSH that runs over UDP and has some advantages over unreliable networks. You can read more about it [here](http://linuxpitstop.com/ssh-vs-mosh/).
+Mosh is an alternative to SSH that runs over UDP and has some advantages over unreliable networks. You can read more about it `here<http://linuxpitstop.com/ssh-vs-mosh/>`_.
 
 On Amazon AMI instances:
 
