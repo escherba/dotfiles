@@ -34,7 +34,8 @@ Then run port forwarding like this::
 
     ssh -NfL 9999:localhost:8888 ec2-large
     
-Now you can open the browser at http://localhost:9999 and use Jupyter Lab. These steps roughly follow ones in `this Medium post<https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6>`_.
+Now you can open the browser at http://localhost:9999 and use Jupyter Lab. These steps roughly follow ones in `this Medium post<https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6>`_. `Python
+<http://www.python.org/>`_
 
 
 File transfer
