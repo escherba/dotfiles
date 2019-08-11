@@ -95,21 +95,17 @@ Jupyter
 
 ::
 
-    conda install -c conda-forge jupyter_contrib_nbextensions
+    conda install ipywidgets
+    conda install -c conda-forge nodejs jupyterthemes jupyter_contrib_nbextensions
     jupyter contrib nbextension install --user
+    jupyter nbextension enable --py widgetsnbextension
     jupyter nbextension enable collapsible_headings/main
     jupyter nbextension enable notify/notify
     jupyter nbextension enable freeze/main
     jupyter nbextension emable hide_header/main
-
-More Jupyter set up::
-
-    conda install -c conda-forge nodejs jupyterthemes
-    jupyter labextension install @jupyter-widgets/jupyterlab-manager
-
-Adding a spellchecker to Jupyter::
-
     jupyter nbextension enable spellchecker/main
+    
+    jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 Other notes:
 https://medium.com/@rrfd/jupyter-notebook-shortcuts-tips-and-tricks-top-nbextensions-bring-order-to-your-notebooks-pt-1-b58f270963f9
