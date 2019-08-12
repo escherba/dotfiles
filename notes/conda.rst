@@ -45,7 +45,7 @@ Create a new conda environment::
     conda activate tf2b
     conda install setuptools
     conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
-    conda install cythono matplotlib seaborn pillow scikit-learn pandas jupyter jupyterlab \
+    conda install cython matplotlib seaborn pillow scikit-learn pandas jupyter jupyterlab \
         tqdm pywavelets pylint pyyaml statsmodels joblib pytest pydot ipykernel dill
     conda install -c conda-forge imbalanced-learn scikit-garden mlxtend xgboost
     conda install -c conda-forge tensorboard tensorboardx visdom lightgbm
