@@ -66,6 +66,7 @@ Some lesser-known packages can be installed through pip on top of Conda environm
 
     pip install gym
 
+Possible issues: see `this page <https://github.com/tensorflow/tensorflow/issues/24828#issuecomment-457425190>`_
 
 Tensorflow v1 environment with Conda
 ------------------------------------
