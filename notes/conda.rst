@@ -126,11 +126,3 @@ To view installed kernels and to delete an existing one::
 
     jupyter kernelspec list
     jupyter kernelspec uninstall <kernel-name>
-
-Other Conda packages
---------------------
-
-::
-
-    conda install pymysql sqlalchemy
-
