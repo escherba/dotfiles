@@ -20,7 +20,7 @@ Then reboot to load the driver.
 
 
 To install CUDA, download an appropriate .deb file from
-https://developer.nvidia.com/cuda-toolkit. Then:
+https://developer.nvidia.com/cuda-toolkit. Then::
 
     sudo dpkg -i cuda-repo-ubuntu1604-10-1-local-10.1.168-418.67_1.0-1_amd64.deb
     sudo apt-key add /var/cuda-repo-10-1-local-10.1.168-418.67/7fa2af80.pub
