@@ -95,8 +95,24 @@ missing CUDA libraries. Install them with::
     conda install cudnn=7.6
 
 
-Jupyter
--------
+Creating Jupyter kernels from Conda environments
+------------------------------------------------
+
+::
+
+    conda install ipykernel
+    python3 -m ipykernel install --user --name tf2b --display-name "Python 3 (tf2b)"
+
+Now you can select a kernel named `Python 3 (tf2b)` from the kernel dropdown
+when creating a new Jupyter notebook.
+
+To view installed kernels and to delete an existing one::
+
+    jupyter kernelspec list
+    jupyter kernelspec uninstall <kernel-name>
+
+Jupyter (Misc extensions)
+-------------------------
 
 ::
 
@@ -114,19 +130,3 @@ Jupyter
 
 Other notes:
 https://medium.com/@rrfd/jupyter-notebook-shortcuts-tips-and-tricks-top-nbextensions-bring-order-to-your-notebooks-pt-1-b58f270963f9
-
-Creating Jupyter kernels from Conda environments
-------------------------------------------------
-
-::
-
-    conda install ipykernel
-    python3 -m ipykernel install --user --name tf2b --display-name "Python 3 (tf2b)"
-
-Now you can select a kernel named `Python 3 (tf2b)` from the kernel dropdown
-when creating a new Jupyter notebook.
-
-To view installed kernels and to delete an existing one::
-
-    jupyter kernelspec list
-    jupyter kernelspec uninstall <kernel-name>
