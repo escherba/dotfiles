@@ -10,9 +10,9 @@ https://www.anaconda.com/distribution/ and run the interactive installer.
 Basics
 ------
 
-To create a blank Conda envirnoment for Python 3.6::
+To create a blank Conda envirnoment called "env1" for Python 3.6::
 
-    conda create -n tf2b python=3.6 pip
+    conda create -n env1 python=3.6 pip
 
 To create a Conda environment from a YAML file::
 
