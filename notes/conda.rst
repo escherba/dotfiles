@@ -35,7 +35,7 @@ To remove an existing environment::
 
     conda env remove --name <environment-name>
 
-To clean up an active conda environment::
+To clean up an active conda environment (this reduces disk space usage)::
 
     conda clean --all
 
