@@ -116,7 +116,7 @@ Jupyter (extensions)
 ::
 
     conda install ipywidgets
-    conda install -c conda-forge nodejs jupyterthemes jupyter_contrib_nbextensions
+    conda install -c conda-forge nodejs jupyter_contrib_nbextensions
     jupyter contrib nbextension install --user
     jupyter nbextension enable --py widgetsnbextension
     jupyter nbextension enable collapsible_headings/main
