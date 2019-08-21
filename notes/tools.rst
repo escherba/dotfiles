@@ -6,11 +6,7 @@ remove "code" and "literals" checkmarks.
 
 https://intellij-support.jetbrains.com/hc/en-us/community/posts/207070915-disable-spell-checking-on-variable-declarations-
 
-Increase Inotify Watches Limit:
-
-https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
-
-Modify ``/etc/sysctl.conf`` to include::
+To increase `inotify watches limit`_, modify ``/etc/sysctl.conf`` to include::
 
     fs.inotify.max_user_watches = 524288
 
@@ -42,3 +38,4 @@ The above utility (``diff-highlight``) generally handles CSV files quite
 well, but for a more specialized tool try `daff`_.
 
 .. _daff: https://github.com/paulfitz/daff
+.. _inotify watches limit: https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
