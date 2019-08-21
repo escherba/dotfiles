@@ -36,9 +36,6 @@ Then run port forwarding like this::
     
 Now you can open the browser at http://localhost:9999 and use Jupyter Lab. These steps roughly follow ones in in `Alex Sanchez post`_.
 
-.. Alex Sanchez post: <https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6>`_.
-
-
 File transfer
 -------------
 
@@ -52,7 +49,6 @@ Using AWS with Mosh
 
 Mosh is an alternative to SSH that runs over UDP and has some advantages over unreliable networks. You can read more about it in `this article`_.
 
-.. this article: <http://linuxpitstop.com/ssh-vs-mosh/>`_
 
 On Amazon AMI instances:
 
@@ -90,3 +86,5 @@ Add to ``.bashrc``::
     alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
 
 
+.. Alex Sanchez post: https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6
+.. this article: http://linuxpitstop.com/ssh-vs-mosh/
