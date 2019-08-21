@@ -23,7 +23,7 @@ For analysis::
     conda install matplotlib jupyterlab
     jupyter lab --no-browser --port 8888
     
-On the local machine, add the following to `~/.ssh/config` ::
+On the local machine, add the following to `~/.ssh/config`::
 
     Host ec2-large
         <your public ec2 ip address>
@@ -34,8 +34,9 @@ Then run port forwarding like this::
 
     ssh -NfL 9999:localhost:8888 ec2-large
     
-Now you can open the browser at http://localhost:9999 and use Jupyter Lab. These steps roughly follow ones in `this Medium post
-<https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6>`_.
+Now you can open the browser at http://localhost:9999 and use Jupyter Lab. These steps roughly follow ones in in `Alex Sanchez post`_.
+
+.. Alex Sanchez Post: <https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6>`_.
 
 
 File transfer
@@ -49,7 +50,9 @@ To quickly download lots of files from AWS EC2 instance::
 Using AWS with Mosh
 -------------------
 
-Mosh is an alternative to SSH that runs over UDP and has some advantages over unreliable networks. You can read more about it `here <http://linuxpitstop.com/ssh-vs-mosh/>`_.
+Mosh is an alternative to SSH that runs over UDP and has some advantages over unreliable networks. You can read more about it in `this article`_.
+
+.. this article: <http://linuxpitstop.com/ssh-vs-mosh/>`_
 
 On Amazon AMI instances:
 
@@ -80,7 +83,7 @@ and then
     # configure Tmux
     curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux.conf
 
-Add to `.bashrc`::
+Add to ``.bashrc``::
 
     alias ssh-emr="ssh -i $AWS_KEY $EMR_HOST"
     alias mosh-emr="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
