@@ -2,7 +2,7 @@
 Zeppelin on EMR
 ===============
 
-These instructions are after: https://mail-archives.apache.org/mod_mbox/incubator-zeppelin-users/201511.mbox/%3CCAF9mLAD1=GW_ghO==Vt1zUCYSoHRrkvaj0N-eyJzt-QEyPBb=A@mail.gmail.com%3E
+These instructions are after ones on this `mailing list page`_.
 
 To have default EMR instance with Zeppelin store notebooks in S3, create the following bucket: ``/<my-bucket-name>/zeppelin/notebook/``
 
@@ -24,7 +24,7 @@ Create and edit ``zeppelin-site.xml``:
     sudo cp /etc/zeppelin/conf.dist/zeppelin-site.xml.template /etc/zeppelin/conf.dist/zeppelin-site.xml
     sudo vim /etc/zeppelin/conf.dist/zeppelin-site.xml
 
-uncomment the following:
+Uncomment the following:
 
 .. code-block:: xml
 
@@ -59,11 +59,15 @@ comment the following:
     -->
 
 (optionally) remember to put any of your notebooks into the S3 bucket. Some example notebooks
-are found at: https://github.com/Leemoonsoo?tab=repositories
+are found on `Lee moon soo github page`_: 
 
-Finally, restart zeppelin
+Finally, restart Zeppelin:
 
 .. code-block:: bash
 
     sudo /usr/lib/zeppelin/bin/zeppelin-daemon.sh stop
     sudo /usr/lib/zeppelin/bin/zeppelin-daemon.sh start
+
+
+.. _mailing list page: https://mail-archives.apache.org/mod_mbox/incubator-zeppelin-users/201511.mbox/%3CCAF9mLAD1=GW_ghO==Vt1zUCYSoHRrkvaj0N-eyJzt-QEyPBb=A@mail.gmail.com%3E
+.. _Lee moon soo github page: https://github.com/Leemoonsoo?tab=repositories
