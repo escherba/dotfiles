@@ -50,7 +50,7 @@ Using AWS with Mosh
 Mosh is an alternative to SSH that runs over UDP and has some advantages over unreliable networks. You can read more about it in `this article`_.
 
 
-First we upgrade the instance (on Ubuntu the same is accomplished via `sudo apt update && sudo apt ugrade`):
+First we upgrade the instance (on Ubuntu the same is accomplished via ``sudo apt update && sudo apt ugrade``):
 
 .. code-block:: bash
 
@@ -70,7 +70,7 @@ and then
     # configure Tmux
     curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux.conf
 
-Add to ``.bashrc``::
+Finally, add to ``.bashrc`` on your local machine::
 
     alias ssh-emr="ssh -i $AWS_KEY $EMR_HOST"
     alias mosh-emr="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
