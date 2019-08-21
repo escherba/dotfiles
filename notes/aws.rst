@@ -23,7 +23,8 @@ For analysis::
     conda install matplotlib jupyterlab
     jupyter lab --no-browser --port 8888
     
-On the local machine, add the following to `~/.ssh/config`::
+On the local machine, add the following to `~/.ssh/config` (it allows you to log in to your
+instance simply by typing `ssh ec2-large`)::
 
     Host ec2-large
         <your public ec2 ip address>
@@ -34,7 +35,7 @@ Then run port forwarding like this::
 
     ssh -NfL 9999:localhost:8888 ec2-large
     
-Now you can open the browser at http://localhost:9999 and use Jupyter Lab. These steps roughly follow ones in in `Alex Sanchez post`_.
+Now you can open the browser at http://localhost:9999 and use Jupyter Lab. These steps roughly follow ones outlined in `Alex Sanchez post`_.
 
 File transfer
 -------------
@@ -57,25 +58,24 @@ First we upgrade the instance (on Ubuntu the same is accomplished via ``sudo apt
     sudo yum -y update
     sudo yum -y upgrade
 
-and then
+Then enable EPEL6 by changing ``enabled=0`` to ``enabled=1`` in ``/etc/yum.repos.d/epel.repo`` and install Mosh:
 
 .. code-block:: bash
 
-    # enable EPEL6 by changing enabled=0 -> enabled=1
-    sudo vim /etc/yum.repos.d/epel.repo
+    sudo yum install mosh
 
-    # install bare basics
-    sudo yum install htop tmux mosh
+While we're at it, configure tmux:
+
+.. code-block:: bash
 
     # configure Tmux
     curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux.conf
 
 Finally, add to ``.bashrc`` on your local machine::
 
-    alias ssh-emr="ssh -i $AWS_KEY $EMR_HOST"
-    alias mosh-emr="mosh --ssh=\"ssh -Y -i $AWS_KEY\" $EMR_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
-    alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
-
+    alias ssh-ec2-large="ssh -i $AWS_PEM_FILE $AWS_HOST"
+    alias mosh-ec2-large="mosh --ssh=\"ssh -Y -i $AWS_PEM_FILE\" $AWS_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
+    alias mosh-ec2-large-bind="mosh --ssh=\"ssh -i $AWS_PEM_FILE -ND 8157\" $AWS_HOST --server=\"/usr/bin/mosh-server\""
 
 .. _Alex Sanchez post: https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6
 .. _this article: http://linuxpitstop.com/ssh-vs-mosh/
