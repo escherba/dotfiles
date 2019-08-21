@@ -1,7 +1,7 @@
 PyCharm
 -------
 
-To disable spell checking in code: Go to ``file | settings | editor | inspections | Spelling | Typo`` and
+To disable spell checking in code: Go to "File -> settings -> editor -> inspections -> Spelling -> Typo" and
 remove "code" and "literals" checkmarks.
 
 https://intellij-support.jetbrains.com/hc/en-us/community/posts/207070915-disable-spell-checking-on-variable-declarations-
@@ -39,6 +39,6 @@ CSV diff tool
 -------------
 
 The above utility (``diff-highlight``) generally handles CSV files quite
-well, but for a more specialized tool try ``daff``_.
+well, but for a more specialized tool try `daff`_.
 
 .. _daff: https://github.com/paulfitz/daff
