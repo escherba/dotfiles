@@ -1,8 +1,8 @@
 PyCharm
 -------
 
-To disable spell checking in code: Go to `file | settings | editor | inspections | Spelling | Typo` and
-remove checkmarks for `code` and `literals`.
+To disable spell checking in code: Go to ``file | settings | editor | inspections | Spelling | Typo`` and
+remove "code" and "literals" checkmarks.
 
 https://intellij-support.jetbrains.com/hc/en-us/community/posts/207070915-disable-spell-checking-on-variable-declarations-
 
@@ -10,7 +10,7 @@ Increase Inotify Watches Limit:
 
 https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
 
-Modify `/etc/sysctl.conf` to include::
+Modify ``/etc/sysctl.conf`` to include::
 
     fs.inotify.max_user_watches = 524288
 
@@ -39,6 +39,6 @@ CSV diff tool
 -------------
 
 The above utility (``diff-highlight``) generally handles CSV files quite
-well, but for a more specialized tool you try `daff`_.
+well, but for a more specialized tool try ``daff``_.
 
 .. _daff: https://github.com/paulfitz/daff
