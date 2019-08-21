@@ -1,10 +1,8 @@
 PyCharm
 -------
 
-To disable spell checking in code: Go to "File -> settings -> editor -> inspections -> Spelling -> Typo" and
+To `disable spell checking`_ in code: Go to "File -> settings -> editor -> inspections -> Spelling -> Typo" and
 remove "code" and "literals" checkmarks.
-
-https://intellij-support.jetbrains.com/hc/en-us/community/posts/207070915-disable-spell-checking-on-variable-declarations-
 
 To increase `inotify watches limit`_, modify ``/etc/sysctl.conf`` to include::
 
@@ -39,3 +37,4 @@ well, but for a more specialized tool try `daff`_.
 
 .. _daff: https://github.com/paulfitz/daff
 .. _inotify watches limit: https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
+.. _disable spell checking: https://intellij-support.jetbrains.com/hc/en-us/community/posts/207070915-disable-spell-checking-on-variable-declarations-
