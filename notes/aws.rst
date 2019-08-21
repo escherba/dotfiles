@@ -24,7 +24,7 @@ For analysis::
     jupyter lab --no-browser --port 8888
     
 On the local machine, add the following to ``~/.ssh/config`` (it allows you to log in to your
-instance simply by typing `ssh ec2-large`)::
+instance simply by typing ``ssh ec2-large``)::
 
     Host ec2-large
         <your public ec2 ip address>
