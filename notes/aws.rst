@@ -68,7 +68,6 @@ While we're at it, configure tmux:
 
 .. code-block:: bash
 
-    # configure Tmux
     curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux.conf
 
 Finally, add to ``.bashrc`` on your local machine::
