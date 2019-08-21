@@ -14,13 +14,13 @@ To create a blank Conda envirnoment called "env1" for Python 3.6::
 
     conda create -n env1 python=3.6 pip
 
-To create a Conda environment from a YAML file::
-
-    conda env create -f environment.yml
-
-To dump current environment into a YAML file::
+To dump current environment into a Conda YAML config (this is Conda equivalent of "pip freeze")::
 
     conda env export > environment.yml
+
+To create a Conda environment from a Conda YAML config::
+
+    conda env create -f environment.yml
 
 To view all environments::
 
@@ -51,9 +51,8 @@ Create a new conda environment::
     conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
     conda install cython matplotlib seaborn pillow scikit-learn pandas jupyter jupyterlab \
         tqdm pywavelets pylint pyyaml statsmodels joblib pytest pydot ipykernel dill
-    conda install -c conda-forge imbalanced-learn scikit-garden mlxtend xgboost
-    conda install -c conda-forge tensorboard tensorboardx visdom lightgbm
-    conda install -c conda-forge frozendict boto3 jupyter_contrib_nbextensions
+    conda install -c conda-forge imbalanced-learn scikit-garden mlxtend xgboost tensorboard \
+        tensorboardx visdom lightgbm frozendict boto3 jupyter_contrib_nbextensions
 
 Finally install Tensorflow 2.0-beta using pip::
 
@@ -111,7 +110,7 @@ To view installed kernels and to delete an existing one::
     jupyter kernelspec list
     jupyter kernelspec uninstall <kernel-name>
 
-Jupyter (Misc extensions)
+Jupyter (extensions)
 -------------------------
 
 ::
