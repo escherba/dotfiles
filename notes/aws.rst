@@ -50,21 +50,12 @@ Using AWS with Mosh
 Mosh is an alternative to SSH that runs over UDP and has some advantages over unreliable networks. You can read more about it in `this article`_.
 
 
-On Amazon AMI instances:
+First we upgrade the instance (on Ubuntu the same is accomplished via `sudo apt update && sudo apt ugrade`):
 
 .. code-block:: bash
 
-    # update
     sudo yum -y update
     sudo yum -y upgrade
-
-On Ubuntu instances:
-
-.. code-block:: bash
-
-    # update
-    sudo apt update
-    sudo apt upgrade
 
 and then
 
@@ -73,7 +64,7 @@ and then
     # enable EPEL6 by changing enabled=0 -> enabled=1
     sudo vim /etc/yum.repos.d/epel.repo
 
-    # install misc. utilities
+    # install bare basics
     sudo yum install htop tmux mosh
 
     # configure Tmux
