@@ -12,7 +12,7 @@ The rest of the commands are run in a tmux window::
     bash Anaconda3-2019.07-Linux-x86_64.sh
     conda clean --all
     
-Given a repo with `environment.yml` file in it::
+Given a repo with ``environment.yml`` file in it::
 
     conda env create --name env1 -f environment.yml
     conda clean --all
@@ -23,7 +23,7 @@ For analysis::
     conda install matplotlib jupyterlab
     jupyter lab --no-browser --port 8888
     
-On the local machine, add the following to `~/.ssh/config` (it allows you to log in to your
+On the local machine, add the following to ``~/.ssh/config`` (it allows you to log in to your
 instance simply by typing `ssh ec2-large`)::
 
     Host ec2-large
