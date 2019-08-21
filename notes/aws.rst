@@ -86,5 +86,5 @@ Add to ``.bashrc``::
     alias mosh-emr-bind="mosh --ssh=\"ssh -i $AWS_KEY -ND 8157\" $EMR_HOST --server=\"/usr/bin/mosh-server\""
 
 
-.. Alex Sanchez post: https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6
-.. this article: http://linuxpitstop.com/ssh-vs-mosh/
+.. _Alex Sanchez post: https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6
+.. _this article: http://linuxpitstop.com/ssh-vs-mosh/
