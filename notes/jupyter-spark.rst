@@ -4,12 +4,12 @@ Jupyter on EMR
 Installation
 ------------
 
-First, install Jupyter on master node. Some installation here ensures that Jupyter can also start a Python kernels and isn't necessart for running Spark with Scala.
+First, install Jupyter on master node.
 
 .. code-block:: bash
 
     sudo yum install gcc-gfortran
-    sudo yum install python27-devel python27-pip. pyhton27-numpy python27-scipy
+    sudo yum install python27-devel python27-pip pyhton27-numpy python27-scipy
     sudo pip install py4j nose pandas jupyter
 
 Append the following to the ``~/.bashrc``:
@@ -19,7 +19,7 @@ Append the following to the ``~/.bashrc``:
     export SPARK_HOME=/usr/lib/spark
     alias sudo='sudo env PATH=$PATH'
 
-Install Apache Toree to support IBM Spark Kernel with Jupyter:
+Install `Apache Toree`_ to support IBM Spark Kernel with Jupyter:
 
 .. code-block:: bash
 
@@ -40,3 +40,5 @@ You will be able to select Toree Scala kernel from the drop down list in the bro
 .. code-block:: bash
     
     lsof | grep nohup.out | awk '{print $2}' | xargs kill
+
+.. _Apache Toree: https://toree.apache.org
