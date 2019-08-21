@@ -1,8 +1,14 @@
 PyCharm
 -------
 
-To `disable spell checking`_ in code, go to "File -> settings -> editor -> inspections -> Spelling -> Typo" and
+Spell checking
+~~~~~~~~~~~~~~
+
+To `disable spell checking`_ in code, go to "File -> Settings -> Editor -> Inspections -> Spelling -> Typo" and
 remove "code" and "literals" checkmarks.
+
+Inotify Watches Limit
+~~~~~~~~~~~~~~~~~~~~~
 
 To increase `inotify watches limit`_, modify ``/etc/sysctl.conf`` to include::
 
