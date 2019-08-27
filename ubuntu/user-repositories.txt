@@ -1,9 +1,0 @@
-#!/bin/bash
-
-sudo apt-add-repository ppa:diesch/testing
-sudo apt-add-repository ppa:no1wantdthisname/ppa
-sudo apt-add-repository ppa:ubuntu-audio-dev/alsa-daily
-sudo apt-add-repository ppa:webupd8team/java
-sudo apt-add-repository ppa:graphics-drivers/ppa
-sudo apt-add-repository ppa:jfi/ppa
-sudo apt-add-repository ppa:indicator-multiload/stable-daily
