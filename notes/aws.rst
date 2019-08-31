@@ -37,6 +37,15 @@ Then run port forwarding like this::
     
 Now you can open the browser at http://localhost:9999 and use Jupyter Lab. These steps roughly follow ones outlined in `Alex Sanchez post`_.
 
+Tmux
+----
+
+To avoid the fixed-size panes issue, detach existing clients when attaching to a Tmux session::
+
+    tmux attach -d
+    
+To read more about this, see `this SO answer`_.
+
 File transfer
 -------------
 
@@ -78,3 +87,4 @@ Finally, add to ``.bashrc`` on your local machine::
 
 .. _Alex Sanchez post: https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6
 .. _this article: http://linuxpitstop.com/ssh-vs-mosh/
+.. _this SO answer: https://stackoverflow.com/a/7819465
