@@ -126,6 +126,7 @@ Jupyter (extensions)
     jupyter nbextension enable spellchecker/main
     
     jupyter labextension install @jupyter-widgets/jupyterlab-manager
-
+    jupyter labextension install @pyviz/jupyterlab_pyviz
+   
 Other notes:
 https://medium.com/@rrfd/jupyter-notebook-shortcuts-tips-and-tricks-top-nbextensions-bring-order-to-your-notebooks-pt-1-b58f270963f9
