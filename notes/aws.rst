@@ -37,6 +37,12 @@ Then run port forwarding like this::
     
 Now you can open the browser at http://localhost:9999 and use Jupyter Lab. These steps roughly follow ones outlined in `Alex Sanchez post`_.
 
+Sometimes port forwarding gets stuck. You can find the PIDs of the listeners like so:
+
+    lsof -i :9999
+   
+Then terminate the listeners using `kill` and try connecting again.
+
 Tmux
 ----
 
