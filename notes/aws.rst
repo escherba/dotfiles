@@ -27,7 +27,7 @@ On the local machine, add the following to ``~/.ssh/config`` (it allows you to l
 instance simply by typing ``ssh ec2-large``)::
 
     Host ec2-large
-        <your public ec2 ip address>
+        Hostname <your public ec2 ip address>
         User ec2-user
         IdentityFile ~/.ssh/aws_web_east.pem
 
