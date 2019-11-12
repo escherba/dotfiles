@@ -18,7 +18,7 @@ Given a repo with ``environment.yml`` file in it::
     conda clean --all
     conda activate env1
     
-For analysis::
+For basic data science stuff::
 
     conda install matplotlib jupyterlab
     jupyter lab --no-browser --port 8888
