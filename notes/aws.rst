@@ -3,7 +3,7 @@ Jupyter Lab Workflow
 
 Install bare necessities::
 
-    sudo yum install htop tmux git
+    sudo yum install htop tmux git wget
     curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux.conf
 
 The rest of the commands are run in a tmux window::
