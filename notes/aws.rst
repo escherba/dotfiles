@@ -43,7 +43,7 @@ Sometimes port forwarding gets stuck. You can find the PIDs of the listeners lik
    
 Then terminate the listeners using ``kill`` and try connecting again.
 
-To avoid clobbering notebook history with large output blobs, I strip out output using `nbstripout`::
+To avoid clobbering notebook history with large output blobs, I strip out output using ``nbstripout``::
 
     conda install -c conda-forge nbstripout
     nbstripout --install --global
