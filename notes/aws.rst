@@ -1,6 +1,10 @@
 Jupyter Lab Workflow
 --------------------
 
+(Optionally) May need to use EPEL::
+
+    sudo yum install epel-release
+
 Install bare necessities::
 
     sudo yum install htop tmux git wget
