@@ -17,7 +17,3 @@
     show = diff-highlight | less
 [grep]
     linenumber = true
-[filter "dropoutput_ipynb"]
-	clean = ~/.local/bin/ipynb_output_filter.py
-	smudge = cat
-

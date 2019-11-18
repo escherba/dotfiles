@@ -3,7 +3,7 @@
     excludesfile = ~/.global_ignore
     editor = vim
 [user]
-	name = Eugene Scherba
+    name = Eugene Scherba
     email = escherba@gmail.com
 [merge]
     tool = vimdiff
@@ -20,6 +20,3 @@
     show = diff-highlight | less
 [grep]
     linenumber = true
-[filter "dropoutput_ipynb"]
-	clean = ~/.local/bin/ipynb_output_filter.py
-	smudge = cat
