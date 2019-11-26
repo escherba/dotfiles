@@ -50,9 +50,11 @@ Create a new conda environment::
     conda install setuptools
     conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
     conda install cython matplotlib seaborn pillow scikit-learn pandas jupyter jupyterlab \
-        tqdm pywavelets pylint pyyaml statsmodels joblib pytest pydot ipykernel dill
+        tqdm pylint pyyaml statsmodels joblib pytest pydot ipykernel dill \
+        pyyaml pytables numpy pandas scipy scikit-learn joblib psutil colorama
     conda install -c conda-forge imbalanced-learn scikit-garden mlxtend xgboost tensorboard \
-        tensorboardx visdom lightgbm frozendict boto3 jupyter_contrib_nbextensions
+        tensorboardx visdom lightgbm frozendict boto3 jupyter_contrib_nbextensions fastparquet \
+        pyaml frozendict s3fs boto3 awscli
 
 Finally install Tensorflow 2.0-beta using pip::
 
