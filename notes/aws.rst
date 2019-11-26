@@ -3,7 +3,7 @@ Jupyter Lab Workflow
 
 (Optionally) May need to use EPEL::
 
-    sudo yum install epel-release
+    sudo amazon-linux-extras install epel
 
 Install bare necessities::
 
