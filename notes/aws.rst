@@ -12,8 +12,8 @@ Install bare necessities::
 
 The rest of the commands are run in a tmux window::
 
-    wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh
-    bash Anaconda3-2019.07-Linux-x86_64.sh
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    bash Miniconda3-latest-Linux-x86_64.sh
     conda clean --all
     
 Given a repo with ``environment.yml`` file in it::
