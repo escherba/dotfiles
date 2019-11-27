@@ -44,7 +44,6 @@ Tensorflow v2 environment with Conda
 
 Create a new conda environment::
 
-    conda deactivate
     conda create -n tf2b python=3.6 pip
     conda activate tf2b
     conda install setuptools
