@@ -16,12 +16,13 @@ This should print out "True."
 Running Jupyter from Docker
 ------------
 
-Example of how to start jupyter lab in a project folder called ``project-dir``::
+Assuming the project you're working on is under ``$HOME/project-dir`` and home is your current directory::
 
-  cd project-dir
-  docker run -v $(pwd):/project-dir -p 8888:8888 --gpus all -it -e JUPYTER_ENABLE_LAB=yes \
-    --rm escherba/tensorflow:mod /usr/local/bin/jupyter lab \
-    --no-browser --ip 0.0.0.0 --allow-root --notebook-dir /project-dir
+  docker run -v $(pwd):/default -p 8888:8888 --gpus all -it -e JUPYTER_ENABLE_LAB=yes \
+    --rm <your-dockerhub-handle>/tensorflow:<some-tag> /usr/local/bin/jupyter lab \
+    --no-browser --ip 0.0.0.0 --allow-root --notebook-dir /default/project-dir
+
+Where intead of ``<your-dockerhub-handle>/tensorflow:<some-tag>`` I use something like ``escherba/tensorflow:mod``.
 
 Now you can use `port forwarding`_
 
