@@ -22,7 +22,7 @@ Assuming the project you're working on is under ``$HOME/project-dir`` and home i
     --rm <your-dockerhub-acct>/tensorflow:<tag> /usr/local/bin/jupyter lab \
     --no-browser --ip 0.0.0.0 --allow-root --notebook-dir /default/project-dir
 
-Where intead of ``<your-dockerhub-acct>/tensorflow:<some-tag>`` I use something like ``escherba/tensorflow:mod``.
+Where intead of ``<your-dockerhub-acct>/tensorflow:<tag>`` I use something like ``escherba/tensorflow:mod``.
 
 Now you can use `port forwarding`_
 
