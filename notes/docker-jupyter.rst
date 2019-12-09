@@ -14,7 +14,7 @@ To verify both that Nvidia-docker is working and that Tensorflow can recognize t
 
 This should print out "True."
 
-Running Jupyter 
+Running Jupyter from Docker
 ------------
 
 Example of how to start jupyter lab in a project folder called ``project-dir``::
