@@ -6,6 +6,9 @@ To verify both that Nvidia-docker is working and that Tensorflow can recognize t
   docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu  \
     python -c "import tensorflow as tf; print(tf.test.is_gpu_available())"
 
-  docker run -v $(pwd):/houdini -p 8888:8888 --gpus all -it -e JUPYTER_ENABLE_LAB=yes \
+Example of how to start jupyter lab in a project folder called ``project-dir``::
+
+  cd project-dir
+  docker run -v $(pwd):/project-dir -p 8888:8888 --gpus all -it -e JUPYTER_ENABLE_LAB=yes \
     --rm escherba/tensorflow:mod /usr/local/bin/jupyter lab \
-    --no-browser --ip 0.0.0.0 --allow-root --notebook-dir /houdini
+    --no-browser --ip 0.0.0.0 --allow-root --notebook-dir /project-dir
