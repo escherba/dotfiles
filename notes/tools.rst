@@ -61,14 +61,6 @@ well, but for a more specialized tool try `daff`_.
 Miscellaneous
 -------------
 
-Tools
-~~~~~
-
-Some useful things::
-
-    sudo apt install htop tmux
-    sudo apt install silversearcher-ag
-
 Libraries
 ~~~~~~~~~
 
