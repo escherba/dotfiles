@@ -4,7 +4,7 @@ Using Jupyter Lab with Docker on Nvidia GPU instances
 Basic set up on GPU instances
 ------------
 
-For setting up on Ubuntu, I found instructions in `Jonathan Petitcolas post` easy to follow.
+For setting up on Ubuntu, I found instructions in `Jonathan Petitcolas post`_ easy to follow.
 
 To verify both that Nvidia-docker is working and that Tensorflow can recognize the GPU::
 
