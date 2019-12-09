@@ -1,4 +1,8 @@
-## Basic set up
+Using Jupyter Lab with Docker on Nvidia GPU instances
+=====================
+
+Basic set up on GPU instances
+------------
 
 Instructions on how to set up an Ubuntu instance to work with Nvidia Docker: 
 https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
@@ -8,7 +12,8 @@ To verify both that Nvidia-docker is working and that Tensorflow can recognize t
   docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu  \
     python -c "import tensorflow as tf; print(tf.test.is_gpu_available())"
 
-## Running Jupyter 
+Running Jupyter 
+------------
 
 Example of how to start jupyter lab in a project folder called ``project-dir``::
 
@@ -17,7 +22,8 @@ Example of how to start jupyter lab in a project folder called ``project-dir``::
     --rm escherba/tensorflow:mod /usr/local/bin/jupyter lab \
     --no-browser --ip 0.0.0.0 --allow-root --notebook-dir /project-dir
 
-## Basic operation
+Basic Docker operation (for reference)
+------------
 
 Pull the lastest Tensorflow image::
 
