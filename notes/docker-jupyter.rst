@@ -19,10 +19,10 @@ Running Jupyter from Docker
 Assuming the project you're working on is under ``$HOME/project-dir`` and home is your current directory::
 
   docker run -v $(pwd):/default -p 8888:8888 --gpus all -it -e JUPYTER_ENABLE_LAB=yes \
-    --rm <your-dockerhub-handle>/tensorflow:<some-tag> /usr/local/bin/jupyter lab \
+    --rm <your-dockerhub-acct>/tensorflow:<tag> /usr/local/bin/jupyter lab \
     --no-browser --ip 0.0.0.0 --allow-root --notebook-dir /default/project-dir
 
-Where intead of ``<your-dockerhub-handle>/tensorflow:<some-tag>`` I use something like ``escherba/tensorflow:mod``.
+Where intead of ``<your-dockerhub-acct>/tensorflow:<some-tag>`` I use something like ``escherba/tensorflow:mod``.
 
 Now you can use `port forwarding`_
 
@@ -35,7 +35,7 @@ Pull the lastest Tensorflow image::
 
 To set up a custom repo for the image (effectively "forking" it)::
 
-  docker push <your-dockerhub-handle>/tensorflow:<some-tag>
+  docker push <your-dockerhub-acct>/tensorflow:<tag>
   
 To see running images::
 
@@ -43,8 +43,8 @@ To see running images::
 
 To commit and push changes::
 
-  docker commit 8c5384b78fb5 <your-dockerhub-handle>/tensorflow:<some-tag>
-  docker push <your-dockerhub-handle>/tensorflow:<some-tag>
+  docker commit 8c5384b78fb5 <your-dockerhub-acct>/tensorflow:<tag>
+  docker push <your-dockerhub-acct>/tensorflow:<tag>
 
 
 .. _Jonathan Petitcolas post: https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
