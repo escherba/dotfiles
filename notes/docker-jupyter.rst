@@ -42,8 +42,8 @@ To see running images::
 
 To commit and push changes::
 
-  docker commit 8c5384b78fb5 escherba/tensorflow:mod
-  docker push escherba/tensorflow:mod
+  docker commit 8c5384b78fb5 <your-dockerhub-handle>/tensorflow:<some-tag>
+  docker push <your-dockerhub-handle>/tensorflow:<some-tag>
 
 
 .. _Jonathan Petitcolas post: https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
