@@ -1,6 +1,8 @@
 Jupyter Lab Workflow
---------------------
+==================
 
+Set up
+------
 (Optionally) May need to use EPEL::
 
     sudo amazon-linux-extras install epel
@@ -25,6 +27,12 @@ Given a repo with ``environment.yml`` file in it::
 For basic data science stuff::
 
     conda install matplotlib jupyterlab
+    
+Port forwarding
+---------------
+
+To start Jupyter Lab on port 8888::
+
     jupyter lab --no-browser --port 8888
     
 On the local machine, add the following to ``~/.ssh/config`` (it allows you to log in to your
