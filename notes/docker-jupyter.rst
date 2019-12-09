@@ -4,8 +4,7 @@ Using Jupyter Lab with Docker on Nvidia GPU instances
 Basic set up on GPU instances
 ------------
 
-Instructions on how to set up an Ubuntu instance to work with Nvidia Docker: 
-https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
+For setting up on Ubuntu, I found instructions in `Jonathan Petitcolas post` easy to follow.
 
 To verify both that Nvidia-docker is working and that Tensorflow can recognize the GPU::
 
@@ -23,6 +22,8 @@ Example of how to start jupyter lab in a project folder called ``project-dir``::
   docker run -v $(pwd):/project-dir -p 8888:8888 --gpus all -it -e JUPYTER_ENABLE_LAB=yes \
     --rm escherba/tensorflow:mod /usr/local/bin/jupyter lab \
     --no-browser --ip 0.0.0.0 --allow-root --notebook-dir /project-dir
+
+Now you can use `port forwarding`_
 
 Basic Docker operation (for reference)
 ------------
@@ -43,3 +44,7 @@ To commit and push changes::
 
   docker commit 8c5384b78fb5 escherba/tensorflow:mod
   docker push escherba/tensorflow:mod
+
+
+.. _Jonathan Petitcolas post: https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
+.. _port forwarding: https://github.com/escherba/dotfiles/blob/master/notes/aws.rst#port-forwarding
