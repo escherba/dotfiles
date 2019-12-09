@@ -12,6 +12,8 @@ To verify both that Nvidia-docker is working and that Tensorflow can recognize t
   docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu  \
     python -c "import tensorflow as tf; print(tf.test.is_gpu_available())"
 
+This should print out "True."
+
 Running Jupyter 
 ------------
 
