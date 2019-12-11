@@ -50,4 +50,4 @@ To manage docker as a non-root user see this `doc page`_
 
 .. _Jonathan Petitcolas post: https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
 .. _port forwarding: https://github.com/escherba/dotfiles/blob/master/notes/aws.rst#port-forwarding
-.. _dock page: https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user
+.. _doc page: https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user
