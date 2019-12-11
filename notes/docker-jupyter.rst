@@ -46,6 +46,8 @@ To commit and push changes::
   docker commit 8c5384b78fb5 <your-dockerhub-acct>/tensorflow:<tag>
   docker push <your-dockerhub-acct>/tensorflow:<tag>
 
+To manage docker as a non-root user see this `doc page`_
 
 .. _Jonathan Petitcolas post: https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
 .. _port forwarding: https://github.com/escherba/dotfiles/blob/master/notes/aws.rst#port-forwarding
+.. _dock page: https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user
