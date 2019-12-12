@@ -2,7 +2,7 @@
 set nospell
 
 " unless we're in rst
-au BufRead *.rst setlocal spell
+au BufRead *.rst,*.md setlocal spell
 
 " ----- disable some plugins bundled with Spf13 -------------
 UnBundle 'amirh/HTML-AutoCloseTag'
