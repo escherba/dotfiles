@@ -53,7 +53,9 @@ Sometimes port forwarding gets stuck. You can find the PIDs of the listeners lik
 
     lsof -i :9999
    
-Then terminate the listeners using ``kill`` and try connecting again.
+Then terminate the listeners using ``kill`` and try connecting again. A shortcut::
+
+    lsof -i :<port> | awk '{print $2}' | sort | uniq | xargs kill
 
 Other tools
 ------------
