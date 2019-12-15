@@ -37,7 +37,7 @@ To set up a custom repo for the image (effectively "forking" it)::
 
   docker tag ${image_id} docker.io/${login_name}/${image_name}
   docker push docker.io/${login_name}/${image_name}
-  
+
 To see running images::
 
   docker ps -a
@@ -47,7 +47,7 @@ To commit and push changes::
   docker commit 8c5384b78fb5 <your-dockerhub-acct>/tensorflow:<tag>
   docker push <your-dockerhub-acct>/tensorflow:<tag>
 
-To start Docker container as a non-root user, add ``-u $(id -u):$(id -g)`` 
+To start Docker container as a non-root user, add ``-u $(id -u):$(id -g)``
 to the command-line options. Conversely, to start as a root user (in
 case the container does not start this way by default), use ``-u 0``. For
 more information, see this `doc page`_.

@@ -33,7 +33,9 @@ install some dependencies::
 
 The following command builds LightGBM with GPU support::
 
-    python3 -m pip install lightgbm --install-option=--gpu --install-option="--opencl-include-dir=/usr/local/cuda/include/" --install-option="--opencl-library=/usr/local/cuda/lib64/libOpenCL.so"
+    python3 -m pip install lightgbm --install-option=--gpu \
+        --install-option="--opencl-include-dir=/usr/local/cuda/include/" \
+        --install-option="--opencl-library=/usr/local/cuda/lib64/libOpenCL.so"
 
 To see other related installation instructions, visit `LightGBM PyPi page`_.
 
