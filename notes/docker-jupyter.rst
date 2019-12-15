@@ -8,10 +8,62 @@ For setting up on Ubuntu, I found instructions in `Jonathan Petitcolas post`_ ea
 
 To verify both that Nvidia-docker is working and that Tensorflow can recognize the GPU::
 
-  docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu  \
-    python -c "import tensorflow as tf; print(tf.test.is_gpu_available())"
+  docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu-py3 \
+    python3 -c "import tensorflow as tf; print(tf.test.is_gpu_available())"
 
 This should print out "True."
+
+Basic Docker operation (for reference)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Pull the lastest Tensorflow image::
+
+  docker pull tensorflow/tensorflow:latest-gpu-py3
+
+To set up a custom repo for the image (effectively "forking" it)::
+
+  docker tag <image-id> docker.io/<your-login-name>/<image-name>
+  docker push docker.io/<your-ogin-name>/<image-name>
+
+To see running images::
+
+  docker ps -a
+
+To commit and push changes::
+
+  docker commit <image-id> <your-login-name>/<image-name>
+  docker push <your-login-name>/<image-name>
+
+To start Docker container as a non-root user, add ``-u $(id -u):$(id -g)``
+to the command-line options. Conversely, to start as a root user (in
+case the container does not start this way by default), use ``-u 0``. For
+more information, see this `doc page`_.
+
+Installing Jupyter Lab
+~~~~~~~~~~~~~~~~~~~~~~
+
+To allow user-side installation of Jupyter and other packages, we need to set up
+some directories under root (/). To do this, start the container as root (passing ``-u 0``)
+and::
+
+  mkdir /.local /.jupyter /.cache /.npm
+  chown 1000:1000 /.local /.jupyter /.cache /.npm
+
+You will need NodeJS and NPM for running plugins::
+
+  apt-get install nodejs npm
+
+Then save current changes (using ``docker commit`` and ``docker push``) and enter
+docker image as regular user (passing ``-u $(id -u):$(id -g)``. The following commands should work::
+
+  python3 -m pip install --user ipython ipywidgets nbstripout jupyter \
+    jupyterlab jupyter_contrib_nbextensions
+
+Finally run the following::
+
+  jupyter contrib nbextension install --user
+  jupyter labextension install @jupyter-widgets/jupyterlab-manager
+  jupyter labextension install @pyviz/jupyterlab_pyviz
 
 Running Jupyter from Docker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -25,32 +77,6 @@ Assuming the project you're working on is under ``$HOME/project-dir`` and home i
 Where intead of ``<your-dockerhub-acct>/tensorflow:<tag>`` I use something like ``escherba/tensorflow:mod``.
 
 Now you can use `port forwarding`_
-
-Basic Docker operation (for reference)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Pull the lastest Tensorflow image::
-
-  docker pull tensorflow/tensorflow:latest-gpu-py3-jupyter
-
-To set up a custom repo for the image (effectively "forking" it)::
-
-  docker tag ${image_id} docker.io/${login_name}/${image_name}
-  docker push docker.io/${login_name}/${image_name}
-
-To see running images::
-
-  docker ps -a
-
-To commit and push changes::
-
-  docker commit 8c5384b78fb5 <your-dockerhub-acct>/tensorflow:<tag>
-  docker push <your-dockerhub-acct>/tensorflow:<tag>
-
-To start Docker container as a non-root user, add ``-u $(id -u):$(id -g)``
-to the command-line options. Conversely, to start as a root user (in
-case the container does not start this way by default), use ``-u 0``. For
-more information, see this `doc page`_.
 
 .. _Jonathan Petitcolas post: https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
 .. _port forwarding: https://github.com/escherba/dotfiles/blob/master/notes/aws.rst#port-forwarding
