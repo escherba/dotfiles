@@ -1,8 +1,8 @@
 Using Jupyter Lab with Docker on Nvidia GPU instances
-=====================
+-----------------------------------------------------
 
 Basic set up on GPU instances
-------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For setting up on Ubuntu, I found instructions in `Jonathan Petitcolas post`_ easy to follow.
 
@@ -14,7 +14,7 @@ To verify both that Nvidia-docker is working and that Tensorflow can recognize t
 This should print out "True."
 
 Running Jupyter from Docker
-------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Assuming the project you're working on is under ``$HOME/project-dir`` and home is your current directory::
 
@@ -27,15 +27,16 @@ Where intead of ``<your-dockerhub-acct>/tensorflow:<tag>`` I use something like 
 Now you can use `port forwarding`_
 
 Basic Docker operation (for reference)
-------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Pull the lastest Tensorflow image::
 
-  docker pull tensorflow/tensorflow:latest-gpu
+  docker pull tensorflow/tensorflow:latest-gpu-py3-jupyter
 
 To set up a custom repo for the image (effectively "forking" it)::
 
-  docker push <your-dockerhub-acct>/tensorflow:<tag>
+  docker tag ${image_id} docker.io/${login_name}/${image_name}
+  docker push docker.io/${login_name}/${image_name}
   
 To see running images::
 
@@ -46,7 +47,10 @@ To commit and push changes::
   docker commit 8c5384b78fb5 <your-dockerhub-acct>/tensorflow:<tag>
   docker push <your-dockerhub-acct>/tensorflow:<tag>
 
-To manage docker as a non-root user see this `doc page`_
+To start Docker container as a non-root user, add ``-u $(id -u):$(id -g)`` 
+to the command-line options. Conversely, to start as a root user (in
+case the container does not start this way by default), use ``-u 0``. For
+more information, see this `doc page`_.
 
 .. _Jonathan Petitcolas post: https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
 .. _port forwarding: https://github.com/escherba/dotfiles/blob/master/notes/aws.rst#port-forwarding
