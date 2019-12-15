@@ -17,7 +17,7 @@ Intel Math Kernel Library (MKL)
 
 To install MKL system-wide, follow `mkl4deb`_ script. Then follow
 `these instructions`_ to compile Numpy and Scipy to use it. Note: to
-compile Scipy you may need:
+compile Scipy you may need::
 
     apt-get install gfortran
 
