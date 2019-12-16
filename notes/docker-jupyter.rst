@@ -78,6 +78,13 @@ Where intead of ``<your-dockerhub-acct>/tensorflow:<tag>`` I use something like 
 
 Now you can use `port forwarding`_
 
+Troubleshooting
+~~~~~~~~~~~~~~~
+
+An old script for installing Docker on Ubuntu I found useful: `escherba/install.sh`_. Includes `docker-cleanup`_ command.
+
 .. _Jonathan Petitcolas post: https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
 .. _port forwarding: https://github.com/escherba/dotfiles/blob/master/notes/aws.rst#port-forwarding
 .. _doc page: https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user
+.. _escherba/install.sh: https://gist.github.com/escherba/1ffcf8ff9e0791f8206b737322f6e3bc
+.. _docker-cleanup: https://gist.github.com/wdullaer/76b450a0c986e576e98b
