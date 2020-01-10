@@ -8,7 +8,7 @@ To restart Linux safely in case of a frozen desktop::
 
     Ctrl + Alt + PrtSc (SysRq) + reisub
 
-where you hold <Ctrl>, <Alt> and <PrtSc(SysRq)> buttons, and while holding them down, press r, e, i, s, u, b with the remaining finger(s).
+where you hold <Ctrl>, <Alt> and <PrtScn(SysRq)> buttons, and while holding them down, press r, e, i, s, u, b with the remaining finger(s).
 
 Libraries
 ~~~~~~~~~
