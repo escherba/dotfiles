@@ -16,6 +16,10 @@ This should print out "True."
 Basic Docker operation (for reference)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+If the Docker daemon is not running, start it with::
+
+  sudo service docker start
+
 Pull the lastest Tensorflow image::
 
   docker pull tensorflow/tensorflow:latest-gpu-py3
@@ -95,7 +99,3 @@ The user mapping ``-u $(id -u):$(id -g)`` is a useful shorthand for starting Doc
 .. _doc page: https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user
 .. _escherba/install.sh: https://gist.github.com/escherba/1ffcf8ff9e0791f8206b737322f6e3bc
 .. _docker-cleanup: https://gist.github.com/wdullaer/76b450a0c986e576e98b
-
-If the Docker daemon is not running, start it with::
-
-  sudo service docker start
