@@ -96,3 +96,6 @@ The user mapping ``-u $(id -u):$(id -g)`` is a useful shorthand for starting Doc
 .. _escherba/install.sh: https://gist.github.com/escherba/1ffcf8ff9e0791f8206b737322f6e3bc
 .. _docker-cleanup: https://gist.github.com/wdullaer/76b450a0c986e576e98b
 
+If the Docker daemon is not running, start it with::
+
+  sudo service docker start
