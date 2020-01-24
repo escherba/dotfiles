@@ -62,6 +62,11 @@ Finally install Tensorflow 2.0::
 
 Note: previously (TF-2.0 beta( one had to use pip: ``pip install tensorflow-gpu==2.0.0-beta1``.
 
+Re-login into Conda::
+
+    conda deactivate
+    conda activate tf2
+
 Test whether GPU is available::
 
     python3
