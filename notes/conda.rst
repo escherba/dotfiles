@@ -58,7 +58,7 @@ Create a new conda environment::
 
 Finally install Tensorflow 2.0::
 
-    conda install tensorflow-gpu
+    conda install tensorflow-gpu=2.0.0
 
 Note: previously (TF-2.0 beta( one had to use pip: ``pip install tensorflow-gpu==2.0.0-beta1``.
 
