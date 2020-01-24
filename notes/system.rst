@@ -1,6 +1,11 @@
 System stuff
 ------------
 
+SSH
+~~~
+
+Setting up public key for remote access: https://archive.md/QgoS2
+
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
