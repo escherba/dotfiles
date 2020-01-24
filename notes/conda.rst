@@ -56,9 +56,11 @@ Create a new conda environment::
         pyaml frozendict s3fs boto3 awscli ipython ipykernel nodejs ipywidgets nbstripout jupyter \
         jupyterlab jupyter_contrib_nbextensions
 
-Finally install Tensorflow 2.0-beta using pip::
+Finally install Tensorflow 2.0::
 
-    pip install tensorflow-gpu==2.0.0-beta1
+    conda install tensorflow-gpu
+
+Note: previously (TF-2.0 beta( one had to use pip: ``pip install tensorflow-gpu==2.0.0-beta1``.
 
 Test whether GPU is available::
 
