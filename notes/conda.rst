@@ -51,7 +51,7 @@ Create a new conda environment::
     conda install cython matplotlib seaborn pillow scikit-learn pandas  \
         pylint pyyaml statsmodels joblib pytest pydot dill \
         pytables numpy scipy joblib psutil colorama
-    conda install -c conda-forge imbalanced-learn scikit-garden mlxtend xgboost tensorboard \
+    conda install -c conda-forge rfpimp imbalanced-learn scikit-garden mlxtend xgboost tensorboard \
         tqdm tensorboardx visdom lightgbm frozendict boto3 jupyter_contrib_nbextensions fastparquet \
         pyaml frozendict s3fs boto3 awscli ipython ipykernel nodejs ipywidgets nbstripout jupyter \
         jupyterlab jupyter_contrib_nbextensions
