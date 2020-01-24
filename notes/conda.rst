@@ -31,7 +31,7 @@ To switch between environments::
     conda activate <environment-name>
     conda deactivate
 
-To remove an existing environment::
+To delete an existing environment::
 
     conda env remove --name <environment-name>
 
