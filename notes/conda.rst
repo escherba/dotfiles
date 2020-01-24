@@ -44,8 +44,8 @@ Tensorflow v2 environment with Conda
 
 Create a new conda environment::
 
-    conda create -n tf2b python=3.6 pip
-    conda activate tf2b
+    conda create -n tf2 python=3.6 pip
+    conda activate tf2
     conda install setuptools
     conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
     conda install cython matplotlib seaborn pillow scikit-learn pandas  \
@@ -104,9 +104,9 @@ Creating Jupyter kernels from Conda environments
 ::
 
     conda install ipykernel
-    python3 -m ipykernel install --user --name tf2b --display-name "Python 3 (tf2b)"
+    python3 -m ipykernel install --user --name tf2 --display-name "Python 3 (tf2)"
 
-Now you can select a kernel named `Python 3 (tf2b)` from the kernel dropdown
+Now you can select a kernel named `Python 3 (tf2)` from the kernel dropdown
 when creating a new Jupyter notebook.
 
 To view installed kernels and to delete an existing one::
