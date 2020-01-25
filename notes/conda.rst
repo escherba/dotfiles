@@ -85,33 +85,15 @@ Some lesser-known packages can be installed through pip on top of Conda environm
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
-If you get ``failed to get convolution algorithm``, see see `this page <https://github.com/tensorflow/tensorflow/issues/24828#issuecomment-457425190>`_ for possible resolution.
-
 If you get ``failed call to cuInit: CUDA_ERROR_UNKNOWN`` error when calling ``tf.test.is_gpu_available()``, the fix may be as simple as rebooting the system.
 
-Tensorflow v1 environment with Conda
-------------------------------------
+If you get ``failed to get convolution algorithm``, see see `this page <https://github.com/tensorflow/tensorflow/issues/24828#issuecomment-457425190>`_ for possible resolution.
 
-Suppose we want an environment with an older version of Tensorflow::
-
-    conda create -n tf1 python=3.6 pip
-    conda activate tf1
-    conda install numpy joblib pandas matplotlib jupyter jupyterlab scikit-learn \
-        pylint seaborn scipy tensorflow-gpu
-
-To test the Tensorflow environment::
-
-    python3
-    >>> import tensorflow as tf
-    >>> tf.test.is_gpu_available()
-
-The above should output `True`. If it outputs `False`, there are probably
-missing CUDA libraries. Install them with::
+Sometimes you may need to install Anaconda's CUDA packages directly. Do this like so::
 
     conda install cuda=10.0
     conda install cudnn=7.6
-
-
+ 
 Creating Jupyter kernels from Conda environments
 ------------------------------------------------
 
@@ -136,6 +118,7 @@ Jupyter (extensions)
     conda install ipywidgets
     conda install -c conda-forge nodejs jupyter_contrib_nbextensions
     jupyter contrib nbextension install --user
+    
     jupyter nbextension enable --py widgetsnbextension
     jupyter nbextension enable collapsible_headings/main
     jupyter nbextension enable notify/notify
