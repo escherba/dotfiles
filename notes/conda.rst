@@ -54,7 +54,7 @@ Create a new conda environment::
     conda install -c conda-forge rfpimp imbalanced-learn scikit-garden mlxtend xgboost tensorboard \
         tqdm tensorboardx visdom lightgbm frozendict boto3 jupyter_contrib_nbextensions fastparquet \
         pyaml frozendict s3fs boto3 awscli ipython ipykernel nodejs ipywidgets nbstripout jupyter \
-        jupyterlab jupyter_contrib_nbextensions
+        jupyterlab jupyter_contrib_nbextensions pandas-profiling
 
 Finally install Tensorflow 2.0::
 
