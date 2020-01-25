@@ -53,7 +53,7 @@ Create a new conda environment::
     conda install -c conda-forge rfpimp imbalanced-learn scikit-garden mlxtend xgboost tensorboard \
         tqdm tensorboardx visdom lightgbm frozendict boto3 fastparquet pyaml s3fs awscli \
         ipython ipdb ipykernel nodejs ipywidgets nbstripout jupyter umap-learn \
-        jupyterlab pandas-profiling pymysql sqlalchemy
+        jupyterlab pandas-profiling pymysql sqlalchemy jupyter_contrib_nbextensions
     conda install -c pyviz bokeh hvplot holoviews panel colorcet
 
 Finally install Tensorflow 2.0::
@@ -73,7 +73,6 @@ Test whether GPU is available::
     
 For analysis, it may be useful to enable ipywidgets and jupyter extensions::
 
-    conda install -c conda-forge jupyter_contrib_nbextensions 
     jupyter contrib nbextension install --user
     jupyter labextension install @jupyter-widgets/jupyterlab-manager
     jupyter labextension install @pyviz/jupyterlab_pyviz
