@@ -48,13 +48,13 @@ Create a new conda environment::
     conda activate tf2
     conda install setuptools
     conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
-    conda install cython matplotlib seaborn pillow scikit-learn pandas  \
-        pylint pyyaml statsmodels joblib pytest pydot dill \
-        pytables numpy scipy joblib psutil colorama
+    conda install cython matplotlib seaborn pillow scikit-learn pandas pylint pyyaml \
+        statsmodels pytest pydot dill pytables numpy scipy joblib psutil colorama
     conda install -c conda-forge rfpimp imbalanced-learn scikit-garden mlxtend xgboost tensorboard \
         tqdm tensorboardx visdom lightgbm frozendict boto3 jupyter_contrib_nbextensions fastparquet \
-        pyaml frozendict s3fs boto3 awscli ipython ipykernel nodejs ipywidgets nbstripout jupyter \
-        jupyterlab jupyter_contrib_nbextensions pandas-profiling
+        pyaml s3fs awscli ipython ipdb ipykernel nodejs ipywidgets nbstripout jupyter umap-learn \
+        jupyterlab jupyter_contrib_nbextensions pandas-profiling pymysql sqlalchemy
+    conda install -c pyviz bokeh hvplot holoviews panel colorcet
 
 Finally install Tensorflow 2.0::
 
