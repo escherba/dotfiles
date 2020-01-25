@@ -38,7 +38,7 @@ compile Scipy you may need::
 MKL on Mac OS X
 ~~~~~~~~~~~~~~~~
 
-When using some Anaconda packages, you may encounter the error:
+When using some Anaconda packages, you may encounter the error::
 
     Intel MKL FATAL ERROR: Cannot load libmkl_intel_thread.dylib
 
