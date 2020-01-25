@@ -78,6 +78,11 @@ Some lesser-known packages can be installed through pip on top of Conda environm
 
 Possible issues: see `this page <https://github.com/tensorflow/tensorflow/issues/24828#issuecomment-457425190>`_
 
+Troubleshooting
+~~~~~~~~~~~~~~~
+
+If you get ``failed call to cuInit: CUDA_ERROR_UNKNOWN`` when calling `tf.test.is_gpu_available()``, the fix may be as simple as rebooting the system.
+
 Tensorflow v1 environment with Conda
 ------------------------------------
 
