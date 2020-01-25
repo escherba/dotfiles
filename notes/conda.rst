@@ -49,7 +49,7 @@ Create a new conda environment::
     conda install setuptools
     conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
     conda install cython matplotlib seaborn pillow scikit-learn pandas pylint pyyaml \
-        statsmodels pytest pydot dill pytables numpy scipy joblib psutil colorama
+        statsmodels pytest pydot dill cloudpickle pytables numpy scipy joblib psutil colorama
     conda install -c conda-forge rfpimp imbalanced-learn scikit-garden mlxtend xgboost tensorboard \
         tqdm tensorboardx visdom lightgbm frozendict boto3 jupyter_contrib_nbextensions fastparquet \
         pyaml s3fs awscli ipython ipdb ipykernel nodejs ipywidgets nbstripout jupyter umap-learn \
