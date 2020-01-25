@@ -18,6 +18,9 @@ where you hold <Ctrl>, <Alt> and <PrtScn(SysRq)> buttons, and while holding them
 Libraries
 ~~~~~~~~~
 
+OpenCL and OpenMP
+.............
+
 To install OpenCL::
 
     sudo apt install ocl-icd-opencl-dev
@@ -27,7 +30,7 @@ To install OpenMP (for ``clang``)::
     sudo apt install libiomp-dev
 
 MKL on Linux
-~~~~~~~~~~~~
+.............
 
 To install MKL system-wide, follow `mkl4deb`_ script. Then follow
 `these instructions`_ to compile Numpy and Scipy to use it. Note: to
@@ -36,7 +39,7 @@ compile Scipy you may need::
     apt-get install gfortran
 
 MKL on Mac OS X
-~~~~~~~~~~~~~~~~
+.............
 
 When using some Anaconda packages, you may encounter the error: ``Intel MKL FATAL ERROR: Cannot load libmkl_intel_thread.dylib``. This could happen if the MKL library has not been added to library path. Adding the following to ``.bash_profile`` is likely to fix it::
 
