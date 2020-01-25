@@ -70,17 +70,22 @@ Test whether GPU is available::
     python3
     >>> import tensorflow as tf
     >>> tf.test.is_gpu_available()
+    
+For analysis, it may be useful to enable ipywidgets and jupyter extensions::
+
+    jupyter contrib nbextension install --user
+    jupyter labextension install @jupyter-widgets/jupyterlab-manager
+    jupyter labextension install @pyviz/jupyterlab_pyviz
 
 Some lesser-known packages can be installed through pip on top of Conda environment
 (generally prefer Conda packages if they exist)::
 
     pip install gym
-
-Possible issues: see `this page <https://github.com/tensorflow/tensorflow/issues/24828#issuecomment-457425190>`_
-
+   
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
+If you get ``failed to get convolution algorithm``, see see `this page <https://github.com/tensorflow/tensorflow/issues/24828#issuecomment-457425190>`_ for possible resolution.
 If you get ``failed call to cuInit: CUDA_ERROR_UNKNOWN`` error when calling ``tf.test.is_gpu_available()``, the fix may be as simple as rebooting the system.
 
 Tensorflow v1 environment with Conda
