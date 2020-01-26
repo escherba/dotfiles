@@ -80,7 +80,7 @@ For analysis, it may be useful to enable ipywidgets and jupyter extensions::
 Some lesser-known packages can be installed through pip on top of Conda environment
 (generally prefer Conda packages if they exist)::
 
-    pip install gym livelossplot
+    pip install gym livelossplot missingpy
    
 Troubleshooting
 ~~~~~~~~~~~~~~~
