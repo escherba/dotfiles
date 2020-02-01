@@ -31,10 +31,9 @@ To view all environments::
 
     conda env list
 
-To switch between environments::
+To switch to a different environment::
 
     conda activate <environment-name>
-    conda deactivate
 
 To delete an existing environment::
 
