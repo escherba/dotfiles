@@ -18,6 +18,11 @@ To dump current environment into a Conda YAML config (this is Conda equivalent o
 
     conda env export > environment.yml
 
+Sometimes you want to look at which packages you actually told Conda to install (i.e. you want
+``env export`` output to ignore dependencies)::
+
+    conda env export --from-history
+
 To create a Conda environment from a Conda YAML config::
 
     conda env create -f environment.yml
