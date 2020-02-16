@@ -58,7 +58,8 @@ Create a new conda environment::
     conda install -c conda-forge mlflow rfpimp imbalanced-learn scikit-garden mlxtend xgboost \
         tensorboard tqdm tensorboardx visdom lightgbm frozendict boto3 fastparquet pyaml s3fs \
         awscli ipython ipdb ipykernel nodejs ipywidgets nbstripout jupyter umap-learn \
-        jupyterlab pandas-profiling pymysql sqlalchemy jupyter_contrib_nbextensions
+        jupyterlab pandas-profiling pymysql sqlalchemy jupyter_contrib_nbextensions cloudpickle \
+        future pyglet
     conda install -c pyviz bokeh hvplot holoviews panel colorcet
 
 Finally install Tensorflow 2.0::
