@@ -60,8 +60,10 @@ To see available access points::
 	$ iwlist enx8416f91b54ee scan
 	
 Expect to see a long list of visible Wi-Fi networks. If the list is empty except
-for "No scan results" message, something went wrong (if it's an external USB device,
-try unplugging it and plugging it back in).
+for "No scan results" message, try reloading the device module::
+
+	$ sudo modprobe -r 8812au
+	$ sudo modprobe 8812au
 
 Configure network (WPA)
 -----------------------
