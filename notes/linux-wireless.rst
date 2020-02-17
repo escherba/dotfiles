@@ -154,5 +154,5 @@ Normally this should be solved by adding the name of the adapter's module (e.g. 
 	sudo modprobe -r 8812au
 	sudo modprobe 8812au
 	
-In that case we can automate this by adding the above lines to ``/etc/rc.local``, right before ``exit 0`` line.
+In that case we can automate this by adding the above lines to ``/etc/rc.local``, right before ``exit 0`` line. This ensures the module is reloaded every time after system boots.
 
