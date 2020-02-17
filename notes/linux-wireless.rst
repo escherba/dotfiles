@@ -126,11 +126,11 @@ and may interfere with our setup.
 
 Then generate the ``/run/resolvconf/resolv.conf`` file using::
 
-	sudo resolvconf -u
+	$ sudo resolvconf -u
 
 If the symbolic link ``/etc/resolv.conf`` is missing, run::
 
-	sudo dpkg-reconfigure resolvconf
+	$ sudo dpkg-reconfigure resolvconf
 
 For quicker DHCP lookups on startup (and quicker failure), reduce the timeout
 specified in ``/etc/dhcp/dhclient.conf`` from default 300 to something more
@@ -142,8 +142,8 @@ Network Shares
 
 Mounting network resources such as Airport Extreme disk::
 
-	sudo apt-get install cifs-utils
-	sudo mount.cifs //<IP_ADDRESS>/<SHARE_NAME> /media/<SHARE_NAME> -o 'password=<PASSWORD>,sec=ntlm,uid=<USERNAME>'
+	$ sudo apt-get install cifs-utils
+	$ sudo mount.cifs //<IP_ADDRESS>/<SHARE_NAME> /media/<SHARE_NAME> -o 'password=<PASSWORD>,sec=ntlm,uid=<USERNAME>'
 	
 Troubleshooting
 ---------------
@@ -153,8 +153,23 @@ Troubleshooting
 
 Normally this should be solved by adding the name of the adapter's module (e.g. ``8812au``) to ``/etc/modules``. However, in some instances one is required to reload the module using the following commands::
 
-	sudo modprobe -r 8812au
-	sudo modprobe 8812au
+	$ sudo modprobe -r 8812au
+	$ sudo modprobe 8812au
 	
 In that case we can automate this by adding the above lines to ``/etc/rc.local``, right before ``exit 0`` line. This ensures the module is reloaded every time after system boots.
 
+"I upgraded my distribution and Wi-Fi stopped working"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this situation running `sudo modprobe 8812au` will not help because of the following error::
+
+	modprobe: ERROR: could not insert '8812au': Exec format error
+	
+We need to remove and recompile the driver manually::
+
+	$ sudo dkms remove rtl8812au/4.3.8.12175.20140902+dfsg -k $(uname -r)
+
+Then install the driver (note that you don't need to specify kernel version here)::
+
+	$ sudo dkms install rtl8812au/4.3.8.12175.20140902+dfsg
+	$ sudo modprobe 8812au
