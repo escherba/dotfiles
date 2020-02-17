@@ -143,3 +143,16 @@ Mounting network resources such as Airport Extreme disk::
 	sudo apt-get install cifs-utils
 	sudo mount.cifs //<IP_ADDRESS>/<SHARE_NAME> /media/<SHARE_NAME> -o 'password=<PASSWORD>,sec=ntlm,uid=<USERNAME>'
 	
+Troubleshooting
+---------------
+
+"My Wi-Fi adpater does not work unless I manually unplug it and plug it back in every time after system reboot"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Normally this should be solved by adding the name of the adapter's module (e.g. ``8812au``) to ``/etc/modules``. However, in some instances one is required to reload the module using the following commands::
+
+	sudo modprobe -r 8812au
+	sudo modprobe 8812au
+	
+In that case we can automate this by adding the above lines to ``/etc/rc.local``, right before ``exit 0`` line.
+
