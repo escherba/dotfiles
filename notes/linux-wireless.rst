@@ -161,7 +161,7 @@ In that case we can automate this by adding the above lines to ``/etc/rc.local``
 "I upgraded my distribution and Wi-Fi stopped working"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this situation running `sudo modprobe 8812au` will not help because of the following error::
+In this situation running ``sudo modprobe 8812au`` will not help because of the following error::
 
 	modprobe: ERROR: could not insert '8812au': Exec format error
 	
