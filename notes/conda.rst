@@ -58,7 +58,7 @@ Create a new conda environment::
     conda install -c conda-forge rfpimp imbalanced-learn scikit-garden mlxtend xgboost \
         tensorboard tqdm tensorboardx visdom lightgbm frozendict boto3 fastparquet pyaml s3fs \
         awscli ipython ipdb ipykernel nodejs ipywidgets nbstripout jupyter umap-learn \
-        jupyterlab pandas-profiling pymysql sqlalchemy jupyter_contrib_nbextensions cloudpickle \
+        jupyterlab pandas-profiling pymysql sqlalchemy jupyter_contrib_nbextensions \
         future pyglet
     conda install -c pyviz bokeh hvplot holoviews panel colorcet
 
