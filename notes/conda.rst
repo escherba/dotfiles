@@ -52,19 +52,16 @@ Create a new conda environment::
     conda create -n tf2 python=3.6 pip
     conda activate tf2
     conda install setuptools
-    conda install -c pytorch cuda100 cudatoolkit cudnn numba pytorch torchvision ignite
+    conda install -c pytorch cudatoolkit cudnn numba pytorch torchvision ignite
     conda install cython matplotlib seaborn pillow scikit-learn pandas pylint pyyaml \
-        statsmodels pytest pydot dill cloudpickle pytables numpy scipy joblib psutil colorama
+        statsmodels pytest pydot dill cloudpickle pytables numpy scipy joblib psutil \
+        colorama tensorflow-gpu=2.0.0
     conda install -c conda-forge rfpimp imbalanced-learn scikit-garden mlxtend xgboost \
         tensorboard tqdm tensorboardx visdom lightgbm frozendict boto3 fastparquet pyaml s3fs \
         awscli ipython ipdb ipykernel nodejs ipywidgets nbstripout jupyter umap-learn \
         jupyterlab pandas-profiling pymysql sqlalchemy jupyter_contrib_nbextensions \
         future pyglet
     conda install -c pyviz bokeh hvplot holoviews panel colorcet
-
-Finally install Tensorflow 2.0::
-
-    conda install tensorflow-gpu=2.0.0
 
 Re-login into Conda::
 
