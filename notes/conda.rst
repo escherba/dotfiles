@@ -84,7 +84,8 @@ Some lesser-known packages can be installed through pip on top of Conda environm
 (generally prefer Conda packages if they exist)::
 
     pip install gym livelossplot missingpy
-   
+    pip install git+https://www.github.com/keras-team/keras-contrib.git
+    
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
