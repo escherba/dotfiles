@@ -8,7 +8,7 @@ For setting up on Ubuntu, I found instructions in `Jonathan Petitcolas post`_ ea
 
 To verify both that Nvidia-docker is working and that Tensorflow can recognize the GPU::
 
-  docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu-py3 \
+  docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu-py3-jupyter \
     python3 -c "import tensorflow as tf; print(tf.test.is_gpu_available())"
 
 This should print out "True."
