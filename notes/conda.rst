@@ -62,7 +62,7 @@ Create a new conda environment::
         future pyglet
     conda install -c pyviz bokeh hvplot holoviews panel colorcet
 
-For PyTorch, use following line::
+For PyTorch (optional), use following line::
 
     conda install -c pytorch cudatoolkit cudnn numba pytorch torchvision ignite
   
