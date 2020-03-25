@@ -17,7 +17,8 @@ The rest of the commands are run in a tmux window::
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
     bash Miniconda3-latest-Linux-x86_64.sh
     conda clean --all
-    
+    rm Miniconda3-latest-Linux-x86_64.sh
+
 Given a repo with ``environment.yml`` file in it::
 
     conda env create --name env1 -f environment.yml
