@@ -52,7 +52,6 @@ Create a new conda environment::
     conda create -n tf2 python=3.6 pip
     conda activate tf2
     conda install setuptools
-    conda install -c pytorch cudatoolkit cudnn numba pytorch torchvision ignite
     conda install cython matplotlib seaborn pillow scikit-learn pandas pylint pyyaml \
         statsmodels pytest pydot dill cloudpickle pytables numpy scipy joblib psutil \
         colorama mkl-service tensorflow-gpu=2.0.0
@@ -63,6 +62,10 @@ Create a new conda environment::
         future pyglet
     conda install -c pyviz bokeh hvplot holoviews panel colorcet
 
+For PyTorch, use following line::
+
+    conda install -c pytorch cudatoolkit cudnn numba pytorch torchvision ignite
+  
 Re-login into Conda::
 
     conda deactivate
