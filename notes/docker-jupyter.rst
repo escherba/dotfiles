@@ -43,11 +43,6 @@ Installing Nvidia-Docker::
   # Test nvidia-smi within the Docker container.
   sudo docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
 
-Troubleshooting Nvidia-Docker
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If `nvidia-docker` fails to work properly, some useful tips can be found in `[2]`_.
-
 Basic Docker operation (for reference)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -118,6 +113,8 @@ Now you can use `port forwarding`_
 
 Troubleshooting
 ~~~~~~~~~~~~~~~
+
+If `nvidia-docker` fails to work properly, some useful tips can be found in `[2]`_.
 
 An old script for installing Docker on Ubuntu I found useful: `escherba/install.sh`_. Includes `docker-cleanup`_ command.
 
