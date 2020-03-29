@@ -102,12 +102,13 @@ Finally run the following::
 Running Jupyter from Docker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Assuming the project you're working on is under ``$HOME/project-dir`` and home is your current directory::
+Start docker container from `project-dir`::
 
+  cd project-dir
   sudo docker run -v $(pwd):/default -p 8888:8888 -u $(id -u):$(id -g) \
     --gpus all -it -e JUPYTER_ENABLE_LAB=yes \
     --rm escherba/tensorflow:latest-gpu-py3-jupyter /usr/local/bin/jupyter lab \
-    --no-browser --ip 0.0.0.0 --allow-root --notebook-dir /default/project-dir
+    --no-browser --ip 0.0.0.0 --allow-root --notebook-dir /default
 
 Now you can use `port forwarding`_
 
