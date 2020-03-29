@@ -127,8 +127,8 @@ On error ``Got permission denied while trying to connect to the Docker daemon so
 
 The user mapping ``-u $(id -u):$(id -g)`` is a useful shorthand for starting Docker containers in user mode, but sometimes it may be incorrect. Let's say your effective system user id is 1001, while inside docker container all files are created by user 1000. In such a case, use ``-u 1000:$(id -g)`` instead.
 
-.. _[1]: https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
-.. _[2]: https://lambdalabs.com/blog/set-up-a-tensorflow-gpu-docker-container-using-lambda-stack-dockerfile/
+.. _[1]: https://lambdalabs.com/blog/set-up-a-tensorflow-gpu-docker-container-using-lambda-stack-dockerfile/
+.. _[2]: https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
 .. _port forwarding: https://github.com/escherba/dotfiles/blob/master/notes/aws.rst#port-forwarding
 .. _doc page: https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user
 .. _escherba/install.sh: https://gist.github.com/escherba/1ffcf8ff9e0791f8206b737322f6e3bc
