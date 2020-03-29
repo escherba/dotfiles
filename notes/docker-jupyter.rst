@@ -1,17 +1,47 @@
 Using Jupyter Lab with Docker on Nvidia GPU instances
 -----------------------------------------------------
 
-Basic set up on GPU instances
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Basic set up on Ubuntu
+~~~~~~~~~~~~~~~~~~~~~~
 
-For setting up on Ubuntu, I found instructions in `Jonathan Petitcolas post`_ easy to follow.
+Installing Docker CE (this follows `[1]`_)::
 
-To verify both that Nvidia-docker is working and that Tensorflow can recognize the GPU::
+  # First, remove old versions of Docker
+  sudo apt-get remove -y docker docker-engine docker.io
 
-  sudo docker run --gpus all -it --rm escherba/tensorflow:latest-gpu-py3-jupyter \
-    python3 -c "import tensorflow as tf; print(tf.test.is_gpu_available())"
+  # Next, add Docker Repository
+  sudo apt-get update
+  sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+  curl -fsSL 'https://download.docker.com/linux/ubuntu/gpg' | sudo apt-key add -
+  sudo add-apt-repository \
+      "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs) stable"
 
-This should print out "True."
+  # Install Docker CE
+  sudo apt-get update
+  sudo apt-get install -y docker-ce
+
+  # Verify the Docker installation
+  sudo docker run hello-world	
+
+Installing Nvidia-Docker::
+
+  # First, purge all of the old docker versions and containers.
+  sudo docker volume ls -q -f driver=nvidia-docker \
+      | xargs -r -I{} -n1 docker ps -q -a -f volume={} \
+      | xargs -r docker rm -f
+  sudo apt-get purge -y nvidia-docker
+
+  # Add NVIDIA's docker repository to your system.
+  # Install nvidia-docker2 and restart the Docker daemon.
+  curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
+      && curl -s -L "https://nvidia.github.io/nvidia-docker/$(. /etc/os-release; echo $ID$VERSION_ID)/nvidia-docker.list" \
+      | sudo tee /etc/apt/sources.list.d/nvidia-docker.list \
+      && sudo apt-get update \
+      && sudo apt-get install -y nvidia-docker2 \
+      && sudo pkill -SIGKILL dockerd
+
+  # Test nvidia-smi within the Docker container.
+  sudo docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
 
 Basic Docker operation (for reference)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,7 +122,8 @@ On error ``Got permission denied while trying to connect to the Docker daemon so
 
 The user mapping ``-u $(id -u):$(id -g)`` is a useful shorthand for starting Docker containers in user mode, but sometimes it may be incorrect. Let's say your effective system user id is 1001, while inside docker container all files are created by user 1000. In such a case, use ``-u 1000:$(id -g)`` instead.
 
-.. _Jonathan Petitcolas post: https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
+.. _[1]: https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
+.. _[2]: https://lambdalabs.com/blog/set-up-a-tensorflow-gpu-docker-container-using-lambda-stack-dockerfile/
 .. _port forwarding: https://github.com/escherba/dotfiles/blob/master/notes/aws.rst#port-forwarding
 .. _doc page: https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user
 .. _escherba/install.sh: https://gist.github.com/escherba/1ffcf8ff9e0791f8206b737322f6e3bc
