@@ -46,7 +46,7 @@ Installing Nvidia-Docker::
 Troubleshooting Nvidia-Docker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If `nvidia-docker` fails to work properly, some useful tips can be found in `[1]_`.
+If `nvidia-docker` fails to work properly, some useful tips can be found in `[2]`_.
 
 Basic Docker operation (for reference)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
