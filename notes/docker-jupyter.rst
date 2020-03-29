@@ -8,7 +8,7 @@ For setting up on Ubuntu, I found instructions in `Jonathan Petitcolas post`_ ea
 
 To verify both that Nvidia-docker is working and that Tensorflow can recognize the GPU::
 
-  docker run --gpus all -it --rm escherba/tensorflow:latest-gpu-py3-jupyter \
+  sudo docker run --gpus all -it --rm escherba/tensorflow:latest-gpu-py3-jupyter \
     python3 -c "import tensorflow as tf; print(tf.test.is_gpu_available())"
 
 This should print out "True."
@@ -74,7 +74,7 @@ Running Jupyter from Docker
 
 Assuming the project you're working on is under ``$HOME/project-dir`` and home is your current directory::
 
-  docker run -v $(pwd):/default -p 8888:8888 -u $(id -u):$(id -g) \
+  sudo docker run -v $(pwd):/default -p 8888:8888 -u $(id -u):$(id -g) \
     --gpus all -it -e JUPYTER_ENABLE_LAB=yes \
     --rm escherba/tensorflow:latest-gpu-py3-jupyter /usr/local/bin/jupyter lab \
     --no-browser --ip 0.0.0.0 --allow-root --notebook-dir /default/project-dir
