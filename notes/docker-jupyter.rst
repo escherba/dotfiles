@@ -43,6 +43,11 @@ Installing Nvidia-Docker::
   # Test nvidia-smi within the Docker container.
   sudo docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
 
+Troubleshooting Nvidia-Docker
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If `nvidia-docker` fails to work properly, some useful tips can be found in `[1]_`.
+
 Basic Docker operation (for reference)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
