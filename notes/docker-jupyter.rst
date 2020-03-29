@@ -43,6 +43,11 @@ Installing Nvidia-Docker::
   # Test nvidia-smi within the Docker container.
   sudo docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
 
+Verifying GPU+TenosrFlow operation::
+
+  docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu-py3-jupyter \
+    python3 -c "import tensorflow as tf; print(tf.test.is_gpu_available())"
+
 Basic Docker operation (for reference)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
