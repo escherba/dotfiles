@@ -105,12 +105,14 @@ Running Jupyter from Docker
 Start docker container from `project-dir`::
 
   cd project-dir
-  sudo docker run -v $(pwd):/default -p 8888:8888 -u $(id -u):$(id -g) \
+  sudo docker run -v $(pwd):/default -p 8888:8888 -u 0:1000 \
     --gpus all -it -e JUPYTER_ENABLE_LAB=yes \
     --rm escherba/tensorflow:latest-gpu-py3-jupyter /usr/local/bin/jupyter lab \
     --no-browser --ip 0.0.0.0 --allow-root --notebook-dir /default
 
-Now you can use `port forwarding`_
+Note: the recommended switch `-u $(id -u):$(id -g)` does not work for me because of various permission errors; I may figure this out later.
+
+Now you can set up `port forwarding`_ to port 8888.
 
 Troubleshooting
 ~~~~~~~~~~~~~~~
