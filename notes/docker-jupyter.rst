@@ -70,7 +70,7 @@ To see running images::
 
 To commit and push changes::
 
-  docker commit <image-id> <your-login-name>/<image-name>
+  docker commit <container-id> <your-login-name>/<image-name>
   docker push <your-login-name>/<image-name>
 
 To start Docker container as a non-root user, add ``-u $(id -u):$(id -g)``
