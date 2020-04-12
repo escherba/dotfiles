@@ -59,7 +59,7 @@ Create a new conda environment::
         tensorboard tqdm tensorboardx visdom lightgbm frozendict boto3 fastparquet pyaml s3fs \
         awscli ipython ipdb ipykernel nodejs ipywidgets nbstripout jupyter umap-learn \
         jupyterlab pandas-profiling pymysql sqlalchemy jupyter_contrib_nbextensions \
-        future pyglet fbprophet pandas-profiling plotly
+        future pyglet fbprophet pandas-profiling plotly keras
     conda install -c pyviz bokeh hvplot holoviews panel colorcet
 
 For PyTorch (optional), use following line::
