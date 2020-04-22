@@ -82,6 +82,10 @@ To add current user to docker group::
 
   sudo gpasswd -a $USER docker
 
+To login to your DockerHub account::
+
+  sudo docker login
+  
 Installing Jupyter Lab
 ~~~~~~~~~~~~~~~~~~~~~~
 
