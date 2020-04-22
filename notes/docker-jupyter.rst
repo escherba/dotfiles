@@ -78,6 +78,10 @@ to the command-line options. Conversely, to start as a root user (in
 case the container does not start this way by default), use ``-u 0``. For
 more information, see this `doc page`_.
 
+To add current user to docker group::
+
+  sudo gpasswd -a $USER docker
+
 Installing Jupyter Lab
 ~~~~~~~~~~~~~~~~~~~~~~
 
