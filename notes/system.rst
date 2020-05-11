@@ -19,7 +19,7 @@ Libraries
 ~~~~~~~~~
 
 OpenCL and OpenMP
-.............
+.................
 
 To install OpenCL::
 
@@ -39,9 +39,12 @@ compile Scipy you may need::
     apt-get install gfortran
 
 MKL on Mac OS X
-.............
+...............
 
-When using some Anaconda packages, you may encounter the error: ``Intel MKL FATAL ERROR: Cannot load libmkl_intel_thread.dylib``. This could happen if the MKL library has not been added to library path. Adding the following to ``.bash_profile`` is likely to fix it::
+When using some Anaconda packages, you may encounter the error:
+``Intel MKL FATAL ERROR: Cannot load libmkl_intel_thread.dylib``. This could happen if the
+MKL library has not been added to library path. Adding the following to
+``.bash_profile`` is likely to fix it::
 
     export LD_LIBRARY_PATH="/Users/<username>/anaconda3/lib:$LD_LIBRARY_PATH"
 
@@ -106,3 +109,20 @@ To install Opera from command line::
     sudo add-apt-repository "deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free"
     sudo apt-get update
     sudo apt install opera-stable pepperflashplugin-nonfree
+
+Notifications on Ubuntu
+~~~~~~~~~~~~~~~~~~~~~~~
+
+To see recent notifications in menu bar::
+
+    sudo add-apt-repository ppa:jconti/recent-notifications
+    sudo apt-get update
+    sudo apt-get install indicator-notifications
+
+If there is Spotify on the machine, this list may soon be full of Spotify notifications. To disable those::
+
+    vi `find ~/.config/spotify/Users/ -name prefs`
+
+and add::
+
+    ui.track_notifications_enabled=false
