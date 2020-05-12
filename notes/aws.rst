@@ -23,12 +23,7 @@ Given a repo with ``environment.yml`` file in it::
 
     conda env create --name env1 -f environment.yml
     conda clean --all
-    conda activate env1
-    
-For basic data science stuff::
 
-    conda install matplotlib jupyterlab
-    
 Port forwarding
 ---------------
 
