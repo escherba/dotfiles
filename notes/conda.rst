@@ -60,6 +60,7 @@ Create a new conda environment::
         awscli ipython ipdb ipykernel nodejs=13.0.0 ipywidgets nbstripout jupyter umap-learn \
         jupyterlab pandas-profiling pymysql sqlalchemy jupyter_contrib_nbextensions \
         future pyglet fbprophet plotly keras
+    conda install -c bokeh bokeh jupyter_bokeh
     conda install -c pyviz bokeh hvplot holoviews panel colorcet
 
 For PyTorch (optional), use following line::
@@ -81,6 +82,7 @@ For analysis, it may be useful to enable ipywidgets and jupyter extensions::
 
     jupyter contrib nbextension install --user
     jupyter labextension install @jupyter-widgets/jupyterlab-manager
+    jupyter labextension install @bokeh/jupyter_bokeh
     jupyter labextension install @pyviz/jupyterlab_pyviz
 
 Some lesser-known packages can be installed through pip on top of Conda environment
