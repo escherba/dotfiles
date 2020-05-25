@@ -59,9 +59,9 @@ Create a new conda environment::
         tensorboard tqdm tensorboardx visdom lightgbm frozendict boto3 fastparquet pyaml s3fs \
         awscli ipython ipdb ipykernel nodejs=13.0.0 ipywidgets nbstripout jupyter umap-learn \
         jupyterlab pandas-profiling pymysql sqlalchemy jupyter_contrib_nbextensions \
-        future pyglet fbprophet plotly keras
+        future pyglet fbprophet plotly keras python-annoy
     conda install -c bokeh bokeh jupyter_bokeh
-    conda install -c pyviz bokeh hvplot holoviews panel colorcet
+    conda install -c pyviz bokeh hvplot holoviews panel colorcet datashader
 
 For PyTorch (optional), use following line::
 
