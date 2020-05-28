@@ -48,6 +48,26 @@ Verifying GPU+TenosrFlow operation::
   docker run --gpus all -it --rm tensorflow/tensorflow:latest-gpu-py3-jupyter \
     python3 -c "import tensorflow as tf; print(tf.test.is_gpu_available())"
 
+Common Issues
+~~~~~~~~~~~~~
+
+I sometimes get an error after attempting to install ``nvidia-docker2``::
+
+    The following packages have unmet dependencies:
+     nvidia-docker2 : Depends: nvidia-container-runtime (>= 3.2.0) but 3.1.4-1 is to be installed
+    E: Unable to correct problems, you have held broken packages.
+
+That package requires a specific version of ``nvidia-container-runtime`` which in turn requires a
+specific version of ``nvidia-container-toolkit``. You can view available versions of any package like so::
+
+  apt-cache madison nvidia-container-toolkit
+  
+To fix the issue, I force installation of a specific version of ``nvidia-container-toolkit``::
+
+  sudo apt-get install nvidia-container-toolkit=1.1.0-1
+  
+And then repeat the ``nvidia-docker2`` installation command.
+
 Basic Docker operation (for reference)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
