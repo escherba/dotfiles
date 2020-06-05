@@ -31,6 +31,9 @@ To select a specific version as default::
 
     sudo update-alternatives --config vi
 
+To install space-vim::
+
+    bash <(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)
 
 A better git diff highlighter
 -----------------------------
