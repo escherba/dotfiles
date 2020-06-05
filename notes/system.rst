@@ -109,6 +109,19 @@ To install Opera from command line::
     sudo add-apt-repository "deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free"
     sudo apt-get update
     sudo apt install opera-stable pepperflashplugin-nonfree
+    
+Firewall on Ubuntu
+~~~~~~~~~~~~~~~~~~
+
+To enable firewall::
+
+    sudo ufw enable
+
+To allow SSH, connecting to ports 8000-9000 via TCP, and Samba file sharing::
+
+    sudo ufw allow 22
+    sudo ufw allow 8000:9000/tcp
+    sudo ufw allow Samba
 
 Notifications on Ubuntu
 ~~~~~~~~~~~~~~~~~~~~~~~
