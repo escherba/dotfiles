@@ -32,6 +32,10 @@ function! UserInit()
   " Add your own plugin via Plug command.
   Plug 'dense-analysis/ale'
 
+  " NB: Using 'develop' branch of python-mode because of issue:
+  " https://github.com/python-mode/python-mode/issues/783#issuecomment-320490153
+  Plug 'python-mode/python-mode', {'branch': 'develop'}
+
   " color schemes
   Plug 'jonathanfilip/vim-lucius'
   Plug 'drewtempelmeyer/palenight.vim'
@@ -67,5 +71,27 @@ function! UserConfig()
 
   " set background to transparent (must come after colorscheme)
   " hi Normal guibg=NONE ctermbg=NONE
+
+  " ----- Python-mode -------------
+  let g:pymode_python = 'python3'
+  
+  " Linting
+  let g:pymode_lint = 1
+  let g:pymode_lint_checker = "pyflakes,pep8"
+  let g:pymode_lint_write = 1  " Auto check on save
+  let g:pymode_lint_ignore=["E501","W291","W293"]
+
+  " disable trimming whitespace on save
+  let g:pymode_trim_whitespaces = 0
+  
+  " breakpoints
+  let g:pymode_breakpoint = 1
+  let g:pymode_breakpoint_bind = '<leader>b'
+  
+  " syntax highlighting
+  let g:pymode_syntax = 1
+  let g:pymode_syntax_all = 1
+  let g:pymode_syntax_indent_errors = 1
+  let g:pymode_syntax_space_errors = 0
 
 endfunction
