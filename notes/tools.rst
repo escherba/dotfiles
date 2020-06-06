@@ -26,6 +26,7 @@ Install the following into system Python::
     sudo /usr/local/bin/pip3 install yapf
     sudo /usr/local/bin/pip3 install flake8
     sudo /usr/local/bin/pip3 install pylint
+    sudo /usr/local/bin/pip3 install pylama
     sudo /usr/local/bin/pip3 install autopep8
 
 Vim
