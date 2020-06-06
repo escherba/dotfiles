@@ -35,6 +35,12 @@ To install space-vim::
 
     bash <(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)
 
+To instal NeoVim on Ubuntu versions previous to 18::
+
+    sudo add-apt-repository ppa:neovim-ppa/stable
+    sudo apt update
+    sudo apt install neovim
+
 A better git diff highlighter
 -----------------------------
 
