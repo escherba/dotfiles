@@ -30,9 +30,11 @@ endif
 function! UserInit()
 
   " Add your own plugin via Plug command.
-  " Plug 'junegunn/seoul256.vim'
   Plug 'dense-analysis/ale'
+
+  " color schemes
   Plug 'jonathanfilip/vim-lucius'
+  Plug 'drewtempelmeyer/palenight.vim'
 
 endfunction
 
@@ -40,7 +42,11 @@ endfunction
 function! UserConfig()
 
   " Override the default settings.
-  " Uncomment the following line to disable relative number.
+
+  " Focus follows mouse
+  set mouse=a
+
+  " Disable relative number
   set norelativenumber
 
   " Adding extras.
@@ -48,13 +54,18 @@ function! UserConfig()
   " It is good for airline layer.
   let g:airline_powerline_fonts = 1
 
-  let g:lucius_style = 'dark'
-  let g:lucius_contrast = 'normal'
-  let g:lucius_contrast_bg = 'normal'
-  let g:lucius_use_bold = 1
-  let g:lucius_use_underline = 1
-  let g:lucius_no_term_bg = 1
+  " Set background to dark (must come before colorscheme)
+  set background=dark
 
+  " let g:lucius_style = 'dark'
+  " let g:lucius_contrast = 'normal'
+  " let g:lucius_contrast_bg = 'normal'
+  " let g:lucius_use_bold = 1
+  " let g:lucius_use_underline = 1
+  " let g:lucius_no_term_bg = 1
   colorscheme lucius
+
+  " set background to transparent (must come after colorscheme)
+  " hi Normal guibg=NONE ctermbg=NONE
 
 endfunction
