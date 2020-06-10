@@ -51,7 +51,12 @@ Verifying GPU+TenosrFlow operation::
 Common Issues
 ~~~~~~~~~~~~~
 
-I sometimes get an error after attempting to install ``nvidia-docker2``::
+In case of an error ``could not select device driver "" with capabilities: [[gpu]]``::
+
+  sudo apt install nvidia-container-toolkit
+  sudo systemctl restart docker
+  
+If you encounter the following error while attempting to install ``nvidia-docker2``::
 
     The following packages have unmet dependencies:
      nvidia-docker2 : Depends: nvidia-container-runtime (>= 3.2.0) but 3.1.4-1 is to be installed
