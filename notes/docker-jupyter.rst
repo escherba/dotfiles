@@ -111,6 +111,21 @@ To login to your DockerHub account::
 
   sudo docker login
   
+Cleaning up disk space
+~~~~~~~~~~~~~~~~~~~~~~
+
+To stop all containers::
+
+  docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
+
+To see which images take up disk space::
+
+  docker system df -v
+
+To remove all images::
+
+  docker image prune -a -f
+
 Installing Jupyter Lab
 ~~~~~~~~~~~~~~~~~~~~~~
 
