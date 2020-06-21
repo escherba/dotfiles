@@ -111,6 +111,10 @@ To login to your DockerHub account::
 
   sudo docker login
   
+To run an image with a custom entrypoint (for example ``/bin/bash``)::
+
+  docker run -it --entrypoint /bin/bash <your-login-name>/<image-name>
+
 Cleaning up disk space
 ~~~~~~~~~~~~~~~~~~~~~~
 
