@@ -79,3 +79,13 @@ well, but for a more specialized tool try `daff`_.
 .. _inotify watches limit: https://confluence.jetbrains.com/display/IDEADEV/Inotify+Watches+Limit
 .. _disable spell checking: https://intellij-support.jetbrains.com/hc/en-us/community/posts/207070915-disable-spell-checking-on-variable-declarations-
 
+Converting a group of JSON files to CSV
+---------------------------------------
+
+Suppose you have a list of JSON files ``stats-1.json``, ``stats-2.json``, etc., each encoding a JSON dict. You want to convert their output into a DataFrame format saved in a CSV. To do that, install ``json2csv`` using NPM:
+
+    npm install -g json2csv
+
+and then
+
+    cat stats*.json | jq -c | json2csv > out-focus.csv
