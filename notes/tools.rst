@@ -82,10 +82,10 @@ well, but for a more specialized tool try `daff`_.
 Converting a group of JSON files to CSV
 ---------------------------------------
 
-Suppose you have a list of JSON files ``stats-1.json``, ``stats-2.json``, etc., each encoding a JSON dict. You want to convert their output into a DataFrame format saved in a CSV. To do that, install ``json2csv`` using NPM:
+Suppose you have a list of JSON files ``stats-1.json``, ``stats-2.json``, etc., each encoding a JSON dict. You want to convert their output into a DataFrame format saved in a CSV. To do that, install ``json2csv`` using NPM::
 
     npm install -g json2csv
 
-and then
+and then::
 
     cat stats*.json | jq -c | json2csv > out-focus.csv
