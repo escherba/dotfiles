@@ -88,4 +88,4 @@ Suppose you have a list of JSON files ``stats-1.json``, ``stats-2.json``, etc., 
 
 and then::
 
-    cat stats*.json | jq -c | json2csv > out-focus.csv
+    cat stats*.json | jq -c | json2csv > out-stats.csv
