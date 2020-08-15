@@ -56,10 +56,11 @@ Create a new conda environment::
         statsmodels pytest pydot dill cloudpickle pytables numpy scipy joblib psutil \
         colorama mkl-service tensorflow-gpu=2.0.0 tensorflow-probability=0.8.0
     conda install -c conda-forge rfpimp imbalanced-learn scikit-garden mlxtend xgboost \
-        tensorboard tqdm tensorboardx visdom lightgbm frozendict boto3 fastparquet pyaml s3fs \
-        awscli ipython ipdb ipykernel nodejs=13.0.0 ipywidgets nbstripout jupyter umap-learn \
-        jupyterlab pandas-profiling pymysql sqlalchemy jupyter_contrib_nbextensions \
+        tensorboard tqdm tensorboardx visdom lightgbm frozendict boto3 fastparquet pyaml \
+        s3fs awscli nbstripout umap-learn pandas-profiling pymysql sqlalchemy \
         future pyglet fbprophet plotly keras python-annoy
+    conda install -c conda-forge ipython ipdb ipykernel nodejs=13.0.0 ipywidgets jupyter \
+        jupyterlab jupyter_contrib_nbextensions
     conda install -c bokeh bokeh jupyter_bokeh
     conda install -c pyviz bokeh hvplot holoviews panel colorcet datashader
 
