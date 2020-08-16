@@ -62,7 +62,7 @@ Create a new conda environment::
     conda install -c conda-forge ipython ipdb ipykernel nodejs=13.0.0 ipywidgets jupyter \
         jupyterlab jupyter_contrib_nbextensions
     conda install -c bokeh bokeh jupyter_bokeh
-    conda install -c pyviz bokeh hvplot holoviews panel colorcet datashader
+    conda install -c pyviz hvplot holoviews panel colorcet datashader
 
 For PyTorch (optional), use following line::
 
