@@ -10,8 +10,11 @@ let g:spacevim_plug_home = '~/.vim/plugged'
 
 " Enable the existing layers in space-vim.
 " Refer to https://github.com/liuchengxu/space-vim/blob/master/layers/LAYERS.md for all available layers.
+" let g:spacevim_layers = [
+"       \ 'fzf', 'better-defaults', 'which-key',
+"       \ ]
 let g:spacevim_layers = [
-      \ 'fzf', 'better-defaults', 'which-key',
+      \ 'fzf', 'which-key',
       \ ]
 
 " Uncomment the following line if your terminal(-emulator) supports true colors.
@@ -21,22 +24,20 @@ let g:spacevim_layers = [
 " let g:spacevim_nerd_fonts = 1
 
 " If you want to have more control over the layer, try using Layer command.
-if g:spacevim.gui
-  Layer 'airline'
-endif
+" if g:spacevim.gui
+"   Layer 'airline'
+" endif
 
 " Manage your own plugins.
 " Refer to https://github.com/junegunn/vim-plug for more detials.
 function! UserInit()
 
   " Add your own plugin via Plug command.
+  " Plug 'junegunn/seoul256.vim'
   Plug 'dense-analysis/ale'
-
   " NB: Using 'develop' branch of python-mode because of issue:
   " https://github.com/python-mode/python-mode/issues/783#issuecomment-320490153
   Plug 'python-mode/python-mode', {'branch': 'develop'}
-
-  " color schemes
   Plug 'jonathanfilip/vim-lucius'
   Plug 'drewtempelmeyer/palenight.vim'
 
@@ -46,35 +47,30 @@ endfunction
 function! UserConfig()
 
   " Override the default settings.
-
-  " Focus follows mouse
-  set mouse=a
-
-  " Disable relative number
+  " Uncomment the following line to disable relative number.
   set norelativenumber
 
   " Adding extras.
   " Uncomment the following line If you have installed the powerline fonts.
   " It is good for airline layer.
-  let g:airline_powerline_fonts = 1
+  " let g:airline_powerline_fonts = 1
 
-  " Set background to dark (must come before colorscheme)
+  set mouse=a
+  set hlsearch
+
   set background=dark
 
-  " let g:lucius_style = 'dark'
-  " let g:lucius_contrast = 'normal'
-  " let g:lucius_contrast_bg = 'normal'
-  " let g:lucius_use_bold = 1
-  " let g:lucius_use_underline = 1
-  " let g:lucius_no_term_bg = 1
-  colorscheme lucius
+  let g:lucius_style = 'dark'
+	" let g:lucius_contrast = 'normal'
+	let g:lucius_contrast_bg = 'normal'
+	" let g:lucius_use_bold = 1
+	" let g:lucius_use_underline = 1
+	" let g:lucius_no_term_bg = 0
 
-  " set background to transparent (must come after colorscheme)
-  " hi Normal guibg=NONE ctermbg=NONE
+	colorscheme lucius
 
-  " ----- Python-mode -------------
   let g:pymode_python = 'python3'
-  
+
   " Linting
   let g:pymode_lint = 1
   let g:pymode_lint_checker = "pyflakes,pep8"
