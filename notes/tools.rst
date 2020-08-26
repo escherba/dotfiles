@@ -53,6 +53,10 @@ To instal NeoVim on Ubuntu versions previous to 18::
     sudo apt update
     sudo apt install neovim
 
+To find out where a Vim default such as ``hlsearch`` was last set, enter::
+
+    :verb set hlssearch?
+ 
 A better git diff highlighter
 -----------------------------
 
