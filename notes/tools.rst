@@ -47,6 +47,11 @@ To install space-vim::
 
     bash <(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)
 
+Also copy settings::
+    
+    curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.spacevim -o ~/.spacevim
+    curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.config/flake8 -o ~/.config/flake8
+    
 To instal NeoVim on Ubuntu versions previous to 18::
 
     sudo add-apt-repository ppa:neovim-ppa/stable
