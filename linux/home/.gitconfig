@@ -9,6 +9,13 @@
     tool = vimdiff
 [difftool]
     prompt = False
+[diff "ipynb"]
+	textconv = python -m nbstripout -t
+[diff "daff-csv"]
+    command = daff diff --git
+[merge "daff-csv"]
+	name = daff tabular csv merge
+	driver = daff merge --output %A %O %A %B
 [push]
     default = simple
 [pager]
