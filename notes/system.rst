@@ -48,23 +48,59 @@ MKL library has not been added to library path. Adding the following to
 
     export LD_LIBRARY_PATH="/Users/<username>/anaconda3/lib:$LD_LIBRARY_PATH"
 
-LightGBM
-~~~~~~~~
+LightGBM with NVIDIA GPU support
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-LightGBM is best installed using Conda, but sometimes you may want to
-use Pip, for example when building Docker images. To install it, first
-install some dependencies::
+Find out the version of NVIDIA driver you're running (this assumes 
+you already have NVIDIA drivers along with ``nvidia-smi``):
 
-    apt-get install cmake libboost-all-dev libopenblas-dev
+nvidia-smi --query-gpu=driver_version --format=csv,noheader
+
+Install OpenCL support. The version of ``nvidia-opencl-icd`` 
+package should match the version of the NVIDIA driver on your system::
+
+    sudo apt-get install -y --no-install-recommends \
+        nvidia-opencl-icd-440 nvidia-opencl-dev opencl-headers
+
+Install build tools::
+
+    sudo apt-get install -y --no-install-recommends \
+        cmake build-essential libboost-dev \
+        libboost-all-dev libopenblas-dev
+    
+Install LightGBM dependencies into your environment (could be done with Conda)::
+
     python3 -m pip install scikit-learn joblib scipy numpy
 
-The following command builds LightGBM with GPU support::
+Finally::
+
+    python3 -m pip install lightgbm --install-option=--gpu
+    
+Sometimes you may want to specify additional options::
 
     python3 -m pip install lightgbm --install-option=--gpu \
         --install-option="--opencl-include-dir=/usr/local/cuda/include/" \
         --install-option="--opencl-library=/usr/local/cuda/lib64/libOpenCL.so"
 
 To see other related installation instructions, visit `LightGBM PyPi page`_.
+
+Memory usage monitoring on Ubuntu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Install SysStat::
+
+    sudo apt install sysstat
+    sudo vi /etc/default/sysstat # change "false" to "true"
+    sudo service sysstat restart
+
+The following command will sample memory usage 5,000 times at 1-second intervals
+and write results to ``memory_log.tsv``::
+
+    sar -r 1 5000 > memory_log.tsv
+
+You may want to view the file in a separate shell as it is being written with::
+
+    tail -f memory_log.tsv
 
 NVIDIA drivers on Ubuntu
 ~~~~~~~~~~~~~~~~~~~~~~~~
