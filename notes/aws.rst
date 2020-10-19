@@ -5,8 +5,8 @@ Set up
 ------
 (Optionally) May need to use EPEL::
 
-    sudo yum update
-    sudo amazon-linux-extras install epel
+    sudo yum update -y
+    sudo amazon-linux-extras install -y epel
 
 Install bare necessities::
 
