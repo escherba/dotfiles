@@ -5,11 +5,12 @@ Set up
 ------
 (Optionally) May need to use EPEL::
 
+    sudo yum update
     sudo amazon-linux-extras install epel
 
 Install bare necessities::
 
-    sudo yum install htop tmux git wget jq vim
+    sudo yum install -y htop tmux git wget jq vim
     curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux.conf
 
 The rest of the commands are run in a tmux window::
