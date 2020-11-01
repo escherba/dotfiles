@@ -196,3 +196,10 @@ alias yavide="gvim --servername yavide -f -N -u /opt/yavide/.vimrc"
 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
+# To automatically start tmux on your remote server when ordinarily logging in
+# via SSH (and only SSH), edit the ~/.bashrc of your user or root (or both) on
+# the remote server accordingly:
+if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+  tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
+fi
+
