@@ -200,6 +200,6 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 # via SSH (and only SSH), edit the ~/.bashrc of your user or root (or both) on
 # the remote server accordingly:
 if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
-  tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
+  tmux attach-session -d -t ssh_tmux || tmux new-session -s ssh_tmux
 fi
 
