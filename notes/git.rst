@@ -1,5 +1,5 @@
-Github notes
-============
+Git notes
+=========
 
 Adding a private key
 ----------------------
