@@ -62,22 +62,6 @@ To find out where a Vim default such as ``hlsearch`` was last set, enter::
 
     :verb set hlssearch?
  
-A better git diff highlighter
------------------------------
-
-From http://stackoverflow.com/a/15149253 :
-
-.. code-block:: bash
-
-    git clone https://github.com/git/git
-    cd git/contrib/diff-highlight
-    make
-    sudo cp diff-highlight /usr/local/bin/
-
-    git config --global pager.log 'diff-highlight | less'
-    git config --global pager.show 'diff-highlight | less'
-    git config --global pager.diff 'diff-highlight | less'
-
 CSV diff tool
 -------------
 

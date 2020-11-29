@@ -110,14 +110,6 @@ Finally, add to ``.bashrc`` on your local machine::
     alias mosh-ec2-large="mosh --ssh=\"ssh -Y -i $AWS_PEM_FILE\" $AWS_HOST --server=\"/usr/bin/mosh-server\" -- tmux new-session -A -s main"
     alias mosh-ec2-large-bind="mosh --ssh=\"ssh -i $AWS_PEM_FILE -ND 8157\" $AWS_HOST --server=\"/usr/bin/mosh-server\""
 
-Troubleshooting
--------------------
-
-If git commands are not colorized, you may need to run::
-
-    git config --global color.ui auto
- 
- 
 .. _Alex Sanchez post: https://medium.com/@alexjsanchez/python-3-notebooks-on-aws-ec2-in-15-mostly-easy-steps-2ec5e662c6c6
 .. _this article: http://linuxpitstop.com/ssh-vs-mosh/
 .. _this SO answer: https://stackoverflow.com/a/7819465
