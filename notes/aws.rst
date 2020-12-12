@@ -71,6 +71,14 @@ To avoid the fixed-size panes issue, detach existing clients when attaching to a
     
 To read more about this, see `this SO answer`_.
 
+To automatically start tmux on your remote server when ordinarily logging in
+via SSH, edit the ``~/.bashrc`` of your user on the remote server accordingly::
+
+    if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+      tmux attach-session -d -t ssh_tmux || tmux new-session -s ssh_tmux
+    fi
+
+
 File transfer
 -------------
 
