@@ -196,6 +196,23 @@ Run::
 
 If `docker run` consistently fails while asking whether Docker daemon is running and `sudo service docker start` also fails, reboot machine.
 
+If you get::
+
+    The following packages have unmet dependencies:
+    nvidia-docker2 : Depends: nvidia-container-runtime (>= 3.4.0) but 3.3.0-1 is to be installed
+    E: Unable to correct problems, you have held broken packages
+
+Edit the following file using vim or similar: ``/etc/apt/preferences.d/nvidia-docker-pin-1002``::
+
+    Package: *
+    Pin: origin nvidia.github.io
+    Pin-Priority: 1002
+
+Then run::
+
+    sudo apt-get install -y nvidia-docker2
+
+
 .. _[1]: https://lambdalabs.com/blog/set-up-a-tensorflow-gpu-docker-container-using-lambda-stack-dockerfile/
 .. _[2]: https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
 .. _port forwarding: https://github.com/escherba/dotfiles/blob/master/notes/aws.rst#port-forwarding
