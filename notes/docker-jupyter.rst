@@ -186,7 +186,8 @@ The user mapping ``-u $(id -u):$(id -g)`` is a useful shorthand for starting Doc
 
 If you see the following error::
 
-    Failed to fetch https://nvidia.github.io/nvidia-docker/ubuntu18.04/amd64/InRelease  The following signatures were invalid: EXPKEYSIG 6ED91CA3AC1160CD NVIDIA CORPORATION (Open Source Projects) <cudatools@nvidia.com>
+    Failed to fetch https://nvidia.github.io/nvidia-docker/ubuntu18.04/amd64/InRelease  
+      The following signatures were invalid: EXPKEYSIG 6ED91CA3AC1160CD NVIDIA CORPORATION (Open Source Projects) <cudatools@nvidia.com>
   
 Run::
 
