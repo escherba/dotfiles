@@ -187,12 +187,14 @@ The user mapping ``-u $(id -u):$(id -g)`` is a useful shorthand for starting Doc
 If you see the following error::
 
     Failed to fetch https://nvidia.github.io/nvidia-docker/ubuntu18.04/amd64/InRelease  
-      The following signatures were invalid: EXPKEYSIG 6ED91CA3AC1160CD NVIDIA CORPORATION (Open Source Projects) <cudatools@nvidia.com>
+      The following signatures were invalid: EXPKEYSIG 6ED91CA3AC1160CD NVIDIA CORPORATION 
+      (Open Source Projects) <cudatools@nvidia.com>
   
 Run::
 
     curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 
+If `docker run` consistently fails while asking whether Docker daemon is running and `sudo service docker start` also fails, reboot machine.
 
 .. _[1]: https://lambdalabs.com/blog/set-up-a-tensorflow-gpu-docker-container-using-lambda-stack-dockerfile/
 .. _[2]: https://marmelab.com/blog/2018/03/21/using-nvidia-gpu-within-docker-container.html
