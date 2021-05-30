@@ -30,6 +30,13 @@ Install the following into system Python::
     sudo /usr/local/bin/pip3 install pylama
     sudo /usr/local/bin/pip3 install pynvim
 
+LaTeX
+------
+
+To allow PDF export of Jupyter notebooks:
+
+    sudo apt-get install texlive-xetex
+    
 Vim
 ---
 
