@@ -33,7 +33,7 @@ Install the following into system Python::
 LaTeX
 ------
 
-To allow PDF export of Jupyter notebooks:
+To allow PDF export of Jupyter notebooks::
 
     sudo apt-get install texlive-xetex
     
