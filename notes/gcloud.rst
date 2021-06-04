@@ -20,3 +20,7 @@ Then run::
 And point your browser at the URL, followed by copying the access code. Then::
 
     gcloud config set project <PROJECT_NAME>
+
+To allow applications such as Pandas read/write access, follow up with::
+
+    gcloud auth application-default login
