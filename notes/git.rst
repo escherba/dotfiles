@@ -4,7 +4,7 @@ Git notes
 Adding a private key
 ----------------------
 
-Refer to original instructions here: `page 1`_, `page 2`_. Run::
+Refer to original instructions here: `page 1 <https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent>`_, `page 2 <https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account>`_. Run::
 
     $ ssh-keygen -t ed25519 -C "your_email@example.com"
     $ eval "$(ssh-agent -s)"
@@ -25,7 +25,7 @@ Afterwards run::
 
 	$ cat ~/.ssh/id_ed25519.pub
 
-And copy the contents of the line. Then go to `SSH keys`_ page in your GitHub profile,
+And copy the contents of the line. Then go to `SSH keys <https://github.com/settings/keys>`_ page in your GitHub profile,
 click "New SSH key" and paste the contents, labeling it with somehting like the name of the machine.
 
 To ensure that git stores your credentials and does not prompt you for password every time::
@@ -58,7 +58,3 @@ If git commands are not colorized, you may need to run::
 
     git config --global color.ui auto
  
- 
-.. page 1: https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-.. page 2: https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
-.. SSH keys: https://github.com/settings/keys
