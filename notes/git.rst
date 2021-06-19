@@ -59,6 +59,6 @@ If git commands are not colorized, you may need to run::
     git config --global color.ui auto
  
  
-.. `page 1`: https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-.. `page 2`: https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
-.. `SSH keys`: https://github.com/settings/keys
+.. page 1: https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+.. page 2: https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
+.. SSH keys: https://github.com/settings/keys
