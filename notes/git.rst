@@ -18,6 +18,7 @@ And add the following lines::
 
 Then::
 
+	$ chmod 600 ~/.ssh/config
 	$ ssh-add -k ~/.ssh/id_ed25519
 
 Afterwards run::
