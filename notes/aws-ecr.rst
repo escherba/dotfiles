@@ -41,6 +41,6 @@ Push to new repo::
 References
 ==========
 
-https://dev.to/aws-builders/using-the-aws-public-container-registry-for-tensorflow-2-on-graviton-processors-1hl3
-https://community.arm.com/developer/tools-software/tools/b/tools-software-ides-blog/posts/aarch64-docker-images-for-tensorflow-and-pytorch
-https://docs.aws.amazon.com/AmazonECR/latest/public/ecr-public-ug.pdf
+* https://dev.to/aws-builders/using-the-aws-public-container-registry-for-tensorflow-2-on-graviton-processors-1hl3
+* https://community.arm.com/developer/tools-software/tools/b/tools-software-ides-blog/posts/aarch64-docker-images-for-tensorflow-and-pytorch
+* https://docs.aws.amazon.com/AmazonECR/latest/public/ecr-public-ug.pdf
