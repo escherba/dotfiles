@@ -7,7 +7,7 @@ After having spun up an instance::
 
 Then create an ECR repo::
 
-    cat << EOF > repo_config.json
+    cat << EOF > repo.json
 
     {
         "description": "TF2 on ARM64",
@@ -22,7 +22,7 @@ Then create an ECR repo::
         "usageText": ""
     }
     EOF
-    aws ecr-public create-repository  --repository-name tensorflow-aarch64 --catalog-data  file://repo_config.json --region us-east-1
+    aws ecr-public create-repository  --repository-name tensorflow-aarch64 --catalog-data  file://repo.json --region us-east-1
     
 Use the repo address printed out by command above to tag the docker image::
 
