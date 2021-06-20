@@ -22,7 +22,7 @@ Then create an ECR repo::
         "usageText": ""
     }
     EOF
-    aws ecr-public create-repository  --repository-name tensorflow-aarch64 --catalog-data  file://repo.json --region us-east-1
+    aws ecr-public create-repository --repository-name tensorflow-aarch64 --catalog-data file://repo.json --region us-east-1
     
 Use the repo address printed out by command above to tag the docker image::
 
