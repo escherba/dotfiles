@@ -8,7 +8,6 @@ After having spun up an instance::
 Then create an ECR repo::
 
     cat << EOF > repo.json
-
     {
         "description": "TF2 on ARM64",
         "architectures": [
