@@ -6,9 +6,9 @@ After having spun up an instance::
 
     git clone https://github.com/ARM-software/Tool-Solutions.git
     cd Tool-Solutions/docker/tensorflow-aarch64
-    ./build.sh --build-type full  --onednn acl --bazel_memory_limit 30000 --jobs 16
+    ./build.sh --build-type full --onednn acl --bazel_memory_limit 30000 --jobs 16
 
-Then create an ECR repo::
+Download an install latest AWS CLI toolkit. Then create an ECR repo::
 
     cat << EOF > repo.json
     {
