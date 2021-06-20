@@ -40,8 +40,8 @@ Push to new repo::
     docker push public.ecr.aws/u4g7z4f7/tensorflow-aarch64
 
 
-References
-==========
+Links
+=====
 
 * https://dev.to/aws-builders/using-the-aws-public-container-registry-for-tensorflow-2-on-graviton-processors-1hl3
 * https://community.arm.com/developer/tools-software/tools/b/tools-software-ides-blog/posts/aarch64-docker-images-for-tensorflow-and-pytorch
