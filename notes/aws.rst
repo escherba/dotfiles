@@ -10,7 +10,7 @@ Set up
 
 Install bare necessities::
 
-    sudo yum install -y htop tmux git wget jq vim aws
+    sudo yum install -y htop tmux git wget jq vim awscli
     curl https://raw.githubusercontent.com/escherba/dotfiles/master/home/.tmux-linux.conf -o ~/.tmux.conf
 
 The rest of the commands are run in a tmux window::
