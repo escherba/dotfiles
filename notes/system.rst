@@ -4,7 +4,7 @@ System stuff
 Power Management
 ~~~~~~~~~~~~~~~~
 
-Some Intel CPUs have power save mode enabled. To allow full-speed operation, install `cpupower` utility. You can view available modes using ``cpupower idle-info``. To disable idle mode::
+Some Intel CPUs have power save mode enabled. To allow full-speed operation, install ``cpupower`` utility. You can view available modes using ``cpupower idle-info``. To disable idle mode::
 
     cpupower idle-set -D 1
     
