@@ -8,7 +8,7 @@ Some Intel CPUs have power save mode enabled. To allow full-speed operation, ins
 
     cpupower idle-set -D 1
     
-To reset default settings::
+To reset to default settings::
 
     cpupower idle-set -E
 
