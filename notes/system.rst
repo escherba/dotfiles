@@ -6,11 +6,11 @@ Power Management
 
 Some Intel CPUs have power save mode enabled. To allow full-speed operation, install ``cpupower`` utility. You can view available modes using ``cpupower idle-info``. To disable idle mode::
 
-    cpupower idle-set -D 1
+    sudo cpupower idle-set -D 1
     
 To reset to default settings::
 
-    cpupower idle-set -E
+    sudo cpupower idle-set -E
 
 SSH
 ~~~
