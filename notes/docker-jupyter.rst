@@ -194,7 +194,14 @@ Run::
 
     curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 
-If `docker run` consistently fails while asking whether Docker daemon is running and `sudo service docker start` also fails, reboot machine.
+If `docker run` consistently fails while asking whether Docker daemon is running and `sudo service docker start` also fails, you can try the following::
+
+    sudo su
+    systemctl unmask docker.service
+    systemctl unmask docker.socket
+    systemctl start docker.service
+
+If it still does not help, reboot machine.
 
 If you get::
 
