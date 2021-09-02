@@ -38,7 +38,8 @@ function! UserInit()
   " NB: Using 'develop' branch of python-mode because of issue:
   " https://github.com/python-mode/python-mode/issues/783#issuecomment-320490153
   Plug 'python-mode/python-mode', {'branch': 'develop'}
-  Plug 'jonathanfilip/vim-lucius'
+  " Plug 'jonathanfilip/vim-lucius'
+  Plug 'cocopon/iceberg.vim'
 endfunction
 
 " Override the default settings from space-vim as well as adding extras
@@ -67,13 +68,15 @@ function! UserConfig()
     set termguicolors
   endif
 
-  let g:lucius_style = 'dark'
-	let g:lucius_contrast = 'normal'
-	let g:lucius_contrast_bg = 'normal'
-	let g:lucius_use_bold = 1
-	let g:lucius_use_underline = 1
-	let g:lucius_no_term_bg = 0
-	colorscheme lucius
+  " let g:lucius_style = 'dark'
+	" let g:lucius_contrast = 'normal'
+	" let g:lucius_contrast_bg = 'normal'
+	" let g:lucius_use_bold = 1
+	" let g:lucius_use_underline = 1
+	" let g:lucius_no_term_bg = 0
+	" colorscheme lucius
+
+  colorscheme iceberg
 
   let g:pymode_python = 'python3'
 
