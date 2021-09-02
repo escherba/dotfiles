@@ -38,14 +38,7 @@ function! UserInit()
   " NB: Using 'develop' branch of python-mode because of issue:
   " https://github.com/python-mode/python-mode/issues/783#issuecomment-320490153
   Plug 'python-mode/python-mode', {'branch': 'develop'}
-  " Plug 'jonathanfilip/vim-lucius'
-  " Plug 'cormacrelf/vim-colors-github'
-  " Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-  " Plug 'glepnir/oceanic-material'
-  Plug 'mhartington/oceanic-next'
-  " Plug 'herrbischoff/cobalt2.vim'
-  " Plug 'drewtempelmeyer/palenight.vim'
-
+  Plug 'jonathanfilip/vim-lucius'
 endfunction
 
 " Override the default settings from space-vim as well as adding extras
@@ -65,28 +58,22 @@ function! UserConfig()
 
   set background=dark
 
+	" set Vim-specific sequences for RGB colors
+  " This fixes termguicolors with Tmux
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
   if (has("termguicolors"))
     set termguicolors
   endif
 
-  " let g:lucius_style = 'dark'
-	" let g:lucius_contrast = 'normal'
-	" let g:lucius_contrast_bg = 'normal'
-	" let g:lucius_use_bold = 1
-	" let g:lucius_use_underline = 1
-	" let g:lucius_no_term_bg = 0
-	" colorscheme lucius
-
-  colorscheme OceanicNext
-
-	" " use a slightly darker background, like GitHub inline code blocks
-	" let g:github_colors_soft = 1
-	" " more blocky diff markers in signcolumn (e.g. GitGutter)
-	" let g:github_colors_block_diffmark = 0
-  " colorscheme github
-
-  " let g:material_theme_style = 'ocean'
-  " colorscheme material
+  let g:lucius_style = 'dark'
+	let g:lucius_contrast = 'normal'
+	let g:lucius_contrast_bg = 'normal'
+	let g:lucius_use_bold = 1
+	let g:lucius_use_underline = 1
+	let g:lucius_no_term_bg = 0
+	colorscheme lucius
 
   let g:pymode_python = 'python3'
 
