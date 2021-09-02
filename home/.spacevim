@@ -37,7 +37,7 @@ function! UserInit()
   Plug 'dense-analysis/ale'
   " NB: Using 'develop' branch of python-mode because of issue:
   " https://github.com/python-mode/python-mode/issues/783#issuecomment-320490153
-  Plug 'python-mode/python-mode', {'branch': 'develop'}
+  Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop'}
   " Plug 'jonathanfilip/vim-lucius'
   Plug 'cocopon/iceberg.vim'
 endfunction
