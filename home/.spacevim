@@ -38,8 +38,13 @@ function! UserInit()
   " NB: Using 'develop' branch of python-mode because of issue:
   " https://github.com/python-mode/python-mode/issues/783#issuecomment-320490153
   Plug 'python-mode/python-mode', {'branch': 'develop'}
-  Plug 'jonathanfilip/vim-lucius'
-  Plug 'drewtempelmeyer/palenight.vim'
+  " Plug 'jonathanfilip/vim-lucius'
+  " Plug 'cormacrelf/vim-colors-github'
+  " Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+  " Plug 'glepnir/oceanic-material'
+  Plug 'mhartington/oceanic-next'
+  " Plug 'herrbischoff/cobalt2.vim'
+  " Plug 'drewtempelmeyer/palenight.vim'
 
 endfunction
 
@@ -60,17 +65,28 @@ function! UserConfig()
 
   set background=dark
 
-  let g:lucius_style = 'dark'
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+
+  " let g:lucius_style = 'dark'
 	" let g:lucius_contrast = 'normal'
-	let g:lucius_contrast_bg = 'normal'
+	" let g:lucius_contrast_bg = 'normal'
 	" let g:lucius_use_bold = 1
 	" let g:lucius_use_underline = 1
 	" let g:lucius_no_term_bg = 0
+	" colorscheme lucius
 
-	colorscheme lucius
+  colorscheme OceanicNext
 
-	" let g:python_host_prog = '/opt/homebrew/bin/python3'
-	" let g:python3_host_prog = '/opt/homebrew/bin/python3'
+	" " use a slightly darker background, like GitHub inline code blocks
+	" let g:github_colors_soft = 1
+	" " more blocky diff markers in signcolumn (e.g. GitGutter)
+	" let g:github_colors_block_diffmark = 0
+  " colorscheme github
+
+  " let g:material_theme_style = 'ocean'
+  " colorscheme material
 
   let g:pymode_python = 'python3'
 
@@ -78,15 +94,15 @@ function! UserConfig()
   let g:pymode_lint = 1
   let g:pymode_lint_checker = "pyflakes,pep8"
   let g:pymode_lint_write = 1  " Auto check on save
-  let g:pymode_lint_ignore=["E501","W291","W293"]
+  let g:pymode_lint_ignore=["E501","W291","W293","C0103"]
 
   " disable trimming whitespace on save
   let g:pymode_trim_whitespaces = 0
-  
+
   " breakpoints
   let g:pymode_breakpoint = 1
   let g:pymode_breakpoint_bind = '<leader>b'
-  
+
   " syntax highlighting
   let g:pymode_syntax = 1
   let g:pymode_syntax_all = 1
