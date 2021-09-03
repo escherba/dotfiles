@@ -68,7 +68,13 @@ To instal NeoVim on Ubuntu versions previous to 18::
 To find out where a Vim default such as ``hlsearch`` was last set, enter::
 
     :verb set hlssearch?
- 
+
+Note: if you are getting Syntastic errors about Python 3 syntax, it may be that
+you need to install linters using system's ``pip3``::
+
+    pip3 install pylint flake8 pyflakes --user
+
+
 CSV diff tool
 -------------
 
