@@ -59,14 +59,17 @@ function! UserConfig()
 
   set background=dark
 
+  " if (has("termguicolors"))
+  "   set termguicolors
+  " endif
+
 	" set Vim-specific sequences for RGB colors
   " This fixes termguicolors with Tmux
-	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-  if (has("termguicolors"))
-    set termguicolors
-  endif
+	if exists('+termguicolors')
+		let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+		let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+		set termguicolors
+	endif
 
   " let g:lucius_style = 'dark'
 	" let g:lucius_contrast = 'normal'
