@@ -10,9 +10,9 @@ https://www.anaconda.com/distribution/ and run the interactive installer.
 Basics
 ------
 
-To create a blank Conda envirnoment called "env1" for Python 3.6::
+To create a blank Conda envirnoment called "env1" for Python 3.9::
 
-    conda create -n env1 python=3.6 pip
+    conda create -n env1 python=3.9 pip
 
 To dump current environment into a Conda YAML config (this is Conda equivalent of "pip freeze")::
 
@@ -44,54 +44,115 @@ To clean up an active conda environment (this reduces disk space usage)::
 
     conda clean --all
 
-Tensorflow v2 environment with Conda
-------------------------------------
+Using Conda with direnv
+-----------------------
 
-Create a new conda environment::
+The program ``direnv`` allows automatically setting your environment depending
+on the current working directory. This is extremely convenient for development.
+You can install ``direnv`` on most systems, for example, on Ubuntu::
 
-    conda create -n tf2 python=3.6 pip
-    conda activate tf2
-    conda install setuptools
-    conda install cython matplotlib seaborn pillow scikit-learn pandas pylint pyyaml \
-        statsmodels pytest pydot dill cloudpickle pytables numpy scipy joblib psutil \
-        colorama mkl-service tensorflow-gpu=2.0.0 tensorflow-probability=0.8.0
-    conda install -c conda-forge rfpimp imbalanced-learn scikit-garden mlxtend xgboost \
-        tensorboard tqdm tensorboardx visdom lightgbm frozendict boto3 fastparquet pyaml \
-        s3fs awscli nbstripout umap-learn pandas-profiling pymysql sqlalchemy \
-        future pyglet fbprophet plotly keras python-annoy
-    conda install -c conda-forge ipython ipdb ipykernel nodejs=13.0.0 ipywidgets jupyter \
-        jupyterlab jupyter_contrib_nbextensions
-    conda install -c bokeh bokeh jupyter_bokeh
-    conda install -c pyviz hvplot holoviews panel colorcet datashader
+    sudo apt install direnv
 
-For PyTorch (optional), use following line::
+After installing the program, add the following line to your Bash profile::
 
-    conda install -c pytorch cudatoolkit cudnn numba pytorch torchvision ignite
-  
-Re-login into Conda::
+    [ -x "$(command -v direnv)" ] && eval "$(direnv hook bash)"
 
-    conda deactivate
-    conda activate tf2
+There is a ``.envrc`` file in provided in this directory that contains the
+following lines::
 
-Test whether GPU is available::
+    eval "$(conda shell.bash hook)"
+    conda activate <env-name>
+    export PYTHONPATH=$(python -c 'import site; print(":".join(site.getsitepackages()))')
+
+Where ``<env-name>`` is the name of thei desired environment (you need
+to set this yourself).
+
+Note that this does not update the shell prompt which may show incorrect Conda
+environment (the location of Python binary, for example, however, should be correct,
+which is easy to verify using ``which python``). To avoid confusion, you can disable
+Conda prompt globally using::
+
+    conda config --set changeps1 False
+
+Creating PyTorch environmnets with Conda
+----------------------------------------
+
+One benefit of Conda for ML is that it allows you to create isolated
+environments with different versions of CUDA. For example here is how to
+install PyTorch with GPU support (this works regardless of which version of
+CUDA is installed system-wide)::
+
+	conda create -n torch pytorch torchvision torchaudio cudatoolkit=10.2 \
+		-c pytorch -c conda-forge -c nvidia
+
+This creates an environment called "torch" with packages ``pytorch``,
+``torchvision``, ``torchaudio``, and ``cudatoolkit=10.2`` that are pulled from
+channels ``pytorch`` (official PyTorch channel), ``conda-forge``, and
+``nvidia`` (official Nvidia channel).
+
+The PyTorch website provides a handy tool for building out the conda command
+that can be used to install PyTorch: https://pytorch.org/get-started/locally/
+
+Creating Tensorflow environments with Conda
+-------------------------------------------
+
+To create a TF v2.4 environment on Linux::
+
+    conda install -n base -c conda-forge mamba
+    mamba create -c conda-forge -n tf24 pip python=3.8 pandas tqdm \
+        scikit-learn matplotlib-base cloudpickle statsmodels \
+        s3fs pyyaml pytest pytest-cov coverage colorlog bokeh colorcet pyarrow pydot \
+        networkx jupyter jupyterlab ipython nodejs ipywidgets bottleneck numexpr ipdb \
+        jupyter_contrib_nbextensions tensorflow-gpu=2.4 tensorflow-estimator=2.4 tensorboard=2.4 \
+        numpy=1.19.2 gast=0.3.3 six=1.15.0 typing-extensions=3.7.4
+    conda activate tf24
+    jupyter contrib nbextension install --user
+    jupyter labextension install @jupyter-widgets/jupyterlab-manager
+
+To create a TF v2.5 environmnet on Linux::
+
+    conda create -c conda-forge -n tf25 pip python=3.9 pydot numpy=1.19.5 \
+        scikit-learn=0.24.2 pandas tqdm cloudpickle pyyaml matplotlib-base \
+        bokeh networkx jupyter jupyterlab ipython nodejs ipywidgets bottleneck numexpr ipdb \
+        jupyter_contrib_nbextensions pytest pytest-cov coverage colorlog \
+        colorcet pyarrow statsmodels s3fs typing-extensions=3.7.4.3 six=1.15.0
+    conda activate tf25
+    pip install tensorflow_probability tensorflow-gpu==2.5
+    jupyter contrib nbextension install --user
+    jupyter labextension install @jupyter-widgets/jupyterlab-manager
+
+To test whether GPU is available::
 
     python3
     >>> import tensorflow as tf
     >>> tf.test.is_gpu_available()
-    
-For analysis, it may be useful to enable ipywidgets and jupyter extensions::
 
+To create a Tensorflow v2.1 environment on a Mac::
+
+    conda create -c anaconda --name tf21 pip numpy \
+        pandas scipy=1.4.1 scikit-learn=0.23.2 matplotlib-base tqdm \
+        cloudpickle s3fs pyyaml pytest pytest-cov coverage \
+        colorlog bokeh colorcet pyarrow grpcio oauthlib pyasn1 pyasn1-modules \
+        markdown werkzeug opt_einsum h5py=2.10.0 absl-py protobuf \
+        astor astunparse cachetools gast=0.2.2 requests-oauthlib rsa termcolor
+    conda activate tf21
+    pip install tensorflow==2.1.0
+
+Finally, to create a Tensorflow v2.5 envrionment on a Mac M1 machine::
+
+    conda create -c apple -n tf-metal tensorflow-deps
+    conda activate tf-metal
+    conda install -c conda-forge pandas tqdm cloudpickle pyyaml matplotlib-base bokeh \
+        scikit-learn s3fs pytest pytest-cov coverage colorlog colorcet pyarrow pydot \
+        networkx jupyter jupyterlab ipython nodejs ipywidgets bottleneck numexpr ipdb \
+        statsmodels
+    python -m pip install tensorflow-macos
+    python -m pip install tensorflow-metal
+    python -m pip install jupyter_contrib_nbextensions
     jupyter contrib nbextension install --user
     jupyter labextension install @jupyter-widgets/jupyterlab-manager
-    jupyter labextension install @bokeh/jupyter_bokeh
-    jupyter labextension install @pyviz/jupyterlab_pyviz
 
-Some lesser-known packages can be installed through pip on top of Conda environment
-(generally prefer Conda packages if they exist)::
 
-    pip install gym livelossplot missingpy
-    pip install git+https://www.github.com/keras-team/keras-contrib.git
-    
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
