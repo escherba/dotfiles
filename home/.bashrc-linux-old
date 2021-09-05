@@ -8,16 +8,8 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+# export TERM=xterm-256color
+export TERM=konsole-256color
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -61,18 +53,18 @@ function parse_git_branch() {
 }
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(parse_git_branch) \$ '
-    # PS1="\w\[\033[01;32m\]\$(parse_git_branch)\[\033[00m\] $ "
+    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+    PS1="\W\[\033[01;32m\]\$(parse_git_branch)\[\033[00m\] $ "
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch) \$ '
-    # PS1="\w\$(parse_git_branch) $ "
+    # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
+    PS1="\W\$(parse_git_branch) $ "
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \W\a\]$PS1"
     ;;
 *)
     ;;
@@ -97,6 +89,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias vi='vim -X'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -121,12 +114,87 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+[ -r "${HOME}/.byobu/prompt" ] && . "${HOME}/.byobu/prompt"   #byobu-prompt#
 
-# command-line fuzzy finder
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# if direnv is installed, hook it with bash
-[ -x "$(command -v direnv)" ] && eval "$(direnv hook bash)"
+export NLTK_DATA="$HOME/dev/py-nlp/var/nltk/data"
+
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+export LESS="-R"
+export EDITOR=/usr/bin/vim
+
+# Tell grep to highlight matches
+# export GREP_OPTIONS='--color=auto'
+
+# Tell ls to be colourful
+export CLICOLOR=1
+export LSCOLORS=Exfxcxdxbxegedabagacad
+
+# Node: do not use `~' shortcut when referring to home directory
+# when exporting paths. Instead, use "$HOME" variable.
+#
+export NODE_PATH="/usr/local/lib/jsctags:$NODE_PATH"
+export NODE_PATH="/usr/local/lib/jsctags:$NODE_PATH"
+
+#pkgconfig
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig"
+
+# export PATH="$HOME/.cabal/bin:$HOME/Library/Haskell/bin:/Library/Haskell/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+
+export GOPATH="/usr/share/go"
+export PATH="$PATH:/usr/share/go/bin:/usr/local/go/bin"
+
+export PATH="$PATH:/opt/bin"
+
+export PATH="$HOME/.local/bin:$PATH"
+
+### Added by the Heroku Toolbelt
+# export PATH="/usr/local/heroku/bin:$PATH"
+
+# export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/heroku/bin:$HOME/Library/Haskell/bin:/Library/Haskell/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/share/python:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/share/go/bin:/usr/local/go/bin:/opt/bin:/usr/texbin:$PATH"
+
+# test -s "$HOME/.rvm/scripts/rvm" && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+test -s "${HOME}/.bash_private" && source "${HOME}/.bash_private"
+
+export PYTHONIOENCODING=UTF_8
+
+PERL_MB_OPT="--install_base $HOME/perl5"; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
+
+# export PERL5LIB="$HOME/perl5/lib/perl5"
+# export PATH="$PATH:$HOME/perl5/bin"
+
+export LIBFM_PATH="$HOME/.local/bin"
+
+# export PATH=${SPARK_HOME}/bin${PATH:+:${PATH}}
+
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export LD_LIBRARY_PATH=/usr/lib/openblas-base/${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export NUMEXPR_MAX_THREADS=$(grep processor /proc/cpuinfo | wc -l)
+
+# http://unix.stackexchange.com/a/48113/172348
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=100000                   # big big history
+export HISTFILESIZE=100000               # big big history
+shopt -s histappend                      # append to history, don't overwrite it
+# Save and reload the history after each command finishes
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# Yavide alias
+alias yavide="gvim --servername yavide -f -N -u /opt/yavide/.vimrc"
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 # To automatically start tmux on your remote server when ordinarily logging in
 # via SSH (and only SSH), edit the ~/.bashrc of your user or root (or both) on
@@ -134,3 +202,4 @@ fi
 if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
   tmux attach-session -d -t ssh_tmux || tmux new-session -s ssh_tmux
 fi
+
