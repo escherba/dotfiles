@@ -14,12 +14,13 @@ To create a blank Conda envirnoment called "env1" for Python 3.9::
 
     conda create -n env1 python=3.9 pip
 
-To dump current environment into a Conda YAML config (this is Conda equivalent of "pip freeze")::
+To dump current environment into a Conda YAML config (this is Conda equivalent
+of "pip freeze")::
 
     conda env export > environment.yml
 
-Sometimes you want to look at which packages you actually told Conda to install (i.e. you want
-``env export`` output to ignore dependencies)::
+Sometimes you want to look at which packages you actually told Conda to install
+(i.e. you want ``env export`` output to ignore dependencies)::
 
     conda env export --from-history
 
@@ -63,14 +64,15 @@ following lines::
     eval "$(conda shell.bash hook)"
     conda activate <env-name>
     export PYTHONPATH=$(python -c 'import site; print(":".join(site.getsitepackages()))')
+    export LD_LIBRARY_PATH=$(which conda | sed 's/bin\/conda$/\/lib/'):$LD_LIBRARY_PATH
 
-Where ``<env-name>`` is the name of thei desired environment (you need
+Where ``<env-name>`` is the name of their desired environment (you need
 to set this yourself).
 
 Note that this does not update the shell prompt which may show incorrect Conda
-environment (the location of Python binary, for example, however, should be correct,
-which is easy to verify using ``which python``). To avoid confusion, you can disable
-Conda prompt globally using::
+environment (the location of Python binary, for example, however, should be
+correct, which is easy to verify using ``which python``). To avoid confusion,
+you can disable Conda prompt globally using::
 
     conda config --set changeps1 False
 
@@ -156,9 +158,13 @@ Finally, to create a Tensorflow v2.5 envrionment on a Mac M1 machine::
 Troubleshooting
 ~~~~~~~~~~~~~~~
 
-If you get ``failed call to cuInit: CUDA_ERROR_UNKNOWN`` error when calling ``tf.test.is_gpu_available()``, the fix may be as simple as rebooting the system.
+If you get ``failed call to cuInit: CUDA_ERROR_UNKNOWN`` error when calling
+``tf.test.is_gpu_available()``, the fix may be as simple as rebooting the
+system.
 
-If you get ``failed to get convolution algorithm``, see see `this page <https://github.com/tensorflow/tensorflow/issues/24828#issuecomment-457425190>`_ for possible resolution.
+If you get ``failed to get convolution algorithm``, see see
+`this page <https://github.com/tensorflow/tensorflow/issues/24828#issuecomment-457425190>`_
+for possible resolution.
 
 Sometimes you may need to install Anaconda's CUDA packages directly. Do this like so::
 
