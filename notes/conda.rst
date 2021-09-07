@@ -10,9 +10,9 @@ https://www.anaconda.com/distribution/ and run the interactive installer.
 Basics
 ------
 
-To create a blank Conda envirnoment called "env1" for Python 3.9::
+To create a blank Conda envirnoment called "py39" for Python 3.9::
 
-    conda create -n env1 python=3.9 pip
+    conda create -n py39 python=3.9 pip
 
 To dump current environment into a Conda YAML config (this is Conda equivalent
 of "pip freeze")::
