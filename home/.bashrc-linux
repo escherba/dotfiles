@@ -122,6 +122,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# command-line fuzzy finder
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # if direnv is installed, hook it with bash

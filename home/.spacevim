@@ -35,7 +35,7 @@ function! UserInit()
   " Add your own plugin via Plug command.
   " Plug 'junegunn/seoul256.vim'
   Plug 'dense-analysis/ale'
-  Plug 'airblade/vim-gitgutter'
+  " Plug 'airblade/vim-gitgutter'
   " NB: Using 'develop' branch of python-mode because of issue:
   " https://github.com/python-mode/python-mode/issues/783#issuecomment-320490153
   Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop'}
@@ -75,7 +75,7 @@ function! UserConfig()
 	if exists('+termguicolors')
 		let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 		let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-		" set termguicolors
+		set termguicolors
 	endif
 
   " let g:lucius_style = 'dark'
