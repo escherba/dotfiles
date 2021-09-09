@@ -35,6 +35,7 @@ function! UserInit()
   " Add your own plugin via Plug command.
   " Plug 'junegunn/seoul256.vim'
   Plug 'dense-analysis/ale'
+  Plug 'airblade/vim-gitgutter'
   " NB: Using 'develop' branch of python-mode because of issue:
   " https://github.com/python-mode/python-mode/issues/783#issuecomment-320490153
   Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop'}
@@ -46,6 +47,9 @@ endfunction
 function! UserConfig()
 
   " Override the default settings.
+
+  " let g:python3_host_prog = '/usr/bin/python3.6'
+
   " Uncomment the following line to disable relative number.
   set norelativenumber
 
@@ -54,9 +58,12 @@ function! UserConfig()
   " It is good for airline layer.
   " let g:airline_powerline_fonts = 1
 
+  " Focus follows mouse
   set mouse=a
+
   set hlsearch
 
+  " Set background to dark (must come before colorscheme)
   set background=dark
 
   " if (has("termguicolors"))
@@ -80,6 +87,9 @@ function! UserConfig()
 	" colorscheme lucius
 
   colorscheme iceberg
+
+  " set background to transparent (must come after colorscheme)
+  " hi Normal guibg=NONE ctermbg=NONE
 
   let g:pymode_python = 'python3'
 
