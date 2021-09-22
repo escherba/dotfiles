@@ -76,7 +76,7 @@ you can disable Conda prompt globally using::
 
     conda config --set changeps1 False
 
-Creating PyTorch environmnets with Conda
+Creating PyTorch environments with Conda
 ----------------------------------------
 
 One benefit of Conda for ML is that it allows you to create isolated
