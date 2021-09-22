@@ -88,6 +88,11 @@ function! UserConfig()
 
   colorscheme iceberg
 
+  if g:colors_name ==# "iceberg"
+    " For iceberg colorscheme: Modify color definition
+    hi Visual ctermbg=236 guibg=#363d5c
+  endif
+
   " set background to transparent (must come after colorscheme)
   " hi Normal guibg=NONE ctermbg=NONE
 
