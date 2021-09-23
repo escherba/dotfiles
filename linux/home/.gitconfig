@@ -24,3 +24,5 @@
     show = diff-highlight | less
 [grep]
     linenumber = true
+[alias]
+    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -r -n 1 git branch -d"
