@@ -1,4 +1,4 @@
-Jupyter Lab Workflow
+AWS Notes
 ==================
 
 Set up
@@ -24,6 +24,11 @@ Given a repo with ``environment.yml`` file in it::
 
     conda env create --name env1 -f environment.yml
     conda clean --all
+
+Installing Docker
+-----------------
+
+See https://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html
 
 Port forwarding
 ---------------
