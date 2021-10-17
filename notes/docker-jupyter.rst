@@ -118,14 +118,14 @@ To run an image with a custom entrypoint (for example ``/bin/bash``)::
 Cleaning up disk space
 ~~~~~~~~~~~~~~~~~~~~~~
 
-To prune images without containers created more than 24 hours ago::
-
-  docker image prune -a --filter "until=24h"
- 
 To stop all containers::
 
   docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
 
+To prune images without containers created more than 24 hours ago::
+
+  docker image prune -a --filter "until=24h"
+ 
 To see which images take up disk space::
 
   docker system df -v
