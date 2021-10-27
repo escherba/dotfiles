@@ -5,6 +5,8 @@ alias gc='git commit'
 alias gd='git diff'
 alias gt='git log --decorate --oneline --all --graph'
 alias g='git'
+#alias vim='nvim'
+#alias vi='nvim'
 alias dos2unix="perl -w015l12pl12pi -e1"
 alias mac2unix="perl -w015l12pi -e1"
 
@@ -54,7 +56,6 @@ function joinpdf() {
     shift
     gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=${result} "$@"
 }
-
 
 # alias mysql-aurora-dev="mysql -h$AURORA_DEV_HOST -u$DB_USER --port $DB_PORT -p"
 # alias ssh-hugemem="ssh -Y $HUGEMEM -i $AWS_KEY -t \"tmux new-session -A -s main\""
