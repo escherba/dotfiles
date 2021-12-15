@@ -2,27 +2,31 @@
     attributesfile = ~/.gitattributes
     excludesfile = ~/.global_ignore
     editor = vim
+[pager]
+    log = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less
 [merge]
     tool = vimdiff
 [diff]
     compactionHeuristic = true
     tool = vimdiff
-[difftool]
-    prompt = False
 [diff "ipynb"]
-	textconv = python -m nbstripout -t
+    textconv = python -m nbstripout -t
 [diff "daff-csv"]
     command = daff diff --git
+[difftool]
+    prompt = False
 [merge "daff-csv"]
-	name = daff tabular csv merge
-	driver = daff merge --output %A %O %A %B
+    name = daff tabular csv merge
+    driver = daff merge --output %A %O %A %B
 [push]
     default = simple
-[pager]
-    diff = diff-highlight | less
-    log = diff-highlight | less
-    show = diff-highlight | less
 [grep]
     linenumber = true
+[credential "https://github.com"]
+    helper = 
+    helper = !/usr/bin/gh auth git-credential
 [alias]
-    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -r -n 1 git branch -d"
+    clean-merged = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -r -n 1 git branch -d"
+    clean-gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
