@@ -1,3 +1,5 @@
+[credential "https://github.com"]
+    helper = !/usr/bin/gh auth git-credential
 [core]
     attributesfile = ~/.gitattributes
     excludesfile = ~/.global_ignore
@@ -24,9 +26,6 @@
     default = simple
 [grep]
     linenumber = true
-[credential "https://github.com"]
-    helper = 
-    helper = !/usr/bin/gh auth git-credential
 [alias]
     clean-merged = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -r -n 1 git branch -d"
     clean-gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
