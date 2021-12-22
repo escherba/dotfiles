@@ -1,15 +1,12 @@
+[alias]
+    clean-merged = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -r -n 1 git branch -d"
+    clean-gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
 [credential "https://github.com"]
     helper = !/usr/bin/gh auth git-credential
 [core]
     attributesfile = ~/.gitattributes
     excludesfile = ~/.global_ignore
     editor = vim
-[pager]
-    log = diff-highlight | less
-    show = diff-highlight | less
-    diff = diff-highlight | less
-[merge]
-    tool = vimdiff
 [diff]
     compactionHeuristic = true
     tool = vimdiff
@@ -19,13 +16,18 @@
     command = daff diff --git
 [difftool]
     prompt = False
+[grep]
+    linenumber = true
+[merge]
+    tool = vimdiff
 [merge "daff-csv"]
     name = daff tabular csv merge
     driver = daff merge --output %A %O %A %B
+[pager]
+    diff = diff-highlight | less
+    log = diff-highlight | less
+    show = diff-highlight | less
+[pull]
+    ff = only
 [push]
     default = simple
-[grep]
-    linenumber = true
-[alias]
-    clean-merged = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -r -n 1 git branch -d"
-    clean-gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
