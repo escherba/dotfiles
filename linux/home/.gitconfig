@@ -1,6 +1,6 @@
 [alias]
-    clean-merged = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -r -n 1 git branch -d"
-    clean-gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
+    clean-merged = ! git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d
+    clean-gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs git branch -D
 [credential "https://github.com"]
     helper = !/usr/bin/gh auth git-credential
 [core]
