@@ -132,7 +132,7 @@ To see which images take up disk space::
 
 To remove all images::
 
-  docker image prune -a -f
+  docker system prune -a -f
 
 Installing Jupyter Lab
 ~~~~~~~~~~~~~~~~~~~~~~
