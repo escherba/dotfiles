@@ -53,9 +53,9 @@ Common Issues
 
 In case of an error ``could not select device driver "" with capabilities: [[gpu]]``::
 
-  sudo apt install nvidia-container-toolkit
-  sudo systemctl restart docker
-  
+  sudo snap remove --purge docker
+  sudo apt-get install docker.io nvidia-container-toolkit containerd
+ 
 If you encounter the following error while attempting to install ``nvidia-docker2``::
 
     The following packages have unmet dependencies:
