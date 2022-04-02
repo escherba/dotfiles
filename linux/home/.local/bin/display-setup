@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Set up dual monitors
+xrandr \
+    --output HDMI-0 --left-of DP-4 --auto --primary --rotate normal \
+    --output DP-4 --auto --preferred --rotate normal
