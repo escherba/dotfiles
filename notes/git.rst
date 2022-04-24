@@ -1,6 +1,17 @@
 Git notes
 =========
 
+Merging only a specific subdirectory from another branch
+--------------------------------------------------------
+
+Very simple:
+
+.. code-block:: bash
+
+    git checkout source_branch <paths>...
+
+[Source](https://jasonrudolph.com/blog/2009/02/25/git-tip-how-to-merge-specific-files-from-another-branch/)
+
 Adding a private key
 ----------------------
 
