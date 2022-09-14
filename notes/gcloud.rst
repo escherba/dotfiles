@@ -11,7 +11,7 @@ namely ``client_id`` and ``client_secret``.
 
 Then run::
 
-    gcloud auth login
+    gcloud auth login --no-launch-browser
 
 And point your browser at the URL, followed by copying the access code. Then::
 
@@ -19,4 +19,4 @@ And point your browser at the URL, followed by copying the access code. Then::
 
 To allow applications such as Pandas read/write access, follow up with::
 
-    gcloud auth application-default login
+    gcloud auth application-default login --no-launch-browser
