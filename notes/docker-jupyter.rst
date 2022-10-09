@@ -156,7 +156,7 @@ docker image as regular user (passing ``-u $(id -u):$(id -g)``. The following co
 
 Finally run the following::
 
-  jupyter contrib nbextension install --user
+  jupyter contrib nbextensions install --user
   jupyter labextension install @jupyter-widgets/jupyterlab-manager
   jupyter labextension install @pyviz/jupyterlab_pyviz
 

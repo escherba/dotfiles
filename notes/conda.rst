@@ -108,7 +108,7 @@ To create a TF v2.4 environment on Linux::
         jupyter_contrib_nbextensions tensorflow-gpu=2.4 tensorflow-estimator=2.4 tensorboard=2.4 \
         numpy=1.19.2 gast=0.3.3 six=1.15.0 typing-extensions=3.7.4
     conda activate tf24
-    jupyter contrib nbextension install --user
+    jupyter contrib nbextensions install --user
     jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 To create a TF v2.5 environmnet on Linux::
@@ -120,7 +120,7 @@ To create a TF v2.5 environmnet on Linux::
         colorcet pyarrow statsmodels s3fs typing-extensions=3.7.4.3 six=1.15.0
     conda activate tf25
     pip install tensorflow_probability tensorflow-gpu==2.5
-    jupyter contrib nbextension install --user
+    jupyter contrib nbextensions install --user
     jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 To test whether GPU is available::
@@ -151,7 +151,7 @@ Finally, to create a Tensorflow v2.5 envrionment on a Mac M1 machine::
     python -m pip install tensorflow-macos
     python -m pip install tensorflow-metal
     python -m pip install jupyter_contrib_nbextensions
-    jupyter contrib nbextension install --user
+    jupyter contrib nbextensions install --user
     jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 
@@ -194,7 +194,7 @@ Jupyter (extensions)
 
     conda install ipywidgets
     conda install -c conda-forge nodejs jupyter_contrib_nbextensions
-    jupyter contrib nbextension install --user
+    jupyter contrib nbextensions install --user
     
     jupyter nbextension enable --py widgetsnbextension
     jupyter nbextension enable collapsible_headings/main
