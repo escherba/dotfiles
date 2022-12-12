@@ -39,8 +39,11 @@ function! UserInit()
   " NB: Using 'develop' branch of python-mode because of issue:
   " https://github.com/python-mode/python-mode/issues/783#issuecomment-320490153
   Plug 'python-mode/python-mode', {'for': 'python', 'branch': 'develop'}
+  Plug 'christoomey/vim-tmux-navigator'
   " Plug 'jonathanfilip/vim-lucius'
   Plug 'cocopon/iceberg.vim'
+  " Plug 'arcticicestudio/nord-vim'
+  Plug 'cespare/vim-toml'
 endfunction
 
 " Override the default settings from space-vim as well as adding extras
@@ -77,6 +80,23 @@ function! UserConfig()
 		let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 		set termguicolors
 	endif
+
+  " Reset existing highlightings and syntax
+  hi clear
+  if exists('syntax_on')
+    syntax reset
+  endif
+
+  set hlsearch
+
+  " Smart pane switching with awareness of Vim splits.
+  " See: https://github.com/christoomey/vim-tmux-navigator
+  let g:tmux_navigator_no_mappings = 1
+  noremap <silent> <c-h> :<C-U>TmuxNavigateLeft<cr>
+  noremap <silent> <c-j> :<C-U>TmuxNavigateDown<cr>
+  noremap <silent> <c-k> :<C-U>TmuxNavigateUp<cr>
+  noremap <silent> <c-l> :<C-U>TmuxNavigateRight<cr>
+  noremap <silent> <c-\> :<C-U>TmuxNavigatePrevious<cr>
 
   " let g:lucius_style = 'dark'
 	" let g:lucius_contrast = 'normal'
