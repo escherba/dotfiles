@@ -63,6 +63,7 @@ function! UserConfig()
 
   " Focus follows mouse
   set mouse=a
+  set ttymouse=sgr
 
   set hlsearch
 
